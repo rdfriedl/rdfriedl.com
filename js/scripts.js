@@ -18,6 +18,19 @@ $(document).ready(function() {
 	$gameItem = $('#temp .item');
 	$gameItem.remove();
 	
+	$('#back-to-top').click(function(){
+		$.smoothScroll({offset: 0});
+	})
+	$(document).scroll(function(event) {
+		$('#back-to-top').css('opacity',($(document).scrollTop()-200)/300);
+		if($('#back-to-top').css('opacity') > 0){
+			$('#back-to-top').show()
+		}
+		else{
+			$('#back-to-top').hide()
+		}
+	});
+
 	//load json
 	$.ajax({
 		url: 'https://api.github.com/users/rdfriedl/repos',

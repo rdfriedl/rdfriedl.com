@@ -15,9 +15,20 @@
 	  
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://rawgit.com/kswedberg/jquery-smooth-scroll/master/jquery.smooth-scroll.min.js"></script>
 
 		<script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
 		<script src="js/bootstrap-image-gallery.min.js"></script>
+
+		<script>
+		  	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+		  	ga('create', 'UA-62048613-1', 'auto');
+		  	ga('send', 'pageview');
+		</script>
 
 		<script type="text/javascript" src="js/scripts.js"></script>
 
@@ -31,6 +42,15 @@
 			}
 			.git:focus{
 				color: black;
+			}
+			#back-to-top{
+				display: none;
+			    font-size: 2em;
+			    position: fixed;
+			    right: 20px;
+			    bottom: 20px;
+			    opacity: 0;
+  				box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.5);
 			}
 
 			.game .images{
@@ -47,6 +67,13 @@
 			}
 			.game .images img{
 				height: 100%;
+			}
+
+			@media screen and (max-width: 930px) {
+				#back-to-top{
+				    top: 20px;
+				    bottom: auto;
+				}
 			}
 		</style>
 	</head>
@@ -70,13 +97,13 @@
 							<li data-slide-to="1" data-target="#carousel"></li>
 						</ol>
 						<div class="carousel-inner">
-							<div class="item">
+							<div class="item active">
 								<img src="img/games/block-script.png">
 								<div class="carousel-caption">
 									<h4>Block-Script</h4>
 								</div>
 							</div>
-							<div class="item active">
+							<div class="item">
 								<img src="img/games/cannontest.png">
 								<div class="carousel-caption">
 									<h4>Cannon Test</h4>
@@ -118,6 +145,8 @@
 				<a data-gallery><img></a>
 			</div>
 		</div>
+
+		<button id="back-to-top" class="btn btn-default"><span class="glyphicon glyphicon-chevron-up"></span></button>
 
 		<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
 		<div id="blueimp-gallery" class="blueimp-gallery" data-use-bootstrap-modal="false">
