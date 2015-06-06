@@ -1,0 +1,22 @@
+[
+	{
+		"title": "cannontest",
+		"description": "A Three.js and Cannon.js Test Project",
+		"sourceURL": "https://github.com/rdfriedl/cannontest",
+		"playURL": "http://cdn.rawgit.com/rdfriedl/cannontest/v1/index.html",
+		"images": [
+			"img/games/cannontest/cannontest.png"
+		]
+	},
+	{
+		"title": "Block-Script",
+		"description": "A simple minecraft like ThreeJS example",
+		"sourceURL": "https://github.com/rdfriedl/block-script",
+		"playURL": "http://rdfriedl.github.io/block-script/",
+		"images": [
+			"img/games/block-script/block-script.png",
+			"img/games/block-script/block-script2.png",
+			"img/games/block-script/block-script3.png"
+		]
+	}
+]
