@@ -4,6 +4,12 @@
 		"description": "A Three.js and Cannon.js Test Project",
 		"sourceURL": "https://github.com/rdfriedl/cannontest",
 		"playURL": "http://cdn.rawgit.com/rdfriedl/cannontest/v1/index.html",
+		"tags": [
+			{
+				"message": "Complete",
+				"type": "success"
+			}
+		],
 		"images": [
 			"img/games/cannontest/cannontest.png"
 		]
@@ -13,10 +19,36 @@
 		"description": "A simple minecraft like ThreeJS example",
 		"sourceURL": "https://github.com/rdfriedl/block-script",
 		"playURL": "http://rdfriedl.github.io/block-script/",
+		"tags": [
+			{
+				"message": "Incomplete",
+				"type": "info"
+			}
+		],
 		"images": [
 			"img/games/block-script/block-script.png",
 			"img/games/block-script/block-script2.png",
 			"img/games/block-script/block-script3.png"
+		]
+	},
+	{
+		"title": "PhaserGame",
+		"description": "A simple MMORPG base built with phaser.io",
+		"sourceURL": "https://github.com/rdfriedl/phasergame/",
+		"playURL": "http://cdn.rawgit.com/rdfriedl/phasergame/master/index.html",
+		"tags": [
+			{
+				"message": "Incomplete",
+				"type": "info"
+			},
+			{
+				"message": "Stable v0.1.4",
+				"type": "success"
+			}
+		],
+		"images": [
+			"img/games/phasergame/phasergame.png",
+			"img/games/phasergame/phasergame2.png"
 		]
 	}
 ]

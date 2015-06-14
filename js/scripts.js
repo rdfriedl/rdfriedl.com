@@ -6,7 +6,7 @@ function loadImage(url,cb){
 	})
 	.done(function() {
 		if(cb) cb();
-	})
+	});
 }
 
 $(document).ready(function() {
@@ -15,22 +15,25 @@ $(document).ready(function() {
 	$gameTemp.remove();
 	$gameImage = $('#temp .game-image');
 	$gameImage.remove();
-	$gameItem = $('#temp .item');
-	$gameItem.remove();
 	//library
 	$libraryTemp = $('#temp .library');
 	$libraryTemp.remove();
-	
+	//game
+	$toolTemp = $('#temp .tool');
+	$toolTemp.remove();
+	$toolImage = $('#temp .tool-image');
+	$toolImage.remove();
+
 	$('#back-to-top').click(function(){
 		$.smoothScroll({offset: 0});
-	})
-	$(document).scroll(function(event) {
+	});
+	$(document).scroll(function() {
 		$('#back-to-top').css('opacity',($(document).scrollTop()-200)/300);
 		if($('#back-to-top').css('opacity') > 0){
-			$('#back-to-top').show()
+			$('#back-to-top').show();
 		}
 		else{
-			$('#back-to-top').hide()
+			$('#back-to-top').hide();
 		}
 	});
 
@@ -52,19 +55,27 @@ $(document).ready(function() {
 
 			$game.find('.cover').attr('href',game.images[0]);
 			$game.find('.cover>img').attr('src',game.images[0]);
+
+			//build tags
+			for(var k = 0; k < game.tags.length; k++){
+				var $tag = $('<span class="label"></span>').addClass('label-'+game.tags[k].type);
+				$tag.text(game.tags[k].message);
+				$game.find('.tags').append($tag);
+			}
+
 			$game.appendTo('#games');
 
 			for (var k = 0; k < game.images.length; k++) {
 				loadImage(game.images[k],function(url,$game){
 					var $image = $gameImage.clone(true);
-					$image.find('a').attr('href',url)
-					$image.find('img').attr('src',url)
+					$image.find('a').attr('href',url);
+					$image.find('img').attr('src',url);
 					//add it
 					$game.find('.images').append($image);
 				}.bind(this,game.images[k],$game));
-			};
-		};
-	})
+			}
+		}
+	});
 
 	//load libraries
 	$.ajax({
@@ -83,9 +94,50 @@ $(document).ready(function() {
 			$library.find('.site-link').attr('href',library.siteURL);
 			$library.find('.demo-link').attr('href',library.demoURL);
 
+			//build tags
+			for(var k = 0; k < library.tags.length; k++){
+				var $tag = $('<span class="label"></span>').addClass('label-'+library.tags[k].type);
+				$tag.text(library.tags[k].message);
+				$library.find('.tags').append($tag);
+			}
+
 			$library.appendTo('#libraries');
-		};
+		}
+	});
+
+	//load tools
+	$.ajax({
+		url: 'data/tools.json',
+		type: 'GET',
+		dataType: 'json'
 	})
+	.done(function(json) {
+		//build library list
+		for (var i = 0; i < json.length; i++) {
+			var $tool = $toolTemp.clone(true,true);
+			var tool = json[i];
+			$tool.find('.title').text(tool.title);
+			$tool.find('.desc').text(tool.description);
+			$tool.find('.source-link').attr('href',tool.sourceURL);
+			$tool.find('.open-link').hide();
+			if(tool.openURL){
+				$tool.find('.open-link').attr('href',tool.openURL).show();
+			}
+			$tool.find('.download-link').hide();
+			if(tool.downloadURL){
+				$tool.find('.download-link').attr('href',tool.downloadURL).show();
+			}
+
+			//build tags
+			for(var k = 0; k < tool.tags.length; k++){
+				var $tag = $('<span class="label"></span>').addClass('label-'+tool.tags[k].type);
+				$tag.text(tool.tags[k].message);
+				$tool.find('.tags').append($tag);
+			}
+
+			$tool.appendTo('#tools');
+		}
+	});
 
 	$.ajax({
 		url: 'https://api.github.com/users/rdfriedl',
@@ -95,5 +147,5 @@ $(document).ready(function() {
 	.done(function(json) {
 		//build game list
 		$('#profile-image').attr('src',json.avatar_url);
-	})
+	});
 });

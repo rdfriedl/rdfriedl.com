@@ -4,7 +4,7 @@
 	  	<meta charset="utf-8">
 	  	<title>Rdfriedl</title>
 	  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
+
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/bootstrap-theme.min.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
 		<link rel="stylesheet" href="css/bootstrap-image-gallery.min.css">
-	  
+
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="https://rawgit.com/kswedberg/jquery-smooth-scroll/master/jquery.smooth-scroll.min.js"></script>
@@ -25,7 +25,7 @@
 		  	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		  	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		  	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-	
+
 		  	ga('create', 'UA-62048613-1', 'auto');
 		  	ga('send', 'pageview');
 		</script>
@@ -48,6 +48,7 @@
 						<ul class="nav nav-pills">
 					  		<li role="presentation"><a href="#games">Games</a></li>
 					  		<li role="presentation"><a href="#libraries">Libraries</a></li>
+					  		<li role="presentation"><a href="#tools">Tools / Utilities</a></li>
 						</ul>
 					</div>
 					<div class="carousel slide" id="carousel">
@@ -68,8 +69,8 @@
 									<h4>Cannon Test</h4>
 								</div>
 							</div>
-						</div> 
-						<a class="left carousel-control" href="#carousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> 
+						</div>
+						<a class="left carousel-control" href="#carousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
 						<a class="right carousel-control" href="#carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 					</div>
 					<div id="games" class="row">
@@ -88,6 +89,14 @@
 						</div>
 						<!-- libraries -->
 					</div>
+					<div id="tools" class="row">
+						<div class="page-header">
+							<h2>
+								Tools / Utilities
+							</h2>
+						</div>
+						<!-- tools -->
+					</div>
 				</div>
 			</div>
 		</div>
@@ -99,11 +108,12 @@
 					</a>
 					<div class="images"></div>
 					<div class="caption">
-						<h3 class="title" style="margin-top: 0px;"></h3>
+						<h3 class="title" style="margin-top: 0px; display: inline-block;"></h3>
+						<div class="tags" style="display: inline;"></div>
 						<p class="desc"></p>
 						<p>
-							<a class="btn btn-primary source-link" href="#" target="_blank">Source Code</a>
-							<a class="btn btn-success pull-right play-link" href="#" target="_blank">Play</a>
+							<a class="btn btn-primary source-link" href="#" target="_blank"><i class="fa fa-code-fork"></i> Source Code</a>
+							<a class="btn btn-success pull-right play-link" href="#"><i class="fa fa-gamepad"></i> Play</a>
 						</p>
 					</div>
 				</div>
@@ -120,14 +130,36 @@
 					<div class="images"></div>
 					<div class="caption">
 						<h3 class="title" style="margin-top: 0px;"></h3>
+						<div class="tags" style="display: inline;"></div>
 						<p class="desc"></p>
 						<p>
-							<a class="btn btn-primary source-link" href="#" target="_blank">Source Code</a>
-							<a class="btn btn-success pull-right site-link" href="#" target="_blank">Site</a>
-							<a class="btn btn-info pull-right demo-link" href="#" target="_blank">Demo</a>
+							<a class="btn btn-primary source-link" href="#" target="_blank"><i class="fa fa-code-fork"></i> Source Code</a>
+							<a class="btn btn-success pull-right site-link" href="#"><i class="fa fa-link"></i> Site</a>
 						</p>
 					</div>
 				</div>
+			</div>
+
+			<div class="col-md-4 tool">
+				<div class="thumbnail">
+					<a class="cover" href="#" data-gallery>
+						<img>
+					</a>
+					<div class="images"></div>
+					<div class="caption">
+						<h3 class="title" style="margin-top: 0px; display: inline-block;"></h3>
+						<div class="tags" style="display: inline;"></div>
+						<p class="desc"></p>
+						<p>
+							<a class="btn btn-primary source-link" href="#" target="_blank"><i class="fa fa-code-fork"></i> Source Code</a>
+							<a class="btn btn-info pull-right download-link" href="#"><i class="fa fa-download"></i> Download</a>
+							<a class="btn btn-success pull-right open-link" href="#"><i class="fa fa-external-link"></i> Open</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="tool-image">
+				<a data-gallery><img></a>
 			</div>
 		</div>
 

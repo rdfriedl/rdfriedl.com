@@ -4,6 +4,11 @@
 		"description": "Simple javascript html Bindings",
 		"siteURL": "http://rdfriedl.github.io/bindings.js/",
 		"sourceURL": "https://github.com/rdfriedl/bindings.js",
-		"demoURL": "http://rdfriedl.github.io/bindings.js/examples"
+		"tags": [
+			{
+				"message": "In Development",
+				"type": "warning"
+			}
+		]
 	}
 ]

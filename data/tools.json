@@ -1,0 +1,36 @@
+[
+	{
+		"title": "PhaserGame Admin",
+		"description": "Admin tool for PhaserGame Server",
+		"openURL": "http://cdn.rawgit.com/rdfriedl/phasergameadmin/master/index.html",
+		"downloadURL": "",
+		"sourceURL": "https://github.com/rdfriedl/phasergameadmin/",
+		"tags": [
+			{
+				"message": "Incomplete",
+				"type": "info"
+			},
+			{
+				"message": "Stable v0.1.4",
+				"type": "success"
+			}
+		]
+	},
+	{
+		"title": "PhaserGame Server",
+		"description": "Server for PhaserGame",
+		"openURL": "",
+		"downloadURL": "https://github.com/rdfriedl/phasergameserver/archive/master.zip",
+		"sourceURL": "https://github.com/rdfriedl/phasergameserver/",
+		"tags": [
+			{
+				"message": "Incomplete",
+				"type": "info"
+			},
+			{
+				"message": "Stable v0.1.4",
+				"type": "success"
+			}
+		]
+	}
+]
