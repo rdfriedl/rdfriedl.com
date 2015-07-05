@@ -1,5 +1,18 @@
 [
 	{
+		"title": "Filtered",
+		"description": "Simple SVG Filter Builder",
+		"openURL": "http://rawgit.com/rdfriedl/filtered/master/index.html",
+		"downloadURL": "",
+		"sourceURL": "https://github.com/rdfriedl/filtered",
+		"tags": [
+			{
+				"message": "Incomplete",
+				"type": "info"
+			}
+		]
+	},
+	{
 		"title": "PhaserGame Admin",
 		"description": "Admin tool for PhaserGame Server",
 		"openURL": "http://cdn.rawgit.com/rdfriedl/phasergameadmin/master/index.html",
