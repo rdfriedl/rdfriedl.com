@@ -22,7 +22,7 @@
 	margin-top: 5px;
 	width: 100%;
 	overflow: hidden;
-	height: 30px;
+	max-height: 30px;
 }
 .game .images div{
 	height: 30px;

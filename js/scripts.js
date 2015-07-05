@@ -65,7 +65,8 @@ $(document).ready(function() {
 
 			$game.appendTo('#games');
 
-			for (var k = 0; k < game.images.length; k++) {
+			//k = 1, because we already used image 0 for cover
+			for (var k = 1; k < game.images.length; k++) {
 				loadImage(game.images[k],function(url,$game){
 					var $image = $gameImage.clone(true);
 					$image.find('a').attr('href',url);
@@ -101,6 +102,14 @@ $(document).ready(function() {
 				$library.find('.tags').append($tag);
 			}
 
+			//images
+			if(library.coverImage.length){
+				$library.find('.cover').attr('href',library.coverImage).find('img').attr('src',library.coverImage)
+			}
+			else{
+				$library.find('.cover').remove();
+			}
+
 			$library.appendTo('#libraries');
 		}
 	});
@@ -133,6 +142,14 @@ $(document).ready(function() {
 				var $tag = $('<span class="label"></span>').addClass('label-'+tool.tags[k].type);
 				$tag.text(tool.tags[k].message);
 				$tool.find('.tags').append($tag);
+			}
+
+			//images
+			if(tool.coverImage.length){
+				$tool.find('.cover').attr('href',tool.coverImage).find('img').attr('src',tool.coverImage)
+			}
+			else{
+				$tool.find('.cover').remove();
 			}
 
 			$tool.appendTo('#tools');

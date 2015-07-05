@@ -10,7 +10,8 @@
 				"message": "Incomplete",
 				"type": "info"
 			}
-		]
+		],
+		"coverImage": "img/tools/filtered/filtered.png"
 	},
 	{
 		"title": "PhaserGame Admin",
@@ -27,7 +28,8 @@
 				"message": "Stable v0.1.4",
 				"type": "success"
 			}
-		]
+		],
+		"coverImage": "img/tools/phasergameadmin/phasergameadmin.png"
 	},
 	{
 		"title": "PhaserGame Server",
@@ -44,6 +46,7 @@
 				"message": "Stable v0.1.4",
 				"type": "success"
 			}
-		]
+		],
+		"coverImage": "img/tools/phasergameserver/phasergameserver.png"
 	}
 ]
