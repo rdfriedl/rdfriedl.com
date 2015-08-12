@@ -56,6 +56,8 @@ $(document).ready(function() {
 			$game.find('.cover').attr('href',game.images[0]);
 			$game.find('.cover>img').attr('src',game.images[0]);
 
+			if(game.sourceURL.length == 0) $game.find('.source-link').hide();
+
 			//build tags
 			for(var k = 0; k < game.tags.length; k++){
 				var $tag = $('<span class="label"></span>').addClass('label-'+game.tags[k].type);
@@ -94,6 +96,8 @@ $(document).ready(function() {
 			$library.find('.source-link').attr('href',library.sourceURL);
 			$library.find('.site-link').attr('href',library.siteURL);
 			$library.find('.demo-link').attr('href',library.demoURL);
+
+			if(library.sourceURL.length == 0) $library.find('.source-link').hide();
 
 			//build tags
 			for(var k = 0; k < library.tags.length; k++){
@@ -136,6 +140,8 @@ $(document).ready(function() {
 			if(tool.downloadURL){
 				$tool.find('.download-link').attr('href',tool.downloadURL).show();
 			}
+
+			if(tool.sourceURL.length == 0) $tool.find('.source-link').hide();
 
 			//build tags
 			for(var k = 0; k < tool.tags.length; k++){
