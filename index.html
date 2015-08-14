@@ -15,10 +15,8 @@
 
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="https://rawgit.com/kswedberg/jquery-smooth-scroll/master/jquery.smooth-scroll.min.js"></script>
-
-		<script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
-		<script src="js/bootstrap-image-gallery.min.js"></script>
+		<script type="text/javascript" src="js/routie.min.js"></script>
+		<script type="text/javascript" src="js/bindings-bundle.min.js"></script>
 
 		<script>
 		  	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -34,191 +32,173 @@
 	</head>
 
 	<body>
-		<div class="container">
-			<div class="row clearfix">
-				<div class="col-md-12 column">
-					<div class="page-header">
-						<div class="pull-right">
-							<a href="https://github.com/rdfriedl" class="link git"><i class="fa fa-2x fa-github"></i></a>
-						</div>
-						<h1>
-							<img id="profile-image" style="width: 1.8em;">
-							Rdfriedl
-						</h1>
-						<ul class="nav nav-pills">
-					  		<li role="presentation"><a href="#games">Games</a></li>
-					  		<li role="presentation"><a href="#libraries">Libraries</a></li>
-					  		<li role="presentation"><a href="#tools">Tools / Utilities</a></li>
-						</ul>
-					</div>
-					<div class="carousel slide" id="carousel">
-						<ol class="carousel-indicators">
-							<li data-slide-to="0" data-target="#carousel" class="active"></li>
-							<li data-slide-to="1" data-target="#carousel"></li>
-							<li data-slide-to="2" data-target="#carousel"></li>
-							<li data-slide-to="3" data-target="#carousel"></li>
-							<li data-slide-to="4" data-target="#carousel"></li>
-						</ol>
-						<div class="carousel-inner">
-							<div class="item active">
-								<img src="img/games/block-script/block-script.png">
-								<div class="carousel-caption">
-									<h4>Block-Script</h4>
-								</div>
-							</div>
-							<div class="item">
-								<img src="img/games/cannontest/cannontest.png">
-								<div class="carousel-caption">
-									<h4>Cannon Test</h4>
-								</div>
-							</div>
-							<div class="item">
-								<img src="img/games/phasergame/phasergame.png">
-								<div class="carousel-caption">
-									<h4>Phaser Game</h4>
-								</div>
-							</div>
-							<div class="item">
-								<img src="img/tools/filtered/filtered.png">
-								<div class="carousel-caption">
-									<h4>Filtered</h4>
-								</div>
-							</div>
-							<div class="item">
-								<img src="img/tools/phasergameadmin/phasergameadmin.png">
-								<div class="carousel-caption">
-									<h4>PhaserGame Admin</h4>
-								</div>
-							</div>
-						</div>
-						<a class="left carousel-control" href="#carousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-						<a class="right carousel-control" href="#carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-					</div>
-					<div id="games" class="row">
-						<div class="page-header">
-							<h2>
-								Games
-							</h2>
-						</div>
-						<!-- games -->
-					</div>
-					<div id="libraries" class="row">
-						<div class="page-header">
-							<h2>
-								Libraries
-							</h2>
-						</div>
-						<!-- libraries -->
-					</div>
-					<div id="tools" class="row">
-						<div class="page-header">
-							<h2>
-								Tools / Utilities
-							</h2>
-						</div>
-						<!-- tools -->
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="temp" style="display: none;">
-			<div class="col-md-4 game">
-				<div class="thumbnail">
-					<a class="cover" data-gallery>
-						<img>
-					</a>
-					<div class="images"></div>
-					<div class="caption">
-						<h3 class="title" style="margin-top: 0px;"></h3>
-						<div class="tags" style="display: inline;"></div>
-						<p class="desc"></p>
-						<p style="height: 38px;">
-							<a class="btn btn-primary source-link" href="#" target="_blank"><i class="fa fa-code-fork"></i> Source Code</a>
-							<a class="btn btn-success pull-right play-link" href="#"><i class="fa fa-gamepad"></i> Play</a>
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="game-image">
-				<a data-gallery><img></a>
-			</div>
+		<div id="container">
 
-			<div class="col-md-4 library">
-				<div class="thumbnail">
-					<a class="cover" data-gallery>
-						<img>
-					</a>
-					<div class="images"></div>
-					<div class="caption">
-						<h3 class="title" style="margin-top: 0px;"></h3>
-						<div class="tags" style="display: inline;"></div>
-						<p class="desc"></p>
-						<p style="height: 38px;">
-							<a class="btn btn-primary source-link" href="#" target="_blank"><i class="fa fa-code-fork"></i> Source Code</a>
-							<a class="btn btn-success pull-right site-link" href="#"><i class="fa fa-link"></i> Site</a>
-						</p>
+			<!-- games -->
+			<div id="games-panel" class="panel-3d bottom">
+				<div class="page-header">
+					<h2 class="title">
+						<a class="btn btn-primary" href="#home" role="button"><i class="fa fa-chevron-left"></i> Back</a>
+						Games
+					</h2>
+				</div>
+				<div bind-foreach="games">
+					<div class="col-md-4 game">
+						<div class="thumbnail">
+							<a class="cover" bind-href="'#image/'+images[0]">
+								<img bind-src="images[0]">
+							</a>
+							<div class="images" bind-foreach="images">
+								<div class="game-image" bind-visible="$index !== 0">
+									<a bind-href="'#image/'+$parent[$index]"><img bind-src="$parent[$index]"></a>
+								</div>
+							</div>
+							<div class="caption">
+								<h3 class="title" style="margin-top: 0px;">{title}</h3>
+								<div class="tags" style="display: inline;"></div>
+								<p class="desc">{description}</p>
+								<p style="height: 38px;">
+									<a class="btn btn-primary source-link" bind-href="sourceURL" bind-visible="sourceURL" target="_blank"><i class="fa fa-code-fork"></i> Source Code</a>
+									<a class="btn btn-success pull-right play-link" bind-href="playURL" bind-visible="playURL"><i class="fa fa-gamepad"></i> Play</a>
+								</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 
-			<div class="col-md-4 tool">
-				<div class="thumbnail">
-					<a class="cover" data-gallery>
-						<img>
-					</a>
-					<div class="images"></div>
-					<div class="caption">
-						<h3 class="title" style="margin-top: 0px;"></h3>
-						<div class="tags" style="display: inline;"></div>
-						<p class="desc"></p>
-						<p style="height: 38px;">
-							<a class="btn btn-primary source-link" href="#" target="_blank"><i class="fa fa-code-fork"></i> Source Code</a>
-							<a class="btn btn-info pull-right download-link" href="#"><i class="fa fa-download"></i> Download</a>
-							<a class="btn btn-success pull-right open-link" href="#"><i class="fa fa-external-link"></i> Open</a>
-						</p>
+			<!-- libraries -->
+			<div id="libraries-panel" class="panel-3d bottom">
+				<div class="page-header">
+					<h2 class="title">
+						<a class="btn btn-primary" href="#home" role="button"><i class="fa fa-chevron-left"></i> Back</a>
+						Libraries
+					</h2>
+				</div>
+				<!-- libraries -->
+				<div bind-foreach="libraries">
+					<div class="col-md-4 library">
+						<div class="thumbnail">
+							<a class="cover" bind-href="'#image/'+coverImage">
+								<img bind-src="coverImage">
+							</a>
+							<div class="caption">
+								<h3 class="title" style="margin-top: 0px;">{title}</h3>
+								<div class="tags" style="display: inline;"></div>
+								<p class="desc">{description}</p>
+								<p style="height: 38px;">
+									<a class="btn btn-primary source-link" bind-href="sourceURL" target="_blank"><i class="fa fa-code-fork"></i> Source Code</a>
+									<a class="btn btn-success pull-right site-link" bind-href="siteURL"><i class="fa fa-link"></i> Site</a>
+								</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="tool-image">
-				<a data-gallery><img></a>
+
+			<!-- tools -->
+			<div id="tools-panel" class="panel-3d bottom">
+				<div class="page-header">
+					<h2 class="title">
+						<a class="btn btn-primary" href="#home" role="button"><i class="fa fa-chevron-left"></i> Back</a>
+						Tools / Utilities
+					</h2>
+				</div>
+				<!-- tools -->
+				<div bind-foreach="tools">
+					<div class="col-md-4 tool">
+						<div class="thumbnail">
+							<a class="cover" bind-href="'#image/'+coverImage">
+								<img bind-src="coverImage">
+							</a>
+							<div class="images"></div>
+							<div class="caption">
+								<h3 class="title" style="margin-top: 0px;">{title}</h3>
+								<div class="tags" style="display: inline;"></div>
+								<p class="desc">{description}</p>
+								<p style="height: 38px;">
+									<a class="btn btn-primary source-link" bind-href="sourceURL" bind-visible="sourceURL" target="_blank"><i class="fa fa-code-fork"></i> Source Code</a>
+									<a class="btn btn-info pull-right download-link" bind-href="downloadURL" bind-visible="downloadURL"><i class="fa fa-download"></i> Download</a>
+									<a class="btn btn-success pull-right open-link" bind-href="openURL" bind-visible="openURL"><i class="fa fa-external-link"></i> Open</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>
 
-		<button id="back-to-top" class="btn btn-default"><span class="glyphicon glyphicon-chevron-up"></span></button>
+			<!-- preview image -->
+			<div id="preview-image" class="panel-3d right">
+				<div class="page-header">
+					<h2 class="title">
+						<a class="btn btn-info pull-right" role="button" bind-href="previewImage" download><i class="fa fa-download"></i> Download</a>
+						<button class="btn btn-primary" role="button" bind-click="routie(back)"><i class="fa fa-chevron-left"></i> Back</button>
+					</h2>
+				</div>
+				<img width="100%" bind-src="previewImage" style="margin-bottom: 20px">
+			</div>
 
-		<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
-		<div id="blueimp-gallery" class="blueimp-gallery" data-use-bootstrap-modal="false">
-		    <!-- The container for the modal slides -->
-		    <div class="slides"></div>
-		    <!-- Controls for the borderless lightbox -->
-		    <h3 class="title"></h3>
-		    <a class="prev">‹</a>
-		    <a class="next">›</a>
-		    <a class="close">×</a>
-		    <a class="play-pause"></a>
-		    <ol class="indicator"></ol>
-		    <!-- The modal dialog, which will be used to wrap the lightbox content -->
-		    <div class="modal fade">
-		        <div class="modal-dialog">
-		            <div class="modal-content">
-		                <div class="modal-header">
-		                    <button type="button" class="close" aria-hidden="true">&times;</button>
-		                    <h4 class="modal-title"></h4>
-		                </div>
-		                <div class="modal-body next"></div>
-		                <div class="modal-footer">
-		                    <button type="button" class="btn btn-default pull-left prev">
-		                        <i class="glyphicon glyphicon-chevron-left"></i>
-		                        Previous
-		                    </button>
-		                    <button type="button" class="btn btn-primary next">
-		                        Next
-		                        <i class="glyphicon glyphicon-chevron-right"></i>
-		                    </button>
-		                </div>
-		            </div>
-		        </div>
-		    </div>
+			<!-- home -->
+			<div id="home-panel" class="panel-3d top">
+				<div class="page-header">
+					<div class="pull-right">
+						<a href="https://github.com/rdfriedl" class="link git"><i class="fa fa-2x fa-github"></i></a>
+					</div>
+					<h1 class="title">
+						<img id="profile-image" style="width: 1.8em;">
+						Rdfriedl
+					</h1>
+					<div class="btn-group">
+						<a class="btn btn-primary" href="#games" role="button"><i class="fa fa-gamepad"></i> Games</a>
+						<a class="btn btn-primary" href="#libraries" role="button"><i class="fa fa-code"></i> Libraries</a>
+						<a class="btn btn-primary" href="#tools" role="button"><i class="fa fa-wrench"></i> Tools / Utilities</a>
+					</div>
+				</div>
+				<div class="carousel slide" id="carousel">
+					<ol class="carousel-indicators">
+						<li data-slide-to="0" data-target="#carousel" class="active"></li>
+						<li data-slide-to="1" data-target="#carousel"></li>
+						<li data-slide-to="2" data-target="#carousel"></li>
+						<li data-slide-to="3" data-target="#carousel"></li>
+						<li data-slide-to="4" data-target="#carousel"></li>
+					</ol>
+					<div class="carousel-inner">
+						<div class="item active">
+							<a href="#games"><img src="img/games/block-script/block-script.png"></a>
+							<div class="carousel-caption">
+								<h4>Block-Script</h4>
+							</div>
+						</div>
+						<div class="item">
+							<a href="#games"><img src="img/games/cannontest/cannontest.png"></a>
+							<div class="carousel-caption">
+								<h4>Cannon Test</h4>
+							</div>
+						</div>
+						<div class="item">
+							<a href="#games"><img src="img/games/phasergame/phasergame.png"></a>
+							<div class="carousel-caption">
+								<h4>Phaser Game</h4>
+							</div>
+						</div>
+						<div class="item">
+							<a href="#tools"><img src="img/tools/filtered/filtered.png"></a>
+							<div class="carousel-caption">
+								<h4>Filtered</h4>
+							</div>
+						</div>
+						<div class="item">
+							<a href="#tools"><img src="img/tools/phasergameadmin/phasergameadmin.png"></a>
+							<div class="carousel-caption">
+								<h4>PhaserGame Admin</h4>
+							</div>
+						</div>
+					</div>
+					<a class="left carousel-control" href="#carousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+					<a class="right carousel-control" href="#carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+				</div>
+			</div>
+
 		</div>
 	</body>
 </html>
