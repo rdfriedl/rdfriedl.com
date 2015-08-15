@@ -31,7 +31,7 @@
 		<script type="text/javascript" src="js/scripts.js"></script>
 	</head>
 
-	<body>
+	<body class="side-bar-out">
 		<div id="container">
 
 			<!-- games -->
@@ -141,11 +141,8 @@
 			<!-- home -->
 			<div id="home-panel" class="panel-3d top">
 				<div class="page-header">
-					<div class="pull-right">
-						<a href="https://github.com/rdfriedl" class="link git"><i class="fa fa-2x fa-github"></i></a>
-					</div>
 					<h1 class="title">
-						<img id="profile-image" style="width: 1.8em;">
+						<img bind-src="profileImage" style="width: 1.8em;">
 						Rdfriedl
 					</h1>
 					<div class="btn-group">
@@ -199,6 +196,25 @@
 				</div>
 			</div>
 
+			<div id="side-bar" class="panel panel-default hidden-xs hidden-sm">
+				<div id="links" class="btn-group btn-group-xs" style="position: absolute;right: 0px;">
+				  	<a class="btn btn-primary" href="http://codepen.io/rdfriedl/"><i class="fa fa-2x fa-codepen"></i></a>
+				  	<a class="btn btn-primary" href="https://github.com/rdfriedl"><i class="fa fa-2x fa-github"></i></a>
+				</div>
+				<div class="panel-heading">
+					<h2 class="title"><img bind-src="profileImage" style="width: 1.8em;"> Rdfriedl</h2>
+				</div>
+				<div class="panel-body">
+					<div class="list-group">
+						<a class="list-group-item" href="#home"><i class="fa fa-home"></i> Home</a>
+						<a class="list-group-item" href="#games"><i class="fa fa-gamepad"></i> Games</a>
+						<a class="list-group-item" href="#libraries"><i class="fa fa-code"></i> Libraries</a>
+						<a class="list-group-item" href="#tools"><i class="fa fa-wrench"></i> Tools / Utilities</a>
+					</ul>
+				</div>
+				<button id="side-bar-hide" type="button" class="btn btn-primary pull-right" bind-click="$('body').toggleClass('side-bar-out')"><i class="fa fa-chevron-left"></i></button>
+			</div>
 		</div>
+		<button id="side-bar-show" type="button" class="btn btn-primary" bind-click="$('body').toggleClass('side-bar-out')"><i class="fa fa-chevron-right"></i></button>
 	</body>
 </html>

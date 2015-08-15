@@ -14,12 +14,6 @@ html,body,#continer{
 	margin: 5px;
 	color: lightgrey;
 }
-.git:hover{
-	color: black;
-}
-.git:focus{
-	color: black;
-}
 
 .title{
 	font-family: cursive;
@@ -53,7 +47,10 @@ html,body,#continer{
     top: 5%;
     background-color: #2c3e50;
     padding: 0px 20px;
-    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: transform 1s, left .5s;
+}
+.side-bar-out .panel-3d{
+    left: 18%;
 }
 .panel-3d.left{
     transform: 
@@ -82,13 +79,27 @@ html,body,#continer{
             rotateX(0deg);
 }
 
-@media screen and (max-width: 930px) {
-	#back-to-top{
-	    top: 20px;
-	    bottom: auto;
-	}
+#side-bar{
+    width: 15%;
+    transform: rotateY(110deg);
+    transform-origin: left;
+    transition: all .5s;
+    margin: 0px;
+}
+.side-bar-out #side-bar{
+    transform: rotateY(20deg);
 }
 
-.blueimp-gallery>.slides>.slide>.slide-content{
-	padding: 5px;
+#side-bar-show{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    transition: all .2s;
+}
+.side-bar-out #side-bar-show{
+    left: -64px;
+}
+
+#links a:hover, #links a:focus{
+    color: black;
 }

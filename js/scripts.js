@@ -56,7 +56,8 @@ var page = {
 	libraries: loadJSON('data/libraries.json',undefined,[]),
 	tools: loadJSON('data/tools.json',undefined,[]),
 	back: '#home',
-	previewImage: ''
+	previewImage: '',
+	profileImage: ''
 }
 
 $(document).ready(function() {
@@ -68,22 +69,32 @@ $(document).ready(function() {
 		'home': function() {
 		    $('.panel-3d').removeClass('show');
 	    	$('#home-panel').addClass('show');
+	    	$('a').removeClass('active');
+	    	$('a[href="'+location.hash+'"]').addClass('active');
 		},
 		'games': function() {
 		    $('.panel-3d').removeClass('show');
 	    	$('#games-panel').addClass('show');
+	    	$('a').removeClass('active');
+	    	$('a[href="'+location.hash+'"]').addClass('active');
 		},
 		'libraries': function() {
 		    $('.panel-3d').removeClass('show');
 	    	$('#libraries-panel').addClass('show');
+	    	$('a').removeClass('active');
+	    	$('a[href="'+location.hash+'"]').addClass('active');
 		},
 		'tools': function() {
 		    $('.panel-3d').removeClass('show');
 	    	$('#tools-panel').addClass('show');
+	    	$('a').removeClass('active');
+	    	$('a[href="'+location.hash+'"]').addClass('active');
 		},
 		'image/*': function(url) {
 		    $('.panel-3d').removeClass('show');
 	    	$('#preview-image').addClass('show');
+	    	$('a').removeClass('active');
+	    	$('a[href="'+location.hash+'"]').addClass('active');
 	    	page.previewImage = url;
 		}
 	});
@@ -106,6 +117,6 @@ $(document).ready(function() {
 	})
 	.done(function(json) {
 		//build game list
-		$('#profile-image').attr('src',json.avatar_url);
+		page.profileImage = json.avatar_url;
 	});
 });
