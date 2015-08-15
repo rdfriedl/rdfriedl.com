@@ -119,4 +119,6 @@ $(document).ready(function() {
 		//build game list
 		page.profileImage = json.avatar_url;
 	});
+
+  	$('[data-toggle="tooltip"]').tooltip()
 });
