@@ -3,11 +3,16 @@ body{
 	background-color: black;
     width: 100%;
     height: 100%;
-    perspective: 3000px;
 }
-html,body,#continer{
+html,body,#container{
     width: 100%;
     height: 100%;
+}
+
+#container{
+    -webkit-perspective: 3000px;
+    -moz-perspective: 3000px;
+    perspective: 3000px;
 }
 
 .link{
@@ -53,27 +58,81 @@ html,body,#continer{
     left: 18%;
 }
 .panel-3d.left{
-    transform: 
+    -webkit-transform:
             translate3d(calc(-50% - 150px), 0px, 1000px)
+            rotateX(0deg)
+            rotateY(100deg);
+
+    -moz-transform:
+            translate3d(calc(-50% - 150px), 0px, 1000px)
+            rotateX(0deg)
+            rotateY(100deg);
+
+    transform:
+            translate3d(calc(-50% - 150px), 0px, 1000px)
+            rotateX(0deg)
             rotateY(100deg);
 }
 .panel-3d.right{
-    transform: 
+    -webkit-transform:
             translate3d(calc(50% + 150px), 0px, 1000px)
+            rotateX(0deg)
+            rotateY(-100deg);
+
+    -moz-transform:
+            translate3d(calc(50% + 150px), 0px, 1000px)
+            rotateX(0deg)
+            rotateY(-100deg);
+            
+    transform:
+            translate3d(calc(50% + 150px), 0px, 1000px)
+            rotateX(0deg)
             rotateY(-100deg);
 }
 .panel-3d.top{
-    transform: 
+    -webkit-transform:
             translate3d(0px, calc(-50% - 150px), 1000px)
+            rotateY(0deg)
+            rotateX(-100deg);
+
+    -moz-transform:
+            translate3d(0px, calc(-50% - 150px), 1000px)
+            rotateY(0deg)
+            rotateX(-100deg);
+            
+    transform:
+            translate3d(0px, calc(-50% - 150px), 1000px)
+            rotateY(0deg)
             rotateX(-100deg);
 }
 .panel-3d.bottom{
-    transform: 
+    -webkit-transform:
             translate3d(0px, calc(110% + 150px), 1000px)
+            rotateY(0deg)
+            rotateX(100deg);
+
+    -moz-transform:
+            translate3d(0px, calc(110% + 150px), 1000px)
+            rotateY(0deg)
+            rotateX(100deg);
+            
+    transform:
+            translate3d(0px, calc(110% + 150px), 1000px)
+            rotateY(0deg)
             rotateX(100deg);
 }
 .panel-3d.show{
-    transform: 
+    -webkit-transform:
+            translate3d(0px, 0px, 0px)
+            rotateY(0deg)
+            rotateX(0deg);
+
+    -moz-transform:
+            translate3d(0px, 0px, 0px)
+            rotateY(0deg)
+            rotateX(0deg);
+            
+    transform:
             translate3d(0px, 0px, 0px)
             rotateY(0deg)
             rotateX(0deg);
@@ -82,6 +141,7 @@ html,body,#continer{
 #side-bar{
     width: 15%;
     transform: rotateY(110deg);
+    -webkit-transform: rotateY(110deg);
     transform-origin: left;
     transition: all .5s;
     margin: 0px;
