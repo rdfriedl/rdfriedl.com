@@ -1,0 +1,30 @@
+[
+	{
+		"src": "img/backgrounds/full-image/background1.png",
+		"thumbnail": "img/backgrounds/thumbnails/background1.jpg"
+	},
+	{
+		"src": "img/backgrounds/full-image/background5.png",
+		"thumbnail": "img/backgrounds/thumbnails/background5.jpg"
+	},
+	{
+		"src": "img/backgrounds/full-image/background4.png",
+		"thumbnail": "img/backgrounds/thumbnails/background4.jpg"
+	},
+	{
+		"src": "img/backgrounds/full-image/background6.png",
+		"thumbnail": "img/backgrounds/thumbnails/background6.jpg"
+	},
+	{
+		"src": "img/backgrounds/full-image/background2.png",
+		"thumbnail": "img/backgrounds/thumbnails/background2.jpg"
+	},
+	{
+		"src": "img/backgrounds/full-image/background3.png",
+		"thumbnail": "img/backgrounds/thumbnails/background3.jpg"
+	},
+	{
+		"src": "img/backgrounds/full-image/background7.png",
+		"thumbnail": "img/backgrounds/thumbnails/background7.jpg"
+	}
+]

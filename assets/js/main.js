@@ -55,6 +55,7 @@ var page = {
     games: loadJSON('data/games.json',undefined,[]),
     libraries: loadJSON('data/libraries.json',undefined,[]),
     tools: loadJSON('data/tools.json',undefined,[]),
+    backgrounds: loadJSON('data/backgrounds.json',undefined,[]),
 
     profileImage: '',
     info: loadJSON('data/info.json',undefined,{}),
