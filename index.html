@@ -96,7 +96,7 @@
                         <h2 class="heading"><i class="fa fa-gamepad"></i> Backgrounds</h2>
                         <div class="content row" bind-foreach="backgrounds">
 
-                            <div class="col-xs-6">
+                            <div class="col-xs-12 col-sm-6">
                                 <a class="thumbnail" bind-href="src" target="_blank">
                                     <img bind-src="thumbnail">
                                 </a>
@@ -104,17 +104,6 @@
 
                         </div><!--//content-->  
                     </div><!--//section-inner-->                 
-                </section><!--//section-->
-
-                <section class="github section">
-                    <div class="section-inner">
-                        <h2 class="heading">My GitHub</h2>
-                        <p>You can embed your GitHub activities using Casey Scarborough's <a href="http://caseyscarborough.com/projects/github-activity/" target="_blank">GitHub Activity Stream</a> widget.        
-                        <!--//Usage: http://caseyscarborough.com/projects/github-activity/ -->                       
-                        <div id="ghfeed" class="ghfeed">
-                        </div><!--//ghfeed-->
-                        
-                    </div><!--//secton-inner-->
                 </section><!--//section-->
             </div><!--//primary-->
             <div class="secondary col-md-4 col-sm-12 col-xs-12">
@@ -163,6 +152,16 @@
                         </div><!--//content-->   
                     </div><!--//section-inner-->                 
                 </aside><!--//section-->
+
+                <aside class="github aside section">
+                    <div class="section-inner">
+                        <div class="content">
+
+                            <div id="ghfeed" class="ghfeed"></div>
+
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+                </aside><!--//section-->
             </div><!--//secondary-->    
         </div><!--//row-->
     </div><!--//masonry-->
@@ -171,7 +170,7 @@
     <footer class="footer">
         <div class="container text-center">
             <small class="copyright">
-            	<img bind-src="github.avatar_url" style="heigth: 1em;"/>
+            	<img bind-src="github.avatar_url" style="height: 1em;"/>
             	RDFiedl 
             	<span bind-foreach="links">
             		<span>
