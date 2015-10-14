@@ -51,10 +51,15 @@
 </head> 
 
 <body>
+    <div id="background" bind-if="backgrounds.length > 0">
+        <img bind-src="backgrounds[0].src">
+        <div id="overlay"></div>
+    </div>
+
     <!-- ******HEADER****** --> 
     <header class="header">
         <div class="container">
-            <img class="profile-image img-responsive pull-left col-sm-3 col-lg-2" bind-src="github.avatar_url" bind-attr-alt="info.name" style="border-radius: 50%;"/>
+            <img class="profile-image img-responsive pull-left col-sm-3 col-lg-2" bind-src="github.avatar_url" bind-attr-alt="info.name"/>
             <div class="profile-content pull-left">
                 <h1 class="name">{info.name}</h1>
                 <h2 class="desc">{info.desc}</h2>   
