@@ -57,7 +57,7 @@
     </script>
 </head> 
 
-<body>
+<body class="page-showing">
     <div id="background" bind-if="backgrounds.length > 0">
         <img bind-src="backgrounds[0].src">
         <div id="overlay"></div>
@@ -66,8 +66,8 @@
     <!-- ******HEADER****** --> 
     <header class="header">
         <div class="container">
-            <img class="profile-image img-responsive pull-left col-xs-5 col-sm-3 col-lg-2" bind-src="github.avatar_url" bind-attr-alt="info.name"/>
-            <div class="profile-content pull-left">
+            <img class="profile-image img-responsive pull-left col-xs-5 col-sm-3 col-lg-2 show-animate hide-left" bind-src="github.avatar_url" bind-attr-alt="info.name" style="transition-delay: 0.1s;"/>
+            <div class="profile-content pull-left show-animate hide-up">
                 <h1 class="name">{info.name}</h1>
                 <h2 class="desc">{info.desc}</h2>   
                 <ul class="social list-inline" bind-foreach="links">
@@ -80,7 +80,7 @@
     <div class="container sections-wrapper">
         <div class="row">
             <div class="primary col-md-8 col-sm-12 col-xs-12">
-                <section class="projects section">
+                <section class="projects section show-animate hide-left" style="transition-delay: 0.2s;">
                     <div class="section-inner">
                         <h2 class="heading"><i class="fa fa-gamepad"></i> Games</h2>
                         <div class="content" bind-foreach="games">
@@ -103,7 +103,7 @@
                     </div><!--//section-inner-->                 
                 </section><!--//section-->
                 
-                <section class="backgrounds section">
+                <section class="backgrounds section show-animate hide-left" style="transition-delay: 0.4s;">
                     <div class="section-inner">
                         <h2 class="heading"><i class="fa fa-gamepad"></i> Backgrounds</h2>
                         <div class="content row" bind-foreach="backgrounds">
@@ -119,7 +119,7 @@
                 </section><!--//section-->
             </div><!--//primary-->
             <div class="secondary col-md-4 col-sm-12 col-xs-12">
-                <aside class="tools aside section">
+                <aside class="tools aside section show-animate hide-right" style="transition-delay: 0.3s;">
                     <div class="section-inner">
                         <h2 class="heading"><i class="fa fa-wrench"></i> Tools / Utilities</h2>
                         <div class="content" bind-foreach="tools">
@@ -142,7 +142,7 @@
                     </div><!--//section-inner-->
                 </aside><!--//section-->
                 
-                <aside class="libraries aside section">
+                <aside class="libraries aside section show-animate hide-right" style="transition-delay: 0.4s;">
                     <div class="section-inner">
                         <h2 class="heading"><i class="fa fa-code"></i> Libraries</h2>
                         <div class="content" bind-foreach="libraries">
@@ -165,7 +165,7 @@
                     </div><!--//section-inner-->                 
                 </aside><!--//section-->
 
-                <aside class="github aside section">
+                <aside class="github aside section show-animate hide-right" style="transition-delay: 0.5s;">
                     <div class="section-inner">
                         <div class="content">
 

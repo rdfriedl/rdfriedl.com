@@ -87,4 +87,7 @@ jQuery(document).ready(function($) {
 
     $('[data-toggle="tooltip"]').tooltip()
 
+    setTimeout(function(){
+        $('body').removeClass('page-showing');
+    },500);
 });

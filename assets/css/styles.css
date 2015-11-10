@@ -587,3 +587,19 @@ iframe {
 .fixed header .profile-content {
     height: 100%;
 }
+
+body{
+  overflow-x:hidden;
+}
+.show-animate{
+  transition: transform .5s;
+}
+body.page-showing .show-animate.hide-right{
+  transform: translateX(150%);
+}
+body.page-showing .show-animate.hide-left{
+  transform: translateX(-200%);
+}
+body.page-showing .show-animate.hide-up{
+  transform: translateY(-150%);
+}
