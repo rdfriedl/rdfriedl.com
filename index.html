@@ -48,6 +48,13 @@
 	  	ga('create', 'UA-62048613-2', 'auto');
 	  	ga('send', 'pageview');
 	</script>
+
+    <script>
+    // handle event
+    window.addEventListener("scroll", function() {
+        $('#background').attr('style','top:'+(-window.scrollY/3)+'px');
+    });
+    </script>
 </head> 
 
 <body>

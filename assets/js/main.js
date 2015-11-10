@@ -59,7 +59,7 @@ var page = {
 
     profileImage: '',
     info: loadJSON('data/info.json',undefined,{}),
-    github: loadJSON('https://api.github.com/users/rdfriedl',undefined,{}),
+    github: {},
     links: loadJSON('data/links.json',undefined,[])
 }
 
@@ -70,6 +70,12 @@ jQuery(document).ready(function($) {
     
     /* Github Activity Feed - https://github.com/rdfriedl/github-activity */
     GitHubActivity.feed({ username: "rdfriedl", selector: "#ghfeed" });
+
+    //cache the github data
+    jQuery.getJSON('https://api.github.com/users/rdfriedl', function(json, textStatus) {
+        localStorage.rdfriedl_site_github = json;
+        page.github = json;
+    });
 
     $('[data-toggle="tooltip"]').tooltip()
 
