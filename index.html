@@ -87,14 +87,14 @@
 
                             <div class="item row">
                                 <a class="col-md-4 col-sm-4 col-xs-12" bind-href="sourceURL" target="_blank">
-                                <img class="img-responsive project-image" bind-src="images[0]" alt="title" />
+                                <img class="img-responsive project-image" bind-src="images[0]" bind-attr-alt="title" />
                                 </a>
                                 <div class="desc col-md-8 col-sm-8 col-xs-12">
                                     <h3 class="title"><a bind-href="sourceURL" target="_blank" bind-text="title"></a></h3>
                                 	<p bind-text="description"></p>
                                 	<div class="btn-group btn-group-sm pull-right">
+                                        <a bind-href="playURL" class="btn btn-default btn-success">Play</a>
 										<a bind-href="sourceURL" class="btn btn-default btn-info"><i class="fa fa-code"></i> Source</a>
-										<a bind-href="playURL" class="btn btn-default btn-success">Play</a>
 									</div>
                                 </div><!--//desc-->                          
                             </div><!--//item-->
@@ -165,7 +165,29 @@
                     </div><!--//section-inner-->                 
                 </aside><!--//section-->
 
-                <aside class="github aside section show-animate hide-right" style="transition-delay: 0.5s;">
+                <aside class="projects section show-animate hide-right" style="transition-delay: 0.5s;">
+                    <div class="section-inner">
+                        <h2 class="heading"><i class="fa fa-codepen"></i> Pens</h2>
+                        <div class="content" bind-foreach="pens">
+
+                            <div class="item row">
+                                <a class="col-md-4 col-sm-4 col-xs-12" bind-href="openURL" target="_blank">
+                                <img class="img-responsive project-image" bind-src="coverImage" bind-attr-alt="title" />
+                                </a>
+                                <div class="desc col-md-8 col-sm-8 col-xs-12">
+                                    <h3 class="title"><a bind-href="openURL" target="_blank" bind-text="title"></a></h3>
+                                    <div class="btn-group btn-group-sm pull-right">
+                                        <a bind-href="openURL" class="btn btn-default btn-success" target="_blank">Open</a>
+                                        <a bind-href="sourceURL" class="btn btn-default btn-info" target="_blank"><i class="fa fa-codepen"></i> Source</a>
+                                    </div>
+                                </div><!--//desc-->                          
+                            </div><!--//item-->
+
+                        </div><!--//content-->  
+                    </div><!--//section-inner-->                 
+                </aside><!--//section-->
+
+                <aside class="github aside section show-animate hide-right" style="transition-delay: 0.6s;">
                     <div class="section-inner">
                         <div class="content">
 
