@@ -73,9 +73,17 @@ jQuery(document).ready(function($) {
 
     //cache the github data
     jQuery.getJSON('https://api.github.com/users/rdfriedl', function(json, textStatus) {
-        localStorage.rdfriedl_site_github = json;
+        for(var i in json){
+            if(json[i] === null) json[i] = undefined;
+        }
+
+        localStorage.rdfriedl_site_github = JSON.stringify(json);
         page.github = json;
-    });
+    }).fail(function(){
+        if(localStorage.rdfriedl_site_github){
+            page.github = JSON.parse(rdfriedl_site_github);
+        }
+    })
 
     $('[data-toggle="tooltip"]').tooltip()
 
