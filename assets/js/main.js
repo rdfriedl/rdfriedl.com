@@ -58,6 +58,14 @@ var page = {
     pens: loadJSON('data/pens.json',undefined,[]),
     backgrounds: loadJSON('data/backgrounds.json',undefined,[]),
 
+    previewImage: '',
+    preview: {},
+    previewPen: function(pen){
+        page.preview.id = pen.id;
+        page.preview.title = pen.title;
+        $('#preview-pen').modal('show');
+    },
+
     profileImage: '',
     info: loadJSON('data/info.json',undefined,{}),
     github: {},
@@ -82,8 +90,12 @@ jQuery(document).ready(function($) {
         page.github = json;
     }).fail(function(){
         if(localStorage.rdfriedl_site_github){
-            page.github = JSON.parse(rdfriedl_site_github);
+            page.github = JSON.parse(localStorage.rdfriedl_site_github);
         }
+    })
+
+    jQuery(document).on('click','[href="#"]',function(event){
+        event.preventDefault();
     })
 
     $('[data-toggle="tooltip"]').tooltip()

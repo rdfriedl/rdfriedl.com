@@ -1,38 +1,26 @@
 [
 	{
-		"title":"SVG Cubes",
-		"sourceURL": "http://codepen.io/rdfriedl/pen/pjqQEB",
-		"openURL": "http://codepen.io/rdfriedl/details/pjqQEB",
-		"coverImage": "img/pens/pjqQEB.png"
+		"title":"SVG infinite loading animation",
+		"id": "jborpz"
 	},
 	{
-		"title":"SVG Useless clock",
-		"sourceURL": "http://codepen.io/rdfriedl/pen/xwQLJM",
-		"openURL": "http://codepen.io/rdfriedl/details/xwQLJM",
-		"coverImage": "img/pens/xwQLJM.png"
+		"title":"3d divs",
+		"id": "BoEGLp"
 	},
 	{
-		"title":"CSS tile map",
-		"sourceURL": "http://codepen.io/rdfriedl/pen/bdvrjM",
-		"openURL": "http://codepen.io/rdfriedl/details/bdvrjM",
-		"coverImage": "img/pens/bdvrjM.png"
+		"title":"SVG loading animation",
+		"id": "zvbvMv"
 	},
 	{
-		"title":"SVG Grunge effect",
-		"sourceURL": "http://codepen.io/rdfriedl/pen/PPeZGa",
-		"openURL": "http://codepen.io/rdfriedl/details/PPeZGa",
-		"coverImage": "img/pens/PPeZGa.png"
+		"title":"SVG dots",
+		"id": "RWdryq"
 	},
 	{
-		"title":"SVG Text Stroke",
-		"sourceURL": "http://codepen.io/rdfriedl/pen/BomWeW",
-		"openURL": "http://codepen.io/rdfriedl/details/BomWeW",
-		"coverImage": "img/pens/BomWeW.png"
+		"title":"SVG cubes",
+		"id": "pjqQEB"
 	},
 	{
-		"title":"SVG Double Strokes",
-		"sourceURL": "http://codepen.io/rdfriedl/pen/dYRoPV",
-		"openURL": "http://codepen.io/rdfriedl/details/dYRoPV",
-		"coverImage": "img/pens/dYRoPV.png"
+		"title":"animated svg arcs",
+		"id": "wKRRNG"
 	}
 ]

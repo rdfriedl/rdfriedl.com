@@ -109,7 +109,7 @@
                         <div class="content row" bind-foreach="backgrounds">
 
                             <div class="col-xs-12 col-sm-6">
-                                <a class="thumbnail" bind-href="src" target="_blank">
+                                <a class="thumbnail" href="#" bind-click="$modal.previewImage = src" data-toggle="modal" data-target="#preview-image">
                                     <img bind-src="thumbnail">
                                 </a>
                             </div>
@@ -171,14 +171,14 @@
                         <div class="content" bind-foreach="pens">
 
                             <div class="item row">
-                                <a class="col-md-4 col-sm-4 col-xs-12" bind-href="openURL" target="_blank">
-                                <img class="img-responsive project-image" bind-src="coverImage" bind-attr-alt="title" />
+                                <a href="#" class="col-md-4 col-sm-4 col-xs-12" bind-click="$modal.previewPen(this)" target="_blank">
+                                <img class="img-responsive project-image" bind-src="'img/pens/'+id+'.png'" bind-attr-alt="title" />
                                 </a>
                                 <div class="desc col-md-8 col-sm-8 col-xs-12">
-                                    <h3 class="title"><a bind-href="openURL" target="_blank" bind-text="title"></a></h3>
+                                    <h3 class="title"><a href="#" bind-click="$modal.previewPen(this)" target="_blank" bind-text="title"></a></h3>
                                     <div class="btn-group btn-group-sm pull-right">
-                                        <a bind-href="openURL" class="btn btn-default btn-success" target="_blank">Open</a>
-                                        <a bind-href="sourceURL" class="btn btn-default btn-info" target="_blank"><i class="fa fa-codepen"></i> Source</a>
+                                        <a href="#" bind-click="$modal.previewPen(this)" class="btn btn-default btn-success" target="_blank">Open</a>
+                                        <a bind-href="'http://codepen.io/rdfriedl/pen/'+id" class="btn btn-default btn-info" target="_blank"><i class="fa fa-codepen"></i> Source</a>
                                     </div>
                                 </div><!--//desc-->                          
                             </div><!--//item-->
@@ -214,7 +214,34 @@
             	</span>
             </small>
         </div><!--//container-->
-    </footer><!--//footer-->        
-</body>
-</html> 
+    </footer><!--//footer-->
 
+    <div class="modal fade" id="preview-pen" bind-if="preview.id">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="border-radius: 0px;">
+                <div class="modal-body">
+                    <iframe sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation" bind-src="'http://codepen.io/rdfriedl/full/'+preview.id"></iframe>
+                </div>
+                <div class="modal-footer">
+                    <a bind-href="'http://codepen.io/rdfriedl/details/'+preview.id" class="btn btn-primary btn-sm" target="_blank"><i class="fa fa-codepen"></i>Open On CodePen</a>
+                    <button class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+   </div>
+
+   <div class="modal fade" id="preview-image">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="border-radius: 0px;">
+                <div class="modal-header">
+                    <button class="btn btn-default btn-sm pull-right" data-dismiss="modal">Close</button>
+                    <a bind-href="previewImage" class="btn btn-primary btn-sm" target="_blank" download><i class="fa fa-download"></i> Download</a>
+                </div>
+                <div class="modal-body" bind-if="previewImage !== ''">
+                    <img bind-src="previewImage" style="width:100%;"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

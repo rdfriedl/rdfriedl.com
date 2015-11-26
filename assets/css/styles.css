@@ -603,3 +603,11 @@ body.page-showing .show-animate.hide-left{
 body.page-showing .show-animate.hide-up{
   transform: translateY(-150%);
 }
+#preview-pen iframe{
+  width: 100%;
+  height: 80vh;
+  border: none;
+}
+#preview-pen .modal-body{
+  padding: 0px;
+}
