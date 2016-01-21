@@ -2,7 +2,7 @@ function loadJSON(url,cb,d){
     loadJSON.callbacks = loadJSON.callbacks || {};
     loadJSON.cache = loadJSON.cache || {};
     loadJSON.loading = loadJSON.loading || {};
-        
+
     if(!loadJSON.cache[url]){
         loadJSON.cache[url] = d || {};
         $.ajax({
@@ -22,7 +22,7 @@ function loadJSON(url,cb,d){
                     if(json[i] != null) loadJSON.cache[url][i] = json[i];
                 }
             }
-            
+
             if(cb) cb(json);
 
             if(loadJSON.callbacks[url]){
@@ -56,7 +56,9 @@ var page = {
     libraries: loadJSON('data/libraries.json',undefined,[]),
     tools: loadJSON('data/tools.json',undefined,[]),
     pens: loadJSON('data/pens.json',undefined,[]),
-    backgrounds: loadJSON('data/backgrounds.json',undefined,[]),
+    backgrounds: loadJSON('data/backgrounds.json',function(backgrounds){
+        for(var i in backgrounds) $('<link rel="prefetch" href="'+backgrounds[i].src+'"/>').appendTo('head')
+    },[]),
 
     previewImage: '',
     preview: {},
@@ -76,7 +78,7 @@ jQuery(document).ready(function($) {
 
     bindings.createModal(page)
     bindings.applyBindings(page,document.body)
-    
+
     /* Github Activity Feed - https://github.com/rdfriedl/github-activity */
     GitHubActivity.feed({ username: "rdfriedl", selector: "#ghfeed" });
 
