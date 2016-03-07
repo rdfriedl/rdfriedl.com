@@ -2,11 +2,16 @@
 	{
 		"title": "Code Pen",
 		"icon": "codepen",
-		"href": "http://codepen.io/rdfriedl/"
+		"href": "//codepen.io/rdfriedl/"
 	},
 	{
 		"title": "GitHub",
 		"icon": "github",
-		"href": "http://github.com/rdfriedl/"
+		"href": "//github.com/rdfriedl/"
+	},
+	{
+		"title": "Bitbucket",
+		"icon": "bitbucket",
+		"href": "//bitbucket.org/rdfriedl"
 	}
 ]
