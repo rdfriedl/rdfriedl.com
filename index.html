@@ -59,23 +59,23 @@
 
 <body class="page-showing">
     <div id="background" bind-if="backgrounds.length > 0">
-        <img bind-src="backgrounds[0].src">
+        <img bind-src="backgrounds[Math.choose(0,1,3)].src">
         <div id="overlay"></div>
     </div>
 
     <!-- ******HEADER****** -->
     <header class="header">
         <div class="container">
-            <img class="profile-image img-responsive pull-left col-xs-5 col-sm-3 col-lg-2 show-animate hide-left" bind-src="github.avatar_url" bind-attr-alt="info.name" style="transition-delay: 0.1s;"/>
+            <img class="profile-image img-responsive pull-left col-xs-5 col-sm-3 col-lg-2 show-animate hide-left more" bind-src="github.avatar_url" bind-attr-alt="info.name" style="transition-delay: 0.1s;"/>
             <div class="profile-content pull-left show-animate hide-up">
                 <h1 class="name">{info.name}</h1>
                 <h2 class="desc">{info.desc}</h2>
                 <ul class="social list-inline" bind-foreach="links">
                     <li data-toggle="tooltip" data-placement="left" bind-attr-title="title"><a bind-href="href"><i bind-attr-class="'fa fa-'+icon"></i></a></li>
                 </ul>
-            </div><!--//profile-->
-        </div><!--//container-->
-    </header><!--//header-->
+            </div>
+        </div>
+    </header>
 
     <div class="container sections-wrapper">
         <div class="row">
@@ -96,16 +96,16 @@
                                         <a bind-href="playURL" class="btn btn-default btn-success">Play</a>
 										<a bind-href="sourceURL" class="btn btn-default btn-info"><i class="fa fa-code"></i> Source</a>
 									</div>
-                                </div><!--//desc-->
-                            </div><!--//item-->
+                                </div>
+                            </div>
 
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </section><!--//section-->
+                        </div>
+                    </div>
+                </section>
 
                 <section class="backgrounds section show-animate hide-left" style="transition-delay: 0.4s;">
                     <div class="section-inner">
-                        <h2 class="heading"><i class="fa fa-gamepad"></i> Backgrounds</h2>
+                        <h2 class="heading"><i class="fa fa-image"></i> Backgrounds</h2>
                         <div class="content row" bind-foreach="backgrounds">
 
                             <div class="col-xs-12 col-sm-6">
@@ -114,10 +114,10 @@
                                 </a>
                             </div>
 
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </section><!--//section-->
-            </div><!--//primary-->
+                        </div>
+                    </div>
+                </section>
+            </div>
             <div class="secondary col-md-4 col-sm-12 col-xs-12">
                 <aside class="tools aside section show-animate hide-right" style="transition-delay: 0.3s;">
                     <div class="section-inner">
@@ -135,12 +135,12 @@
 										<a bind-href="openURL" class="btn btn-default btn-info">Open</a>
 										<a bind-href="sourceURL" bind-visible="sourceURL" class="btn btn-default btn-warning">Source</a>
 									</div>
-                                </div><!--//desc-->
-                            </div><!--//item-->
+                                </div>
+                            </div>
 
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
+                        </div>
+                    </div>
+                </aside>
 
                 <aside class="libraries aside section show-animate hide-right" style="transition-delay: 0.4s;">
                     <div class="section-inner">
@@ -158,16 +158,19 @@
 										<a bind-href="sourceURL" class="btn btn-default btn-info">Site</a>
 										<a bind-href="playURL" class="btn btn-default btn-warning">Source</a>
 									</div>
-                                </div><!--//desc-->
-                            </div><!--//item-->
+                                </div>
+                            </div>
 
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
+                        </div>
+                    </div>
+                </aside>
 
                 <aside class="projects section show-animate hide-right" style="transition-delay: 0.5s;">
                     <div class="section-inner">
-                        <h2 class="heading"><i class="fa fa-codepen"></i> Pens</h2>
+                        <h2 class="heading">
+                            <a href="//codepen.io/rdfriedl" target="_blank" class="btn btn-success btn-xs pull-right"><i class="fa fa-codepen"></i> More</a>
+                            <i class="fa fa-codepen"></i> Pens
+                        </h2>
                         <div class="content" bind-foreach="pens">
 
                             <div class="item row">
@@ -180,12 +183,12 @@
                                         <a href="#" bind-click="$modal.previewPen(this)" class="btn btn-default btn-success" target="_blank">Open</a>
                                         <a bind-href="'http://codepen.io/rdfriedl/pen/'+id" class="btn btn-default btn-info" target="_blank"><i class="fa fa-codepen"></i> Source</a>
                                     </div>
-                                </div><!--//desc-->
-                            </div><!--//item-->
+                                </div>
+                            </div>
 
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
+                        </div>
+                    </div>
+                </aside>
 
                 <aside class="github aside section show-animate hide-right" style="transition-delay: 0.6s;">
                     <div class="section-inner">
@@ -193,12 +196,12 @@
 
                             <div id="ghfeed" class="ghfeed"></div>
 
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
-            </div><!--//secondary-->
-        </div><!--//row-->
-    </div><!--//masonry-->
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
 
     <!-- ******FOOTER****** -->
     <footer class="footer">
@@ -213,8 +216,8 @@
             		</span>
             	</span>
             </small>
-        </div><!--//container-->
-    </footer><!--//footer-->
+        </div>
+    </footer>
 
     <div class="modal fade" id="preview-pen" bind-if="preview.id">
         <div class="modal-dialog modal-lg">
@@ -228,9 +231,9 @@
                 </div>
             </div>
         </div>
-   </div>
+    </div>
 
-   <div class="modal fade" id="preview-image">
+    <div class="modal fade" id="preview-image">
         <div class="modal-dialog modal-lg">
             <div class="modal-content" style="border-radius: 0px;">
                 <div class="modal-header">

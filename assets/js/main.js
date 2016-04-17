@@ -50,6 +50,7 @@ function loadJSON(url,cb,d){
     }
     return loadJSON.cache[url];
 }
+Math.choose = function(){return arguments[Math.floor(Math.random() * arguments.length)]}
 
 var page = {
     games: loadJSON('data/games.json',undefined,[]),
@@ -104,5 +105,5 @@ jQuery(document).ready(function($) {
 
     setTimeout(function(){
         $('body').removeClass('page-showing');
-    },500);
+    },1000);
 });
