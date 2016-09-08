@@ -457,8 +457,7 @@ iframe {
 #background{
 	position: fixed;
 	top: 0px;
-	left: 0px;
-	right: 0px;
+	width: 100vw;
 	z-index: -20;
 }
 #background>img{

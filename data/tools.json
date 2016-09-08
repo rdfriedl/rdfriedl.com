@@ -9,7 +9,7 @@
 				"type": "info"
 			}
 		],
-		"coverImage": "img/tools/filtered/filtered.png"
+		"coverImage": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/tools/filtered/filtered.png"
 	},
 	{
 		"title": "PhaserGame Admin",
@@ -26,7 +26,7 @@
 				"type": "success"
 			}
 		],
-		"coverImage": "img/tools/phasergameadmin/phasergameadmin.png"
+		"coverImage": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/tools/phasergameadmin/phasergameadmin.png"
 	},
 	{
 		"title": "PhaserGame Server",
@@ -43,6 +43,6 @@
 				"type": "success"
 			}
 		],
-		"coverImage": "img/tools/phasergameserver/phasergameserver.png"
+		"coverImage": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/tools/phasergameserver/phasergameserver.png"
 	}
 ]

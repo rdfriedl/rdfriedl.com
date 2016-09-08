@@ -29,7 +29,7 @@
 			}
 		],
 		"images": [
-			"img/games/cannontest/cannontest.png"
+			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/cannontest/cannontest.png"
 		]
 	},
 	{
@@ -44,9 +44,9 @@
 			}
 		],
 		"images": [
-			"img/games/block-script/block-script.png",
-			"img/games/block-script/block-script2.png",
-			"img/games/block-script/block-script3.png"
+			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/block-script/block-script.png",
+			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/block-script/block-script2.png",
+			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/block-script/block-script3.png"
 		]
 	},
 	{
@@ -65,8 +65,8 @@
 			}
 		],
 		"images": [
-			"img/games/phasergame/phasergame.png",
-			"img/games/phasergame/phasergame2.png"
+			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/phasergame/phasergame.png",
+			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/phasergame/phasergame2.png"
 		]
 	}
 ]
