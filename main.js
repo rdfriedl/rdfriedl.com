@@ -96,7 +96,8 @@ $(document).ready(function() {
 			return fetch('https://api.github.com/users/rdfriedl').then(function(res){
 				return res.json();
 			}).then(function(json){
-				return resolve(localStorage['json-cache|github'] = JSON.stringify(json));
+				localStorage['json-cache|github'] = JSON.stringify(json);
+				return resolve(json);
 			})
 		}).then(function(json){
 			view.github = json;
