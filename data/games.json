@@ -13,6 +13,19 @@
 		]
 	},
 	{
+		"title": "buttons-and-doors",
+		"description": "a simple puzzle game",
+		"sourceURL": "https://github.com/rdfriedl/buttons-and-doors",
+		"playURL": "http://rdfriedl.github.io/buttons-and-doors",
+		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/buttons-and-doors.png",
+		"tags": [
+			{
+				"message": "Incomplete",
+				"type": "warning"
+			}
+		]
+	},
+	{
 		"title": "Car Game",
 		"description": "A simple Car Game built with Unity",
 		"sourceURL": "https://github.com/ReflectionGames/carGame",
