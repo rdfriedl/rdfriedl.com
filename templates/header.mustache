@@ -1,0 +1,36 @@
+<div class="header panel panel-default">
+	<div class="panel-body">
+		<div class="row">
+			<!-- desktop profile image -->
+			<div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-0 col-md-3 col-md-offset-1 col-lg-2 show-animate hide-left more hidden-xs" style="transition-delay: 0.1s;">
+				<a href="{{github.html_url}}">
+					<img class="profile-image img-circle img-responsive" src="{{github.avatar_url}}"/>
+				</a>
+			</div>
+			<!-- mobile -->
+			<div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-0 col-md-3 col-md-offset-1 col-lg-2 show-animate hide-top more visible-xs" style="transition-delay: 0.1s;">
+				<img class="profile-image img-circle img-responsive" src="{{github.avatar_url}}"/>
+			</div>
+			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
+				<div class="hidden-xs">
+					<h1 class="show-animate hide-up">{{info.name}}</h1>
+					<h4 class="text-muted show-animate hide-up">{{info.description}}</h4>
+					<ul class="social list-inline show-animate hide-left">
+						{{#links}}
+							<li data-toggle="tooltip" data-placement="bottom" title="{{title}}"><a class="btn btn-info" href="{{href}}" target="_blank"><i class="fa fa-{{icon}}"></i></a></li>
+						{{/links}}
+					</ul>
+				</div>
+				<div class="visible-xs text-center">
+					<h1 class="show-animate hide-left">{{info.name}}</h1>
+					<h4 class="text-muted show-animate hide-right">{{info.description}}</h4>
+					<ul class="social list-inline show-animate hide-left">
+						{{#links}}
+							<li data-toggle="tooltip" data-placement="bottom" title="{{title}}"><a class="btn btn-info" href="{{href}}" target="_blank"><i class="fa fa-{{icon}}"></i></a></li>
+						{{/links}}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

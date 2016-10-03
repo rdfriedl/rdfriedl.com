@@ -3,46 +3,25 @@
 		"title": "Filtered",
 		"description": "Simple SVG Filter Builder",
 		"openURL": "filtered.html",
+		"example": "filtered.html?example=4",
 		"tags": [
 			{
-				"message": "Incomplete",
-				"type": "info"
-			}
-		],
-		"coverImage": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/tools/filtered/filtered.png"
-	},
-	{
-		"title": "PhaserGame Admin",
-		"description": "Admin tool for PhaserGame Server",
-		"openURL": "http://cdn.rawgit.com/rdfriedl/phasergameadmin/master/index.html",
-		"sourceURL": "https://github.com/rdfriedl/phasergameadmin/",
-		"tags": [
-			{
-				"message": "Incomplete",
-				"type": "info"
-			},
-			{
-				"message": "Stable v0.1.4",
+				"message": "Complete",
 				"type": "success"
 			}
 		],
-		"coverImage": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/tools/phasergameadmin/phasergameadmin.png"
+		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/tools/filtered/filtered.png"
 	},
 	{
-		"title": "PhaserGame Server",
-		"description": "Server for PhaserGame",
-		"downloadURL": "https://github.com/rdfriedl/phasergameserver/archive/master.zip",
-		"sourceURL": "https://github.com/rdfriedl/phasergameserver/",
+		"title": "Image Background Remover",
+		"description": "a image background remover test",
+		"openURL": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/background-remover/index.html",
 		"tags": [
 			{
-				"message": "Incomplete",
-				"type": "info"
-			},
-			{
-				"message": "Stable v0.1.4",
+				"message": "Complete",
 				"type": "success"
 			}
 		],
-		"coverImage": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/tools/phasergameserver/phasergameserver.png"
+		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/tools/background-remover.png"
 	}
 ]
