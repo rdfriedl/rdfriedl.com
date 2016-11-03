@@ -31,6 +31,21 @@
 				</div>
 			</section>
 
+			{{! expariment }}
+			<section class="show-animate hide-left" style="transition-delay: 0.3s;">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<div class="page-header">
+							<h3><i class="fa fa-pie-chart"></i> Experiments</h3>
+						</div>
+
+						{{#expariments}}
+							{{> expariment}}
+						{{/expariments}}
+					</div>
+				</div>
+			</section>
+
 			{{! backgrounds }}
 			<section class="show-animate hide-left" style="transition-delay: 0.4s;">
 				<div class="panel panel-default">

@@ -59,6 +59,9 @@ $(document).ready(function() {
 		loadTemplate('templates/project.mustache').then(function(template){
 			partials.project = template;
 		}),
+		loadTemplate('templates/expariment.mustache').then(function(template){
+			partials.expariment = template;
+		}),
 
 		// load data
 		loadJSON('data/projects.json').then(function(projects){
@@ -78,6 +81,9 @@ $(document).ready(function() {
 		}),
 		loadJSON('data/pens.json').then(function(pens){
 			view.pens = pens;
+		}),
+		loadJSON('data/expariments.json').then(function(expariments){
+			view.expariments = expariments;
 		}),
 		loadJSON('data/backgrounds.json').then(function(backgrounds){
 			view.backgrounds = backgrounds;

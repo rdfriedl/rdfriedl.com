@@ -1,0 +1,19 @@
+<div class="row" style="margin-bottom: 1em;">
+	<div class="col-xs-12 col-sm-4">
+		<a href="{{openURL}}" target="_blank">
+			<img class="img-responsive" src="{{thumbnail}}"/>
+		</a>
+	</div>
+	<div class="col-xs-12 col-sm-6">
+		<h4>{{title}}</h4>
+		<p>{{description}}</p>
+		{{#tags}}
+		<span class="label label-{{type}}">{{message}}</span>
+		{{/tags}}
+	</div>
+	<div class="col-xs-12 col-lg-2">
+		<div class="btn-group pull-right">
+			<a href="{{openURL}}" class="btn btn-default btn-success" target="_blank">Open</a>
+		</div>
+	</div>
+</div>
