@@ -1,31 +1,18 @@
 function loadJSON(url){
 	return new Promise(function(resolve){
-		if(localStorage['json-cache|'+url] && location.search !== '?debug')
-			return resolve(JSON.parse(localStorage['json-cache|'+url]));
-
 		return fetch(url).then(function(res){
 			return res.json();
 		}).then(function(json){
-			localStorage['json-cache|'+url] = JSON.stringify(json);
 			return resolve(json);
-		}).catch(function(err){
-			if(localStorage['json-cache|'+url])
-				return resolve(JSON.parse(localStorage['json-cache|'+url]));
 		})
 	})
 }
 function loadTemplate(url){
 	return new Promise(function(resolve){
-		if(localStorage['template-cache|'+url] && location.search !== '?debug')
-			return resolve(localStorage['template-cache|'+url]);
-
 		return fetch(url).then(function(res){
 			return res.text();
 		}).then(function(template){
-			return resolve(localStorage['template-cache|'+url] = template);
-		}).catch(function(err){
-			if(localStorage['template-cache|'+url])
-				return resolve(localStorage['template-cache|'+url]);
+			return resolve(template);
 		})
 	})
 }

@@ -12,9 +12,6 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 /* overwrite bootstrap */
-body>.container-fluid{
-	margin: 0 10% 0 10%;
-}
 .panel-body>.page-header{
 	margin-top: 0;
 }
