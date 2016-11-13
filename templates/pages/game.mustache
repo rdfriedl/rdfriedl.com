@@ -1,0 +1,41 @@
+{{>header}}
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="page-header">
+						<div class="btn-group pull-right">
+							<a href="/games/play?id={{game.id}}" class="btn btn-success"><i class="fa fa-gamepad"></i> Play</a>
+							<a href="{{game.sourceURL}}" class="btn btn-info" target="_blank"><i class="fa fa-code"></i> Source</a>
+						</div>
+				  		<h2>{{game.title}}</h2>
+					</div>
+
+					<div class="row">
+						<div class="col-xs-4">
+							<img class="img-responsive" src="{{game.thumbnail}}"/>
+						</div>
+						<div class="col-xs-8">{{game.description}}</div>
+					</div>
+
+					{{#game.images.length}}
+					<div class="page-header">
+						<h4>Screen Shots</h4>
+					</div>
+					{{#game.images}}
+					<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+						<a href="{{src}}" target="_blank" class="thumbnail">
+							<img class="img-responsive" src="{{thumbnail}}">
+						</a>
+					</div>
+					{{/game.images}}
+					{{/game.images.length}}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{{>footer}}

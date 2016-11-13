@@ -30,6 +30,17 @@ h1,h2,h3,h4,h5,h6 {
 	padding: .4em;
 }
 
+.btn.btn-outline {
+	background: none;
+	border-width: 2px;
+	padding: 0.5em 2em;
+	box-shadow: none;
+	outline: none !important;
+}
+.btn.btn-outline:hover{
+	border-color: #151515;
+}
+
 /* background */
 #background{
 	position: fixed;
@@ -62,7 +73,7 @@ h1,h2,h3,h4,h5,h6 {
 
 /* show animation */
 .show-animate{
-	transition: transform 0.5s ease;
+	transition: transform 0.5s ease, opacity 0.5s ease;
 }
 body.page-showing .show-animate.hide-right{
 	transform: translateX(100vw);
@@ -73,12 +84,34 @@ body.page-showing .show-animate.hide-left{
 body.page-showing .show-animate.hide-up{
 	transform: translateY(-100vh);
 }
+body.page-showing .show-animate.show-fade{
+	opacity: 0;
+}
 body .header{
 	transition: background 0.5s ease, border-color 0.5s ease;
 }
 body.page-showing .header{
 	background: transparent;
 	border-color: transparent;
+}
+
+.delay-2{
+	transition-delay: 0.2s;
+}
+.delay-3{
+	transition-delay: 0.3s;
+}
+.delay-4{
+	transition-delay: 0.4s;
+}
+.delay-6{
+	transition-delay: 0.6s;
+}
+.delay-8{
+	transition-delay: 0.8s;
+}
+.delay-10{
+	transition-delay: 1s;
 }
 
 /* pen preview */

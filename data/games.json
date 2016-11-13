@@ -1,33 +1,75 @@
 [
 	{
-		"title": "Block-Script v2.0",
+		"id": "block-script",
+		"title": "Block-Script",
 		"description": "A 3 Dimensional voxel maze game, built with Three.js",
-		"sourceURL": "https://github.com/rdfriedl/block-script/tree/dev-es6",
-		"playURL": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/block-script/index.html#!/",
-		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/block-script-v2.png",
+		"longDescription": "",
+		"sourceURL": "https://github.com/rdfriedl/block-script",
+		"playURL": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/block-script/index.html",
+		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/block-script/block-script-v2_tn.jpg",
 		"tags": [
 			{
 				"message": "Incomplete",
 				"type": "warning"
 			}
+		],
+		"images": [
+			{
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/block-script/block-script-v2.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/block-script/block-script-v2_tn.jpg"
+			},
+			{
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/block-script/2016-11-12-19-35-09.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/block-script/2016-11-12-19-35-09_tn.jpg"
+			},
+			{
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/block-script/2016-11-12-19-37-44.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/block-script/2016-11-12-19-37-44_tn.jpg"
+			},
+			{
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/block-script/2016-11-12-19-38-42.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/block-script/2016-11-12-19-38-42_tn.jpg"
+			},
+			{
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/block-script/2016-11-12-19-39-58.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/block-script/2016-11-12-19-39-58_tn.jpg"
+			}
 		]
 	},
 	{
+		"id": "buttons-and-doors",
 		"title": "buttons-and-doors",
 		"description": "a simple puzzle game",
+		"longDescription": "",
 		"sourceURL": "https://github.com/rdfriedl/buttons-and-doors",
 		"playURL": "http://rdfriedl.github.io/buttons-and-doors",
-		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/buttons-and-doors.png",
+		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/buttons-and-doors/buttons-and-doors_tn.jpg",
 		"tags": [
 			{
 				"message": "Incomplete",
 				"type": "warning"
 			}
+		],
+		"images": [
+			{
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/buttons-and-doors/buttons-and-doors.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/buttons-and-doors/buttons-and-doors_tn.jpg"
+			},
+			{
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/buttons-and-doors/2016-11-12-19-52-44.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/buttons-and-doors/2016-11-12-19-52-44_tn.jpg"
+			},
+			{
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/buttons-and-doors/2016-11-12-19-53-48.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/buttons-and-doors/2016-11-12-19-53-48_tn.jpg"
+			}
 		]
 	},
 	{
+		"id": "car-game",
 		"title": "Car Game",
 		"description": "A simple Car Game built with Unity",
+		"longDescription": "",
 		"sourceURL": "https://github.com/ReflectionGames/carGame",
 		"playURL": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/webplayers/UnityWebPlayer/UnityWebPlayer.html",
 		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/screenshots/screenshot1.png",
@@ -42,18 +84,32 @@
 			}
 		],
 		"images": [
-			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/screenshots/screenshot1.png",
-			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/screenshots/screenshot2.png",
-			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/screenshots/screenshot3.png",
-			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/screenshots/screenshot4.png"
+			{
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/screenshots/screenshot1.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/screenshots/screenshot1.png"
+			},
+			{
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/screenshots/screenshot2.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/screenshots/screenshot2.png"
+			},
+			{
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/screenshots/screenshot3.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/screenshots/screenshot3.png"
+			},
+			{
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/screenshots/screenshot4.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/screenshots/screenshot4.png"
+			}
 		]
 	},
 	{
+		"id": "cannontest",
 		"title": "cannontest",
 		"description": "A Three.js and Cannon.js Test Project",
+		"longDescription": "",
 		"sourceURL": "https://github.com/rdfriedl/cannontest",
 		"playURL": "http://cdn.rawgit.com/rdfriedl/cannontest/v1/index.html",
-		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/cannontest/cannontest.png",
+		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/cannontest/cannontest_tn.jpg",
 		"tags": [
 			{
 				"message": "Test",
@@ -65,25 +121,18 @@
 			}
 		],
 		"images": [
-			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/cannontest/cannontest.png"
-		]
-	},
-	{
-		"title": "Block-Script",
-		"description": "A simple minecraft like ThreeJS example",
-		"sourceURL": "https://github.com/rdfriedl/block-script",
-		"playURL": "http://rdfriedl.github.io/block-script/",
-		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/block-script/block-script.png",
-		"tags": [
 			{
-				"message": "Incomplete",
-				"type": "warning"
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/cannontest/cannontest.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/cannontest/cannontest_tn.jpg"
+			},
+			{
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/cannontest/2016-11-12-19-49-59.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/cannontest/2016-11-12-19-49-59_tn.jpg"
+			},
+			{
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/cannontest/2016-11-12-19-50-33.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/cannontest/2016-11-12-19-50-33_tn.jpg"
 			}
-		],
-		"images": [
-			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/block-script/block-script.png",
-			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/block-script/block-script2.png",
-			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/block-script/block-script3.png"
 		]
 	}
 ]

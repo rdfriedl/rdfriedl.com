@@ -1,16 +1,26 @@
 <div class="header panel panel-default">
-	<div class="panel-body">
+	<div class="panel-body" style="position: relative;">
+		<div class="row show-animate show-fade delay-3 hidden-xs" style="position: absolute; width: 100%; bottom: 0; margin-bottom: 15px;">
+			<div class="col-xs-12 col-sm-8 col-sm-offset-4 col-lg-9 col-lg-offset-3">
+				<a href="/home" class="btn btn-default btn-outline"><i class="fa fa-home"></i> Home</a>
+				<a href="/about" class="btn btn-default btn-outline"><i class="fa fa-info-circle"></i> About</a>
+				<a href="/games" class="btn btn-default btn-outline"><i class="fa fa-gamepad"></i> Games</a>
+				<a href="/pens" class="btn btn-default btn-outline"><i class="fa fa-codepen"></i> Pens</a>
+			</div>
+		</div>
 		<div class="row">
 			<!-- desktop profile image -->
-			<div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-0 col-md-3 col-md-offset-1 col-lg-2 show-animate hide-left more hidden-xs" style="transition-delay: 0.1s;">
-				<a href="{{github.html_url}}">
+			<div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-0 col-md-3 col-md-offset-1 col-lg-2 show-animate hide-left hidden-xs" style="transition-delay: 0.1s;">
+				<a href="/home">
 					<img class="profile-image img-circle img-responsive" src="{{github.avatar_url}}"/>
 				</a>
 			</div>
 			<!-- mobile -->
-			<div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-0 col-md-3 col-md-offset-1 col-lg-2 show-animate hide-top more visible-xs" style="transition-delay: 0.1s;">
+			<div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-0 col-md-3 col-md-offset-1 col-lg-2 show-animate hide-top visible-xs" style="transition-delay: 0.1s;">
 				<img class="profile-image img-circle img-responsive" src="{{github.avatar_url}}"/>
 			</div>
+
+			<!-- title -->
 			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
 				<div class="hidden-xs">
 					<h1 class="show-animate hide-up">{{info.name}}</h1>
@@ -31,6 +41,12 @@
 					</ul>
 				</div>
 			</div>
+		</div>
+		<div class="btn-group btn-group-justified visible-xs show-animate hide-fade">
+			<a href="/home" class="btn btn-default btn-outline"><i class="fa fa-home"></i> Home</a>
+			<a href="/about" class="btn btn-default btn-outline"><i class="fa fa-info-circle"></i> About</a>
+			<a href="/games" class="btn btn-default btn-outline"><i class="fa fa-gamepad"></i> Games</a>
+			<a href="/pens" class="btn btn-default btn-outline"><i class="fa fa-codepen"></i> Pens</a>
 		</div>
 	</div>
 </div>

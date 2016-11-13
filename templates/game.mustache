@@ -3,12 +3,12 @@
 		<h4>{{title}}</h4>
 	</div>
 	<div class="col-xs-6 col-sm-4">
-		<a href="{{playURL}}">
+		<a href="/games/game?id={{id}}">
 			<img class="img-responsive" src="{{thumbnail}}"/>
 		</a>
 	</div>
 	<div class="col-xs-6 col-sm-5 no-padding-left">
-		<h4 class="no-margin-top hidden-xs">{{title}}</h4>
+		<a href="/games/game?id={{id}}"><h4 class="no-margin-top hidden-xs">{{title}}</h4></a>
 		<p>{{description}}</p>
 		{{#tags}}
 		<span class="label label-{{type}}">{{message}}</span>
@@ -16,11 +16,11 @@
 	</div>
 	<div class="col-xs-12 col-lg-3">
 		<div class="btn-group pull-right hidden-xs">
-			<a href="{{playURL}}" class="btn btn-default btn-success">Play</a>
+			<a href="/games/play?id={{id}}" class="btn btn-default btn-success">Play</a>
 			<a href="{{sourceURL}}" class="btn btn-default btn-info" target="_blank"><i class="fa fa-code"></i> Source</a>
 		</div>
 		<div class="btn-group btn-group-justified visible-xs margin-top-10">
-			<a href="{{playURL}}" class="btn btn-default btn-success">Play</a>
+			<a href="/games/play?id={{id}}" class="btn btn-default btn-success">Play</a>
 			<a href="{{sourceURL}}" class="btn btn-default btn-info" target="_blank"><i class="fa fa-code"></i> Source</a>
 		</div>
 	</div>
