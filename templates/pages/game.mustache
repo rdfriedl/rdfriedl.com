@@ -5,24 +5,41 @@
 		<div class="col-xs-12">
 			<div class="panel panel-default">
 				<div class="panel-body">
-					<div class="page-header">
+					<div class="page-header hidden-xs">
 						<div class="btn-group pull-right">
 							<a href="/games/play?id={{game.id}}" class="btn btn-success"><i class="fa fa-gamepad"></i> Play</a>
 							<a href="{{game.sourceURL}}" class="btn btn-info" target="_blank"><i class="fa fa-code"></i> Source</a>
 						</div>
-				  		<h2 class="no-margin-top">{{game.title}}</h2>
+				  		<h2 class="hidden-xs no-margin-top">{{game.title}}</h2>
 					</div>
 
 					<div class="row">
-						<div class="col-xs-4">
+						{{! desktop }}
+						<div class="col-xs-4 hidden-xs">
 							<img class="img-responsive" src="{{game.thumbnail}}"/>
 						</div>
-						<div class="col-xs-8">{{game.description}}</div>
+						<div class="col-xs-8 hidden-xs">{{game.description}}</div>
+
+						{{! mobile }}
+						<div class="col-xs-12 visible-xs">
+							<img class="img-responsive" src="{{game.thumbnail}}"/>
+							<div class="page-header no-margin-top">
+				  				<h2 class="text-center visible-xs">{{game.title}}</h2>
+							</div>
+						</div>
+						<div class="col-xs-12 visible-xs"><p>{{game.description}}</p></div>
+						<div class="col-xs-6 col-xs-offset-3 visible-xs">
+							<div class="btn-group btn-group-justified">
+								<a href="/games/play?id={{game.id}}" class="btn btn-success"><i class="fa fa-gamepad"></i> Play</a>
+								<a href="{{game.sourceURL}}" class="btn btn-info" target="_blank"><i class="fa fa-code"></i> Source</a>
+							</div>
+						</div>
 					</div>
 
 					{{#game.used.length}}
 					<div class="page-header">
-						<h3>Technologies Used</h3>
+						<h3 class="hidden-xs">Technologies Used</h3>
+						<h3 class="text-center visible-xs">Technologies Used</h3>
 					</div>
 					<div class="row">
 						{{#game.used}}

@@ -12,6 +12,12 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 /* overwrite bootstrap */
+.img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img{
+	width: 100%;
+}
+.panel{
+	background-color: rgba(34, 34, 34, 0.85);
+}
 .panel-body>.page-header{
 	margin-top: 0;
 }
