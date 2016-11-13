@@ -1,0 +1,96 @@
+[
+	{
+		"id": "threejs",
+		"title": "Three.js",
+		"siteURL": "https://threejs.org/",
+		"description": "3D WebGL Library"
+	},
+	{
+		"id": "cannonjs",
+		"title": "Cannon.js",
+		"siteURL": "http://www.cannonjs.org/",
+		"description": "3D Physics Engine"
+	},
+	{
+		"id": "phaser",
+		"title": "Phaser",
+		"siteURL": "http://phaser.io/",
+		"thumbnail": "https://phaser.io/images/logo/logo-download-vector.png",
+		"description": "WebGL and Canvas Game Engine"
+	},
+	{
+		"id": "vuejs",
+		"title": "VueJS",
+		"siteURL": "https://vuejs.org/",
+		"thumbnail": "https://vuejs.org/images/logo.png",
+		"description": "VM* Javascript Framework"
+	},
+	{
+		"id": "knockout",
+		"title": "Knockout",
+		"siteURL": "http://knockoutjs.com/",
+		"thumbnail": "http://learn.knockoutjs.com/Content/App/icon.png",
+		"description": "VM* Javascript Framework"
+	},
+	{
+		"id": "bootstrap",
+		"title": "Bootstrap",
+		"siteURL": "http://getbootstrap.com/",
+		"thumbnail": "http://image.morpht.com/files/post/thumbnail/bootstrap_solid.png",
+		"description": "Responsive CSS Framework"
+	},
+	{
+		"id": "bootswatch",
+		"title": "Bootswatch",
+		"siteURL": "http://bootswatch.com/",
+		"thumbnail": "https://www.vectorlogo.zone/logos/bootswatch/bootswatch-icon.png",
+		"description": "Themes for Bootstrap"
+	},
+	{
+		"id": "css3",
+		"title": "CSS3",
+		"siteURL": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3",
+		"thumbnail": "http://ohdoylerules.com/content/images/css3.svg"
+	},
+	{
+		"id": "html5",
+		"title": "HTML5",
+		"siteURL": "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5",
+		"thumbnail": "https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png"
+	},
+	{
+		"id": "svg",
+		"title": "SVG",
+		"siteURL": "https://developer.mozilla.org/en-US/docs/Web/SVG",
+		"thumbnail": "https://ryanbrownhill.github.io/svg-animation-pres/img/svg-logo.svg",
+		"description": "Scalable Vector Graphics"
+	},
+	{
+		"id": "javascript",
+		"title": "JavaScript",
+		"siteURL": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+		"thumbnail": "http://3.bp.blogspot.com/-PTty3CfTGnA/TpZOEjTQ_WI/AAAAAAAAAeo/KeKt_D5X2xo/s1600/js.jpg",
+		"description": "Programming Language"
+	},
+	{
+		"id": "webgl",
+		"title": "WebGL",
+		"siteURL": "https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API",
+		"thumbnail": "http://www.opengl-trainer.com/images/WebGL_logo.png",
+		"description": " JavaScript API for 3D and 2D graphics"
+	},
+	{
+		"id": "typescript",
+		"title": "TypeScript",
+		"siteURL": "https://www.typescriptlang.org/",
+		"thumbnail": "https://raw.githubusercontent.com/remojansen/logo.ts/master/ts.png",
+		"description": "Typed Superset of Javascript"
+	},
+	{
+		"id": "fontawesome",
+		"title": "FontAwesome",
+		"siteURL": "http://fontawesome.io/",
+		"thumbnail": "http://megan-steele.com/fontawesome/logo.png",
+		"description": "Icon Font"
+	}
+]

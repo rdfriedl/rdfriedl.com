@@ -1,47 +1,139 @@
 [
 	{
-		"title":"CSS 3d login form",
+		"id": "vXoOKo",
+		"title":"CSS 3d spinning dots",
+		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/pens/vXoOKo_tn.jpg",
+		"tags": [
+			{
+				"message": "Pen",
+				"type": "default"
+			}
+		],
+		"used": [
+			"css3",
+			"html5"
+		]
+	},
+	{
 		"id": "obNpeV",
-		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/pens/obNpeV_tn.jpg"
+		"title":"CSS 3d login form",
+		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/pens/obNpeV_tn.jpg",
+		"tags": [
+			{
+				"message": "Pen",
+				"type": "default"
+			}
+		],
+		"used": [
+			"css3",
+			"html5",
+			"javascript"
+		]
 	},
 	{
-		"title":"SVG Book animation",
 		"id": "zvVbEj",
-		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/pens/zvVbEj_tn.jpg"
+		"title":"SVG Book animation",
+		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/pens/zvVbEj_tn.jpg",
+		"tags": [
+			{
+				"message": "Pen",
+				"type": "default"
+			}
+		],
+		"used": ["svg"]
 	},
 	{
-		"title":"SVG cubes",
 		"id": "pjqQEB",
-		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/pens/pjqQEB_tn.jpg"
+		"title":"SVG cubes",
+		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/pens/pjqQEB_tn.jpg",
+		"tags": [
+			{
+				"message": "Pen",
+				"type": "default"
+			}
+		],
+		"used": ["svg"]
 	},
 	{
-		"title":"animated svg arcs",
 		"id": "wKRRNG",
-		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/pens/wKRRNG_tn.jpg"
+		"title":"animated svg arcs",
+		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/pens/wKRRNG_tn.jpg",
+		"tags": [
+			{
+				"message": "Pen",
+				"type": "default"
+			}
+		],
+		"used": ["svg"]
 	},
 	{
-		"title":"SVG loading animation",
 		"id": "zvbvMv",
-		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/pens/zvbvMv_tn.jpg"
+		"title":"SVG loading animation",
+		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/pens/zvbvMv_tn.jpg",
+		"tags": [
+			{
+				"message": "Pen",
+				"type": "default"
+			}
+		],
+		"used": ["svg"]
 	},
 	{
-		"title":"3d divs",
 		"id": "BoEGLp",
-		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/pens/BoEGLp_tn.jpg"
+		"title":"3d divs",
+		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/pens/BoEGLp_tn.jpg",
+		"tags": [
+			{
+				"message": "Pen",
+				"type": "default"
+			}
+		],
+		"used": [
+			"css3",
+			"html5"
+		]
 	},
 	{
-		"title":"SVG dots",
 		"id": "RWdryq",
-		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/pens/RWdryq_tn.jpg"
+		"title":"SVG dots",
+		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/pens/RWdryq_tn.jpg",
+		"tags": [
+			{
+				"message": "Pen",
+				"type": "default"
+			}
+		],
+		"used": ["svg"]
 	},
 	{
-		"title": "Useless SVG Clock",
 		"id": "xwQLJM",
-		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/pens/xwQLJM_tn.jpg"
+		"title": "Useless SVG Clock",
+		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/pens/xwQLJM_tn.jpg",
+		"tags": [
+			{
+				"message": "Pen",
+				"type": "default"
+			}
+		],
+		"used": [
+			"svg",
+			"javascript"
+		]
 	},
 	{
-		"title": "Isometric css tile map",
 		"id": "bdvrjM",
-		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/pens/bdvrjM_tn.jpg"
+		"title": "Isometric css tile map",
+		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/pens/bdvrjM_tn.jpg",
+		"tags": [
+			{
+				"message": "Pen",
+				"type": "default"
+			}
+		],
+		"used": [
+			"html5",
+			"css3",
+			"javascript"
+		]
 	}
 ]

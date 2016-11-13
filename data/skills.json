@@ -1,0 +1,22 @@
+{
+	"javascript": {
+		"knowledge": 95,
+		"experience": 100
+	},
+	"html5": {
+		"knowledge": 80,
+		"experience": 90
+	},
+	"css3": {
+		"knowledge": 90,
+		"experience": 95
+	},
+	"knockout": {
+		"knowledge": 90,
+		"experience": 100
+	},
+	"bootstrap": {
+		"knowledge": 100,
+		"experience": 100
+	}
+}

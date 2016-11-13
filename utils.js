@@ -53,6 +53,63 @@ function parseSearch(url){
     return parseSearch.cache[url];
 }
 
+function loadData(){
+	var data = {};
+
+	data.search = parseSearch();
+
+	return Promise.all([
+		load_github().then(function(json){
+			data.github = json;
+		}),
+		loadJSON('/data/technologies.json').then(function(json){
+			data.technologies = {};
+			for (var i = 0; i < json.length; i++) {
+				data.technologies[json[i].id] = json[i];
+			}
+		}),
+		loadJSON('/data/games.json').then(function(json){
+			data.games = json;
+		}),
+		loadJSON('/data/expariments.json').then(function(json){
+			data.expariments = json;
+		}),
+		loadJSON('/data/pens.json').then(function(json){
+			data.pens = json;
+		}),
+		loadJSON('/data/backgrounds.json').then(function(json){
+			data.backgrounds = json;
+		}),
+		loadJSON('/data/links.json').then(function(json){
+			data.links = json;
+		}),
+		loadJSON('/data/info.json').then(function(json){
+			data.info = json;
+		})
+	]).then(function(){
+		for (var i = 0; i < data.games.length; i++) {
+			if(data.games[i].used){
+				for(var k = 0; k < data.games[i].used.length; k++){
+					var id = data.games[i].used[k];
+					if(data.technologies[id])
+						data.games[i].used[k] = data.technologies[id];
+				}
+			}
+		}
+		for (var i = 0; i < data.pens.length; i++) {
+			if(data.pens[i].used){
+				for(var k = 0; k < data.pens[i].used.length; k++){
+					var id = data.pens[i].used[k];
+					if(data.technologies[id])
+						data.pens[i].used[k] = data.technologies[id];
+				}
+			}
+		}
+
+		return data;
+	})
+}
+
 function loadPage(page, data, templates, callbacks){
 	var data = data || [];
 	var templates = templates || [];
@@ -64,11 +121,15 @@ function loadPage(page, data, templates, callbacks){
 		data.push('backgrounds');
 
 	// load the data
-	for (var i = 0; i < data.length; i++) {
-		wait.push((data[i] == 'github'? load_github() : loadJSON('/data/'+data[i]+'.json')).then(function(name, json){
-			view[name] = json;
-		}.bind(this, data[i])));
-	}
+	// for (var i = 0; i < data.length; i++) {
+	// 	wait.push((data[i] == 'github'? load_github() : loadJSON('/data/'+data[i]+'.json')).then(function(name, json){
+	// 		view[name] = json;
+	// 	}.bind(this, data[i])));
+	// }
+
+	wait.push(loadData().then(function(json){
+		view = json;
+	}));
 
 	// load the templates
 	for (var i = 0; i < templates.length; i++) {
@@ -84,8 +145,6 @@ function loadPage(page, data, templates, callbacks){
 
 	// wait for everything to finish loading
 	return Promise.all(wait).then(function(){
-		view.search = parseSearch();
-
 		if(callbacks.preRender)
 			callbacks.preRender(view, partials);
 
