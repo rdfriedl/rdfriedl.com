@@ -4,8 +4,8 @@
 	<div class="row">
 		<div class="col-xs-12">
 			<div class="panel panel-default">
-				<div class="panel-body">
-					<div class="page-header hidden-xs">
+				<div class="panel-body no-padding-bottom">
+					<div class="page-header no-margin-bottom hidden-xs">
 						<div class="btn-group pull-right">
 							<a href="/games/play?id={{game.id}}" class="btn btn-success"><i class="fa fa-gamepad"></i> Play</a>
 							<a href="{{game.sourceURL}}" class="btn btn-info" target="_blank"><i class="fa fa-code"></i> Source</a>
@@ -23,12 +23,12 @@
 						{{! mobile }}
 						<div class="col-xs-12 visible-xs">
 							<img class="img-responsive" src="{{game.thumbnail}}"/>
-							<div class="page-header no-margin-top">
+							<div class="page-header no-margin-bottom no-margin-top">
 				  				<h2 class="text-center visible-xs">{{game.title}}</h2>
 							</div>
 						</div>
 						<div class="col-xs-12 visible-xs"><p>{{game.description}}</p></div>
-						<div class="col-xs-6 col-xs-offset-3 visible-xs">
+						<div class="col-xs-8 col-xs-offset-2 visible-xs">
 							<div class="btn-group btn-group-justified">
 								<a href="/games/play?id={{game.id}}" class="btn btn-success"><i class="fa fa-gamepad"></i> Play</a>
 								<a href="{{game.sourceURL}}" class="btn btn-info" target="_blank"><i class="fa fa-code"></i> Source</a>
@@ -37,7 +37,7 @@
 					</div>
 
 					{{#game.used.length}}
-					<div class="page-header">
+					<div class="page-header no-margin-bottom">
 						<h3 class="hidden-xs">Technologies Used</h3>
 						<h3 class="text-center visible-xs">Technologies Used</h3>
 					</div>
@@ -51,13 +51,14 @@
 					{{/game.used.length}}
 
 					{{#game.images.length}}
-					<div class="page-header">
-						<h4>Screen Shots</h4>
+					<div class="page-header no-margin">
+						<h3 class="no-margin-bottom hidden-xs">Screen Shots</h3>
+						<h3 class="text-center no-margin-bottom visible-xs">Screen Shots</h3>
 					</div>
 					<div class="row">
 						{{#game.images}}
 						<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
-							<a href="{{src}}" target="_blank" class="thumbnail">
+							<a class="thumbnail open-image-modal" target="_blank" href="{{src}}">
 								<img class="img-responsive" src="{{thumbnail}}">
 							</a>
 						</div>

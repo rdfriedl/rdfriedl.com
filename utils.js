@@ -193,3 +193,57 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
 ga('create', 'UA-62048613-2', 'auto');
 ga('send', 'pageview');
+
+// image modal
+function createImageModal(){
+	var modal = $([
+		'<div class="modal fade" id="preview-image">',
+		'	<div class="modal-dialog modal-xl">',
+		'		<div class="modal-content" style="border-radius: 0px;">',
+		'			<div class="modal-header">',
+		'				<button class="btn btn-default btn-sm pull-right" data-dismiss="modal">Close</button>',
+		'				<a id="download-image" class="btn btn-primary btn-sm" target="_blank" download><i class="fa fa-download"></i> Download</a>',
+		'			</div>',
+		'			<div class="modal-body">',
+		'				<img class="img-responsive"/>',
+		'			</div>',
+		'		</div>',
+		'	</div>',
+		'</div>'
+	].join(''));
+
+	modal.modal();
+
+	$(document.body).append(modal);
+}
+
+$(document).on('click', 'a.open-image-modal', function(event){
+	// its a mobile device, dont do anything
+	if(window.innerWidth < 768)
+		return;
+
+	event.preventDefault();
+
+	if(!$('#preview-image').get(0))
+		createImageModal();
+
+	var src = $(this).attr('href');
+	$('#download-image').attr('href', src);
+	$('#preview-image img').attr('src', src);
+	$('#preview-image').modal('show');
+})
+
+function openImageModal(src){
+	if(window.innerWidth < 768){
+		// its a mobile device, open the image in a new tab
+		window.open(src,'_blank');
+		return;
+	}
+
+	if(!$('#preview-image').get(0))
+		createImageModal();
+
+	$('#download-image').attr('href', src);
+	$('#preview-image img').attr('src', src);
+	$('#preview-image').modal('show');
+}
