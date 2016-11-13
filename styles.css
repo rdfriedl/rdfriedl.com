@@ -18,6 +18,9 @@ h1,h2,h3,h4,h5,h6 {
 .panel{
 	background-color: rgba(34, 34, 34, 0.85);
 }
+.panel.panel-no-alpha{
+	background-color: rgba(34, 34, 34, 1);
+}
 .panel-body>.page-header{
 	margin-top: 0;
 }
@@ -48,6 +51,12 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 /* background */
+html{
+	background: #060606;
+}
+body{
+	background: transparent;
+}
 #background{
 	position: fixed;
 	top: 0px;
