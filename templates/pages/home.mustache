@@ -26,11 +26,13 @@
 							<h3 class="no-margin-top"><i class="fa fa-wrench"></i> Skills</h3>
 						</div>
 
-						{{#skills}}
-							<div class="col-xs-12 col-sm-6">
-							{{> skill}}
-							</div>
-						{{/skills}}
+						<div class="row">
+							{{#skills}}
+								<div class="col-xs-12 col-sm-6">
+								{{> skill}}
+								</div>
+							{{/skills}}
+						</div>
 					</div>
 				</div>
 			</section>
@@ -58,13 +60,15 @@
 							<h3 class="no-margin-top"><i class="fa fa-image"></i> Backgrounds</h3>
 						</div>
 
-						{{#backgrounds}}
-						<div class="col-xs-6">
-							<a class="thumbnail open-image-modal" href="{{src}}" target="_blank">
-								<img src="{{thumbnail}}">
-							</a>
+						<div class="row">
+							{{#backgrounds}}
+							<div class="col-xs-6">
+								<a class="thumbnail open-image-modal" href="{{src}}" target="_blank">
+									<img src="{{thumbnail}}">
+								</a>
+							</div>
+							{{/backgrounds}}
 						</div>
-						{{/backgrounds}}
 					</div>
 				</div>
 			</section>

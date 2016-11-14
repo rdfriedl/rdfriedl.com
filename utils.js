@@ -192,6 +192,29 @@ $(document).on('click','[href="#"]',function(event){
 	event.preventDefault();
 });
 
+// toggle, add, remove class
+$(document).on('click', '[data-toggle-class]', function(evnet){
+	event.preventDefault();
+	var parsed = ($(this).attr('data-toggle-class') || '').split('|');
+	var selector = parsed[0];
+	var className = parsed[1];
+	$(selector).toggleClass(className);
+});
+$(document).on('click', '[data-remove-class]', function(evnet){
+	event.preventDefault();
+	var parsed = ($(this).attr('data-remove-class') || '').split('|');
+	var selector = parsed[0];
+	var className = parsed[1];
+	$(selector).removeClass(className);
+});
+$(document).on('click', '[data-add-class]', function(evnet){
+	event.preventDefault();
+	var parsed = ($(this).attr('data-add-class') || '').split('|');
+	var selector = parsed[0];
+	var className = parsed[1];
+	$(selector).addClass(className);
+});
+
 // Google Analytics
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

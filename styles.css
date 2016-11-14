@@ -14,6 +14,10 @@ h1,h2,h3,h4,h5,h6 {
 a:not([href]){
 	cursor: pointer;
 }
+a.no-link{
+	color: white;
+	text-decoration: none;
+}
 
 /* overwrite bootstrap */
 .img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img{
@@ -133,12 +137,42 @@ body.page-showing .header{
 	transition-delay: 1s;
 }
 
-/* pen preview */
-#preview-pen iframe{
-	width: 100%;
-	height: 80vh;
-	border: none;
+/* mobile nav */
+.mobile-nav .slide {
+	position: fixed;
+	top: 0;
+	left: -100%;
+	width: 70vw;
+	height: 100vh;
+	z-index: 100;
+	overflow: auto;
+	transition: left 0.5s ease;
 }
-#preview-pen .modal-body{
-	padding: 0px;
+.mobile-nav .overlay{
+	background: transparent;
+	transition: background 0.5s ease;
+}
+body.nav-open .mobile-nav .slide{
+	left: 0;
+}
+
+body.nav-open .mobile-nav .overlay {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 50;
+}
+body.nav-open{
+	overflow-y: hidden;
+}
+.mobile-nav .open-nav {
+	/* position: absolute; */
+	border-color: grey;
+	background: rgba(0,0,0,0.8) !important;
+	color: grey;
+	z-index: 50;
+	outline: none;
 }

@@ -1,15 +1,10 @@
 <div class="header panel panel-default panel-no-alpha">
 	<div class="panel-body">
-		<div class="row">
-			<!-- desktop profile image -->
+		<div class="row hidden-xs">
 			<div class="col-sm-2 col-sm-offset-0 col-md-1 col-md-offset-1 col-lg-1 hidden-xs" style="transition-delay: 0.1s;">
 				<a href="/home">
 					<img class="profile-image img-circle img-responsive" src="{{github.avatar_url}}"/>
 				</a>
-			</div>
-			<!-- mobile -->
-			<div class="col-xs-4 col-xs-offset-4 visible-xs" style="transition-delay: 0.1s;">
-				<img class="profile-image img-circle img-responsive" src="{{github.avatar_url}}"/>
 			</div>
 
 			<!-- title -->
@@ -18,10 +13,6 @@
 					<h3 class="no-margin-top">{{info.name}}</h3>
 					<h6 class="text-muted ">{{info.description}}</h6>
 				</div>
-				<div class="visible-xs text-center">
-					<h3>{{info.name}}</h3>
-					<h6 class="text-muted">{{info.description}}</h6>
-				</div>
 
 				<div class="nav-buttons">
 					<a href="/home" class="btn btn-default btn-outline"><i class="fa fa-home"></i> Home</a>
@@ -29,6 +20,46 @@
 					<a href="/skills" class="btn btn-default btn-outline"><i class="fa fa-wrench"></i> Skills</a>
 					<a href="/games" class="btn btn-default btn-outline"><i class="fa fa-gamepad"></i> Games</a>
 					<a href="/pens" class="btn btn-default btn-outline"><i class="fa fa-codepen"></i> Pens</a>
+				</div>
+			</div>
+		</div>
+
+		{{! mobile nav }}
+		<div class="mobile-nav visible-xs">
+			<div data-add-class="body|nav-open">
+				<button type="button" class="show-animate hide-left btn btn-primary open-nav pull-left"><i class="fa fa-navicon"></i></button>
+				<h1 class="show-animate hide-right text-center no-margin">{{info.name}}</h1>
+			</div>
+
+			<div class="overlay" data-remove-class="body|nav-open"></div>
+			<div class="slide panel panel-default">
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-0 col-md-3 col-md-offset-1 col-lg-2" style="transition-delay: 0.1s;">
+							<a href="/home">
+								<img class="profile-image img-circle img-responsive" src="{{github.avatar_url}}" style="max-height: 200px;width: auto;margin: auto;"/>
+							</a>
+						</div>
+						<div class="col-xs-12 text-center">
+							<a href="/home" class="no-link">
+								<h3>{{info.name}}</h3>
+								<h5 class="text-muted">{{info.description}}</h5>
+							</a>
+							<ul class="social list-inline">
+								{{#links}}
+									<li data-toggle="tooltip" data-placement="bottom" title="{{title}}"><a class="btn btn-info" href="{{href}}" target="_blank"><i class="fa fa-{{icon}}"></i></a></li>
+								{{/links}}
+							</ul>
+						</div>
+
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<a href="/home" class="btn btn-default btn-outline btn-block"><i class="fa fa-home"></i> Home</a>
+							<a href="/about" class="btn btn-default btn-outline btn-block"><i class="fa fa-info-circle"></i> About</a>
+							<a href="/skills" class="btn btn-default btn-outline btn-block"><i class="fa fa-wrench"></i> Skills</a>
+							<a href="/games" class="btn btn-default btn-outline btn-block"><i class="fa fa-gamepad"></i> Games</a>
+							<a href="/pens" class="btn btn-default btn-outline btn-block"><i class="fa fa-codepen"></i> Pens</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
