@@ -1,3 +1,9 @@
+var mdRenderer = new markdownit({
+	html: true,
+	breaks: true,
+	linkify: true
+});
+
 function loadJSON(url){
 	return new Promise(function(resolve){
 		return fetch(url).then(function(res){
@@ -129,9 +135,21 @@ function loadPage(page, templates, callbacks){
 
 	// load the templates
 	for (var i = 0; i < templates.length; i++) {
-		wait.push(loadTemplate('/templates/'+templates[i]+'.mustache').then(function(name, json){
-			partials[name] = json;
-		}.bind(this, templates[i])))
+		if(typeof templates[i] == 'string'){
+			wait.push(loadTemplate('/templates/'+templates[i]+'.mustache').then(function(name, template){
+				partials[name] = template;
+			}.bind(this, templates[i])))
+		}
+		else if(templates[i].url, templates[i].name){
+			if((/\.md$/i).test(templates[i].url))
+				wait.push(loadTemplate(templates[i].url).then(function(name, template){
+					partials[name] = mdRenderer.render(template);
+				}.bind(this, templates[i].name)))
+			else
+				wait.push(loadTemplate(templates[i].url).then(function(name, template){
+					partials[name] = template;
+				}.bind(this, templates[i].name)))
+		}
 	}
 
 	// load the page
