@@ -1,0 +1,41 @@
+{{>small-header}}
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					{{#project}}
+					<div class="page-header no-margin-bottom">
+						<div class="btn-group pull-right hidden-xs">
+							<a href="{{project.sourceURL}}" class="btn btn-success" target="_blank"><i class="fa fa-code"></i> Source</a>
+							<a href="{{project.demoURL}}" class="btn btn-info" target="_blank"><i class="fa fa-reply" style="transform: scaleX(-1)"></i> Open</a>
+						</div>
+				  		<h2 class="no-margin-top">
+							<a href="/projects" class="btn btn-default"><i class="fa fa-arrow-left"></i> Back</a>
+							{{project.title}}
+						</h2>
+					</div>
+
+					<iframe src="{{project.demoURL}}" style="width: 100%; height: 90vh; border: none;" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation"></iframe>
+
+					<div class="btn-group btn-group-justified visible-xs">
+						<a href="{{project.sourceURL}}" class="btn btn-success" target="_blank"><i class="fa fa-code"></i> Source</a>
+						<a href="{{project.demoURL}}" class="btn btn-info" target="_blank"><i class="fa fa-codepen"></i> More Pens</a>
+					</div>
+					{{/project}}
+
+					{{^project}}
+					<h2 class="text-center">
+						404....looks like that project dose not exist
+						<br>
+						<small>but check out these other cool ones</small>
+					</h2>
+					{{/project}}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{{>footer}}

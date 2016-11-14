@@ -7,64 +7,64 @@
 				<div class="panel-body no-padding-bottom">
 					<div class="page-header no-margin-bottom hidden-xs">
 						<div class="btn-group pull-right">
-							<a href="/games/play?id={{game.id}}" class="btn btn-success"><i class="fa fa-gamepad"></i> Play</a>
-							<a href="{{game.sourceURL}}" class="btn btn-info" target="_blank"><i class="fa fa-code"></i> Source</a>
+							<a href="/projects/demo?id={{project.id}}" class="btn btn-success">Demo</a>
+							<a href="{{project.sourceURL}}" class="btn btn-info" target="_blank"><i class="fa fa-code"></i> Source</a>
 						</div>
-				  		<h2 class="hidden-xs no-margin-top">{{game.title}}</h2>
+				  		<h2 class="hidden-xs no-margin-top">{{project.title}}</h2>
 					</div>
 
 					<div class="row">
 						{{! desktop }}
 						<div class="col-xs-4 hidden-xs">
-							<img class="img-responsive" src="{{game.thumbnail}}"/>
+							<img class="img-responsive" src="{{project.thumbnail}}"/>
 						</div>
-						<div class="col-xs-8 hidden-xs">{{game.description}}</div>
+						<div class="col-xs-8 hidden-xs">{{project.description}}</div>
 
 						{{! mobile }}
 						<div class="col-xs-12 visible-xs">
-							<img class="img-responsive" src="{{game.thumbnail}}"/>
+							<img class="img-responsive" src="{{project.thumbnail}}"/>
 							<div class="page-header no-margin-bottom no-margin-top">
-				  				<h3 class="text-center visible-xs">{{game.title}}</h3>
+				  				<h3 class="text-center visible-xs">{{project.title}}</h3>
 							</div>
 						</div>
-						<div class="col-xs-12 visible-xs"><p>{{game.description}}</p></div>
+						<div class="col-xs-12 visible-xs"><p>{{project.description}}</p></div>
 						<div class="col-xs-8 col-xs-offset-2 visible-xs">
 							<div class="btn-group btn-group-justified">
-								<a href="/games/play?id={{game.id}}" class="btn btn-success"><i class="fa fa-gamepad"></i> Play</a>
-								<a href="{{game.sourceURL}}" class="btn btn-info" target="_blank"><i class="fa fa-code"></i> Source</a>
+								{{#project.demoURL}}<a href="/projects/demo?id={{project.id}}" class="btn btn-success">Demo</a>{{/project.demoURL}}
+								<a href="{{project.sourceURL}}" class="btn btn-info" target="_blank"><i class="fa fa-code"></i> Source</a>
 							</div>
 						</div>
 					</div>
 
-					{{#game.used.length}}
+					{{#project.used.length}}
 					<div class="page-header no-margin-bottom">
 						<h3 class="hidden-xs">Technologies Used</h3>
 						<h3 class="text-center visible-xs">Technologies Used</h3>
 					</div>
 					<div class="row">
-						{{#game.used}}
+						{{#project.used}}
 						<div class="col-xs-12 col-sm-6 col-md-4">
 							{{>technology}}
 						</div>
-						{{/game.used}}
+						{{/project.used}}
 					</div>
-					{{/game.used.length}}
+					{{/project.used.length}}
 
-					{{#game.images.length}}
+					{{#project.media.length}}
 					<div class="page-header no-margin">
 						<h3 class="no-margin hidden-xs">Screen Shots</h3>
 						<h3 class="text-center no-margin visible-xs">Screen Shots</h3>
 					</div>
 					<div class="row">
-						{{#game.images}}
+						{{#project.media}}
 						<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
 							<a class="thumbnail open-image-modal" target="_blank" href="{{src}}">
 								<img class="img-responsive" src="{{thumbnail}}">
 							</a>
 						</div>
-						{{/game.images}}
+						{{/project.media}}
 					</div>
-					{{/game.images.length}}
+					{{/project.media.length}}
 				</div>
 			</div>
 		</div>

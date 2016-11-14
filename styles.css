@@ -1,13 +1,14 @@
-/* ======= Base ======= */
+@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono:400,700');
+
 body {
-	font-family: 'Lato', arial, sans-serif;
+	font-family: 'Share Tech Mono', sans-serif;
 	overflow-x:hidden;
 	font-size: 16px;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 h1,h2,h3,h4,h5,h6 {
-	font-family: 'Montserrat', sans-serif;
+	font-family: inherit !important;
 	font-weight: 700;
 }
 
@@ -17,6 +18,13 @@ a:not([href]){
 a.no-link{
 	color: white;
 	text-decoration: none;
+}
+span.first-letter{
+	font-size: 3em;
+	display: inline;
+	float: left;
+	line-height: 1em;
+	margin-right: 5px;
 }
 
 /* overwrite bootstrap */

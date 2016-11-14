@@ -68,11 +68,8 @@ function loadData(){
 				data.technologies[json[i].id] = json[i];
 			}
 		}),
-		loadJSON('/data/games.json').then(function(json){
-			data.games = json;
-		}),
-		loadJSON('/data/expariments.json').then(function(json){
-			data.expariments = json;
+		loadJSON('/data/projects.json').then(function(json){
+			data.projects = json;
 		}),
 		loadJSON('/data/pens.json').then(function(json){
 			data.pens = json;
@@ -90,24 +87,16 @@ function loadData(){
 			data.skills = json;
 		})
 	]).then(function(){
-		for (var i = 0; i < data.games.length; i++) {
-			if(data.games[i].used){
-				for(var k = 0; k < data.games[i].used.length; k++){
-					var id = data.games[i].used[k];
+		for (var i = 0; i < data.projects.length; i++) {
+			if(data.projects[i].used){
+				for(var k = 0; k < data.projects[i].used.length; k++){
+					var id = data.projects[i].used[k];
 					if(data.technologies[id])
-						data.games[i].used[k] = data.technologies[id];
+						data.projects[i].used[k] = data.technologies[id];
 				}
 			}
 		}
-		for (var i = 0; i < data.pens.length; i++) {
-			if(data.pens[i].used){
-				for(var k = 0; k < data.pens[i].used.length; k++){
-					var id = data.pens[i].used[k];
-					if(data.technologies[id])
-						data.pens[i].used[k] = data.technologies[id];
-				}
-			}
-		}
+
 		var skills = [];
 		for(var id in data.skills){
 			if(data.technologies[id]){

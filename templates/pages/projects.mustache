@@ -3,17 +3,20 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12">
-			{{! games }}
 			<section class="show-animate hide-left" style="transition-delay: 0.2s;">
 				<div class="panel panel-default">
 					<div class="panel-body">
 						<div class="page-header no-margin-bottom">
-							<h3 class="no-margin-top"><i class="fa fa-gamepad"></i> Games</h3>
+							<h3 class="no-margin-top"><i class="fa fa-trophy"></i> Projects</h3>
 						</div>
 
-						{{#games}}
-							{{> game}}
-						{{/games}}
+						<div class="row">
+							{{#projects}}
+								<div class="col-xs-12">
+									{{>project}}
+								</div>
+							{{/projects}}
+						</div>
 					</div>
 				</div>
 			</section>

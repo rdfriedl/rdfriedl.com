@@ -101,5 +101,26 @@
 		"siteURL": "http://fontawesome.io/",
 		"thumbnail": "http://megan-steele.com/fontawesome/logo.png",
 		"description": "Icon Font"
+	},
+	{
+		"id": "mobx",
+		"title": "MobX",
+		"siteURL": "http://mobxjs.github.io/mobx/",
+		"thumbnail": "https://mobxjs.github.io/mobx/docs/mobx.png",
+		"description": "Simple state managment for React"
+	},
+	{
+		"id": "gulp",
+		"title": "Gulp",
+		"siteURL": "http://gulpjs.com/",
+		"thumbnail": "http://www.codeproject.com/KB/HTML/865943/gulp.png",
+		"description": "Javascript task runner"
+	},
+	{
+		"id": "svg.js",
+		"title": "SVG.JS",
+		"siteURL": "http://svgjs.com/",
+		"thumbnail": "http://svgjs.com/images/logo.png",
+		"description": "A lightweight library for SVG"
 	}
 ]

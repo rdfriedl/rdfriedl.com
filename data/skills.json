@@ -19,6 +19,11 @@
 		"experience": 80,
 		"about": ""
 	},
+	"typescript": {
+		"knowledge": 70,
+		"experience": 50,
+		"about": ""
+	},
 	"knockout": {
 		"knowledge": 90,
 		"experience": 100,
@@ -29,12 +34,27 @@
 		"experience": 50,
 		"about": ""
 	},
+	"mobx": {
+		"knowledge": 80,
+		"experience": 90,
+		"about": ""
+	},
 	"vuejs": {
 		"knowledge": 50,
 		"experience": 70,
 		"about": ""
 	},
 	"bootstrap": {
+		"knowledge": 100,
+		"experience": 100,
+		"about": ""
+	},
+	"gulp": {
+		"knowledge": 96,
+		"experience": 80,
+		"about": ""
+	},
+	"svg.js": {
 		"knowledge": 100,
 		"experience": 100,
 		"about": ""

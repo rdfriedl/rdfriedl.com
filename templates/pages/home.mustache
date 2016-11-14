@@ -3,17 +3,26 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-8 col-sm-12 col-xs-12">
-			{{! games }}
+			{{! about }}
 			<section class="show-animate hide-left" style="transition-delay: 0.2s;">
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<div class="page-header no-margin-bottom">
-							<h3 class="no-margin-top"><i class="fa fa-gamepad"></i> Games</h3>
-						</div>
+						<h3 class="no-margin-top"><i class="fa fa-info-circle"></i> About</h3>
 
-						{{#games}}
-							{{> game}}
-						{{/games}}
+						<p>{{>about}}</p>
+					</div>
+				</div>
+			</section>
+
+			{{! projects }}
+			<section class="show-animate hide-left" style="transition-delay: 0.3s;">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<h3 class="no-margin-top"><i class="fa fa-trophy"></i> Projects</h3>
+
+						{{#projects}}
+							{{>project}}
+						{{/projects}}
 					</div>
 				</div>
 			</section>
@@ -22,9 +31,7 @@
 			<section class="show-animate hide-left" style="transition-delay: 0.4s;">
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<div class="page-header no-margin-bottom">
-							<h3 class="no-margin-top"><i class="fa fa-wrench"></i> Skills</h3>
-						</div>
+						<h3 class="no-margin-top"><i class="fa fa-wrench"></i> Skills</h3>
 
 						<div class="row">
 							{{#skills}}
@@ -37,28 +44,11 @@
 				</div>
 			</section>
 
-			{{! expariments }}
-			<section class="show-animate hide-left" style="transition-delay: 0.3s;">
-				<div class="panel panel-default">
-					<div class="panel-body">
-						<div class="page-header no-margin-bottom">
-							<h3 class="no-margin-top"><i class="fa fa-pie-chart"></i> Experiments</h3>
-						</div>
-
-						{{#expariments}}
-							{{> expariment}}
-						{{/expariments}}
-					</div>
-				</div>
-			</section>
-
 			{{! backgrounds }}
 			<section class="show-animate hide-left" style="transition-delay: 0.4s;">
 				<div class="panel panel-default">
 					<div class="panel-body no-padding-bottom">
-						<div class="page-header no-margin-bottom">
-							<h3 class="no-margin-top"><i class="fa fa-image"></i> Backgrounds</h3>
-						</div>
+						<h3 class="no-margin-top"><i class="fa fa-image"></i> Backgrounds</h3>
 
 						<div class="row">
 							{{#backgrounds}}
@@ -75,35 +65,23 @@
 		</div>
 		<div class="secondary col-md-4 col-sm-12 col-xs-12">
 			{{! pens }}
-			<div class="panel panel-default show-animate hide-right" style="transition-delay: 0.5s;">
-				<div class="panel-body">
-					<div class="page-header clearfix">
-						<a href="//codepen.io/rdfriedl" target="_blank" class="btn btn-success btn-xs pull-right hidden-xs"><i class="fa fa-codepen"></i> More</a>
-						<a href="//codepen.io/rdfriedl" target="_blank" class="btn btn-success btn-md pull-right visible-xs"><i class="fa fa-codepen"></i> More</a>
-						<h4><i class="fa fa-codepen"></i> Pens</h4>
+			<div class="panel panel-default show-animate hide-right delay-5 hidden-xs">
+				<div class="panel-body no-padding-bottom">
+					<div class="page-header clearfix no-margin">
+						<a href="//codepen.io/rdfriedl" target="_blank" class="btn btn-success btn-xs pull-right"><i class="fa fa-codepen"></i> More</a>
+						<h3 class="no-margin"><i class="fa fa-codepen"></i> Pens</h3>
 					</div>
 
-					{{#pens}}
 					<div class="row">
+						{{#pens}}
 						<div class="col-xs-12">
-							<h5>{{title}}</h5>
+							<a href="/pens/view?id={{id}}" class="thumbnail no-link">
+								<img class="img-responsive project-image" src="{{thumbnail}}"/>
+								<h5 class="text-center">{{title}}</h5>
+							</a>
 						</div>
-						<a href="/pens/view?id={{id}}" class="col-xs-12 col-sm-6">
-							<img class="img-responsive project-image" src="{{thumbnail}}"/>
-						</a>
-						<div class="col-xs-12 col-sm-6 margin-bottom-10 margin-top-10 no-padding-left-sm">
-							<div class="btn-group btn-group-sm pull-right visible-xs">
-								<a href="/pens/view?id={{id}}" class="btn btn-default btn-success">Open</a>
-								<a href="http://codepen.io/rdfriedl/pen/{{id}}" class="btn btn-default btn-info" target="_blank"><i class="fa fa-codepen"></i> Source</a>
-							</div>
-
-							<div class="btn-group btn-group-xs pull-right hidden-xs">
-								<a href="/pens/view?id={{id}}" class="btn btn-default btn-success">Open</a>
-								<a href="http://codepen.io/rdfriedl/pen/{{id}}" class="btn btn-default btn-info" target="_blank"><i class="fa fa-codepen"></i> Source</a>
-							</div>
-						</div>
+						{{/pens}}
 					</div>
-					{{/pens}}
 				</div>
 			</div>
 		</div>
