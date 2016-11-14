@@ -33,6 +33,13 @@
 		"description": "VM* Javascript Framework"
 	},
 	{
+		"id": "react",
+		"title": "React",
+		"siteURL": "https://facebook.github.io/react/",
+		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/logos/react.png",
+		"description": "View Library for MVC setups"
+	},
+	{
 		"id": "bootstrap",
 		"title": "Bootstrap",
 		"siteURL": "http://getbootstrap.com/",
@@ -50,13 +57,15 @@
 		"id": "css3",
 		"title": "CSS3",
 		"siteURL": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3",
-		"thumbnail": "http://ohdoylerules.com/content/images/css3.svg"
+		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/logos/css3.svg",
+		"description": "Cascading Style Sheets"
 	},
 	{
 		"id": "html5",
 		"title": "HTML5",
 		"siteURL": "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5",
-		"thumbnail": "https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png"
+		"thumbnail": "https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png",
+		"description": "HyperText Markup Language"
 	},
 	{
 		"id": "svg",

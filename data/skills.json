@@ -1,22 +1,47 @@
 {
 	"javascript": {
 		"knowledge": 95,
-		"experience": 100
+		"experience": 100,
+		"about": ""
 	},
 	"html5": {
 		"knowledge": 80,
-		"experience": 90
+		"experience": 90,
+		"about": ""
 	},
 	"css3": {
 		"knowledge": 90,
-		"experience": 95
+		"experience": 95,
+		"about": ""
+	},
+	"svg": {
+		"knowledge": 95,
+		"experience": 80,
+		"about": ""
 	},
 	"knockout": {
 		"knowledge": 90,
-		"experience": 100
+		"experience": 100,
+		"about": ""
+	},
+	"react": {
+		"knowledge": 60,
+		"experience": 50,
+		"about": ""
+	},
+	"vuejs": {
+		"knowledge": 50,
+		"experience": 70,
+		"about": ""
 	},
 	"bootstrap": {
 		"knowledge": 100,
-		"experience": 100
+		"experience": 100,
+		"about": ""
+	},
+	"threejs": {
+		"knowledge": 40,
+		"experience": 60,
+		"about": ""
 	}
 }

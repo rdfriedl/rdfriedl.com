@@ -44,7 +44,7 @@
 	<div id="page"></div>
 
 	<script type="text/javascript">
-		loadPage('play-game',['github', 'info', 'links', 'games'],['small-header', 'footer'], {
+		loadPage('play-game',['small-header', 'footer'], {
 			preRender: function(view){
 				for (var i = view.games.length - 1; i >= 0; i--) {
 					if(view.games[i].id == view.search.id)

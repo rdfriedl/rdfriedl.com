@@ -3,7 +3,7 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-	<title>Robert Friedl</title>
+	<title>Robert Friedl - About</title>
 	<!-- Meta -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,18 +40,11 @@
 	<script type="text/javascript" src="/utils.js"></script>
 </head>
 
-<body>
+<body class="loading">
 	<div id="page"></div>
 
 	<script type="text/javascript">
-		loadPage('view-pen',['small-header', 'footer', 'technology'], {
-			preRender: function(view){
-				for (var i = view.pens.length - 1; i >= 0; i--) {
-					if(view.pens[i].id == view.search.id)
-						view.pen = view.pens[i];
-				}
-			}
-		});
+		loadPage('skills',['header', 'footer', 'skill']);
 	</script>
 </body>
 </html>

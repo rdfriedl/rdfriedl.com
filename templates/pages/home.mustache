@@ -18,6 +18,23 @@
 				</div>
 			</section>
 
+			{{! skills }}
+			<section class="show-animate hide-left" style="transition-delay: 0.4s;">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<div class="page-header no-margin-bottom">
+							<h3 class="no-margin-top"><i class="fa fa-wrench"></i> Skills</h3>
+						</div>
+
+						{{#skills}}
+							<div class="col-xs-12 col-sm-6">
+							{{> skill}}
+							</div>
+						{{/skills}}
+					</div>
+				</div>
+			</section>
+
 			{{! expariments }}
 			<section class="show-animate hide-left" style="transition-delay: 0.3s;">
 				<div class="panel panel-default">

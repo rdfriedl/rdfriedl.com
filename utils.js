@@ -85,6 +85,9 @@ function loadData(){
 		}),
 		loadJSON('/data/info.json').then(function(json){
 			data.info = json;
+		}),
+		loadJSON('/data/skills.json').then(function(json){
+			data.skills = json;
 		})
 	]).then(function(){
 		for (var i = 0; i < data.games.length; i++) {
@@ -105,27 +108,31 @@ function loadData(){
 				}
 			}
 		}
+		var skills = [];
+		for(var id in data.skills){
+			if(data.technologies[id]){
+				var skill = {
+					id: id,
+					tech: data.technologies[id]
+				};
+
+				for(var prop in data.skills[id])
+					skill[prop] = data.skills[id][prop];
+
+				skills.push(skill);
+			}
+		}
+		data.skills = skills;
 
 		return data;
 	})
 }
 
-function loadPage(page, data, templates, callbacks){
-	var data = data || [];
+function loadPage(page, templates, callbacks){
 	var templates = templates || [];
 	var callbacks = callbacks || {};
 	var wait = [];
 	var view = {}, partials = {}, pageTemplate = '';
-
-	if(data.indexOf('backgrounds') == -1)
-		data.push('backgrounds');
-
-	// load the data
-	// for (var i = 0; i < data.length; i++) {
-	// 	wait.push((data[i] == 'github'? load_github() : loadJSON('/data/'+data[i]+'.json')).then(function(name, json){
-	// 		view[name] = json;
-	// 	}.bind(this, data[i])));
-	// }
 
 	wait.push(loadData().then(function(json){
 		view = json;

@@ -44,12 +44,18 @@
 	<div id="page"></div>
 
 	<script type="text/javascript">
-		loadPage('view-pen',['small-header', 'footer', 'technology'], {
+		loadPage('view-skill',['header', 'footer', 'skill'], {
 			preRender: function(view){
-				for (var i = view.pens.length - 1; i >= 0; i--) {
-					if(view.pens[i].id == view.search.id)
-						view.pen = view.pens[i];
+				for (var i = view.skills.length - 1; i >= 0; i--) {
+					if(view.skills[i].id == view.search.id)
+						view.skill = view.skills[i];
 				}
+
+				view.otherSkills = view.skills.filter(function(skill){
+					return skill.id !== view.skill.id;
+				}).sort(function(){
+					return Math.round(Math.random() * 3 - 1);
+				})
 			}
 		});
 	</script>
