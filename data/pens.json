@@ -1,5 +1,35 @@
 [
 	{
+		"id": "mOOLoQ",
+		"title":"SVG Dots #3",
+		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/pens/mOOLoQ_tn.jpg",
+		"tags": [
+			{
+				"message": "Pen",
+				"type": "default"
+			}
+		],
+		"used": [
+			"svg",
+			"css3"
+		]
+	},
+	{
+		"id": "zoKgEN",
+		"title":"SVG Dots #2",
+		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/pens/zoKgEN_tn.jpg",
+		"tags": [
+			{
+				"message": "Pen",
+				"type": "default"
+			}
+		],
+		"used": [
+			"svg",
+			"css3"
+		]
+	},
+	{
 		"id": "vXoOKo",
 		"title":"CSS 3d spinning dots",
 		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/pens/vXoOKo_tn.jpg",

@@ -49,7 +49,7 @@
 				}
 
 				view.otherPens = view.pens.filter(function(pen){
-					return pen.id !== view.pen.id;
+					return view.pen? pen.id !== view.pen.id : true;
 				}).sort(function(){
 					return Math.round(Math.random() * 3 - 1);
 				})

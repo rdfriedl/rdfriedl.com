@@ -49,12 +49,12 @@
 				}
 
 				view.otherProjects = view.projects.filter(function(project){
-					return project.id !== view.project.id;
+					return view.project? project.id !== view.project.id : true;
 				}).sort(function(){
 					return Math.round(Math.random() * 3 - 1);
 				})
 
-				view.otherProjects.length = 6;
+				view.otherProjects.length = 3;
 			}
 		});
 	</script>

@@ -26,6 +26,9 @@ span.first-letter{
 	line-height: 1em;
 	margin-right: 5px;
 }
+[data-image-modal]{
+	cursor: pointer;
+}
 
 /* overwrite bootstrap */
 .img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img{

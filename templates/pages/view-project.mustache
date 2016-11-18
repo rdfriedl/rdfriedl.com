@@ -4,13 +4,20 @@
 	<div class="row">
 		<div class="col-xs-12">
 			<div class="panel panel-default">
-				<div class="panel-body no-padding-bottom">
-					<div class="page-header no-margin-bottom hidden-xs">
+				<div class="panel-body">
+					{{^project}}
+					<p class="text-center" style="font-size: 10vw">
+						404
+					</p>
+					{{/project}}
+
+					{{#project}}
+					<div class="hidden-xs">
 						<div class="btn-group pull-right">
 							<a href="/projects/demo?id={{project.id}}" class="btn btn-success">Demo</a>
 							<a href="{{project.sourceURL}}" class="btn btn-info" target="_blank"><i class="fa fa-code"></i> Source</a>
 						</div>
-				  		<h2 class="hidden-xs no-margin-top">{{project.title}}</h2>
+				  		<h2 class="no-margin-top">{{project.title}}</h2>
 					</div>
 
 					<div class="row">
@@ -37,10 +44,9 @@
 					</div>
 
 					{{#project.used.length}}
-					<div class="page-header no-margin-bottom">
-						<h3 class="hidden-xs">Technologies Used</h3>
-						<h3 class="text-center visible-xs">Technologies Used</h3>
-					</div>
+					<h3 class="hidden-xs">Technologies Used</h3>
+					<h3 class="text-center visible-xs">Technologies Used</h3>
+
 					<div class="row">
 						{{#project.used}}
 						<div class="col-xs-12 col-sm-6 col-md-4">
@@ -51,20 +57,35 @@
 					{{/project.used.length}}
 
 					{{#project.media.length}}
-					<div class="page-header no-margin">
-						<h3 class="no-margin hidden-xs">Screen Shots</h3>
-						<h3 class="text-center no-margin visible-xs">Screen Shots</h3>
-					</div>
+					<h3 class="no-margin-top hidden-xs">Screen Shots</h3>
+					<h3 class="text-center no-margin visible-xs">Screen Shots</h3>
+
 					<div class="row">
 						{{#project.media}}
 						<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
-							<a class="thumbnail open-image-modal" target="_blank" href="{{src}}">
+							<a class="thumbnail" target="_blank" href="{{src}}" data-image-modal="{{src}}">
 								<img class="img-responsive" src="{{thumbnail}}">
 							</a>
 						</div>
 						{{/project.media}}
 					</div>
 					{{/project.media.length}}
+					{{/project}}
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h3 class="hidden-xs no-margin-top">Other Project</h3>
+					<h3 class="visible-xs no-margin text-center">Other Project</h3>
+
+					<div class="row">
+						{{#otherProjects}}
+						<div class="col-xs-12">
+							{{>project}}
+						</div>
+						{{/otherProjects}}
+					</div>
 				</div>
 			</div>
 		</div>

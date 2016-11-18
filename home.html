@@ -47,8 +47,8 @@
 			'project',
 			'expariment',
 			'skill',
-			{name: 'about', url: 'templates/markdown/about.md'},
-			{name: 'story', url: 'templates/markdown/story.md'}
+			{name: 'about', url: '/templates/markdown/about.md', onload: loadMarkdown},
+			{name: 'story', url: '/templates/markdown/story.md', onload: loadMarkdown}
 		], {
 			preRender: function(view){
 				view.pens.length = Math.min(6, view.pens.length);

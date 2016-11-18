@@ -58,6 +58,11 @@ function parseSearch(url){
     }
     return parseSearch.cache[url];
 }
+function loadMarkdown(str){
+	str = str.replace(/>(\r\n|\n)+</g,'><');
+	str = str.replace(/>(\r\n|\n)+/g,'> ');
+	return mdRenderer.render(str);
+}
 
 function loadData(){
 	var data = {};
@@ -99,6 +104,23 @@ function loadData(){
 					var id = data.projects[i].used[k];
 					if(data.technologies[id])
 						data.projects[i].used[k] = data.technologies[id];
+					else{
+						data.projects[i].used.splice(k, 1);
+						k--;
+					}
+				}
+			}
+		}
+		for (var i = 0; i < data.pens.length; i++) {
+			if(data.pens[i].used){
+				for(var k = 0; k < data.pens[i].used.length; k++){
+					var id = data.pens[i].used[k];
+					if(data.technologies[id])
+						data.pens[i].used[k] = data.technologies[id];
+					else{
+						data.projects[i].used.splice(k, 1);
+						k--;
+					}
 				}
 			}
 		}
@@ -141,14 +163,12 @@ function loadPage(page, templates, callbacks){
 			}.bind(this, templates[i])))
 		}
 		else if(templates[i].url, templates[i].name){
-			if((/\.md$/i).test(templates[i].url))
-				wait.push(loadTemplate(templates[i].url).then(function(name, template){
-					partials[name] = mdRenderer.render(template);
-				}.bind(this, templates[i].name)))
-			else
-				wait.push(loadTemplate(templates[i].url).then(function(name, template){
-					partials[name] = template;
-				}.bind(this, templates[i].name)))
+			wait.push(loadTemplate(templates[i].url).then(function(opts, template){
+				if(opts.onload)
+					partials[opts.name] = opts.onload(template);
+				else
+					partials[opts.name] = template;
+			}.bind(this, templates[i])))
 		}
 	}
 
@@ -254,17 +274,24 @@ function createImageModal(){
 	$(document.body).append(modal);
 }
 
-$(document).on('click', 'a.open-image-modal', function(event){
-	// its a mobile device, dont do anything
-	if(window.innerWidth < 768)
-		return;
+$(document).on('click', '[data-image-modal]', function(event){
+	// if its on a mobile device then open a new tab
+	if(window.innerWidth < 768){
+		if($(this).is('a')){
+			return;
+		}
+		else{
+			window.open($(this).data('image-modal'));
+			return;
+		}
+	}
 
 	event.preventDefault();
 
 	if(!$('#preview-image').get(0))
 		createImageModal();
 
-	var src = $(this).attr('href');
+	var src = $(this).data('image-modal') || $(this).attr('href');
 	$('#download-image').attr('href', src);
 	$('#preview-image img').attr('src', src);
 	$('#preview-image').modal('show');

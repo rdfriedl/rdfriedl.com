@@ -3,12 +3,14 @@
 		"id": "threejs",
 		"title": "Three.js",
 		"siteURL": "https://threejs.org/",
+		"thumbnail": "",
 		"description": "3D WebGL Library"
 	},
 	{
 		"id": "cannonjs",
 		"title": "Cannon.js",
 		"siteURL": "http://www.cannonjs.org/",
+		"thumbnail": "",
 		"description": "3D Physics Engine"
 	},
 	{
@@ -23,14 +25,14 @@
 		"title": "VueJS",
 		"siteURL": "https://vuejs.org/",
 		"thumbnail": "https://vuejs.org/images/logo.png",
-		"description": "VM* Javascript Framework"
+		"description": "MV* Javascript Framework"
 	},
 	{
 		"id": "knockout",
 		"title": "Knockout",
 		"siteURL": "http://knockoutjs.com/",
 		"thumbnail": "http://learn.knockoutjs.com/Content/App/icon.png",
-		"description": "VM* Javascript Framework"
+		"description": "MV* Javascript Framework"
 	},
 	{
 		"id": "react",
@@ -122,5 +124,32 @@
 		"siteURL": "http://svgjs.com/",
 		"thumbnail": "http://svgjs.com/images/logo.png",
 		"description": "A lightweight library for SVG"
+	},
+	{
+		"id": "json",
+		"title": "JSON",
+		"siteURL": "http://www.json.org/",
+		"thumbnail": "https://help.pandasuite.com/resources/AVN1j-YUKSOwRquUXwuT/json-dot-png",
+		"description": "JavaScript Object Notation"
+	},
+	{
+		"id": "github",
+		"title": "GitHub",
+		"siteURL": "https://github.com/",
+		"thumbnail": "http://image.flaticon.com/icons/png/512/25/25231.png"
+	},
+	{
+		"id": "mustachejs",
+		"title": "Muststache.js",
+		"siteURL": "https://mustache.github.io/",
+		"thumbnail": "http://www.saliences.com/images/projects/mustache.png",
+		"description": "JavaScript Templating library"
+	},
+	{
+		"id": "redom",
+		"title": "Re:Dom",
+		"siteURL": "https://redom.js.org/",
+		"thumbnail": "https://redom.js.org/img/logo.svg",
+		"description": "Tiny JavaScript UI library"
 	}
 ]

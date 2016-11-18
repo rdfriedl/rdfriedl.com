@@ -49,7 +49,7 @@
 				}
 
 				view.otherSkills = view.skills.filter(function(skill){
-					return skill.id !== view.skill.id;
+					return view.skill ? skill.id !== view.skill.id : true;
 				}).sort(function(){
 					return Math.round(Math.random() * 3 - 1);
 				})

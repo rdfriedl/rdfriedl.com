@@ -55,9 +55,10 @@
 		"used": [
 			"threejs",
 			"vuejs",
-			"html5",
 			"javascript",
-			"fontawesome"
+			"html5",
+			"fontawesome",
+			"gulp"
 		],
 
 
@@ -74,6 +75,11 @@
 		"tags": [
 			{"title": "web site", "type": "default"},
 			{"title": "personal", "type": "default"}
+		],
+		"used": [
+			"github",
+			"mustachejs",
+			"json"
 		],
 
 		"sourceURL": "https://github.com/rdfriedl/rdfriedl.github.io"
@@ -231,6 +237,11 @@
 				"type": "success"
 			}
 		],
+		"used": [
+			"redom",
+			"mobx",
+			"javascript"
+		],
 
 		"demoURL": "http://www.webpackbin.com/VJG--5mxf"
 	},
@@ -250,6 +261,10 @@
 				"type": "success"
 			}
 		],
+		"used": [
+			"javascript",
+			"html5"
+		],
 
 		"demoURL": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/background-remover/index.html"
 	},
@@ -268,6 +283,12 @@
 				"title": "Complete",
 				"type": "success"
 			}
+		],
+		"used": [
+			"svg",
+			"html5",
+			"css",
+			"javascript"
 		],
 
 		"sourceURL": "http://codepen.io/rdfriedl/pen/LpyKvP"
