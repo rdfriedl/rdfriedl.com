@@ -136,7 +136,8 @@
 		"id": "github",
 		"title": "GitHub",
 		"siteURL": "https://github.com/",
-		"thumbnail": "http://image.flaticon.com/icons/png/512/25/25231.png"
+		"thumbnail": "http://image.flaticon.com/icons/png/512/25/25231.png",
+		"description": "Git repository hosting service"
 	},
 	{
 		"id": "mustachejs",
