@@ -152,5 +152,12 @@
 		"siteURL": "https://redom.js.org/",
 		"thumbnail": "https://redom.js.org/img/logo.svg",
 		"description": "Tiny JavaScript UI library"
+	},
+	{
+		"id": "jsplumb",
+		"title": "jsPlumb",
+		"siteURL": "https://jsplumbtoolkit.com",
+		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/logos/jsplumb-logo.jpg",
+		"description": "JavaScript Flow Chart Library"
 	}
 ]

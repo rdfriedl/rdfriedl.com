@@ -85,6 +85,106 @@
 		"sourceURL": "https://github.com/rdfriedl/rdfriedl.github.io"
 	},
 	{
+		"id": "filtered",
+		"type": "project",
+		"title": "Filtered",
+		"description": "A Simple SVG Filter Designer",
+		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/filtered/examples/screenshots/1.png",
+		"tags": [
+			{"title": "done", "type": "success"},
+			{"title": "personal", "type": "default"}
+		],
+		"used": [
+			"bootstrap",
+			"knockout",
+			"jsplumb",
+			"svg.js",
+			"javascript",
+			"html5",
+			"css",
+			"svg"
+		],
+		"media": [
+			{
+				"type": "image",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/1_tn.jpg",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/1.png"
+			},
+			{
+				"type": "image",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/2_tn.jpg",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/2.png"
+			},
+			{
+				"type": "image",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/3_tn.jpg",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/3.png"
+			},
+			{
+				"type": "image",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/4_tn.jpg",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/4.png"
+			},
+			{
+				"type": "image",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/5_tn.jpg",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/5.png"
+			},
+			{
+				"type": "image",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/6_tn.jpg",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/6.png"
+			},
+			{
+				"type": "image",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/7_tn.jpg",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/7.png"
+			},
+			{
+				"type": "image",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/8_tn.jpg",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/8.png"
+			},
+			{
+				"type": "image",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/9_tn.jpg",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/9.png"
+			},
+			{
+				"type": "image",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/10_tn.jpg",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/10.png"
+			},
+			{
+				"type": "image",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/11_tn.jpg",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/11.png"
+			},
+			{
+				"type": "image",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/12_tn.jpg",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/12.png"
+			},
+			{
+				"type": "image",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/13_tn.jpg",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/13.png"
+			},
+			{
+				"type": "image",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/14_tn.jpg",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/14.png"
+			},
+			{
+				"type": "image",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/15_tn.jpg",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/filtered/15.png"
+			}
+		],
+
+		"demoURL": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/filtered/index.html"
+	},
+	{
 		"id": "buttons-and-doors",
 		"type": "game",
 		"title": "buttons-and-doors",
@@ -267,30 +367,5 @@
 		],
 
 		"demoURL": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/background-remover/index.html"
-	},
-	{
-		"id": "svg-rasterizer",
-		"type": "expariment",
-		"title": "SVG Rasterizer with google fonts",
-		"description": "A SVG Rasterizer that renders svg with support for google fonts",
-		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/expariments/svg-rasterizer.png",
-		"tags": [
-			{
-				"title": "Experiment",
-				"type": "default"
-			},
-			{
-				"title": "Complete",
-				"type": "success"
-			}
-		],
-		"used": [
-			"svg",
-			"html5",
-			"css",
-			"javascript"
-		],
-
-		"sourceURL": "http://codepen.io/rdfriedl/pen/LpyKvP"
 	}
 ]

@@ -82,6 +82,9 @@ function loadData(){
 		loadJSON('/data/projects.json').then(function(json){
 			data.projects = json;
 		}),
+		loadJSON('/data/work.json').then(function(json){
+			data.work = json;
+		}),
 		loadJSON('/data/pens.json').then(function(json){
 			data.pens = json;
 		}),
