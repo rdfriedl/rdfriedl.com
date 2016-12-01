@@ -13,3 +13,16 @@ I had also been experimenting with its basic 3D engine and managed to create som
 	<img title="3d maze game" src="https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/mdRes/3d%20test_tn.jpg"/>
 </a>
 Unfortunately I never really finished any of them, though the knowledge and experience I gained from them was invaluable.
+
+### ---TODO---
+
+After about two years of GameMaker i decided to move on to something else, mainly because i was getting board of it.
+My dad introduced me to Adobe Flex
+i never really got into it.
+i could not wrap my head around the concepts of classes and modules.
+i ended up building web sites out of it, which was not what it was designed for.
+
+then after about 5 to 8 months after i started Flex, my uncle introduced me to JavaScript, HTML, and CSS.
+at first it seemed very confusing, though after about 2 months of reading books and documentations i started to get the hang of it.
+
+one of the most awesome moments i remember, was when discovering the prototype chain in JavaScript, and the way object inherited properties from each other.

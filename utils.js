@@ -194,25 +194,6 @@ function loadPage(page, templates, callbacks){
 		//render
 		$('#page').append(Mustache.render(pageTemplate, view, partials));
 
-		// create background
-		var background = $('<div id="background" class="hidden-xs"><img id="background-image"><div id="overlay"></div></div>');
-		$(document.body).prepend(background);
-
-		// set background
-		var backgroundImage = (view.backgrounds[Math.floor(Math.random() * view.backgrounds.length)] || {}).src;
-		if(backgroundImage){
-			$('#background-image').attr('src', backgroundImage).on('load', function(){
-				$('#background-image').addClass('loaded');
-			});
-		}
-
-		// handle scroll
-		$(window).on("scroll", function() {
-			$('#background').attr('style','top:'+(-window.scrollY/3)+'px');
-		});
-
-		$('[data-toggle="tooltip"]').tooltip();
-
 		setTimeout(function(){
 			$('body').removeClass('page-showing');
 		},750);
@@ -296,6 +277,10 @@ function createVideoModal(){
 	].join(''));
 
 	modal.modal();
+
+	modal.on('hidden.bs.modal', () => {
+		modal.find('iframe').attr('src', '');
+	})
 
 	$(document.body).append(modal);
 }

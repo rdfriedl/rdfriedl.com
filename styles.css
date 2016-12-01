@@ -16,7 +16,7 @@ a:not([href]){
 	cursor: pointer;
 }
 a.no-link{
-	color: white;
+	color: inherit;
 	text-decoration: none;
 }
 span.first-letter{
@@ -33,12 +33,6 @@ span.first-letter{
 /* overwrite bootstrap */
 .img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img{
 	width: 100%;
-}
-.panel{
-	background-color: rgba(34, 34, 34, 0.85);
-}
-.panel.panel-no-alpha{
-	background-color: rgba(34, 34, 34, 1);
 }
 .panel-body>.page-header{
 	margin-top: 0;
@@ -71,38 +65,10 @@ span.first-letter{
 
 /* background */
 html{
-	background: #060606;
+	background: #eff;
 }
 body{
 	background: transparent;
-}
-#background{
-	position: fixed;
-	top: 0px;
-	width: 100vw;
-	z-index: -20;
-}
-#background>img{
-	width: 100%;
-	opacity: 1;
-	transition: opacity 0.5s ease;
-}
-#background>img:not(.loaded){
-	opacity: 0;
-}
-#background>#overlay{
-	position: absolute;
-	left: 0px;
-	right: 0px;
-	top: 0px;
-	height: calc(100% + 1px);
-
-	background: -moz-linear-gradient(top, transparent 50%, #060606 100%);
-	background: -webkit-gradient(left top, left bottom, color-stop(50%, transparent), color-stop(100%, #060606));
-	background: -webkit-linear-gradient(top, transparent 50%, #060606 100%);
-	background: -o-linear-gradient(top, transparent 50%, #060606 100%);
-	background: -ms-linear-gradient(top, transparent 50%, #060606 100%);
-	background: linear-gradient(to bottom, transparent 50%, #060606 100%);
 }
 
 /* show animation */
@@ -181,9 +147,6 @@ body.nav-open{
 }
 .mobile-nav .open-nav {
 	/* position: absolute; */
-	border-color: grey;
-	background: rgba(0,0,0,0.8) !important;
-	color: grey;
 	z-index: 50;
 	outline: none;
 }
