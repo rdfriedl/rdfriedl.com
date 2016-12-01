@@ -3,7 +3,7 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-	<title>Robert Friedl - Home</title>
+	<title>Robert Friedl</title>
 	<!-- Meta -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,20 +41,20 @@
 	<div id="page"></div>
 
 	<script type="text/javascript">
-		loadPage('home',[
-			'header',
-			'footer',
-			'project',
-			'work-project',
-			'expariment',
-			'skill',
-			{name: 'about', url: '/templates/markdown/about.md', onload: loadMarkdown},
-			{name: 'story', url: '/templates/markdown/story.md', onload: loadMarkdown}
-		], {
+		loadPage('view-work',['header', 'footer', 'technology', 'work-project'], {
 			preRender: function(view){
-				view.pens.length = Math.min(6, view.pens.length);
-				view.projects.length = Math.min(6, view.projects.length);
-				view.skills.length = Math.min(6, view.skills.length);
+				for (var i = view.work.length - 1; i >= 0; i--) {
+					if(view.work[i].id == view.search.id)
+						view.viewWork = view.work[i];
+				}
+
+				view.otherProjects = view.work.filter(function(project){
+					return view.project? project.id !== view.viewWork.id : true;
+				}).sort(function(){
+					return Math.round(Math.random() * 3 - 1);
+				})
+
+				view.otherProjects.length = 3;
 			}
 		});
 	</script>

@@ -62,7 +62,6 @@
 		],
 
 
-		"longDescription": "",
 		"sourceURL": "https://github.com/rdfriedl/block-script",
 		"demoURL": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/block-script/index.html"
 	},
@@ -79,6 +78,7 @@
 		"used": [
 			"github",
 			"mustachejs",
+			"jquery",
 			"json"
 		],
 
@@ -97,6 +97,7 @@
 		"used": [
 			"bootstrap",
 			"knockout",
+			"jquery",
 			"jsplumb",
 			"svg.js",
 			"javascript",
@@ -223,7 +224,6 @@
 		],
 
 
-		"longDescription": "",
 		"sourceURL": "https://github.com/rdfriedl/buttons-and-doors",
 		"demoURL": "http://rdfriedl.github.io/buttons-and-doors"
 	},
@@ -266,7 +266,6 @@
 		],
 
 
-		"longDescription": "",
 		"sourceURL": "https://github.com/ReflectionGames/carGame",
 		"demoURL": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/webplayers/UnityWebPlayer/UnityWebPlayer.html"
 	},
@@ -315,7 +314,6 @@
 		],
 
 
-		"longDescription": "",
 		"sourceURL": "https://github.com/rdfriedl/cannontest",
 		"demoURL": "http://cdn.rawgit.com/rdfriedl/cannontest/v1/index.html"
 	},

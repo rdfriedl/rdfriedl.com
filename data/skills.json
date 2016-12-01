@@ -63,5 +63,10 @@
 		"knowledge": 40,
 		"experience": 60,
 		"about": ""
+	},
+	"jquery":{
+		"knowledge": 80,
+		"experience": 100,
+		"about": "im been using jquery ever since iv started using javascript."
 	}
 }

@@ -1,26 +1,28 @@
 {{>header}}
 
-<div class="container">
-	<div class="row">
-		<div class="col-xs-12">
-			<div class="panel panel-default">
-				<div class="panel-body">
-					<div class="page-header no-margin-bottom">
-						<a href="https://codepen.io/rdfriedl" class="btn btn-success pull-right" target="_blank"><i class="fa fa-codepen"></i> More Pens</a>
-				  		<h3 class="no-margin-top"><i class="fa fa-codepen"></i> CodePen Pens <br class="visible-xs"><small>some cool expariments i built</small></h3>
-					</div>
+<div class="container no-padding-xs">
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="page-header no-margin-bottom">
+				<a href="https://codepen.io/rdfriedl" class="btn btn-success pull-right hidden-xs" target="_blank"><i class="fa fa-codepen"></i> More Pens</a>
+		  		<h3 class="no-margin-top"><i class="fa fa-codepen"></i> CodePen Pens <br class="visible-xs"><small>some cool expariments i built</small></h3>
+			</div>
 
-					<div class="row">
-						{{#pens}}
-						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-							<a href="/pens/view?id={{id}}" class="thumbnail no-link">
-								<img class="img-responsive project-image" src="{{thumbnail}}"/>
-								<h5 class="text-center">{{title}}</h5>
-							</a>
-						</div>
-						{{/pens}}
-					</div>
+			<div class="row visible-xs">
+				<div class="col-xs-8 col-xs-offset-2">
+					<a href="https://codepen.io/rdfriedl" class="btn btn-large btn-block btn-success btn-sm margin-bottom-10" target="_blank"><i class="fa fa-codepen"></i> More Pens</a>
 				</div>
+			</div>
+
+			<div class="row">
+				{{#pens}}
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+					<a href="/pens/view?id={{id}}" class="thumbnail no-link">
+						<img class="img-responsive project-image" src="{{thumbnail}}"/>
+						<h5 class="text-center">{{title}}</h5>
+					</a>
+				</div>
+				{{/pens}}
 			</div>
 		</div>
 	</div>

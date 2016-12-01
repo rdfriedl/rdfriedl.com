@@ -1,2 +1,52 @@
 [
+	{
+		"id": "adfactory",
+		"type": "work",
+		"title": "AdFactory",
+		"description": "A simple point and click Ad builer",
+		"thumbnail": "http://www.adfactory.co/wp-content/uploads/ad-factory-ts-logo-small.png",
+		"videos": [
+			{
+				"id": "zXMC9iF-gXk",
+				"title": "AdFactory Intro"
+			},
+			{
+				"id": "l5s4Qd63L_M",
+				"title": "Creating Video Ads"
+			}
+		],
+		"screenshots": [
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/work/ad-factory/screenshot-adfactory.co-2016-11-30-19-06-42.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/work/ad-factory/screenshot-adfactory.co-2016-11-30-19-06-42_tn.jpg"
+			},
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/work/ad-factory/screenshot-adfactory.co-2016-11-30-19-07-05.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/work/ad-factory/screenshot-adfactory.co-2016-11-30-19-07-05_tn.jpg"
+			},
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/work/ad-factory/screenshot-adfactory.co-2016-11-30-19-41-30.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/work/ad-factory/screenshot-adfactory.co-2016-11-30-19-41-30_tn.jpg"
+			},
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/work/ad-factory/screenshot-adfactory.co-2016-11-30-19-43-46.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/work/ad-factory/screenshot-adfactory.co-2016-11-30-19-43-46_tn.jpg"
+			}
+		],
+		"used": [
+			"knockout",
+			"jquery",
+			"teespring-api",
+			"videoconverter",
+			"fabricjs",
+			"whammy"
+		],
+
+		"siteURL": "http://www.adfactory.co/",
+		"company": "Wowspring"
+	}
 ]

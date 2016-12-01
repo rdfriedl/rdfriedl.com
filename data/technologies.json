@@ -126,6 +126,13 @@
 		"description": "A lightweight library for SVG"
 	},
 	{
+		"id": "jquery",
+		"title": "Jquery",
+		"siteURL": "http://jquery.com/",
+		"thumbnail": "http://www.free-icons-download.net/images/jquery-icon-17841.png",
+		"description": "A JavaScript DOM Manipulation Library"
+	},
+	{
 		"id": "json",
 		"title": "JSON",
 		"siteURL": "http://www.json.org/",
@@ -159,5 +166,33 @@
 		"siteURL": "https://jsplumbtoolkit.com",
 		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/logos/jsplumb-logo.jpg",
 		"description": "JavaScript Flow Chart Library"
+	},
+	{
+		"id": "fabricjs",
+		"title": "Fabric.js",
+		"siteURL": "http://fabricjs.com/",
+		"thumbnail": "",
+		"description": "Interactive HTML5 canvas library"
+	},
+	{
+		"id": "videoconverter",
+		"title": "videoconverter",
+		"siteURL": "http://bgrins.com/videoconverter.js/",
+		"thumbnail": "http://bgrins.com/videoconverter.js/site/logo.png",
+		"description": "FFmpeg converted to javaScript using EMscripten"
+	},
+	{
+		"id": "whammy",
+		"title": "Whammy",
+		"siteURL": "https://github.com/antimatter15/whammy",
+		"thumbnail": "",
+		"description": "JavaScript WebM Encoder"
+	},
+	{
+		"id": "teespring-api",
+		"title": "TeeSpring API",
+		"siteURL": "https://teespring-api.readme.io/v1.0/docs",
+		"thumbnail": "https://static1.squarespace.com/static/558c40bde4b02743ade83b67/t/5641744ee4b039a3758ede8d/1447130191425/",
+		"description": "An API for the TeeSpring Platform"
 	}
 ]

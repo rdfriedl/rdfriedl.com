@@ -114,32 +114,25 @@ function loadData(){
 			})
 		})
 	]).then(function(){
-		for (var i = 0; i < data.projects.length; i++) {
-			if(data.projects[i].used){
-				for(var k = 0; k < data.projects[i].used.length; k++){
-					var id = data.projects[i].used[k];
-					if(data.technologies[id])
-						data.projects[i].used[k] = data.technologies[id];
-					else{
-						data.projects[i].used.splice(k, 1);
-						k--;
+		var linkTechnologies = function(data, technologies){
+			for (var i = 0; i < data.length; i++) {
+				if(data[i].used){
+					for(var k = 0; k < data[i].used.length; k++){
+						var id = data[i].used[k];
+						if(technologies[id])
+							data[i].used[k] = technologies[id];
+						else{
+							data[i].used.splice(k, 1);
+							k--;
+						}
 					}
 				}
 			}
 		}
-		for (var i = 0; i < data.pens.length; i++) {
-			if(data.pens[i].used){
-				for(var k = 0; k < data.pens[i].used.length; k++){
-					var id = data.pens[i].used[k];
-					if(data.technologies[id])
-						data.pens[i].used[k] = data.technologies[id];
-					else{
-						data.projects[i].used.splice(k, 1);
-						k--;
-					}
-				}
-			}
-		}
+
+		linkTechnologies(data.projects, data.technologies);
+		linkTechnologies(data.work, data.technologies);
+		linkTechnologies(data.pens, data.technologies);
 
 		var skills = [];
 		for(var id in data.skills){
@@ -289,6 +282,23 @@ function createImageModal(){
 
 	$(document.body).append(modal);
 }
+function createVideoModal(){
+	var modal = $([
+		'<div class="modal fade" id="preview-video">',
+		'	<div class="modal-dialog modal-lg">',
+		'		<div class="modal-content" style="border-radius: 0px;">',
+		'			<div class="modal-body">',
+		'				<iframe id="video-player" style="width: 100%; height: 50vh;" frameborder="0" allowfullscreen></iframe>',
+		'			</div>',
+		'		</div>',
+		'	</div>',
+		'</div>'
+	].join(''));
+
+	modal.modal();
+
+	$(document.body).append(modal);
+}
 
 $(document).on('click', '[data-image-modal]', function(event){
 	// if its on a mobile device then open a new tab
@@ -326,4 +336,42 @@ function openImageModal(src){
 	$('#download-image').attr('href', src);
 	$('#preview-image img').attr('src', src);
 	$('#preview-image').modal('show');
+}
+
+$(document).on('click', '[data-video-modal]', function(event){
+	// if its on a mobile device then open a new tab
+	if(window.innerWidth < 768){
+		if($(this).is('a')){
+			return;
+		}
+		else{
+			window.open('https://www.youtube.com/embed/'+$(this).data('video-modal'));
+			return;
+		}
+	}
+
+	event.preventDefault();
+
+	if(!$('#preview-video').get(0))
+		createVideoModal();
+
+	var id = $(this).data('video-modal');
+	var src = id? 'https://www.youtube.com/embed/'+id+'?autoplay=1' : $(this).attr('href');
+	$('#preview-video #video-player').attr('src', src);
+	$('#preview-video').modal('show');
+})
+
+function openVideoModal(id){
+	var url = 'https://www.youtube.com/embed/'+id;
+	if(window.innerWidth < 768){
+		// its a mobile device, open the image in a new tab
+		window.open(url,'_blank');
+		return;
+	}
+
+	if(!$('#preview-video').get(0))
+		createImageModal();
+
+	$('#preview-video #video-player').attr('src', url);
+	$('#preview-video').modal('show');
 }

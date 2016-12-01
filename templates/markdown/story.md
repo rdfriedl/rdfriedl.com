@@ -1,4 +1,4 @@
-<span class="first-letter">A</span>bout five years I started programming with a program called <a href="http://www.yoyogames.com/" target="_blank">GameMaker</a>, which was a drag-and-drop game builder with a lot of cool features.
+<span class="first-letter">A</span>bout five years ago I started programming with a program called <a href="http://www.yoyogames.com/" target="_blank">GameMaker</a>, which was a drag-and-drop game builder with a lot of cool features.
 When I started using it, I was only programming with the draggable blocks, though after about 5 to 6 months, I found it easier to use the programming language that came with it.
 
 It was called "GML", and for a programming language, it was very basic. No objects, no classes, and no functions aside from the GameMaker API functions.

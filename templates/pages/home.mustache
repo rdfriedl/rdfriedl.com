@@ -2,7 +2,7 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-8 col-sm-12 col-xs-12">
+		<div class="col-md-8 col-sm-12 col-xs-12 no-padding-xs">
 			{{! about }}
 			<section class="show-animate hide-left" style="transition-delay: 0.2s;">
 				<div class="panel panel-default">
@@ -10,6 +10,19 @@
 						<h3 class="no-margin-top"><i class="fa fa-info-circle"></i> About</h3>
 
 						<p>{{>about}}</p>
+					</div>
+				</div>
+			</section>
+
+			{{! work }}
+			<section class="show-animate hide-left" style="transition-delay: 0.3s;">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<h3 class="no-margin-top"><i class="fa fa-users"></i> Work <br class="visible-xs"><small>My Work Experience</small></h3>
+
+						{{#work}}
+							{{>work-project}}
+						{{/work}}
 					</div>
 				</div>
 			</section>
@@ -63,9 +76,9 @@
 				</div>
 			</section>
 		</div>
-		<div class="secondary col-md-4 col-sm-12 col-xs-12">
+		<div class="secondary col-md-4 col-sm-12 col-xs-12 hidden-xs">
 			{{! pens }}
-			<div class="panel panel-default show-animate hide-right delay-5 hidden-xs">
+			<div class="panel panel-default show-animate hide-right delay-5">
 				<div class="panel-body no-padding-bottom">
 					<div class="page-header clearfix no-margin">
 						<a href="//codepen.io/rdfriedl" target="_blank" class="btn btn-success btn-xs pull-right"><i class="fa fa-codepen"></i> More</a>

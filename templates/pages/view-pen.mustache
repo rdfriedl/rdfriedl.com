@@ -1,69 +1,65 @@
 {{>small-header}}
 
-<div class="container">
-	<div class="row">
-		<div class="col-xs-12">
-			<div class="panel panel-default">
-				<div class="panel-body">
-					{{#pen}}
-					<div class="btn-group pull-right hidden-xs">
-						<a href="https://codepen.io/rdfriedl/pen/{{pen.id}}" class="btn btn-success" target="_blank"><i class="fa fa-code"></i> Source</a>
-						<a href="https://codepen.io/rdfriedl" class="btn btn-info" target="_blank"><i class="fa fa-codepen"></i> More Pens</a>
-					</div>
-			  		<h2 class="no-margin-top hidden-xs">
-						<a href="/pens" class="btn btn-default hidden-sm"><i class="fa fa-arrow-left"></i> Back</a>
-						{{pen.title}}
-					</h2>
-			  		<h3 class="no-margin-top visible-xs text-center">
-						{{pen.title}}
-					</h3>
+<div class="container no-padding-xs">
+	<div class="panel panel-default">
+		<div class="panel-body">
+			{{#pen}}
+			<div class="btn-group pull-right hidden-xs">
+				<a href="https://codepen.io/rdfriedl/pen/{{pen.id}}" class="btn btn-success" target="_blank"><i class="fa fa-code"></i> Source</a>
+				<a href="https://codepen.io/rdfriedl" class="btn btn-info" target="_blank"><i class="fa fa-codepen"></i> More Pens</a>
+			</div>
+	  		<h2 class="no-margin-top hidden-xs">
+				<a href="/pens" class="btn btn-default hidden-sm"><i class="fa fa-arrow-left"></i> Back</a>
+				{{pen.title}}
+			</h2>
+	  		<h3 class="no-margin-top visible-xs text-center">
+				{{pen.title}}
+			</h3>
 
-					<iframe src="https://codepen.io/rdfriedl/debug/{{pen.id}}" style="width: 100%; height: 90vh; max-height: 100vw; border: none;" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation"></iframe>
+			<iframe src="https://codepen.io/rdfriedl/debug/{{pen.id}}" style="width: 100%; height: 90vh; max-height: 100vw; border: none;" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation"></iframe>
 
-					<div class="btn-group btn-group-justified visible-xs">
-						<a href="https://codepen.io/rdfriedl/pen/{{pen.id}}" class="btn btn-success" target="_blank"><i class="fa fa-code"></i> Source</a>
-						<a href="https://codepen.io/rdfriedl" class="btn btn-info" target="_blank"><i class="fa fa-codepen"></i> More Pens</a>
-					</div>
-					{{/pen}}
+			<div class="btn-group btn-group-justified visible-xs">
+				<a href="https://codepen.io/rdfriedl/pen/{{pen.id}}" class="btn btn-success" target="_blank"><i class="fa fa-code"></i> Source</a>
+				<a href="https://codepen.io/rdfriedl" class="btn btn-info" target="_blank"><i class="fa fa-codepen"></i> More Pens</a>
+			</div>
+			{{/pen}}
 
-					{{! used }}
-					{{#pen.used.length}}
-					<h3>Technologies Used</h3>
-					<div class="row">
-						{{#pen.used}}
-						<div class="col-xs-12 col-sm-6 col-md-4">
-							{{>technology}}
-						</div>
-						{{/pen.used}}
-					</div>
-					{{/pen.used.length}}
-
-					{{^pen}}
-					<h2 class="text-center">
-						404....looks like that pen dose not exist
-						<br>
-						<small>but check out these other cool ones</small>
-					</h2>
-					{{/pen}}
-
-					{{! other pens header }}
-					{{#pen}}
-			  		<h3 class="hidden-xs no-margin-top">Other Pens</h3>
-			  		<h3 class="visible-xs text-center no-margin-top">Other Pens</h3>
-					{{/pen}}
-
-					{{! other pens }}
-					<div class="row">
-						{{#otherPens}}
-						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-							<a href="/pens/view?id={{id}}" class="thumbnail no-link">
-								<img class="img-responsive project-image" src="{{thumbnail}}"/>
-								<h5 class="text-center">{{title}}</h5>
-							</a>
-						</div>
-						{{/otherPens}}
-					</div>
+			{{! used }}
+			{{#pen.used.length}}
+			<h3>Technologies Used</h3>
+			<div class="row">
+				{{#pen.used}}
+				<div class="col-xs-12 col-sm-6 col-md-4">
+					{{>technology}}
 				</div>
+				{{/pen.used}}
+			</div>
+			{{/pen.used.length}}
+
+			{{^pen}}
+			<h2 class="text-center">
+				404....looks like that pen dose not exist
+				<br>
+				<small>but check out these other cool ones</small>
+			</h2>
+			{{/pen}}
+
+			{{! other pens header }}
+			{{#pen}}
+	  		<h3 class="hidden-xs no-margin-top">Other Pens</h3>
+	  		<h3 class="visible-xs text-center no-margin-top">Other Pens</h3>
+			{{/pen}}
+
+			{{! other pens }}
+			<div class="row">
+				{{#otherPens}}
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+					<a href="/pens/view?id={{id}}" class="thumbnail no-link">
+						<img class="img-responsive project-image" src="{{thumbnail}}"/>
+						<h5 class="text-center">{{title}}</h5>
+					</a>
+				</div>
+				{{/otherPens}}
 			</div>
 		</div>
 	</div>
