@@ -1,22 +1,24 @@
-<a href="{{siteURL}}" target="_blank" class="no-link"><div class="panel panel-default">
-	<div class="panel-body">
-		<div class="row">
-			{{#thumbnail}}
-			<div class="col-xs-3 no-padding-right">
-				<img class="img-responsive" src="{{thumbnail}}">
-			</div>
-			<div class="col-xs-9">
-				<h4 class="no-margin-top">{{title}}</h4>
-				<p class="no-margin-bottom">{{description}}</p>
-			</div>
-			{{/thumbnail}}
+<a href="{{siteURL}}" target="_blank" class="no-link">
+	<div class="panel panel-grey hover-shadow">
+		<div class="panel-body">
+			<div class="row">
+				{{#thumbnail}}
+				<div class="col-xs-3 no-padding-right">
+					<img class="img-responsive" src="{{thumbnail}}">
+				</div>
+				<div class="col-xs-9">
+					<h4 class="no-margin-top">{{title}}</h4>
+					<p class="no-margin-bottom">{{description}}</p>
+				</div>
+				{{/thumbnail}}
 
-			{{^thumbnail}}
-			<div class="col-xs-12">
-				<h4 class="no-margin-top">{{title}}</h4>
-				<p class="no-margin-bottom">{{description}}</p>
+				{{^thumbnail}}
+				<div class="col-xs-12">
+					<h4 class="no-margin-top">{{title}}</h4>
+					<p class="no-margin-bottom">{{description}}</p>
+				</div>
+				{{/thumbnail}}
 			</div>
-			{{/thumbnail}}
 		</div>
 	</div>
-</div></a>
+</a>

@@ -15,10 +15,7 @@
 			<div class="row">
 				{{#pens}}
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-					<a href="/pens/view?id={{id}}" class="thumbnail no-link">
-						<img class="img-responsive project-image" src="{{thumbnail}}"/>
-						<h5 class="text-center">{{title}}</h5>
-					</a>
+					{{>pen}}
 				</div>
 				{{/pens}}
 			</div>

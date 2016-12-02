@@ -1,4 +1,11 @@
 {{> header}}
+<style>
+@media screen and (min-width: 767px){
+	.container{
+		padding-bottom: 30vh;
+	}
+}
+</style>
 
 <div class="container">
 	<div class="row">
@@ -88,10 +95,7 @@
 					<div class="row">
 						{{#pens}}
 						<div class="col-xs-12">
-							<a href="/pens/view?id={{id}}" class="thumbnail no-link">
-								<img class="img-responsive project-image" src="{{thumbnail}}"/>
-								<h5 class="text-center">{{title}}</h5>
-							</a>
+							{{>pen}}
 						</div>
 						{{/pens}}
 					</div>

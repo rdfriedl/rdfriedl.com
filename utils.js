@@ -198,6 +198,8 @@ function loadPage(page, templates, callbacks){
 		if(window.innerWidth >= 768)
 			 initBackground();
 
+		$('[data-toggle="tooltip"]').tooltip();
+
 		setTimeout(function(){
 			$('body').removeClass('page-showing');
 		},750);

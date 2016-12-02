@@ -1,55 +1,59 @@
-<a href="/skills/view?id={{id}}" class="thumbnail no-link padding-10">
-	<div class="row">
-		{{#tech.thumbnail}}
-		<div class="col-xs-3 no-padding-right">
-			<img class="img-responsive" src="{{tech.thumbnail}}">
-		</div>
-		<div class="col-xs-9">
-			<h4 class="no-margin-top">{{tech.title}}</h4>
-			<small class="no-margin-bottom">{{tech.description}}</small>
+<a href="/skills/view?id={{id}}" class="no-link">
+	<div class="panel hover-shadow panel-grey">
+		<div class="panel-body">
+			<div class="row">
+				{{#tech.thumbnail}}
+				<div class="col-xs-3 no-padding-right">
+					<img class="img-responsive" src="{{tech.thumbnail}}">
+				</div>
+				<div class="col-xs-9">
+					<h4 class="no-margin-top">{{tech.title}}</h4>
+					<small class="no-margin-bottom">{{tech.description}}</small>
 
-			{{! mobile progress bars }}
-			<div class="visible-xs">
-				<p class="label">Knowledge</p>
-				<div class="progress no-margin-bottom">
-					<div class="progress-bar progress-bar-info progress-bar-striped" style="width: {{knowledge}}%"></div>
+					{{! mobile progress bars }}
+					<div class="visible-xs">
+						<small>Knowledge</small>
+						<div class="progress no-margin-bottom">
+							<div class="progress-bar progress-bar-info progress-bar-striped" style="width: {{knowledge}}%"></div>
+						</div>
+						<small>Experience</small>
+						<div class="progress no-margin-bottom">
+							<div class="progress-bar progress-bar-success progress-bar-striped" style="width: {{experience}}%"></div>
+						</div>
+					</div>
 				</div>
-				<p class="label">Experience</p>
-				<div class="progress no-margin-bottom">
-					<div class="progress-bar progress-bar-success progress-bar-striped" style="width: {{experience}}%"></div>
-				</div>
-			</div>
-		</div>
-		{{/tech.thumbnail}}
+				{{/tech.thumbnail}}
 
-		{{^tech.thumbnail}}
-		<div class="col-xs-12">
-			<h4 class="no-margin-top">{{tech.title}}</h4>
-			<p class="no-margin-bottom">{{tech.description}}</p>
+				{{^tech.thumbnail}}
+				<div class="col-xs-12">
+					<h4 class="no-margin-top">{{tech.title}}</h4>
+					<p class="no-margin-bottom">{{tech.description}}</p>
 
-			{{! mobile progress bars }}
-			<div class="visible-xs">
-				<p class="label">Knowledge</p>
-				<div class="progress no-margin-bottom">
-					<div class="progress-bar progress-bar-info progress-bar-striped" style="width: {{knowledge}}%"></div>
+					{{! mobile progress bars }}
+					<div class="visible-xs">
+						<small>Knowledge</small>
+						<div class="progress no-margin-bottom">
+							<div class="progress-bar progress-bar-info progress-bar-striped" style="width: {{knowledge}}%"></div>
+						</div>
+						<small>Experience</small>
+						<div class="progress no-margin-bottom">
+							<div class="progress-bar progress-bar-success progress-bar-striped" style="width: {{experience}}%"></div>
+						</div>
+					</div>
 				</div>
-				<p class="label">Experience</p>
-				<div class="progress no-margin-bottom">
-					<div class="progress-bar progress-bar-success progress-bar-striped" style="width: {{experience}}%"></div>
+				{{/tech.thumbnail}}
+			</div>
+			<div class="row hidden-xs">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<small>Knowledge</small>
+					<div class="progress no-margin-bottom">
+						<div class="progress-bar progress-bar-info progress-bar-striped" style="width: {{knowledge}}%"></div>
+					</div>
+					<small>Experience</small>
+					<div class="progress no-margin-bottom">
+						<div class="progress-bar progress-bar-success progress-bar-striped" style="width: {{experience}}%"></div>
+					</div>
 				</div>
-			</div>
-		</div>
-		{{/tech.thumbnail}}
-	</div>
-	<div class="row hidden-xs">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<p class="label">Knowledge</p>
-			<div class="progress no-margin-bottom">
-				<div class="progress-bar progress-bar-info progress-bar-striped" style="width: {{knowledge}}%"></div>
-			</div>
-			<p class="label">Experience</p>
-			<div class="progress no-margin-bottom">
-				<div class="progress-bar progress-bar-success progress-bar-striped" style="width: {{experience}}%"></div>
 			</div>
 		</div>
 	</div>
