@@ -194,6 +194,10 @@ function loadPage(page, templates, callbacks){
 		//render
 		$('#page').append(Mustache.render(pageTemplate, view, partials));
 
+		// dont add the background if its are on mobile
+		if(window.innerWidth >= 768)
+			 initBackground();
+
 		setTimeout(function(){
 			$('body').removeClass('page-showing');
 		},750);
@@ -203,6 +207,48 @@ function loadPage(page, templates, callbacks){
 		if(callbacks.done)
 			callbacks.done();
 	})
+}
+
+var codeFiles = [
+	['/styles.css','css'],
+	['/utils.js','js'],
+	['/templates/header.mustache','html'],
+	['/utils.css','css'],
+	['/index.html','html']
+];
+function initBackground(){
+	// create the wrapper
+	var wrapper = $('<div>').addClass('background-wrapper');
+
+	var layers = 3;
+	for (var layer = 0; layer < layers; layer++) {
+		var codeFile = codeFiles[layer];//codeFiles.splice(Math.floor(codeFiles.length * Math.random()),1)[0];
+		var element = $('<code>').addClass('language-'+codeFile[1]);
+		fetch(codeFile[0]).then(function(res){return res.text()}).then(function(element, text){
+			element.text(text);
+
+			// highlight it
+			Prism.highlightElement(element.get(0), false);
+			element.parent().removeAttr('class');
+		}.bind(this, element))
+
+		// scroll code
+		var scrollRate = layer+2;
+		$(window).on("scroll", function(element, scrollRate) {
+			element.get(0).style.top = (-window.scrollY/scrollRate)+'px';
+		}.bind(this, element, scrollRate));
+
+		var pre = $('<pre>').append(element).appendTo(wrapper);
+		var position = layer/(layers-1);
+		element.css({
+			'transform-origin': 'left',
+			'transform': 'translateZ('+(position*-500-50)+'px) rotateY(35deg)',
+			'opacity': (layers-layer)/layers
+		});
+	}
+
+	$('body').prepend(wrapper);
+	$(window).trigger('resize');
 }
 
 $(document).on('click','[href="#"]',function(event){

@@ -65,11 +65,37 @@ span.first-letter{
 
 /* background */
 html{
-	background: #eff;
+	background: #141414;
 }
 body{
 	background: transparent;
 }
+.background-wrapper {
+	position: fixed;
+	z-index: -1;
+	perspective: 100vw;
+	width: 100vw;
+	height: 100vh;
+	pointer-events: none;
+}
+
+.background-wrapper pre{
+	padding: 0;
+	overflow: visible;
+}
+.background-wrapper code, .background-wrapper pre{
+	position: absolute;
+	font-size: 20px;
+	tab-size: 4;
+	border: none;
+	background: none;
+}
+/* #page>*{
+	display: none;
+}
+#page{
+	height: 1000vh;
+} */
 
 /* show animation */
 .show-animate{
