@@ -68,5 +68,10 @@
 		"knowledge": 80,
 		"experience": 100,
 		"about": "im been using jquery ever since iv started using javascript."
+	},
+	"webpack": {
+		"knowledge": 80,
+		"experience": 90,
+		"about": ""
 	}
 }

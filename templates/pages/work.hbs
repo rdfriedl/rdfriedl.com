@@ -6,14 +6,14 @@
 			<h3 class="no-margin-top"><i class="fa fa-users"></i> Work <br class="visible-xs"><small>My Work Experience</small></h3>
 
 			<div class="row">
-				{{#work}}
+				{{#each work}}
 					<div class="col-xs-12">
-						{{>work-project}}
+						{{> work-project}}
 					</div>
-				{{/work}}
+				{{/each}}
 			</div>
 		</div>
 	</div>
 </div>
 
-{{>footer}}
+{{> footer}}

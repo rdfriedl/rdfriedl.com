@@ -3,20 +3,20 @@
 <div class="container no-padding-xs">
 	<div class="panel panel-default">
 		<div class="panel-body">
-			{{^viewWork}}
+			{{#unless viewWork}}
 			<p class="text-center" style="font-size: 10vw">
 				404
 			</p>
-			{{/viewWork}}
+			{{/unless}}
 
-			{{#viewWork}}
+			{{#if viewWork}}
 			<div class="hidden-xs">
 				{{! desktop header }}
 				<div class="btn-group pull-right">
 					<a href="/work/demo?id={{viewWork.id}}" class="btn btn-success">Demo</a>
 					<a href="{{viewWork.siteURL}}" class="btn btn-info" target="_blank"><i class="fa fa-globe"></i> WebSite</a>
 				</div>
-		  		<h2 class="no-margin-top">{{viewWork.title}}{{#company}} <small>by {{company}}</small>{{/company}}</h2>
+		  		<h2 class="no-margin-top">{{viewWork.title}}{{#if company}} <small>by {{company}}</small>{{/if}}</h2>
 			</div>
 
 			<div class="row">
@@ -29,38 +29,40 @@
 				{{! mobile thumbnail with header}}
 				<div class="col-xs-12 visible-xs">
 					<div class="page-header no-margin-bottom no-margin-top">
-		  				<h2 class="text-center visible-xs no-margin-top">{{viewWork.title}}{{#company}} <small>by {{company}}</small>{{/company}}</h2>
+		  				<h2 class="text-center visible-xs no-margin-top">{{viewWork.title}}{{#if company}} <small>by {{company}}</small>{{/if}}</h2>
 					</div>
 				</div>
 				<div class="col-xs-12 visible-xs"><p>{{viewWork.description}}</p></div>
 				<div class="col-xs-8 col-xs-offset-2 visible-xs">
 					<div class="btn-group btn-group-justified">
-						{{#viewWork.demoURL}}<a href="/work/demo?id={{viewWork.id}}" class="btn btn-success">Demo</a>{{/viewWork.demoURL}}
+						{{#if viewWork.demoURL}}<a href="/work/demo?id={{viewWork.id}}" class="btn btn-success">Demo</a>{{/if}}
 						<a href="{{viewWork.siteURL}}" class="btn btn-info" target="_blank"><i class="fa fa-globe"></i> WebSite</a>
 					</div>
 				</div>
 			</div>
 
-			{{#viewWork.used.length}}
+			{{#if viewWork.used.length}}
 			<h3 class="hidden-xs">Technologies Used</h3>
 			<h3 class="text-center visible-xs">Technologies Used</h3>
 
 			<div class="row">
-				{{#viewWork.used}}
+				{{#each viewWork.used}}
 				<div class="col-xs-12 col-sm-6 col-md-4">
-					{{>technology}}
+					{{#with tech}}
+						{{>technology}}
+					{{/with}}
 				</div>
-				{{/viewWork.used}}
+				{{/each}}
 			</div>
-			{{/viewWork.used.length}}
+			{{/if}}
 
 			{{! videos }}
-			{{#viewWork.videos.length}}
+			{{#if viewWork.videos.length}}
 			<h3 class="no-margin-top hidden-xs">Videos</h3>
 			<h3 class="text-center no-margin visible-xs">Videos</h3>
 
 			<div class="row">
-				{{#viewWork.videos}}
+				{{#each viewWork.videos}}
 				<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
 					<a class="thumbnail no-link" target="_blank" href="https://www.youtube.com/watch?v={{id}}" data-video-modal="{{id}}">
 						<i class="fa fa-5x fa-play-circle overlay-icon"></i>
@@ -68,27 +70,27 @@
 						<h5 class="text-center">{{title}}</h5>
 					</a>
 				</div>
-				{{/viewWork.videos}}
+				{{/each}}
 			</div>
-			{{/viewWork.videos.length}}
+			{{/if}}
 
 			{{! screenshots }}
-			{{#viewWork.screenshots.length}}
+			{{#if viewWork.screenshots.length}}
 			<h3 class="no-margin-top hidden-xs">Screen Shots</h3>
 			<h3 class="text-center no-margin visible-xs">Screen Shots</h3>
 
 			<div class="row">
-				{{#viewWork.screenshots}}
+				{{#each viewWork.screenshots}}
 				<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
 					<a class="thumbnail" target="_blank" href="{{src}}" data-image-modal="{{src}}">
 						<i class="fa fa-5x fa-search-plus overlay-icon"></i>
 						<img class="img-responsive" src="{{thumbnail}}">
 					</a>
 				</div>
-				{{/viewWork.screenshots}}
+				{{/each}}
 			</div>
-			{{/viewWork.screenshots.length}}
-			{{/viewWork}}
+			{{/if}}
+			{{/if}}
 		</div>
 	</div>
 
@@ -98,11 +100,11 @@
 			<h3 class="visible-xs no-margin text-center">Other Project</h3>
 
 			<div class="row">
-				{{#otherProjects}}
+				{{#each otherProjects}}
 				<div class="col-xs-12">
-					{{>viewWork}}
+					{{> work-project}}
 				</div>
-				{{/otherProjects}}
+				{{/each}}
 			</div>
 		</div>
 	</div>

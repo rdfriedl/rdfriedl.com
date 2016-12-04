@@ -27,9 +27,9 @@
 					<div class="panel-body">
 						<h3 class="no-margin-top"><i class="fa fa-users"></i> Work <br class="visible-xs"><small>My Work Experience</small></h3>
 
-						{{#work}}
-							{{>work-project}}
-						{{/work}}
+						{{#each work}}
+							{{> work-project}}
+						{{/each}}
 					</div>
 				</div>
 			</section>
@@ -40,9 +40,9 @@
 					<div class="panel-body">
 						<h3 class="no-margin-top"><i class="fa fa-trophy"></i> Projects <br class="visible-xs"><small>My personal projects</small></h3>
 
-						{{#projects}}
-							{{>project}}
-						{{/projects}}
+						{{#each projects}}
+							{{> project}}
+						{{/each}}
 					</div>
 				</div>
 			</section>
@@ -54,11 +54,11 @@
 						<h3 class="no-margin-top"><i class="fa fa-wrench"></i> Skills <br class="visible-xs"><small>My unique skillset</small></h3>
 
 						<div class="row">
-							{{#skills}}
+							{{#each skills}}
 								<div class="col-xs-12 col-sm-6">
 								{{> skill}}
 								</div>
-							{{/skills}}
+							{{/each}}
 						</div>
 					</div>
 				</div>
@@ -71,13 +71,13 @@
 						<h3 class="no-margin-top"><i class="fa fa-image"></i> Backgrounds</h3>
 
 						<div class="row">
-							{{#backgrounds}}
+							{{#each backgrounds}}
 							<div class="col-xs-6">
 								<a class="thumbnail" href="{{src}}" data-image-modal="{{src}}" target="_blank">
 									<img src="{{thumbnail}}">
 								</a>
 							</div>
-							{{/backgrounds}}
+							{{/each}}
 						</div>
 					</div>
 				</div>
@@ -93,11 +93,11 @@
 					</div>
 
 					<div class="row">
-						{{#pens}}
+						{{#each pens}}
 						<div class="col-xs-12">
-							{{>pen}}
+							{{> pen}}
 						</div>
-						{{/pens}}
+						{{/each}}
 					</div>
 				</div>
 			</div>

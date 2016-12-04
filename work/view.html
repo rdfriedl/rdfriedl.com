@@ -40,7 +40,7 @@
 	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/components/prism-json.min.js"></script>
 
 	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/markdown-it/8.1.0/markdown-it.min.js"></script>
-	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
 	<script type="text/javascript" src="/utils.js"></script>
 </head>
 
@@ -48,22 +48,30 @@
 	<div id="page"></div>
 
 	<script type="text/javascript">
-		loadPage('view-work',['header', 'footer', 'technology', 'work-project'], {
-			preRender: function(view){
-				for (var i = view.work.length - 1; i >= 0; i--) {
-					if(view.work[i].id == view.search.id)
-						view.viewWork = view.work[i];
+		var workDescription;
+		function init(){
+			loadPage('view-work',['header', 'footer', 'technology', 'work-project'], {
+				preRender: function(view){
+					for (var i = view.work.length - 1; i >= 0; i--) {
+						if(view.work[i].id == view.search.id)
+							view.viewWork = view.work[i];
+					}
+
+					view.otherProjects = view.work.filter(function(project){
+						return view.viewWork? project.id !== view.viewWork.id : true;
+					}).sort(function(){
+						return Math.round(Math.random() * 3 - 1);
+					})
+
+					view.otherProjects.length = 3;
+					view.workDescription = workDescription || (view.viewWork && view.viewWork.description) || '';
 				}
-
-				view.otherProjects = view.work.filter(function(project){
-					return view.project? project.id !== view.viewWork.id : true;
-				}).sort(function(){
-					return Math.round(Math.random() * 3 - 1);
-				})
-
-				view.otherProjects.length = 3;
-			}
-		});
+			});
+		}
+		fetch('/templates/markdown/work/'+parseSearch().id+'.md').then(function(res){return res.text()}).then(function(markdown){
+			workDescription = loadMarkdown(markdown);
+			init();
+		}).catch(init);
 	</script>
 </body>
 </html>

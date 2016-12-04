@@ -1,15 +1,28 @@
+<style>
+#project-description h1:first-of-type,
+#project-description h2:first-of-type,
+#project-description h3:first-of-type,
+#project-description h4:first-of-type,
+#project-description h5:first-of-type,
+#project-description h6:first-of-type,
+#project-description h7:first-of-type,
+#project-description h8:first-of-type{
+	margin-top: 0;
+}
+</style>
+
 {{>header}}
 
 <div class="container no-padding-xs">
 	<div class="panel panel-default">
 		<div class="panel-body">
-			{{^project}}
+			{{#unless project}}
 			<p class="text-center" style="font-size: 10vw">
 				404
 			</p>
-			{{/project}}
+			{{/unless}}
 
-			{{#project}}
+			{{#if project}}
 			<div class="hidden-xs">
 				<div class="btn-group pull-right">
 					<a href="/projects/demo?id={{project.id}}" class="btn btn-success">Demo</a>
@@ -20,10 +33,10 @@
 
 			<div class="row">
 				{{! desktop }}
-				<div class="col-xs-4 hidden-xs">
-					<img class="img-responsive" src="{{project.thumbnail}}"/>
+				<div id="project-description" class="col-xs-12 hidden-xs">
+					<img class="pull-left col-xs-4 no-padding-left" src="{{project.thumbnail}}"/>
+					{{&projectDescription}}
 				</div>
-				<div class="col-xs-8 hidden-xs">{{project.description}}</div>
 
 				{{! mobile }}
 				<div class="col-xs-12 visible-xs">
@@ -32,43 +45,45 @@
 		  				<h3 class="text-center visible-xs">{{project.title}}</h3>
 					</div>
 				</div>
-				<div class="col-xs-12 visible-xs"><p>{{project.description}}</p></div>
+				<div class="col-xs-12 visible-xs"><p>{{&projectDescription}}</p></div>
 				<div class="col-xs-8 col-xs-offset-2 visible-xs">
 					<div class="btn-group btn-group-justified">
-						{{#project.demoURL}}<a href="/projects/demo?id={{project.id}}" class="btn btn-success">Demo</a>{{/project.demoURL}}
+						{{#if project.demoURL}}<a href="/projects/demo?id={{project.id}}" class="btn btn-success">Demo</a>{{/if}}
 						<a href="{{project.sourceURL}}" class="btn btn-info" target="_blank"><i class="fa fa-code"></i> Source</a>
 					</div>
 				</div>
 			</div>
 
-			{{#project.used.length}}
+			{{#if project.used.length}}
 			<h3 class="hidden-xs">Technologies Used</h3>
 			<h3 class="text-center visible-xs">Technologies Used</h3>
 
 			<div class="row">
-				{{#project.used}}
+				{{#each project.used}}
 				<div class="col-xs-12 col-sm-6 col-md-4">
-					{{>technology}}
+					{{#with tech}}
+						{{>technology amount=../amount}}
+					{{/with}}
 				</div>
-				{{/project.used}}
+				{{/each}}
 			</div>
-			{{/project.used.length}}
+			{{/if}}
 
-			{{#project.media.length}}
+			{{#if project.media.length}}
 			<h3 class="no-margin-top hidden-xs">Screen Shots</h3>
 			<h3 class="text-center no-margin visible-xs">Screen Shots</h3>
 
 			<div class="row">
-				{{#project.media}}
+				{{#each project.media}}
 				<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
 					<a class="thumbnail" target="_blank" href="{{src}}" data-image-modal="{{src}}">
 						<img class="img-responsive" src="{{thumbnail}}">
 					</a>
 				</div>
-				{{/project.media}}
+				{{/each}}
 			</div>
-			{{/project.media.length}}
-			{{/project}}
+			{{/if}}
+			{{/if}}
 		</div>
 	</div>
 
@@ -78,11 +93,11 @@
 			<h3 class="visible-xs no-margin text-center">Other Project</h3>
 
 			<div class="row">
-				{{#otherProjects}}
+				{{#each otherProjects}}
 				<div class="col-xs-12">
 					{{>project}}
 				</div>
-				{{/otherProjects}}
+				{{/each}}
 			</div>
 		</div>
 	</div>

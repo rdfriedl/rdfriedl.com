@@ -6,11 +6,11 @@
 			<h3 class="no-margin-top"><i class="fa fa-trophy"></i> Projects <br class="visible-xs"><small>My personal projects</small></h3>
 
 			<div class="row">
-				{{#projects}}
+				{{#each projects}}
 					<div class="col-xs-12">
-						{{>project}}
+						{{> project}}
 					</div>
-				{{/projects}}
+				{{/each}}
 			</div>
 		</div>
 	</div>

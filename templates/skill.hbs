@@ -2,7 +2,7 @@
 	<div class="panel hover-shadow panel-grey">
 		<div class="panel-body">
 			<div class="row">
-				{{#tech.thumbnail}}
+				{{#if tech.thumbnail}}
 				<div class="col-xs-3 no-padding-right">
 					<img class="img-responsive" src="{{tech.thumbnail}}">
 				</div>
@@ -12,44 +12,44 @@
 
 					{{! mobile progress bars }}
 					<div class="visible-xs">
-						<small>Knowledge</small>
+						<small><b>Knowledge</b></small>
 						<div class="progress no-margin-bottom">
 							<div class="progress-bar progress-bar-info progress-bar-striped" style="width: {{knowledge}}%"></div>
 						</div>
-						<small>Experience</small>
+						<small><b>Experience</b></small>
 						<div class="progress no-margin-bottom">
 							<div class="progress-bar progress-bar-success progress-bar-striped" style="width: {{experience}}%"></div>
 						</div>
 					</div>
 				</div>
-				{{/tech.thumbnail}}
+				{{/if}}
 
-				{{^tech.thumbnail}}
+				{{#unless tech.thumbnail}}
 				<div class="col-xs-12">
 					<h4 class="no-margin-top">{{tech.title}}</h4>
 					<p class="no-margin-bottom">{{tech.description}}</p>
 
 					{{! mobile progress bars }}
 					<div class="visible-xs">
-						<small>Knowledge</small>
+						<small><b>Knowledge</b></small>
 						<div class="progress no-margin-bottom">
 							<div class="progress-bar progress-bar-info progress-bar-striped" style="width: {{knowledge}}%"></div>
 						</div>
-						<small>Experience</small>
+						<small><b>Experience</b></small>
 						<div class="progress no-margin-bottom">
 							<div class="progress-bar progress-bar-success progress-bar-striped" style="width: {{experience}}%"></div>
 						</div>
 					</div>
 				</div>
-				{{/tech.thumbnail}}
+				{{/unless}}
 			</div>
 			<div class="row hidden-xs">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<small>Knowledge</small>
+					<small><b>Knowledge</b></small>
 					<div class="progress no-margin-bottom">
 						<div class="progress-bar progress-bar-info progress-bar-striped" style="width: {{knowledge}}%"></div>
 					</div>
-					<small>Experience</small>
+					<small><b>Experience</b></small>
 					<div class="progress no-margin-bottom">
 						<div class="progress-bar progress-bar-success progress-bar-striped" style="width: {{experience}}%"></div>
 					</div>

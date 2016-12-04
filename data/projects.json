@@ -53,12 +53,22 @@
 			}
 		],
 		"used": [
-			"threejs",
-			"vuejs",
-			"javascript",
-			"html5",
-			"fontawesome",
-			"gulp"
+			{
+				"id": "threejs",
+				"amount": 100
+			},
+			{
+				"id": "vuejs",
+				"amount": 80
+			},
+			{
+				"id": "fontawesome",
+				"amount": 30
+			},
+			{
+				"id": "gulp",
+				"amount": 20
+			}
 		],
 
 
@@ -77,7 +87,7 @@
 		],
 		"used": [
 			"github",
-			"mustachejs",
+			"handlebarsjs",
 			"jquery",
 			"json"
 		],

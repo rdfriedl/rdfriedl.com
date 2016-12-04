@@ -147,10 +147,10 @@
 		"description": "Git repository hosting service"
 	},
 	{
-		"id": "mustachejs",
-		"title": "Muststache.js",
-		"siteURL": "https://mustache.github.io/",
-		"thumbnail": "http://www.saliences.com/images/projects/mustache.png",
+		"id": "handlebarsjs",
+		"title": "Handlebars.js",
+		"siteURL": "http://handlebarsjs.com/",
+		"thumbnail": "http://blog.yhat.com/static/img/handlebars-logo.png",
 		"description": "JavaScript Templating library"
 	},
 	{
@@ -194,5 +194,12 @@
 		"siteURL": "https://teespring-api.readme.io/v1.0/docs",
 		"thumbnail": "https://static1.squarespace.com/static/558c40bde4b02743ade83b67/t/5641744ee4b039a3758ede8d/1447130191425/",
 		"description": "An API for the TeeSpring Platform"
+	},
+	{
+		"id": "webpack",
+		"title": "Webpack",
+		"siteURL": "http://webpack.github.io/",
+		"thumbnail": "https://topheman.github.io/webpack-babel-starter/assets/974262647c82057b6078c432841a53ea.png",
+		"description": "javascript module bundler and build tool"
 	}
 ]

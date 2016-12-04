@@ -118,9 +118,14 @@ function loadData(){
 			for (var i = 0; i < data.length; i++) {
 				if(data[i].used){
 					for(var k = 0; k < data[i].used.length; k++){
-						var id = data[i].used[k];
+						if(typeof data[i].used[k] == 'string')
+							data[i].used[k] = {
+								id: data[i].used[k]
+							}
+
+						var id = data[i].used[k].id || data[i].used[k];
 						if(technologies[id])
-							data[i].used[k] = technologies[id];
+							data[i].used[k].tech = technologies[id];
 						else{
 							data[i].used.splice(k, 1);
 							k--;
@@ -158,7 +163,7 @@ function loadPage(page, templates, callbacks){
 	var templates = templates || [];
 	var callbacks = callbacks || {};
 	var wait = [];
-	var view = {}, partials = {}, pageTemplate = '';
+	var view = {}, pageTemplate = '';
 
 	wait.push(loadData().then(function(json){
 		view = json;
@@ -167,32 +172,32 @@ function loadPage(page, templates, callbacks){
 	// load the templates
 	for (var i = 0; i < templates.length; i++) {
 		if(typeof templates[i] == 'string'){
-			wait.push(loadTemplate('/templates/'+templates[i]+'.mustache').then(function(name, template){
-				partials[name] = template;
+			wait.push(loadTemplate('/templates/'+templates[i]+'.hbs').then(function(name, template){
+				Handlebars.registerPartial(name, template);
 			}.bind(this, templates[i])))
 		}
 		else if(templates[i].url, templates[i].name){
 			wait.push(loadTemplate(templates[i].url).then(function(opts, template){
 				if(opts.onload)
-					partials[opts.name] = opts.onload(template);
+					Handlebars.registerPartial(opts.name, opts.onload(template));
 				else
-					partials[opts.name] = template;
+					Handlebars.registerPartial(opts.name, template);
 			}.bind(this, templates[i])))
 		}
 	}
 
 	// load the page
-	wait.push(loadTemplate('/templates/pages/'+page+'.mustache').then(function(html){
+	wait.push(loadTemplate('/templates/pages/'+page+'.hbs').then(function(html){
 		pageTemplate = html;
 	}));
 
 	// wait for everything to finish loading
 	return Promise.all(wait).then(function(){
 		if(callbacks.preRender)
-			callbacks.preRender(view, partials);
+			callbacks.preRender(view);
 
 		//render
-		$('#page').append(Mustache.render(pageTemplate, view, partials));
+		$('#page').append(Handlebars.compile(pageTemplate)(view));
 
 		// dont add the background if its are on mobile
 		if(window.innerWidth >= 768)
@@ -214,7 +219,7 @@ function loadPage(page, templates, callbacks){
 var codeFiles = [
 	['/styles.css','css'],
 	['/utils.js','js'],
-	['/templates/header.mustache','html'],
+	['/templates/header.hbs','html'],
 	['/utils.css','css'],
 	['/index.html','html']
 ];

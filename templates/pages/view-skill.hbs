@@ -3,13 +3,13 @@
 <div class="container no-padding-xs">
 	<div class="panel panel-default">
 		<div class="panel-body">
-			{{^skill}}
+			{{#unless skill}}
 			<p class="text-center" style="font-size: 10vw">
 				404
 			</p>
-			{{/skill}}
+			{{/unless}}
 
-			{{#skill}}
+			{{#if skill}}
 			<div class="row">
 				{{! desktop }}
 				<div class="col-sm-2 no-padding-right hidden-xs">
@@ -50,7 +50,7 @@
 					</div>
 				</div>
 			</div>
-			{{/skill}}
+			{{/if}}
 		</div>
 	</div>
 
@@ -61,11 +61,11 @@
 			</div>
 
 			<div class="row">
-				{{#otherSkills}}
+				{{#each otherSkills}}
 				<div class="col-xs-12 col-sm-6 col-md-4">
 					{{>skill}}
 				</div>
-				{{/otherSkills}}
+				{{/each}}
 			</div>
 		</div>
 	</div>

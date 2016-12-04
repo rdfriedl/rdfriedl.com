@@ -40,7 +40,7 @@
 	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/components/prism-json.min.js"></script>
 
 	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/markdown-it/8.1.0/markdown-it.min.js"></script>
-	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
 	<script type="text/javascript" src="/utils.js"></script>
 </head>
 
@@ -48,22 +48,30 @@
 	<div id="page"></div>
 
 	<script type="text/javascript">
-		loadPage('view-project',['header', 'footer', 'technology', 'project'], {
-			preRender: function(view){
-				for (var i = view.projects.length - 1; i >= 0; i--) {
-					if(view.projects[i].id == view.search.id)
-						view.project = view.projects[i];
+		var projectDescription;
+		function init(){
+			loadPage('view-project',['header', 'footer', 'technology', 'project'], {
+				preRender: function(view){
+					for (var i = view.projects.length - 1; i >= 0; i--) {
+						if(view.projects[i].id == view.search.id)
+							view.project = view.projects[i];
+					}
+
+					view.otherProjects = view.projects.filter(function(project){
+						return view.project? project.id !== view.project.id : true;
+					}).sort(function(){
+						return Math.round(Math.random() * 3 - 1);
+					})
+
+					view.otherProjects.length = 3;
+					view.projectDescription = projectDescription || (view.project && view.project.description) || '';
 				}
-
-				view.otherProjects = view.projects.filter(function(project){
-					return view.project? project.id !== view.project.id : true;
-				}).sort(function(){
-					return Math.round(Math.random() * 3 - 1);
-				})
-
-				view.otherProjects.length = 3;
-			}
-		});
+			});
+		}
+		fetch('/templates/markdown/projects/'+parseSearch().id+'.md').then(function(res){return res.text()}).then(function(markdown){
+			projectDescription = loadMarkdown(markdown);
+			init();
+		}).catch(init);
 	</script>
 </body>
 </html>

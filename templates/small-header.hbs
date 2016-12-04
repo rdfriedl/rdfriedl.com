@@ -47,9 +47,9 @@
 								<h5 class="text-muted">{{info.description}}</h5>
 							</a>
 							<ul class="social list-inline">
-								{{#links}}
+								{{#each links}}
 									<li data-toggle="tooltip" data-placement="bottom" title="{{title}}"><a class="btn btn-primary" href="{{href}}" target="_blank"><i class="fa fa-{{icon}}"></i></a></li>
-								{{/links}}
+								{{/each}}
 							</ul>
 						</div>
 

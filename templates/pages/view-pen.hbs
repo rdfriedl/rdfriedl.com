@@ -3,7 +3,7 @@
 <div class="container no-padding-xs">
 	<div class="panel panel-default">
 		<div class="panel-body">
-			{{#pen}}
+			{{#if pen}}
 			<div class="btn-group pull-right hidden-xs">
 				<a href="https://codepen.io/rdfriedl/pen/{{pen.id}}" class="btn btn-success" target="_blank"><i class="fa fa-code"></i> Source</a>
 				<a href="https://codepen.io/rdfriedl" class="btn btn-info" target="_blank"><i class="fa fa-codepen"></i> More Pens</a>
@@ -22,10 +22,10 @@
 				<a href="https://codepen.io/rdfriedl/pen/{{pen.id}}" class="btn btn-success" target="_blank"><i class="fa fa-code"></i> Source</a>
 				<a href="https://codepen.io/rdfriedl" class="btn btn-info" target="_blank"><i class="fa fa-codepen"></i> More Pens</a>
 			</div>
-			{{/pen}}
+			{{/if}}
 
 			{{! used }}
-			{{#pen.used.length}}
+			{{#if pen.used.length}}
 			<h3>Technologies Used</h3>
 			<div class="row">
 				{{#pen.used}}
@@ -34,29 +34,29 @@
 				</div>
 				{{/pen.used}}
 			</div>
-			{{/pen.used.length}}
+			{{/if}}
 
-			{{^pen}}
+			{{#unless pen}}
 			<h2 class="text-center">
 				404....looks like that pen dose not exist
 				<br>
 				<small>but check out these other cool ones</small>
 			</h2>
-			{{/pen}}
+			{{/unless}}
 
 			{{! other pens header }}
-			{{#pen}}
+			{{#if pen}}
 	  		<h3 class="hidden-xs no-margin-top">Other Pens</h3>
 	  		<h3 class="visible-xs text-center no-margin-top">Other Pens</h3>
-			{{/pen}}
+			{{/if}}
 
 			{{! other pens }}
 			<div class="row">
-				{{#otherPens}}
+				{{#each otherPens}}
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-					{{>pen}}
+					{{> pen}}
 				</div>
-				{{/otherPens}}
+				{{/each}}
 			</div>
 		</div>
 	</div>

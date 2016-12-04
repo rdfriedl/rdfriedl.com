@@ -3,7 +3,7 @@
 <div class="container no-padding-xs">
 	<div class="panel panel-default">
 		<div class="panel-body">
-			{{#project}}
+			{{#if project}}
 			<div class="btn-group pull-right hidden-xs">
 				<a href="{{project.sourceURL}}" class="btn btn-success" target="_blank"><i class="fa fa-code"></i> Source</a>
 				<a href="{{project.demoURL}}" class="btn btn-info" target="_blank"><i class="fa fa-reply" style="transform: scaleX(-1)"></i> Open</a>
@@ -19,15 +19,15 @@
 				<a href="{{project.sourceURL}}" class="btn btn-success" target="_blank"><i class="fa fa-code"></i> Source</a>
 				<a href="{{project.demoURL}}" class="btn btn-info" target="_blank"><i class="fa fa-codepen"></i> More Pens</a>
 			</div>
-			{{/project}}
+			{{/if}}
 
-			{{^project}}
+			{{#usless project}}
 			<h2 class="text-center">
 				404....looks like that project dose not exist
 				<br>
 				<small>but check out these other cool ones</small>
 			</h2>
-			{{/project}}
+			{{/unless}}
 		</div>
 	</div>
 </div>
