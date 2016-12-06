@@ -68,6 +68,14 @@
 			{
 				"id": "gulp",
 				"amount": 20
+			},
+			{
+				"id": "webpack",
+				"amount": 60
+			},
+			{
+				"id": "babel",
+				"amount": 80
 			}
 		],
 

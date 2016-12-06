@@ -67,7 +67,7 @@
 	"jquery":{
 		"knowledge": 80,
 		"experience": 100,
-		"about": "im been using jquery ever since iv started using javascript."
+		"about": "jQuery was one of the first JavaScript libraries that i learned"
 	},
 	"webpack": {
 		"knowledge": 80,

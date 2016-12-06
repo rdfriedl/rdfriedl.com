@@ -38,14 +38,14 @@
 			}
 		],
 		"used": [
-			"knockout",
-			"jquery",
-			"teespring-api",
-			"videoconverter",
-			"json",
-			"javascript",
-			"fabricjs",
-			"whammy"
+			{"id": "knockout", "amount": 100},
+			{"id": "jquery", "amount": 30},
+			{"id": "teespring-api", "amount": 35},
+			{"id": "videoconverter", "amount": 25},
+			{"id": "json", "amount": 50},
+			{"id": "javascript", "amount": 80},
+			{"id": "fabricjs", "amount": 95},
+			{"id": "whammy", "amount": 20}
 		],
 
 		"siteURL": "http://www.adfactory.co/",

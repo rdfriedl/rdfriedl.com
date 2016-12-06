@@ -3,7 +3,7 @@
 		"id": "threejs",
 		"title": "Three.js",
 		"siteURL": "https://threejs.org/",
-		"thumbnail": "",
+		"thumbnail": "https://threejs.org/files/projects/paperworld.png",
 		"description": "3D WebGL Library"
 	},
 	{
@@ -127,7 +127,7 @@
 	},
 	{
 		"id": "jquery",
-		"title": "Jquery",
+		"title": "jQuery",
 		"siteURL": "http://jquery.com/",
 		"thumbnail": "http://www.free-icons-download.net/images/jquery-icon-17841.png",
 		"description": "A JavaScript DOM Manipulation Library"
@@ -201,5 +201,12 @@
 		"siteURL": "http://webpack.github.io/",
 		"thumbnail": "https://topheman.github.io/webpack-babel-starter/assets/974262647c82057b6078c432841a53ea.png",
 		"description": "javascript module bundler and build tool"
+	},
+	{
+		"id": "babel",
+		"title": "Babel",
+		"siteURL": "https://babeljs.io/",
+		"thumbnail": "https://raw.githubusercontent.com/babel/logo/master/babel.png",
+		"description": "A JavaScript compiler."
 	}
 ]

@@ -1,12 +1,4 @@
 {{> header}}
-<style>
-@media screen and (min-width: 767px){
-	.container{
-		padding-bottom: 30vh;
-	}
-}
-</style>
-
 <div class="container">
 	<div class="row">
 		<div class="col-md-8 col-sm-12 col-xs-12 no-padding-xs">
@@ -53,11 +45,11 @@
 					<div class="panel-body">
 						<h3 class="no-margin-top"><i class="fa fa-wrench"></i> Skills <br class="visible-xs"><small>My unique skillset</small></h3>
 
-						<div class="row">
+						<div class="columns columns-sm-2">
 							{{#each skills}}
-								<div class="col-xs-12 col-sm-6">
+							<div class="column">
 								{{> skill}}
-								</div>
+							</div>
 							{{/each}}
 						</div>
 					</div>
@@ -70,10 +62,10 @@
 					<div class="panel-body no-padding-bottom">
 						<h3 class="no-margin-top"><i class="fa fa-image"></i> Backgrounds</h3>
 
-						<div class="row">
+						<div class="columns columns-sm-2">
 							{{#each backgrounds}}
-							<div class="col-xs-6">
-								<a class="thumbnail" href="{{src}}" data-image-modal="{{src}}" target="_blank">
+							<div class="column">
+								<a class="thumbnail no-margin" href="{{src}}" data-image-modal="{{src}}" target="_blank">
 									<img src="{{thumbnail}}">
 								</a>
 							</div>
@@ -92,9 +84,9 @@
 						<h3 class="no-margin"><i class="fa fa-codepen"></i> Pens</h3>
 					</div>
 
-					<div class="row">
+					<div class="columns">
 						{{#each pens}}
-						<div class="col-xs-12">
+						<div class="column">
 							{{> pen}}
 						</div>
 						{{/each}}

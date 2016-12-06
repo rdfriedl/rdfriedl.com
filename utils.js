@@ -120,7 +120,8 @@ function loadData(){
 					for(var k = 0; k < data[i].used.length; k++){
 						if(typeof data[i].used[k] == 'string')
 							data[i].used[k] = {
-								id: data[i].used[k]
+								id: data[i].used[k],
+								amount: 0
 							}
 
 						var id = data[i].used[k].id || data[i].used[k];
@@ -131,6 +132,15 @@ function loadData(){
 							k--;
 						}
 					}
+
+					data[i].used.sort(function(a,b){
+						if(b.amount > a.amount)
+							return 1;
+						else if(b.amount < a.amount)
+							return -1;
+						else
+							return 0;
+					})
 				}
 			}
 		}
@@ -263,21 +273,21 @@ $(document).on('click','[href="#"]',function(event){
 });
 
 // toggle, add, remove class
-$(document).on('click', '[data-toggle-class]', function(evnet){
+$(document).on('click', '[data-toggle-class]', function(event){
 	event.preventDefault();
 	var parsed = ($(this).attr('data-toggle-class') || '').split('|');
 	var selector = parsed[0];
 	var className = parsed[1];
 	$(selector).toggleClass(className);
 });
-$(document).on('click', '[data-remove-class]', function(evnet){
+$(document).on('click', '[data-remove-class]', function(event){
 	event.preventDefault();
 	var parsed = ($(this).attr('data-remove-class') || '').split('|');
 	var selector = parsed[0];
 	var className = parsed[1];
 	$(selector).removeClass(className);
 });
-$(document).on('click', '[data-add-class]', function(evnet){
+$(document).on('click', '[data-add-class]', function(event){
 	event.preventDefault();
 	var parsed = ($(this).attr('data-add-class') || '').split('|');
 	var selector = parsed[0];

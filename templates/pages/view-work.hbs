@@ -45,11 +45,11 @@
 			<h3 class="hidden-xs">Technologies Used</h3>
 			<h3 class="text-center visible-xs">Technologies Used</h3>
 
-			<div class="row">
+			<div class="columns columns-sm-2 columns-md-3">
 				{{#each viewWork.used}}
-				<div class="col-xs-12 col-sm-6 col-md-4">
+				<div class="column">
 					{{#with tech}}
-						{{>technology}}
+						{{>technology amount=../amount}}
 					{{/with}}
 				</div>
 				{{/each}}
@@ -61,10 +61,10 @@
 			<h3 class="no-margin-top hidden-xs">Videos</h3>
 			<h3 class="text-center no-margin visible-xs">Videos</h3>
 
-			<div class="row">
+			<div class="columns columns-sm-2 columns-md-3 columns-lg-4">
 				{{#each viewWork.videos}}
-				<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
-					<a class="thumbnail no-link" target="_blank" href="https://www.youtube.com/watch?v={{id}}" data-video-modal="{{id}}">
+				<div class="column">
+					<a class="thumbnail no-link no-margin" target="_blank" href="https://www.youtube.com/watch?v={{id}}" data-video-modal="{{id}}">
 						<i class="fa fa-5x fa-play-circle overlay-icon"></i>
 						<img class="img-responsive" src="https://img.youtube.com/vi/{{id}}/hqdefault.jpg">
 						<h5 class="text-center">{{title}}</h5>
@@ -79,10 +79,10 @@
 			<h3 class="no-margin-top hidden-xs">Screen Shots</h3>
 			<h3 class="text-center no-margin visible-xs">Screen Shots</h3>
 
-			<div class="row">
+			<div class="columns columns-sm-2 columns-md-3 columns-lg-4">
 				{{#each viewWork.screenshots}}
-				<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
-					<a class="thumbnail" target="_blank" href="{{src}}" data-image-modal="{{src}}">
+				<div class="column">
+					<a class="thumbnail no-margin" target="_blank" href="{{src}}" data-image-modal="{{src}}">
 						<i class="fa fa-5x fa-search-plus overlay-icon"></i>
 						<img class="img-responsive" src="{{thumbnail}}">
 					</a>
