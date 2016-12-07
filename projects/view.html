@@ -68,7 +68,12 @@
 				}
 			});
 		}
-		fetch('/templates/markdown/projects/'+parseSearch().id+'.md').then(function(res){return res.text()}).then(function(markdown){
+		fetch('/templates/markdown/projects/'+parseSearch().id+'.md').then(function(res){
+			if(res.ok)
+				return res.text();
+			else
+				throw new Error('failed to get description');
+		}).then(function(markdown){
 			projectDescription = loadMarkdown(markdown);
 			init();
 		}).catch(init);

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Redirecting</title>
+	<script type="text/javascript">
+		var redirects = {
+			'block': '/projects/view?id=block-script',
+			'block-script': '/projects/view?id=block-script',
+			'af': '/work/view?id=adfactory',
+			'ad-factory': '/work/view?id=adfactory',
+			'filter': '/projects/view?id=filtered',
+			'filtered': '/projects/view?id=filtered',
+			'js': '/skills/view?id=javascript'
+		}
+
+		var redirected = false;
+		for(var i in redirects){
+			if(location.search.toLowerCase() == '?'+i.toLowerCase()){
+				location.href = redirects[i];
+				redirected = true;
+			}
+		}
+
+		if(!redirected)
+			location.href = '/';
+	</script>
+</head>
+<body>
+	<center>
+		<h1>Redirecting...</h1>
+		<a href="/">Back</a>
+	</center>
+</body>
+</html>

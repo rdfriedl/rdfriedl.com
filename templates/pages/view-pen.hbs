@@ -24,14 +24,16 @@
 			</div>
 			{{/if}}
 
-			{{! used }}
+			{{!-- used --}}
 			{{#if pen.used.length}}
 			<h3>Technologies Used</h3>
-			<div class="row">
+			<div class="columns columns-sm-2 columns-md-3">
 				{{#pen.used}}
-				<div class="col-xs-12 col-sm-6 col-md-4">
-					{{>technology}}
-				</div>
+					<div class="column">
+						{{#with tech}}
+							{{>technology amount=../amount}}
+						{{/with}}
+					</div>
 				{{/pen.used}}
 			</div>
 			{{/if}}
@@ -51,9 +53,9 @@
 			{{/if}}
 
 			{{! other pens }}
-			<div class="row">
+			<div class="columns columns-sm-2 columns-md-3 columns-lg-4">
 				{{#each otherPens}}
-				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+				<div class="column">
 					{{> pen}}
 				</div>
 				{{/each}}
