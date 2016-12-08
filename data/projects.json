@@ -3,7 +3,7 @@
 		"id": "block-script",
 		"type": "game",
 		"title": "Block-Script",
-		"description": "A 3 Dimensional voxel maze game, built with Three.js",
+		"description": "A 3 Dimensional voxel maze game, built with Three.js and VueJS",
 		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/block-script/block-script-v2_tn.jpg",
 		"tags": [
 			{
@@ -87,7 +87,7 @@
 		"id": "personal-site",
 		"type": "project",
 		"title": "Personal Web Site",
-		"description": "A Web Site for myself",
+		"description": "My Personal WebSite",
 		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/personal-site/2016-11-14-13-23-38_tn.jpg",
 		"tags": [
 			{"title": "web site", "type": "default"},
@@ -203,6 +203,29 @@
 		],
 
 		"demoURL": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/filtered/index.html"
+	},
+	{
+		"id": "background-remover",
+		"type": "expariment",
+		"title": "Image Background Remover",
+		"description": "an expariment with images processing algorithms",
+		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/tools/background-remover.png",
+		"tags": [
+			{
+				"title": "Experiment",
+				"type": "info"
+			},
+			{
+				"title": "Complete",
+				"type": "success"
+			}
+		],
+		"used": [
+			"javascript",
+			"html5"
+		],
+
+		"demoURL": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/background-remover/index.html"
 	},
 	{
 		"id": "buttons-and-doors",
@@ -336,8 +359,6 @@
 		"sourceURL": "https://github.com/rdfriedl/cannontest",
 		"demoURL": "http://cdn.rawgit.com/rdfriedl/cannontest/v1/index.html"
 	},
-
-
 	{
 		"id": "redom-and-mobx-todo-app",
 		"type": "expariment",
@@ -361,28 +382,5 @@
 		],
 
 		"demoURL": "http://www.webpackbin.com/VJG--5mxf"
-	},
-	{
-		"id": "background-remover",
-		"type": "expariment",
-		"title": "Image Background Remover",
-		"description": "a image background remover expariment",
-		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/tools/background-remover.png",
-		"tags": [
-			{
-				"title": "Experiment",
-				"type": "default"
-			},
-			{
-				"title": "Complete",
-				"type": "success"
-			}
-		],
-		"used": [
-			"javascript",
-			"html5"
-		],
-
-		"demoURL": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/background-remover/index.html"
 	}
 ]
