@@ -272,6 +272,28 @@ $(document).on('click','[href="#"]',function(event){
 	event.preventDefault();
 });
 
+// play videos on hover
+$(document).on('mouseover', 'video.play-on-hover', function(event){
+	event.target.play();
+	event.target.playbackRate = parseFloat($(event.target).attr('rate')) || event.target.playbackRate;
+
+	if(!event.target.onended && event.target.hasAttribute('loopPause')){
+		event.target.onended = function(event){
+			var wait = parseFloat(event.target.getAttribute('loopPause')) * 1000;
+			if(isNaN(wait)) return;
+			event.target.loopWait = setTimeout(function(el){
+				el.play();
+			}.bind(this, event.target),wait);
+		}
+	}
+}).on('mouseleave', 'video.play-on-hover', function(event){
+	event.target.pause();
+	if(event.target.loopWait != null){
+		clearTimeout(event.target.loopWait);
+		event.target.loopWait = undefined;
+	}
+})
+
 // toggle, add, remove class
 $(document).on('click', '[data-toggle-class]', function(event){
 	event.preventDefault();

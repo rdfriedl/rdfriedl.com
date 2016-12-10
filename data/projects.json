@@ -4,7 +4,7 @@
 		"type": "game",
 		"title": "Block-Script",
 		"description": "A 3 Dimensional voxel maze game, built with Three.js and VueJS",
-		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/block-script/block-script-v2_tn.jpg",
+		"videoThumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/block-script/block-script.mp4",
 		"tags": [
 			{
 				"title": "Game",
@@ -81,26 +81,8 @@
 
 
 		"sourceURL": "https://github.com/rdfriedl/block-script",
-		"demoURL": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/block-script/index.html"
-	},
-	{
-		"id": "personal-site",
-		"type": "project",
-		"title": "Personal Web Site",
-		"description": "My Personal WebSite",
-		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/personal-site/2016-11-14-13-23-38_tn.jpg",
-		"tags": [
-			{"title": "web site", "type": "default"},
-			{"title": "personal", "type": "default"}
-		],
-		"used": [
-			"github",
-			"handlebarsjs",
-			"jquery",
-			"json"
-		],
-
-		"sourceURL": "https://github.com/rdfriedl/rdfriedl.github.io"
+		"demoURL": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/block-script/index.html",
+		"demoText": "Play Now"
 	},
 	{
 		"id": "filtered",
@@ -210,6 +192,7 @@
 		"title": "Image Background Remover",
 		"description": "an expariment with images processing algorithms",
 		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/tools/background-remover.png",
+		"videoThumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover.mp4",
 		"tags": [
 			{
 				"title": "Experiment",
@@ -224,8 +207,64 @@
 			"javascript",
 			"html5"
 		],
+		"midia": [
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-1.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-1_tn.jpg"
+			},
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-2.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-2_tn.jpg"
+			},
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-3.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-3_tn.jpg"
+			},
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-4.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-4_tn.jpg"
+			},
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-5.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-5_tn.jpg"
+			},
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-6.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-6_tn.jpg"
+			},
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-7.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-7_tn.jpg"
+			}
+		],
 
 		"demoURL": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/background-remover/index.html"
+	},
+	{
+		"id": "personal-site",
+		"type": "project",
+		"title": "Personal Web Site",
+		"description": "My Personal WebSite",
+		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/personal-site/2016-11-14-13-23-38_tn.jpg",
+		"tags": [
+			{"title": "web site", "type": "default"},
+			{"title": "personal", "type": "default"}
+		],
+		"used": [
+			"github",
+			"handlebarsjs",
+			"jquery",
+			"json"
+		],
+
+		"sourceURL": "https://github.com/rdfriedl/rdfriedl.github.io"
 	},
 	{
 		"id": "buttons-and-doors",

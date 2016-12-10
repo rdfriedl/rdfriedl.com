@@ -4,7 +4,7 @@
 		"type": "work",
 		"title": "AdFactory",
 		"description": "A simple point and click Ad builer",
-		"thumbnail": "http://www.adfactory.co/wp-content/uploads/ad-factory-ts-logo-small.png",
+		"videoThumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/work/ad-factory/ad-factory.mp4",
 		"videos": [
 			{
 				"id": "zXMC9iF-gXk",

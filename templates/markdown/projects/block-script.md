@@ -12,10 +12,14 @@ So I decided to rewrite the game to give myself a chance to apply what I had jus
 I also took this chance to redesign the game to be more of a maze game instead of a Minecraft clone.
 Another reason I wanted to change the games design, was because I had been studying maze generators and I wanted to try my hand at creating a 3D maze generator.
 
+**The first step in rewriting the game** was to set up a build system that would allow me to use ES6 and [VueJS](/skills/view?id=vuejs)
+After a little research i settled on using [Webpack](/skills/view?id=webpack) and [Babel](/skills/view?id=babel).
+It did not take long before i had a working development environment setup, complete with a [HMR development server](http://survivejs.com/webpack/developing-with-webpack/automatic-browser-refresh/).
+
 <a class="thumbnail pull-right margin-left-10-sm margin-bottom-10 width-100-xs width-25" href="https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/block-script/2016-11-13-15-57-53.png" target="_blank" data-image-modal>
 	<img title="3d maze game" src="https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/block-script/2016-11-13-15-57-53_tn.jpg"/>
 </a>
-**One of the first steps in redesigning the game** was to create a set of pre-built rooms that would snap together to create the maze.
+**The next step was to create a set of pre-built rooms** that would snap together to create the maze.
 To do this I had to build my own 3D room editor that would allow me build and preview the rooms, before I added them to the game.
 
 Then once I had all 28 of the rooms built for the maze, it was time to start working on the game itself.

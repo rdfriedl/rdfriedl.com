@@ -34,13 +34,31 @@
 			<div class="row">
 				{{! desktop }}
 				<div id="project-description" class="col-xs-12 hidden-xs">
+					{{#if project.videoThumbnail}}
+					<div class="pull-left col-xs-4 no-padding-left" style="position: relative">
+						<i class="fa fa-play-circle overlay-icon overlay-icon-hide"></i>
+						<video class="play-on-hover img-responsive" rate="2" loopPause="1" preload="true" src="{{project.videoThumbnail}}"/>
+					</div>
+					{{/if}}
+					{{#unless project.videoThumbnail}}
 					<img class="pull-left col-xs-4 no-padding-left" src="{{project.thumbnail}}"/>
+					{{/unless}}
+
 					{{&projectDescription}}
 				</div>
 
 				{{! mobile }}
 				<div class="col-xs-12 visible-xs">
+					{{#if project.videoThumbnail}}
+					<div style="position: relative">
+						<i class="fa fa-play-circle overlay-icon overlay-icon-hide"></i>
+						<video class="play-on-hover img-responsive" rate="2" loopPause="1" preload="true" src="{{project.videoThumbnail}}"/>
+					</div>
+					{{/if}}
+					{{#unless project.videoThumbnail}}
 					<img class="img-responsive" src="{{project.thumbnail}}"/>
+					{{/unless}}
+
 					<div class="page-header no-margin-bottom no-margin-top">
 		  				<h3 class="text-center visible-xs">{{project.title}}</h3>
 					</div>

@@ -178,7 +178,7 @@
 		"id": "videoconverter",
 		"title": "videoconverter",
 		"siteURL": "http://bgrins.com/videoconverter.js/",
-		"thumbnail": "http://bgrins.com/videoconverter.js/site/logo.png",
+		"thumbnail": "http://bgrins.github.io/videoconverter.js/site/logo.png",
 		"description": "FFmpeg converted to javaScript using EMscripten"
 	},
 	{

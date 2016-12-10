@@ -21,15 +21,34 @@
 
 			<div class="row">
 				{{! desktop thumbnail}}
-				<div class="col-xs-2 hidden-xs">
-					<img class="img-responsive" src="{{viewWork.thumbnail}}"/>
+				<div class="col-xs-12 hidden-xs">
+					{{#if viewWork.videoThumbnail}}
+					<div class="pull-left col-xs-4 no-padding-left" style="position: relative">
+						<i class="fa fa-play-circle overlay-icon overlay-icon-hide"></i>
+						<video class="play-on-hover img-responsive" rate="2" loopPause="1" preload="true" src="{{viewWork.videoThumbnail}}"/>
+					</div>
+					{{/if}}
+					{{#unless viewWork.videoThumbnail}}
+					<img class="pull-left col-xs-4 no-padding-left" src="{{viewWork.thumbnail}}"/>
+					{{/unless}}
+
+					{{viewWork.description}}
 				</div>
-				<div class="col-xs-10 hidden-xs">{{viewWork.description}}</div>
 
 				{{! mobile thumbnail with header}}
 				<div class="col-xs-12 visible-xs">
+					{{#if viewWork.videoThumbnail}}
+					<div style="position: relative">
+						<i class="fa fa-play-circle overlay-icon overlay-icon-hide"></i>
+						<video class="play-on-hover img-responsive" rate="2" loopPause="1" preload="true" src="{{viewWork.videoThumbnail}}"/>
+					</div>
+					{{/if}}
+					{{#unless viewWork.videoThumbnail}}
+					<img class="img-responsive" src="{{viewWork.thumbnail}}"/>
+					{{/unless}}
+
 					<div class="page-header no-margin-bottom no-margin-top">
-		  				<h2 class="text-center visible-xs no-margin-top">{{viewWork.title}}{{#if company}} <small>by {{company}}</small>{{/if}}</h2>
+		  				<h2 class="text-center visible-xs">{{viewWork.title}}{{#if company}} <small>by {{company}}</small>{{/if}}</h2>
 					</div>
 				</div>
 				<div class="col-xs-12 visible-xs"><p>{{viewWork.description}}</p></div>

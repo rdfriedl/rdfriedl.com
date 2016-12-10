@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono:400,700');
 
+/*
+	add an icon to the video elements using ::before, that hides when the user hover over it, or when the video is playing
+ */
+
 body {
 	font-family: 'Share Tech Mono', sans-serif;
 	overflow-x:hidden;
@@ -182,10 +186,18 @@ body.nav-open{
 .overlay-icon{
 	display: block;
 	position: absolute;
-	color: rgba(0,0,0,0.5);
+	color: black;
+	opacity: 0.6;
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%,-50%);
+	font-size: 0.8in;
+	transition: opacity 0.5s ease;
+}
+*:hover>.overlay-icon-hide{
+	opacity: 0;
+	transform: translate(-50%,-50%) scale(1.5);
+	transition: opacity 0.5s ease, transform 0.7s ease;
 }
 
 /* columns */
