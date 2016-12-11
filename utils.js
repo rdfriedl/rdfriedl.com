@@ -99,17 +99,18 @@ function loadData(){
 		}),
 		loadJSON('/data/skills.json').then(function(json){
 			var skills = [];
-			for(let id in json)
-				skills.push(Object.assign(json[id],{id}));
+			for(var id in json){
+				skills.push(Object.assign(json[id],{id: id}));
+			}
 
 			data.skills = {};
-			skills.sort((a,b) => {
+			skills.sort(function(a,b){
 				if(b.knowledge + b.experience > a.knowledge + a.experience)
 					return 1;
 				else if(b.knowledge + b.experience < a.knowledge + a.experience)
 					return -1;
 				else return 0;
-			}).forEach(skill => {
+			}).forEach(function(skill){
 				data.skills[skill.id] = skill;
 			})
 		})
@@ -363,7 +364,7 @@ function createVideoModal(){
 
 	modal.modal();
 
-	modal.on('hidden.bs.modal', () => {
+	modal.on('hidden.bs.modal', function(){
 		modal.find('iframe').attr('src', '');
 	})
 

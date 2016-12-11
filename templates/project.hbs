@@ -6,7 +6,7 @@
 		<a href="/projects/view?id={{id}}">
 			{{#if videoThumbnail}}
 			<i class="fa fa-play-circle overlay-icon overlay-icon-hide"></i>
-			<video class="play-on-hover img-responsive" rate="2" loopPause="1" preload="true" src="{{videoThumbnail}}"/>
+			<video class="play-on-hover img-responsive" rate="2" loopPause="1" preload="auto" src="{{videoThumbnail}}"/>
 			{{/if}}
 			{{#unless videoThumbnail}}
 			<img class="img-responsive" src="{{thumbnail}}"/>
