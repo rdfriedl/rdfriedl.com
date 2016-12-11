@@ -1,9 +1,9 @@
 [
 	{
-		"id": "adfactory",
+		"id": "ad-factory",
 		"type": "work",
 		"title": "AdFactory",
-		"description": "A simple point and click Ad builer",
+		"description": "A simple point and click Ad builer for TShirt campaigns launched using TeeSpring",
 		"videoThumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/work/ad-factory/ad-factory.mp4",
 		"videos": [
 			{
@@ -45,10 +45,77 @@
 			{"id": "json", "amount": 50},
 			{"id": "javascript", "amount": 80},
 			{"id": "fabricjs", "amount": 95},
-			{"id": "whammy", "amount": 20}
+			{"id": "whammy", "amount": 20},
+			{"id": "bootstrap", "amount": 80}
 		],
 
 		"siteURL": "http://www.adfactory.co/",
-		"company": "Wowspring"
+		"company": "by Wowspring"
+	},
+	{
+		"id": "sunfrog",
+		"title": "Online TShirt Designer",
+		"description": "A simple drag and drop TShirt designer for the printable apparel company SunFrog Shirts",
+		"videoThumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/work/sunfrog/sunfrog.mp4",
+		"used": [
+			{"id": "knockout", "amount": 100},
+			{"id": "jquery", "amount": 30},
+			{"id": "javascript", "amount": 80},
+			{"id": "svgjs", "amount": 90},
+			{"id": "bootstrap", "amount": 60}
+		],
+		"screenshots": [
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/work/sunfrog/sunfrog-1.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/work/sunfrog/sunfrog-1_tn.jpg"
+			},
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/work/sunfrog/sunfrog-2.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/work/sunfrog/sunfrog-2_tn.jpg"
+			}
+		],
+
+		"company": "for SunFrog Shirts"
+	},
+	{
+		"id": "viralstyle",
+		"title": "Online Ad Designer",
+		"description": "A Online graphical ad builder for the printable apparel company ViralStyle",
+		"videoThumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/work/viralstyle/viralstyle.mp4",
+		"used": [
+			{"id": "knockout", "amount": 100},
+			{"id": "jquery", "amount": 30},
+			{"id": "viralstyle-api", "amount": 50},
+			{"id": "javascript", "amount": 80},
+			{"id": "fabricjs", "amount": 95},
+			{"id": "bootstrap", "amount": 70},
+			{"id": "systemjs", "amount": 30}
+		],
+		"screenshots": [
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/work/viralstyle/screenshot-1.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/work/viralstyle/screenshot-1_tn.jpg"
+			},
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/work/viralstyle/screenshot-2.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/work/viralstyle/screenshot-2_tn.jpg"
+			},
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/work/viralstyle/screenshot-3.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/work/viralstyle/screenshot-3_tn.jpg"
+			},
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/work/viralstyle/screenshot-4.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/work/viralstyle/screenshot-4_tn.jpg"
+			}
+		],
+
+		"company": "for ViralStyle"
 	}
 ]

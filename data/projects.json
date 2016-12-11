@@ -207,7 +207,7 @@
 			"javascript",
 			"html5"
 		],
-		"midia": [
+		"media": [
 			{
 				"type": "image",
 				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-1.png",
@@ -306,7 +306,8 @@
 
 
 		"sourceURL": "https://github.com/rdfriedl/buttons-and-doors",
-		"demoURL": "http://rdfriedl.github.io/buttons-and-doors"
+		"demoURL": "http://rdfriedl.github.io/buttons-and-doors",
+		"demoText": "Play Online"
 	},
 	{
 		"id": "car-game",
@@ -348,7 +349,8 @@
 
 
 		"sourceURL": "https://github.com/ReflectionGames/carGame",
-		"demoURL": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/webplayers/UnityWebPlayer/UnityWebPlayer.html"
+		"demoURL": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/webplayers/UnityWebPlayer/UnityWebPlayer.html",
+		"demoText": "Play Now"
 	},
 	{
 		"id": "cannontest",

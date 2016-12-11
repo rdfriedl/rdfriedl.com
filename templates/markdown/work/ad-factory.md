@@ -1,6 +1,5 @@
 AdFactory is a easy to use graphical ad designer for TeeSpring t-shirts campaigns
 
-<!-- 
 **After AdFactory had launched** i started developing a video rendering solution for AdFactory that would allow users to render videos in the browser.
 It had to create `.mp4` video files out of a list of image slides with transitions.
 It was hard but at the same time rewarding, because in the process of building it I learned a lot about JavaScript and web development in general.
@@ -16,4 +15,3 @@ They allow you to create a separate thread to run your JavaScript in.
 I Found that if i ran FFmpeg.js in a WebWorker it would not freeze up the UI or crash the browser.
 
 **Once i got the video renderer running smoothly**, i went on to create the interface to allow the user to edit the videos slides, and add animations.
- -->

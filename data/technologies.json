@@ -208,5 +208,19 @@
 		"siteURL": "https://babeljs.io/",
 		"thumbnail": "https://raw.githubusercontent.com/babel/logo/master/babel.png",
 		"description": "A JavaScript compiler."
+	},
+	{
+		"id": "systemjs",
+		"title": "SystemJS",
+		"siteURL": "https://github.com/systemjs/systemjs",
+		"thumbnail": "https://camo.githubusercontent.com/1ff14500f98dfa0f6007c28c2c9873617f70b2ab/687474703a2f2f666f756e7461696e6a732e696f2f6173736574732f696d67732f73797374656d6a732e706e67",
+		"description": "A Universal dynamic module loader for JavaScript"
+	},
+	{
+		"id": "viralstyle-api",
+		"title": "ViralStyle API",
+		"siteURL": "https://viralstyle.com/partnership",
+		"thumbnail": "https://assets.viralstyle.com/images/favicon.ico",
+		"description": "The ViralStyle API"
 	}
 ]

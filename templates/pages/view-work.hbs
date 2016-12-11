@@ -16,7 +16,7 @@
 					<a href="/work/demo?id={{viewWork.id}}" class="btn btn-success">Demo</a>
 					<a href="{{viewWork.siteURL}}" class="btn btn-info" target="_blank"><i class="fa fa-globe"></i> WebSite</a>
 				</div>
-		  		<h2 class="no-margin-top">{{viewWork.title}}{{#if company}} <small>by {{company}}</small>{{/if}}</h2>
+		  		<h2 class="no-margin-top">{{viewWork.title}}{{#if company}} <small>{{company}}</small>{{/if}}</h2>
 			</div>
 
 			<div class="row">
@@ -32,7 +32,7 @@
 					<img class="pull-left col-xs-4 no-padding-left" src="{{viewWork.thumbnail}}"/>
 					{{/unless}}
 
-					{{viewWork.description}}
+					{{&workDescription}}
 				</div>
 
 				{{! mobile thumbnail with header}}
@@ -48,10 +48,10 @@
 					{{/unless}}
 
 					<div class="page-header no-margin-bottom no-margin-top">
-		  				<h2 class="text-center visible-xs">{{viewWork.title}}{{#if company}} <small>by {{company}}</small>{{/if}}</h2>
+		  				<h2 class="text-center visible-xs">{{viewWork.title}}{{#if company}} <small>{{company}}</small>{{/if}}</h2>
 					</div>
 				</div>
-				<div class="col-xs-12 visible-xs"><p>{{viewWork.description}}</p></div>
+				<div class="col-xs-12 visible-xs"><p>{{&workDescription}}</p></div>
 				<div class="col-xs-8 col-xs-offset-2 visible-xs">
 					<div class="btn-group btn-group-justified">
 						{{#if viewWork.demoURL}}<a href="/work/demo?id={{viewWork.id}}" class="btn btn-success">Demo</a>{{/if}}
@@ -113,6 +113,7 @@
 		</div>
 	</div>
 
+	{{#if otherProjects.length}}
 	<div class="panel panel-default">
 		<div class="panel-body">
 			<h3 class="hidden-xs no-margin-top">Other Project</h3>
@@ -127,6 +128,7 @@
 			</div>
 		</div>
 	</div>
+	{{/if}}
 </div>
 
 {{>footer}}

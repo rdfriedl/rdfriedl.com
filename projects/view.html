@@ -66,7 +66,7 @@
 						return Math.round(Math.random() * 3 - 1);
 					})
 
-					view.otherProjects.length = 3;
+					view.otherProjects.length = Math.min(3, view.otherProjects.length);
 					view.projectDescription = projectDescription || (view.project && view.project.description) || '';
 				}
 			});
