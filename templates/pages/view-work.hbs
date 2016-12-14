@@ -16,7 +16,7 @@
 					<a href="/work/demo?id={{viewWork.id}}" class="btn btn-success">Demo</a>
 					<a href="{{viewWork.siteURL}}" class="btn btn-info" target="_blank"><i class="fa fa-globe"></i> WebSite</a>
 				</div>
-		  		<h2 class="no-margin-top">{{viewWork.title}}{{#if company}} <small>{{company}}</small>{{/if}}</h2>
+		  		<h2 class="no-margin-top">{{viewWork.title}}{{#if viewWork.company}} <small>{{viewWork.company}}</small>{{/if}}</h2>
 			</div>
 
 			<div class="row">
@@ -48,7 +48,7 @@
 					{{/unless}}
 
 					<div class="page-header no-margin-bottom no-margin-top">
-		  				<h2 class="text-center visible-xs">{{viewWork.title}}{{#if company}} <small>{{company}}</small>{{/if}}</h2>
+		  				<h2 class="text-center visible-xs">{{viewWork.title}}{{#if viewWork.company}} <small>{{viewWork.company}}</small>{{/if}}</h2>
 					</div>
 				</div>
 				<div class="col-xs-12 visible-xs"><p>{{&workDescription}}</p></div>

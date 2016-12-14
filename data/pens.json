@@ -85,6 +85,22 @@
 		"used": ["svg"]
 	},
 	{
+		"id": "QNgvYo",
+		"title": "Image Color Finder",
+		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/pens/QNgvYo_tn.jpg",
+		"tags": [
+			{
+				"message": "Pen",
+				"type": "default"
+			}
+		],
+		"used": [
+			"html",
+			"javascript",
+			"css"
+		]
+	},
+	{
 		"id": "wKRRNG",
 		"title":"animated svg arcs",
 		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/pens/wKRRNG_tn.jpg",

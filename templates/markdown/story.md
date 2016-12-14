@@ -40,6 +40,6 @@ We had been heavily testing the application about a month in advance so the laun
 **After AdFactory had launched** I was tasked with developing a video rendering solution for AdFactory that would allow users to render videos in the browser.
 It was designed to export `.mp4` video files from a list of image slides with transitions.
 It was hard but at the same time rewarding, because in the process of building it I learned a lot about JavaScript and web development in general.
-After only 3 months of intense of developing and testing, it was ready to be launched.
+After only 3 months of intense development and testing, it was ready to be launched.
 Once launched AdFactory was the first online application to have a full video creating tool that ran in the users browser.
 other companies, were still using slower server-side technologies to render their videos.

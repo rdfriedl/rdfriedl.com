@@ -16,9 +16,10 @@ Another reason I wanted to change the games design, was because I had been study
 After a little research i settled on using [Webpack](/skills/view?id=webpack) and [Babel](/skills/view?id=babel).
 It did not take long before i had a working development environment setup, complete with a [HMR development server](http://survivejs.com/webpack/developing-with-webpack/automatic-browser-refresh/).
 
-<a class="thumbnail pull-right margin-left-10-sm margin-bottom-10 width-100-xs width-25" href="https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/block-script/2016-11-13-15-57-53.png" target="_blank" data-image-modal>
-	<img title="3d maze game" src="https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/block-script/2016-11-13-15-57-53_tn.jpg"/>
-</a>
+<span class="pull-right margin-left-10-sm margin-bottom-10 width-100-xs width-25" style="position: relative">
+    <i class="fa fa-play-circle overlay-icon overlay-icon-hide"></i>
+    <video class="play-on-hover img-responsive" rate="2.5" loopPause="2" preload src="https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/games/block-script/block-script-editor.mp4"></video>
+</span>
 **The next step was to create a set of pre-built rooms** that would snap together to create the maze.
 To do this I had to build my own 3D room editor that would allow me build and preview the rooms, before I added them to the game.
 
