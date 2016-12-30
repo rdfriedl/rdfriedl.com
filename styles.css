@@ -145,29 +145,38 @@ body.page-showing .header{
 .mobile-nav .slide {
 	position: fixed;
 	top: 0;
-	left: -100%;
 	width: 70vw;
 	height: 100vh;
+	left: 0px;
 	z-index: 100;
 	overflow: auto;
-	transition: left 0.5s ease;
+	transition: transform 0.5s ease;
+	transform: translateX(-100%);
 }
 .mobile-nav .overlay{
-	background: transparent;
-	transition: background 0.5s ease;
-}
-body.nav-open .mobile-nav .slide{
-	left: 0;
-}
-
-body.nav-open .mobile-nav .overlay {
 	position: fixed;
 	width: 100vw;
 	height: 100vh;
 	top: 0;
 	left: 0;
-	background: rgba(0,0,0,0.8);
 	z-index: 50;
+	-webkit-pointer-events: none;
+	   -moz-pointer-events: none;
+	    -ms-pointer-events: none;
+			pointer-events: none;
+	background: transparent;
+	transition: background 0.5s ease;
+}
+body.nav-open .mobile-nav .slide{
+	transform: translateX(0px);
+}
+
+body.nav-open .mobile-nav .overlay {
+	background: rgba(0,0,0,0.8);
+	-webkit-pointer-events: auto;
+	   -moz-pointer-events: auto;
+	    -ms-pointer-events: auto;
+			pointer-events: auto;
 }
 body.nav-open{
 	overflow-y: hidden;
