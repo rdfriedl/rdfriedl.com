@@ -152,6 +152,7 @@ body.page-showing .header{
 	overflow: auto;
 	transition: transform 0.5s ease;
 	transform: translateX(-100%);
+	will-change: transform;
 }
 .mobile-nav .overlay{
 	position: fixed;
