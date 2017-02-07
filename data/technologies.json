@@ -222,5 +222,12 @@
 		"siteURL": "https://viralstyle.com/partnership",
 		"thumbnail": "https://assets.viralstyle.com/images/favicon.ico",
 		"description": "The ViralStyle API"
+	},
+	{
+		"id": "angular2",
+		"title": "Angular 2",
+		"siteURL": "https://angular.io",
+		"thumbnail": "https://angular.io/resources/images/logos/angular2/angular.svg",
+		"description": "Front End Framework"
 	}
 ]

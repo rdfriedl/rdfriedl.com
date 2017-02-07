@@ -85,6 +85,125 @@
 		"demoText": "Play Now"
 	},
 	{
+		"id": "background-remover",
+		"type": "expariment",
+		"title": "Image Background Remover",
+		"description": "an expariment with images processing algorithms",
+		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/tools/background-remover.png",
+		"videoThumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover.mp4",
+		"tags": [
+			{
+				"title": "Experiment",
+				"type": "info"
+			},
+			{
+				"title": "Complete",
+				"type": "success"
+			}
+		],
+		"used": [
+			"javascript",
+			"html5"
+		],
+		"media": [
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-1.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-1_tn.jpg"
+			},
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-2.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-2_tn.jpg"
+			},
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-3.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-3_tn.jpg"
+			},
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-4.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-4_tn.jpg"
+			},
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-5.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-5_tn.jpg"
+			},
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-6.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-6_tn.jpg"
+			},
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-7.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-7_tn.jpg"
+			}
+		],
+
+		"demoURL": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/background-remover/index.html"
+	},
+	{
+		"id": "ng2-notes",
+		"type": "expariment",
+		"title": "Angular2 Notes",
+		"description": "A simple note application built with Angular2",
+		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/ng2-notes/ng2-notes.png",
+		"tags": [
+			{
+				"title": "Experiment",
+				"type": "info"
+			},
+			{
+				"title": "Complete",
+				"type": "success"
+			}
+		],
+		"used": [
+			"angular2",
+			"bootstrap",
+			"typescript",
+			"webpack"
+		],
+		"media": [
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/ng2-notes/ng2-notes.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/ng2-notes/ng2-notes_tn.jpg"
+			},
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/ng2-notes/ng2-notes-2.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/ng2-notes/ng2-notes-2_tn.jpg"
+			},
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/ng2-notes/ng2-notes-3.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/ng2-notes/ng2-notes-3_tn.jpg"
+			},
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/ng2-notes/ng2-notes-4.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/ng2-notes/ng2-notes-4_tn.jpg"
+			},
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/ng2-notes/ng2-notes-5.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/ng2-notes/ng2-notes-5_tn.jpg"
+			},
+			{
+				"type": "image",
+				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/ng2-notes/ng2-notes-6.png",
+				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/ng2-notes/ng2-notes-6_tn.jpg"
+			}
+		],
+
+		"demoURL": "http://notes.rdfriedl.com",
+		"sourceURL": "https://github.com/rdfriedl/ng2-notes"
+	},
+	{
 		"id": "filtered",
 		"type": "project",
 		"title": "Filtered",
@@ -185,67 +304,6 @@
 		],
 
 		"demoURL": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/filtered/index.html"
-	},
-	{
-		"id": "background-remover",
-		"type": "expariment",
-		"title": "Image Background Remover",
-		"description": "an expariment with images processing algorithms",
-		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/tools/background-remover.png",
-		"videoThumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover.mp4",
-		"tags": [
-			{
-				"title": "Experiment",
-				"type": "info"
-			},
-			{
-				"title": "Complete",
-				"type": "success"
-			}
-		],
-		"used": [
-			"javascript",
-			"html5"
-		],
-		"media": [
-			{
-				"type": "image",
-				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-1.png",
-				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-1_tn.jpg"
-			},
-			{
-				"type": "image",
-				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-2.png",
-				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-2_tn.jpg"
-			},
-			{
-				"type": "image",
-				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-3.png",
-				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-3_tn.jpg"
-			},
-			{
-				"type": "image",
-				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-4.png",
-				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-4_tn.jpg"
-			},
-			{
-				"type": "image",
-				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-5.png",
-				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-5_tn.jpg"
-			},
-			{
-				"type": "image",
-				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-6.png",
-				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-6_tn.jpg"
-			},
-			{
-				"type": "image",
-				"src": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-7.png",
-				"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/projects/background-remover/background-remover-7_tn.jpg"
-			}
-		],
-
-		"demoURL": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/background-remover/index.html"
 	},
 	{
 		"id": "personal-site",

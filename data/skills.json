@@ -29,6 +29,11 @@
 		"experience": 100,
 		"about": ""
 	},
+	"angular2": {
+		"knowledge": 50,
+		"experience": 50,
+		"about": ""
+	},
 	"react": {
 		"knowledge": 60,
 		"experience": 50,

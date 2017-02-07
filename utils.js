@@ -338,7 +338,7 @@ function createImageModal(){
 		'				<a id="download-image" class="btn btn-primary btn-sm" target="_blank" download><i class="fa fa-download"></i> Download</a>',
 		'			</div>',
 		'			<div class="modal-body">',
-		'				<img class="img-responsive"/>',
+		'				<img style="max-height: 95vh; margin: 0 auto; max-width: 100%; display: block; height: auto"/>',
 		'			</div>',
 		'		</div>',
 		'	</div>',
