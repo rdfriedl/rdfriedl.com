@@ -73,6 +73,9 @@
 .width-50{
 	width: 50%;
 }
+.width-75-50{
+	width: 75%;
+}
 .full-width, .width-100{
 	width: 100%;
 }
@@ -152,6 +155,9 @@
 	}
 	.width-50-xs{
 		width: 50%;
+	}
+	.width-75-xs{
+		width: 75%;
 	}
 	.full-width-xs, .width-100-xs{
 		width: 100%;
@@ -234,6 +240,9 @@
 	.width-50-sm{
 		width: 50%;
 	}
+	.width-75-sm{
+		width: 75%;
+	}
 	.full-width-sm, .width-100-sm{
 		width: 100%;
 	}
@@ -315,6 +324,9 @@
 	.width-50-md{
 		width: 50%;
 	}
+	.width-75-md{
+		width: 75%;
+	}
 	.full-width-md, .width-100-md{
 		width: 100%;
 	}
@@ -395,6 +407,9 @@
 	}
 	.width-50-lg{
 		width: 50%;
+	}
+	.width-75-lg{
+		width: 75%;
 	}
 	.full-width-lg, .width-100-lg{
 		width: 100%;
