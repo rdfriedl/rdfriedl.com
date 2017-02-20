@@ -1,5 +1,20 @@
 [
 	{
+		"id": "ygrGWM",
+		"title":"Pure CSS & HTML MineSweeper",
+		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/pens/ygrGWM_tn.jpg",
+		"tags": [
+			{
+				"message": "Pen",
+				"type": "default"
+			}
+		],
+		"used": [
+			"css3",
+			"html"
+		]
+	},
+	{
 		"id": "QdKgRK",
 		"title":"CSS 3D animation",
 		"thumbnail": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/site-assets/pens/QdKgRK_tn.jpg",
