@@ -45,6 +45,13 @@
 					{{/unless}}
 
 					{{&projectDescription}}
+
+					<div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-md-4 col-md-offset-4">
+						<div class="btn-group btn-group-justified btn-group-lg">
+							{{#if project.demoURL}}<a href="/projects/demo?id={{project.id}}" class="btn btn-success">Demo</a>{{/if}}
+							<a href="{{project.sourceURL}}" class="btn btn-info" target="_blank"><i class="fa fa-code"></i> Source</a>
+						</div>
+					</div>
 				</div>
 
 				{{! mobile }}
@@ -64,6 +71,7 @@
 					</div>
 				</div>
 				<div class="col-xs-12 visible-xs"><p>{{&projectDescription}}</p></div>
+
 				<div class="col-xs-8 col-xs-offset-2 visible-xs">
 					<div class="btn-group btn-group-justified">
 						{{#if project.demoURL}}<a href="/projects/demo?id={{project.id}}" class="btn btn-success">Demo</a>{{/if}}
