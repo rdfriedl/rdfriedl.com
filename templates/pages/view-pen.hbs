@@ -16,7 +16,9 @@
 				{{pen.title}}
 			</h3>
 
-			<iframe src="https://codepen.io/rdfriedl/debug/{{pen.id}}" style="width: 100%; height: 90vh; max-height: 100vw; border: none;" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation"></iframe>
+			<p id="pen-preview" data-theme-id="dark" data-slug-hash="{{pen.id}}" data-default-tab="result" data-user="rdfriedl" data-embed-version="2" class="codepen"></p>
+			<script>document.getElementById('pen-preview').setAttribute('data-height', window.innerHeight - (20)*2)</script>
+			<script src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 			<div class="btn-group btn-group-justified visible-xs">
 				<a href="https://codepen.io/rdfriedl/pen/{{pen.id}}" class="btn btn-success" target="_blank"><i class="fa fa-code"></i> Source</a>
