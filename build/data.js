@@ -3,7 +3,7 @@ const fs = require('fs');
 const config = require('./config.js');
 const fetch = require('node-fetch');
 
-module.exports = function buildData(){
+module.exports = function buildData(cb){
 	let dataFiles = fs.readdirSync(config.data);
 	let data = {};
 
@@ -49,5 +49,5 @@ module.exports = function buildData(){
 				})
 	}));
 
-	return Promise.all(wait).then(() => data);
+	return Promise.all(wait).then(() => cb && cb(data));
 };

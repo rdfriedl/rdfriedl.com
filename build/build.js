@@ -30,7 +30,7 @@ function renderPugFile(opts = {}) {
 	return outputPath;
 }
 
-buildData().then(data => {
+buildData(data => {
 	let base = path.resolve(__dirname, '../');
 	let pages = glob.sync(`**/[!${config.ignorePagePrefix}]*.pug`, {
 		cwd: config.pages
@@ -46,9 +46,7 @@ buildData().then(data => {
 	});
 
 	// copy static assets
-	new Promise(resolve => {
-		ncp(path.join(config.src, 'assets'), path.join(config.output, 'assets'), resolve);
-	}).then(() => {
+	ncp(path.join(config.src, 'assets'), path.join(config.output, 'assets'), () => {
 		console.log(path.relative(base, path.join(config.src, 'assets')), '->', path.relative(base, path.join(config.output, 'assets')))
 	});
 
@@ -62,7 +60,4 @@ buildData().then(data => {
 		});
 		console.info('rendered', path.relative(base, projectTemplate), '->', path.relative(base, out));
 	})
-}).catch(err => {
-	console.log(err);
-	process.exit(1);
-});
+})
