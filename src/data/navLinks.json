@@ -1,0 +1,37 @@
+[
+	{
+		"title": "Home",
+		"icon": "home",
+		"href": "/"
+	},
+	{
+		"title": "About",
+		"href": "/about/",
+		"icon": "info-circle"
+	},
+	{
+		"title": "Games",
+		"href": "/games/",
+		"icon": "gamepad"
+	},
+	{
+		"title": "Skills",
+		"href": "/skills/",
+		"icon": "wrench"
+	},
+	{
+		"title": "Work",
+		"href": "/work/",
+		"icon": "users"
+	},
+	{
+		"title": "Projects",
+		"href": "/projects/",
+		"icon": "trophy"
+	},
+	{
+		"title": "Pens",
+		"href": "/pens/",
+		"icon": "codepen"
+	}
+]

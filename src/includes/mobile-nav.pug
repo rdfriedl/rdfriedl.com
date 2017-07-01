@@ -1,0 +1,32 @@
+.mobile-nav.visible-xs
+	div(data-add-class='body|nav-open')
+		button.open-nav.show-animate.hide-left.btn.btn-primary.pull-left(type='button')
+			i.fa.fa-navicon
+		h1.show-animate.hide-right.text-center.no-margin= github.name
+	.overlay(data-remove-class='body|nav-open')
+	.slide.panel.panel-default
+		.panel-body
+			.row
+				.col-xs-6.col-xs-offset-3.col-sm-4.col-sm-offset-0.col-md-3.col-md-offset-1.col-lg-2(style='transition-delay: 0.1s;')
+					a(href='/')
+						img.profile-image.img-circle.img-responsive(src=github.avatar_url, style='max-height: 200px;width: auto;margin: auto;')
+				.col-xs-12.text-center
+					a.no-link(href='/')
+						h3= github.name
+						h5.text-muted= info.description
+					ul.social.list-inline
+						each link in links
+							li(data-toggle='tooltip', data-placement='bottom', title=link.title)
+								a.btn.btn-primary(href=link.href, target='_blank')
+									i.fa(class='fa-'+link.icon)
+				.col-xs-12.col-sm-12.col-md-12.col-lg-12
+					each link in navLinks
+						a.btn.btn-default.btn-block(href=link.href)
+							i.fa(class='fa-'+link.icon)= link.title
+script(type = "text/javascript").
+	$('.open-nav').click(function () {
+		$('body').addClass('nav-open');
+	});
+	$('.overlay').click(function () {
+		$('body').removeClass('nav-open');
+	});

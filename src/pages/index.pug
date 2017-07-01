@@ -1,0 +1,85 @@
+include ../includes/mixins
+
++page()
+	.container
+		.row
+			.col-md-8.col-sm-12.col-xs-12.no-padding-xs
+
+				// About
+				section.show-animate.hide-left(style="transition-delay: 0.2s;")
+					.panel.panel-default
+						.panel-body
+							h3.no-margin-top
+								i.fa.fa-info-circle
+								|  About
+							include:markdown-it(html) ../markdown/about.md
+
+				// Projects
+				section.show-animate.hide-left(style="transition-delay: 0.3s;")
+					.panel.panel-default
+						.panel-body
+							h3.no-margin-top
+								i.fa.fa-trophy
+								|  Projects
+								br.visible-xs
+								small My personal projects
+							- var arr = projects.slice(0, 6);
+							each project in arr
+								+project(project)
+
+				// Work
+				section.show-animate.hide-left(style="transition-delay: 0.3s;")
+					.panel.panel-default
+						.panel-body
+							h3.no-margin-top
+								i.fa.fa-users
+								|  Work
+								br.visible-xs
+								small My Work Experience
+							//|            {{#each work}}
+							//|              {{> work-project}}
+							//|            {{/each}}
+
+				// Skills
+				section.show-animate.hide-left(style="transition-delay: 0.4s;")
+					.panel.panel-default
+						.panel-body
+							h3.no-margin-top
+								i.fa.fa-wrench
+								|  Skills
+								br.visible-xs
+								small My unique skillset
+							.columns.columns-sm-2
+								each skill in skills
+									.column
+										| {{> skill}}
+
+				// Backgrounds
+				section.show-animate.hide-left(style="transition-delay: 0.4s;")
+					.panel.panel-default
+						.panel-body.no-padding-bottom
+							h3.no-margin-top
+								i.fa.fa-image
+								|  Backgrounds
+							.columns.columns-sm-2
+								each background in backgrounds
+									.column
+										a.thumbnail.no-margin(href=background.src, data-image-modal=background.src, target="_blank")
+											img(src=background.thumbnail)
+
+			.secondary.col-md-4.col-sm-12.col-xs-12.hidden-xs
+
+				// pens
+				.panel.panel-default.show-animate.hide-right.delay-5
+					.panel-body.no-padding-bottom
+						a.btn.btn-success.btn-xs.pull-right(href="https://codepen.io/rdfriedl", target="_blank")
+							i.fa.fa-codepen
+							|  More
+						h3.no-margin-top
+							i.fa.fa-codepen
+							|  Pens
+						.columns
+							- var homePens = pens.slice(0,6);
+							each pen in homePens
+								.column
+									+pen(pen)

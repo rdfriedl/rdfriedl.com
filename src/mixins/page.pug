@@ -1,0 +1,13 @@
+mixin page(title)
+	- var pageTitle = title ? github.name + ' - ' + title : github.name;
+	html(lang="en")
+		head
+			title= pageTitle
+
+			include ../includes/meta
+			include ../includes/scripts
+		body
+			#page
+				include ../includes/header
+				block
+				include ../includes/footer

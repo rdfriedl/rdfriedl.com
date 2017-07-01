@@ -1,26 +1,28 @@
-language: python
-python:
-  - "3.5"
-cache: pip
+language: node_js
+node_js:
+  - "node"
+cache:
+  directories:
+    - "node_modules"
 install:
-  - pip install awscli
+  - npm install
 script:
-  - echo building
+  - npm run build
 deploy:
   on:
-    branch: master
+    branch: new-s3
   provider: s3
   access_key_id: $AWS_TOKEN
   secret_access_key: $AWS_SECRET
   bucket: $AWS_S3_BUCKET
   skip_cleanup: true
   # Path to a directory containing your built site.
-  # local_dir: build
+  local_dir: dist
   # Set the Cache-Control header.
   cache_control: "max-age=21600"
   acl: public_read
 # after_deploy:
-#   # Allow `awscli` to make requests to CloudFront.
-#   - aws configure set preview.cloudfront true
-#   # Invalidate every object in the targeted distribution.
-#   - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
+# # Allow `awscli` to make requests to CloudFront.
+# - aws configure set preview.cloudfront true
+# # Invalidate every object in the targeted distribution.
+# - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"

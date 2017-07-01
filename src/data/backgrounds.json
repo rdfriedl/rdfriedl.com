@@ -1,0 +1,30 @@
+[
+	{
+		"src": "https://s3.amazonaws.com/rdfriedl.com-assets/backgrounds/background1.png",
+		"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/backgrounds/background1_tn.jpg"
+	},
+	{
+		"src": "https://s3.amazonaws.com/rdfriedl.com-assets/backgrounds/background5.png",
+		"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/backgrounds/background5_tn.jpg"
+	},
+	{
+		"src": "https://s3.amazonaws.com/rdfriedl.com-assets/backgrounds/background4.png",
+		"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/backgrounds/background4_tn.jpg"
+	},
+	{
+		"src": "https://s3.amazonaws.com/rdfriedl.com-assets/backgrounds/background6.png",
+		"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/backgrounds/background6_tn.jpg"
+	},
+	{
+		"src": "https://s3.amazonaws.com/rdfriedl.com-assets/backgrounds/background2.png",
+		"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/backgrounds/background2_tn.jpg"
+	},
+	{
+		"src": "https://s3.amazonaws.com/rdfriedl.com-assets/backgrounds/background3.png",
+		"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/backgrounds/background3_tn.jpg"
+	},
+	{
+		"src": "https://s3.amazonaws.com/rdfriedl.com-assets/backgrounds/background7.png",
+		"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/backgrounds/background7_tn.jpg"
+	}
+]

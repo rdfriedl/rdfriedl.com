@@ -1,0 +1,6 @@
+# Created by .ignore support plugin (hsz.mobi)
+/dist/
+/old/
+node_modules/
+\.idea/
+\.github.cache.json

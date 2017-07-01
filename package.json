@@ -1,0 +1,35 @@
+{
+  "name": "rdfriedl.com",
+  "version": "1.0.0",
+  "description": "personal site",
+  "main": "build.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "node build/build.js",
+    "watch": "watch -p \"src/**/*\" -c \"npm run build\"",
+    "test": "echo no need for tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rdfriedl/rdfriedl.github.io.git"
+  },
+  "author": "Robert Friedl (rdfriedl@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rdfriedl/rdfriedl.github.io/issues"
+  },
+  "homepage": "https://github.com/rdfriedl/rdfriedl.github.io#readme",
+  "devDependencies": {
+    "express": "^4.15.3",
+    "glob": "^7.1.2",
+    "js-beautify": "^1.6.14",
+    "jstransformer-markdown-it": "^2.0.0",
+    "mkdirp": "^0.5.1",
+    "ncp": "^2.0.0",
+    "node-fetch": "^1.7.1",
+    "pretty": "^2.0.0",
+    "pug": "^2.0.0-rc.2",
+    "rimraf": "^2.6.1",
+    "watch-cli": "^0.2.1"
+  }
+}

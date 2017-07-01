@@ -1,0 +1,71 @@
+include ../includes/mixins
+
++page("404")
+	style.
+		#error-container{
+			padding: 0 5em;
+			padding-top: 2em;
+		}
+		#error-container > .section{
+			padding-bottom: 4em
+		}
+		#font h1 {
+			font-size: 30em;
+			font-weight: normal;
+		}
+		#font p {
+			font-size: 6em;
+		}
+	.container
+		.row
+			.panel#error-container.text-center
+				.section#font
+					h1 404
+					p#message
+				.section
+					a.btn.btn-success.btn-lg(href='/') Back To Home
+					h3.text-muted
+						| or you could check out some of my
+						a(href='/games/') Games
+
+	script(type="text/javascript").
+		// copied from https://davidwalsh.name/javascript-debounce-function
+		function debounce(func, wait, immediate) {
+			var timeout;
+			return function () {
+				var context = this, args = arguments;
+				var later = function () {
+					timeout = null;
+					if (!immediate) func.apply(context, args);
+				};
+				var callNow = immediate && !timeout;
+				clearTimeout(timeout);
+				timeout = setTimeout(later, wait);
+				if (callNow) func.apply(context, args);
+			};
+		};
+
+		var messages = ['Looks like that page dose not exist...', 'Page not found'];
+		var fonts = [
+			'Audiowide', 'Bungee Inline', 'Bungee Shade', 'Finger Paint', 'Passion One', 'Codystar', 'Comfortaa',
+			'Iceland', 'Ubuntu Mono', 'Vast Shadow', 'Bungee Hairline', 'Bungee Outline', 'Geostar', 'Sevillana'
+		];
+
+		function resize() {
+			var size = Math.min(window.innerWidth, window.innerHeight);
+			document.getElementById('font').style.setProperty('font-size', (size / 100) + 'px');
+		}
+		window.onresize = debounce(resize, 150);
+
+		var message = messages[Math.floor(Math.random() * messages.length)];
+		var font = fonts[Math.floor(Math.random() * fonts.length)];
+
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.href = 'https://fonts.googleapis.com/css?family=' + font.replace(/ /g, '+');
+		document.head.appendChild(link);
+
+		document.getElementById('font').style.setProperty('font-family', "'"+font+"'");
+		document.getElementById('message').textContent = message;
+
+		resize();
