@@ -60,4 +60,4 @@ buildData(data => {
 		});
 		console.info('rendered', path.relative(base, projectTemplate), '->', path.relative(base, out));
 	})
-})
+});

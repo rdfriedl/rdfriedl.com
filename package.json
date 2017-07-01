@@ -20,16 +20,15 @@
   },
   "homepage": "https://github.com/rdfriedl/rdfriedl.github.io#readme",
   "devDependencies": {
-    "express": "^4.15.3",
     "glob": "^7.1.2",
-    "js-beautify": "^1.6.14",
     "jstransformer-markdown-it": "^2.0.0",
     "mkdirp": "^0.5.1",
     "ncp": "^2.0.0",
-    "node-fetch": "^1.7.1",
     "pretty": "^2.0.0",
     "pug": "^2.0.0-rc.2",
+    "request": "^2.81.0",
     "rimraf": "^2.6.1",
     "watch-cli": "^0.2.1"
-  }
+  },
+  "false": {}
 }
