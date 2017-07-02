@@ -28,6 +28,7 @@ module.exports = function buildData(cb){
 	if(fs.existsSync(config.githubCache)){
 		data.github = JSON.parse(fs.readFileSync(config.githubCache));
 		console.log('loaded github data from cache');
+		if(cb) cb(data);
 		return data;
 	}
 	else{

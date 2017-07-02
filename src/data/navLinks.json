@@ -15,16 +15,6 @@
 		"icon": "gamepad"
 	},
 	{
-		"title": "Skills",
-		"href": "/skills/",
-		"icon": "wrench"
-	},
-	{
-		"title": "Work",
-		"href": "/work/",
-		"icon": "users"
-	},
-	{
 		"title": "Projects",
 		"href": "/projects/",
 		"icon": "trophy"

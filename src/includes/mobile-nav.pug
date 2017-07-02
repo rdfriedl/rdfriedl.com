@@ -22,7 +22,9 @@
 				.col-xs-12.col-sm-12.col-md-12.col-lg-12
 					each link in navLinks
 						a.btn.btn-default.btn-block(href=link.href)
-							i.fa(class='fa-'+link.icon)= link.title
+							i.fa(class='fa-'+link.icon)
+							= ' '+link.title
+
 script(type = "text/javascript").
 	$('.open-nav').click(function () {
 		$('body').addClass('nav-open');

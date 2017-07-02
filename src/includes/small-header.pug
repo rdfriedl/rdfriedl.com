@@ -7,53 +7,13 @@
 			// title
 			.col-xs-12.col-sm-8.col-md-8.col-lg-9.no-padding-left
 				.hidden-xs
-					h3.no-margin-top {{github.name}}
-					h6.text-muted {{info.description}}
+					h3.no-margin-top= github.name
+					h6.text-muted= info.description
 				.nav-buttons
 					each link in navLinks
 						a.btn.btn-default(href=link.href)
 							i.fa(class='fa-' + link.icon)
-							span= link.title
+							= ' '+link.title
 
 		// mobile nav
-		.mobile-nav.visible-xs
-			div(data-add-class="body|nav-open")
-				button.show-animate.hide-left.btn.btn-primary.open-nav.pull-left(type="button")
-					i.fa.fa-navicon
-				h1.show-animate.hide-right.text-center.no-margin {{github.name}}
-			.overlay(data-remove-class="body|nav-open")
-			.slide.panel.panel-default
-				.panel-body
-					.row
-						.col-xs-6.col-xs-offset-3.col-sm-4.col-sm-offset-0.col-md-3.col-md-offset-1.col-lg-2(style="transition-delay: 0.1s;")
-							a(href="/home")
-								img.profile-image.img-circle.img-responsive(src="{{github.avatar_url}}", style="max-height: 200px;width: auto;margin: auto;")
-						.col-xs-12.text-center
-							a.no-link(href="/home")
-								h3 {{github.name}}
-								h5.text-muted {{info.description}}
-							ul.social.list-inline
-								| {{#each links}}
-								li(data-toggle="tooltip", data-placement="bottom", title="{{title}}")
-									a.btn.btn-primary(href="{{href}}", target="_blank")
-										i.fa(class="fa-{{icon}}")
-								| 								{{/each}}
-						.col-xs-12.col-sm-12.col-md-12.col-lg-12
-							a.btn.btn-default.btn-block(href="/home")
-								i.fa.fa-home
-								|  Home
-							a.btn.btn-default.btn-block(href="/about")
-								i.fa.fa-info-circle
-								|  About
-							a.btn.btn-default.btn-block(href="/skills")
-								i.fa.fa-wrench
-								|  Skills
-							a.btn.btn-default.btn-block(href="/work")
-								i.fa.fa-users
-								|  Work
-							a.btn.btn-default.btn-block(href="/projects")
-								i.fa.fa-trophy
-								|  Projects
-							a.btn.btn-default.btn-block(href="/pens")
-								i.fa.fa-codepen
-								|  Pens
+		include ./mobile-nav

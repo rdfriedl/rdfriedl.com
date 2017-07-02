@@ -1,13 +1,18 @@
 include ../includes/mixins
 
 +page("404")
+	include ../includes/glitch
+
 	style.
 		#error-container{
-			padding: 0 5em;
+			padding: 0 5vw;
 			padding-top: 2em;
 		}
 		#error-container > .section{
 			padding-bottom: 4em
+		}
+		#font{
+			pointer-events: none;
 		}
 		#font h1 {
 			font-size: 30em;
@@ -16,6 +21,11 @@ include ../includes/mixins
 		#font p {
 			font-size: 6em;
 		}
+
+		#font, #page .container .row .panel{
+			filter: url(#glitch);
+		}
+
 	.container
 		.row
 			.panel#error-container.text-center

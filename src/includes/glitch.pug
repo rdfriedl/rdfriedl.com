@@ -1,0 +1,74 @@
+// copied from https://codepen.io/DirkWeber/pen/ArFvk
+svg(version="1.1", xmlns="http://www.w3.org/2000/svg", width=0, height=0).hidden-xs
+	filter#glitch(primitiveUnits="objectBoundingBox")
+
+		// glitch 1
+		feflood(flood-color="#ff0000" result="flood1")
+		feflood(
+			x=0 y=0 width=1 height=0.01
+			flood-color="black", result="cut1"
+		)
+			animate#y(
+				attributename="y", dur="4s",
+				values="1; 1; 0.2857; 1; 0.2857; 0.019; 0.019; 0.4762; 0.381; 1; 1; 0.1905; 0.0571; 0.381; 1; 0.381; 0.6667; 0.0952; 0.2857; 1; 0.9714",
+				keytimes="0; 0.362; 0.368; 0.421; 0.440; 0.477; 0.518; 0.564; 0.593; 0.613; 0.644; 0.693; 0.721; 0.736; 0.772; 0.818; 0.844; 0.894; 0.925; 0.939; 1",
+				repeatcount="indefinite"
+			)
+			animate#h(
+				attributename="height", dur="4s",
+				values="0.2; 0.02; 0.2; 0.6; 1; 0.02; 0.2; 0.02; 0.02; 0.02; 0.2; 1; 0.8; 0.02; 0.02; 0.02; 0.8; 0.6; 0.2; 0.02; 1",
+				keytimes="0; 0.362; 0.368; 0.421; 0.440; 0.477; 0.518; 0.564; 0.593; 0.613; 0.644; 0.693; 0.721; 0.736; 0.772; 0.818; 0.844; 0.894; 0.925; 0.939; 1",
+				repeatcount="indefinite"
+			)
+
+		fecomposite(in="SourceGraphic" in2="cut1" operator="in" result="cut-in1")
+		feoffset(in="cut-in1", dx=.01, dy=0, result="offset1")
+
+		fecomposite(in="flood1" in2="cut-in1" operator="in" result="color1")
+		feoffset(in="color1", dx=.005, dy=0, result="color1")
+
+		femerge(result="glitch1")
+			femergenode(in="color1")
+			femergenode(in="offset1")
+
+		// glitch 2
+		feflood(flood-color="#00ff00" result="flood2")
+		feflood(
+			x=0 y=0 width=1 height=0.01
+			flood-color="black", result="cut2"
+		)
+			animate#y(
+				attributename="y", dur="4s",
+				values="1.03; 1.04; 0.69; 0.53; 0.42; 1.04; 0.78; 0.89; 0.96; 1.00; 0.67; 0.50; 0.96; 0.66; 0.88; 0.42; 0.13; 1.00; 1.00; 1.04;",
+				keytimes="0; 0.055; 0.100; 0.125; 0.159; 0.182; 0.202; 0.236; 0.268; 0.326; 0.357; 0.400; 0.408; 0.461; 0.493; 0.513; 0.548; 0.577; 0.613; 1",
+				repeatcount="indefinite"
+			)
+			animate#h(
+				attributename="height", dur="4s",
+				values="0; 0; 0; 0.32; 0.32; 0.24; 0.24; 0; 0; 1; 0.2; 0.44; 0.66; 0.22; 0; 0; 0.2",
+				keytimes="0; 0.055; 0.100; 0.125; 0.159; 0.182; 0.202; 0.236; 0.268; 0.326; 0.357; 0.400; 0.408; 0.461; 0.493; 0.513; 1",
+				repeatcount="indefinite"
+			)
+
+		fecomposite(in="SourceGraphic" in2="cut2" operator="in" result="cut-in2")
+		feoffset(in="cut-in2", dx=-.01, dy=0, result="offset2")
+
+		fecomposite(in="flood2" in2="cut-in2" operator="in" result="color2")
+		feoffset(in="color2", dx=-.005, dy=0, result="color2")
+
+		femerge(result="glitch2")
+			femergenode(in="color2")
+			femergenode(in="offset2")
+
+		//combined
+		femerge(result="cut-out")
+			femergenode(in="cut1")
+			femergenode(in="cut2")
+
+		fecomposite(in="SourceGraphic" in2="cut-out" operator="out" result="source-cut")
+
+		// merge it all together
+		femerge(result="output")
+			femergenode(in='source-cut')
+			femergenode(in='glitch1')
+			femergenode(in='glitch2')

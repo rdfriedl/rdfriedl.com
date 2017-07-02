@@ -150,18 +150,18 @@
 		"media": [
 			{
 				"type": "image",
-				"src": "https://s3.amazonaws.com/rdfriedl.com-assets/games/car-game/screenshots/screenshot2.png",
-				"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/games/car-game/screenshots/screenshot2.png"
+				"src": "https://s3.amazonaws.com/rdfriedl.com-assets/games/car-game/screenshot2.png",
+				"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/games/car-game/screenshot2.png"
 			},
 			{
 				"type": "image",
-				"src": "https://s3.amazonaws.com/rdfriedl.com-assets/games/car-game/screenshots/screenshot3.png",
-				"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/games/car-game/screenshots/screenshot3.png"
+				"src": "https://s3.amazonaws.com/rdfriedl.com-assets/games/car-game/screenshot3.png",
+				"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/games/car-game/screenshot3.png"
 			},
 			{
 				"type": "image",
-				"src": "https://s3.amazonaws.com/rdfriedl.com-assets/games/car-game/screenshots/screenshot4.png",
-				"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/games/car-game/screenshots/screenshot4.png"
+				"src": "https://s3.amazonaws.com/rdfriedl.com-assets/games/car-game/screenshot4.png",
+				"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/games/car-game/screenshot4.png"
 			}
 		],
 

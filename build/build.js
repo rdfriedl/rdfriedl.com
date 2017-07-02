@@ -47,9 +47,10 @@ buildData(data => {
 
 	// copy static assets
 	ncp(path.join(config.src, 'assets'), path.join(config.output, 'assets'), () => {
-		console.log(path.relative(base, path.join(config.src, 'assets')), '->', path.relative(base, path.join(config.output, 'assets')))
+		console.log('copied', path.relative(base, path.join(config.src, 'assets')), '->', path.relative(base, path.join(config.output, 'assets')))
 	});
 
+	//render projects
 	const projectTemplate = path.join(config.pages, 'projects', '_project.pug');
 	data.projects.forEach(project => {
 		let out = renderPugFile({
@@ -59,5 +60,17 @@ buildData(data => {
 			filename: () => 'index.html'
 		});
 		console.info('rendered', path.relative(base, projectTemplate), '->', path.relative(base, out));
+	});
+
+	// render pens
+	const penTemplate = path.join(config.pages, 'pens', '_pen.pug');
+	data.pens.forEach(pen => {
+		let out = renderPugFile({
+			input: penTemplate,
+			output: path.join(config.output, 'pens', pen.id),
+			data: Object.assign({}, data, {pen}),
+			filename: () => 'index.html'
+		});
+		console.info('rendered', path.relative(base, penTemplate), '->', path.relative(base, out));
 	})
 });
