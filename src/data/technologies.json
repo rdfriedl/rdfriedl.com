@@ -38,7 +38,7 @@
 		"id": "react",
 		"title": "React",
 		"siteURL": "https://facebook.github.io/react/",
-		"thumbnail": "/assets/logos/react.png",
+		"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/logos/react.png",
 		"description": "View Library for MVC setups"
 	},
 	{
@@ -59,7 +59,7 @@
 		"id": "css3",
 		"title": "CSS3",
 		"siteURL": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3",
-		"thumbnail": "/assets/logos/css3.svg",
+		"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/logos/css3.svg",
 		"description": "Cascading Style Sheets"
 	},
 	{
@@ -164,7 +164,7 @@
 		"id": "jsplumb",
 		"title": "jsPlumb",
 		"siteURL": "https://jsplumbtoolkit.com",
-		"thumbnail": "/assets/logos/jsplumb-logo.jpg",
+		"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/logos/jsplumb-logo.jpg",
 		"description": "JavaScript Flow Chart Library"
 	},
 	{

@@ -1,3 +1,106 @@
 include /includes/mixins
 
+- var otherProjects = [];
+- while(otherProjects.length < 4){
+- 	var p;
+- 	while(p === pen || otherProjects.includes(p) || !p) {
+- 	  p = projects[Math.floor(Math.random() * projects.length)];
+- 	}
+-   otherProjects.push(p);
+- }
+
 +page(project.title)
+	style.
+		#project-description h1:first-of-type,
+		#project-description h2:first-of-type,
+		#project-description h3:first-of-type,
+		#project-description h4:first-of-type,
+		#project-description h5:first-of-type,
+		#project-description h6:first-of-type {
+			margin-top: 0;
+		}
+
+	.container.no-padding-xs
+		.panel.panel-default
+			.panel-body
+
+				// Desktop buttons
+				.hidden-xs
+					.btn-group.pull-right
+						a.btn.btn-success(href="/projects/"+project.id+"/demo") Demo
+						a.btn.btn-info(href=project.sourceURL, target="_blank")
+							i.fa.fa-code
+							|  Source
+					h2.no-margin-top= project.title
+
+				.row
+					// Desktop
+					#project-description.col-xs-12.hidden-xs
+						if project.videoThumbnail
+							.pull-left.col-xs-4.no-padding-left(style="position: relative")
+								i.fa.fa-play-circle.overlay-icon.overlay-icon-hide
+								video.play-on-hover.img-responsive(rate="2", looppause="1", preload="auto", src=project.videoThumbnail)
+						else
+							img.pull-left.col-xs-4.no-padding-left(src=project.thumbnail)
+
+						| projectDescription
+
+						.col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3.col-md-4.col-md-offset-4
+							.btn-group.btn-group-justified.btn-group-lg
+								if project.demoURL
+									a.btn.btn-success(href="/projects/"+project.id+"/demo") Demo
+
+								a.btn.btn-info(href=project.sourceURL, target="_blank")
+									i.fa.fa-code
+									|  Source
+
+					// Mobile
+					.col-xs-12.visible-xs
+						if project.videoThumbnail
+							div(style="position: relative")
+								i.fa.fa-play-circle.overlay-icon.overlay-icon-hide
+								video.play-on-hover.img-responsive(rate="2", looppause="1", preload="auto", src=project.videoThumbnail)
+						else
+							img.img-responsive(src=project.thumbnail)
+
+						.page-header.no-margin-bottom.no-margin-top
+							h3.text-center.visible-xs= project.title
+
+					.col-xs-12.visible-xs
+						p projectDescription
+
+					.col-xs-8.col-xs-offset-2.visible-xs
+						.btn-group.btn-group-justified
+							if project.demoURL
+								a.btn.btn-success(href="/projects/"+project.id+"/demo") Demo
+
+							a.btn.btn-info(href=project.sourceURL, target="_blank")
+								i.fa.fa-code
+								|  Source
+
+				if project.used && project.used.length
+					h3.hidden-xs Technologies Used
+					h3.text-center.visible-xs Technologies Used
+					.columns.columns-sm-2.columns-md-3
+						each tech in project.used
+							.column
+								+technology(tech)
+
+				if project.media && project.media.length
+					h3.no-margin-top.hidden-xs Screen Shots
+					h3.text-center.no-margin.visible-xs Screen Shots
+					.columns.columns-sm-2.columns-md-3.columns-lg-4
+						each media in project.media
+							.column
+								a.thumbnail.no-margin(target="_blank", href=media.src, data-image-modal=media.src)
+									img.img-responsive(src=media.thumbnail)
+
+		if otherProjects.length
+			.panel.panel-default
+				.panel-body
+					h3.hidden-xs.no-margin-top Other Project
+					h3.visible-xs.no-margin.text-center Other Project
+					.row
+						each p in otherProjects
+							.col-xs-12
+								+project(p)

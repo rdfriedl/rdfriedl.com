@@ -15,7 +15,8 @@ function initBackground(){
 			url: codeFile[0],
 			dataType: 'text',
 			success: function (element, text) {
-				element.text(text);
+				// set the text and change tabs and 4 spaces to 2 spaces
+				element.text(text.replace(/(\t| {4})/g, '  '));
 
 				// highlight it
 				Prism.highlightElement(element.get(0), false);
@@ -156,7 +157,7 @@ $(document).on('click', '[data-image-modal]', function(event){
 	$('#download-image').attr('href', src);
 	$('#preview-image img').attr('src', src);
 	$('#preview-image').modal('show');
-})
+});
 
 function openImageModal(src){
 	if(window.innerWidth < 768){

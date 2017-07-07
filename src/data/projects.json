@@ -168,29 +168,5 @@
 		],
 
 		"sourceURL": "https://github.com/rdfriedl/rdfriedl.github.io"
-	},
-	{
-		"id": "redom-and-mobx-todo-app",
-		"type": "expariment",
-		"title": "Re:Dom and MobX Todo App",
-		"description": "A Simple Todo app writing in Re:Dom and MobX",
-		"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/expariments/redom-and-mobx-todo-app.png",
-		"tags": [
-			{
-				"title": "Experiment",
-				"type": "default"
-			},
-			{
-				"title": "Complete",
-				"type": "success"
-			}
-		],
-		"used": [
-			"redom",
-			"mobx",
-			"javascript"
-		],
-
-		"demoURL": "http://www.webpackbin.com/VJG--5mxf"
 	}
 ]

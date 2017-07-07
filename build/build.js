@@ -12,15 +12,23 @@ const filters = [
 	require('jstransformer-markdown-it')
 ];
 
+function compileTemplate(fp){
+	return pug.compileFile(fp, {
+		filters,
+		basedir: config.src
+	});
+}
+
+const templateCache = new Map();
 function renderPugFile(opts = {}) {
 	let {input, output, data} = opts;
 	if(!input || !output || !data)
 		throw new Error('renderPugFile missing arguments');
 
-	let html = pug.compileFile(input, {
-		filters,
-		basedir: config.src
-	})(data);
+	if(!templateCache.has(input))
+		templateCache.set(input, compileTemplate(input));
+
+	let html = templateCache.get(input)(data);
 	let filename = path.basename(input, path.extname(input));
 	let outputName = opts.filename? opts.filename({filename, html, input, output, ext: path.extname(input)}) : filename + '.html';
 	let outputPath = path.join(output, outputName);
@@ -52,7 +60,9 @@ buildData(data => {
 
 	//render projects
 	const projectTemplate = path.join(config.pages, 'projects', '_project.pug');
+	const projectDemoTemplate = path.join(config.pages, 'projects', '_demo.pug');
 	data.projects.forEach(project => {
+		// render project index.html file
 		let out = renderPugFile({
 			input: projectTemplate,
 			output: path.join(config.output, 'projects', project.id),
@@ -60,6 +70,15 @@ buildData(data => {
 			filename: () => 'index.html'
 		});
 		console.info('rendered', path.relative(base, projectTemplate), '->', path.relative(base, out));
+
+		// render project demo/index.html file
+		let demoOut = renderPugFile({
+			input: projectDemoTemplate,
+			output: path.join(config.output, 'projects', project.id, 'demo'),
+			data: Object.assign({}, data, {project}),
+			filename: () => 'index.html'
+		});
+		console.info('rendered', path.relative(base, projectDemoTemplate), '->', path.relative(base, demoOut));
 	});
 
 	// render pens

@@ -1,0 +1,28 @@
+- function getTech(name){
+-	 	return technologies.find(tech => tech.id === name);
+- }
+
+mixin technology(tech)
+	- tech = typeof tech === "string"? getTech(tech) : tech;
+
+	if tech
+		a.no-link(href=tech.siteURL, target="_blank")
+			.panel.panel-grey.hover-shadow.no-margin
+				.panel-body
+					.row
+						if tech.thumbnail
+							.col-xs-3.no-padding-right
+								img.img-responsive(src=tech.thumbnail)
+							.col-xs-9
+								h4.no-margin-top= tech.title
+								p.no-margin-bottom= tech.description
+						else
+							.col-xs-12
+								h4.no-margin-top= tech.title
+								p.no-margin-bottom= tech.description
+						if tech.amount
+							.col-xs-12
+								small
+									b Amount Used
+								.progress.no-margin-bottom
+									.progress-bar.progress-bar-info.progress-bar-striped(style="width: "+tech.amount+"%")
