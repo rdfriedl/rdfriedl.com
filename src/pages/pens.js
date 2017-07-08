@@ -1,6 +1,7 @@
 import React from 'react';
-import Link from "gatsby-link"
 import Helmet from 'react-helmet';
+import Pen from '../components/Pen';
+import {createTitle} from '../utils/utils';
 
 export default class PensPage extends React.Component {
 	render(){
@@ -8,14 +9,16 @@ export default class PensPage extends React.Component {
 
 		return (
 			<div>
-				<Helmet title="Robert Friedl - Pens"/>
+				<Helmet title={createTitle("Pens")}/>
 
 				<h1>Pens</h1>
+				<div className="row">
 				{allPens.pens.map(({pen}) => (
-					<div key={pen.id}>
-						<Link to={`/pen/${pen.id}`}>{pen.title}</Link>
+					<div className="col-sm-12 col-md-6 col-lg-3" key={pen.id}>
+						<Pen pen={pen}/>
 					</div>
 				))}
+				</div>
 			</div>
 		);
 	}

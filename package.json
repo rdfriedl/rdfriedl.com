@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "personal site",
   "scripts": {
-		"prebuild": "rimraf public",
+    "prebuild": "rimraf public",
     "build": "gatsby build",
     "start": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"pages/*.js\" \"utils/*.js\" \"wrappers/*.js\" \"html.js\"",
@@ -26,6 +26,8 @@
     "gatsby-plugin-react-helmet": "^1.0.1",
     "gatsby-source-filesystem": "^1.0.1",
     "gatsby-transformer-json": "^1.0.1",
+    "mini.css": "^2.3.2",
+    "prop-types": "^15.5.10",
     "react-typography": "^0.15.0",
     "rimraf": "^2.6.1",
     "slash": "^1.0.0",

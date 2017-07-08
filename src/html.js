@@ -38,6 +38,8 @@ export default class HTML extends React.Component {
           {this.props.headComponents}
           <TypographyStyle typography={typography} />
           {css}
+
+          <link rel="stylesheet" href="https://unpkg.com/mini.css/dist/mini-dark.min.css"/>
         </head>
         <body>
           <div
