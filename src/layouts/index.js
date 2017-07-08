@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import typography from '../utils/typography';
-const { rhythm } = typography;
 
 export default class Template extends React.Component {
   static propTypes = {

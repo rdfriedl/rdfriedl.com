@@ -3,6 +3,7 @@ module.exports = {
     title: `Gatsby Default Starter`,
   },
   plugins: [
+		`gatsby-plugin-catch-links`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -17,6 +18,18 @@ module.exports = {
         trackingId: 'UA-62048613-2'
       }
     },
-    'gatsby-plugin-react-helmet'
+    'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Robert Friedl',
+        short_name: 'RDFriedl',
+        start_url: '/',
+        background_color: '#000000',
+        theme_color: '#ffffff',
+        display: 'minimal-ui'
+      }
+    },
+    'gatsby-plugin-offline'
   ]
 };

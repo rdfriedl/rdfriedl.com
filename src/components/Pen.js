@@ -5,7 +5,7 @@ const Pen = ({pen}) => (
 	<div className="card fluid">
 		<div className="section">
 			<Link to={`/pen/${pen.id}`}>
-				<img src={pen.thumbnail} style={{
+				<img src={pen.thumbnail} alt={pen.title} style={{
 					margin: 0,
 					width: '100%'
 				}}/>

@@ -20,19 +20,18 @@
   },
   "homepage": "https://github.com/rdfriedl/rdfriedl.github.io#readme",
   "dependencies": {
-    "gatsby": "^1.0.1",
+    "gatsby": "^1.0.6",
     "gatsby-link": "^1.0.1",
+    "gatsby-plugin-catch-links": "^1.0.1",
     "gatsby-plugin-google-analytics": "^1.0.1",
+    "gatsby-plugin-manifest": "^1.0.1",
+    "gatsby-plugin-offline": "^1.0.1",
     "gatsby-plugin-react-helmet": "^1.0.1",
     "gatsby-source-filesystem": "^1.0.1",
     "gatsby-transformer-json": "^1.0.1",
     "mini.css": "^2.3.2",
     "prop-types": "^15.5.10",
-    "react-typography": "^0.15.0",
     "rimraf": "^2.6.1",
-    "slash": "^1.0.0",
-    "typography": "^0.15.8",
-    "typography-breakpoint-constants": "^0.14.0",
-    "typography-plugin-code": "^0.15.9"
+    "slash": "^1.0.0"
   }
 }

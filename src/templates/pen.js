@@ -22,11 +22,12 @@ class PenTemplate extends React.Component {
 				<Helmet title={createTitle(pen.title)}/>
 				<h1>{pen.title}</h1>
 				<iframe
-					height={height} scrolling='no' title={pen.id}
-					src={`//codepen.io/rdfriedl/embed/${pen.id}/?height=${height}&theme-id=dark&default-tab=result&embed-version=2`}
+					scrolling='no' title={pen.id}
+					src={`//codepen.io/rdfriedl/embed/${pen.id}/?theme-id=dark&default-tab=result&embed-version=2`}
 					style={{
 						width: '100%',
-						border: 'none'
+						border: 'none',
+						height: '80vh'
 					}}>
 					See the Pen <a href='https://codepen.io/rdfriedl/pen/bRBPxG/'>bRBPxG</a> by rdfriedl (<a href='https://codepen.io/rdfriedl'>@rdfriedl</a>) on <a href='https://codepen.io'>CodePen</a>
 				</iframe>
