@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "description": "personal site",
   "scripts": {
+		"prebuild": "rimraf public",
     "build": "gatsby build",
     "start": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"pages/*.js\" \"utils/*.js\" \"wrappers/*.js\" \"html.js\"",
@@ -18,14 +19,18 @@
     "url": "https://github.com/rdfriedl/rdfriedl.github.io/issues"
   },
   "homepage": "https://github.com/rdfriedl/rdfriedl.github.io#readme",
-  "devDependencies": {
+  "dependencies": {
     "gatsby": "^1.0.1",
     "gatsby-link": "^1.0.1",
+    "gatsby-plugin-google-analytics": "^1.0.1",
     "gatsby-plugin-react-helmet": "^1.0.1",
+    "gatsby-source-filesystem": "^1.0.1",
+    "gatsby-transformer-json": "^1.0.1",
     "react-typography": "^0.15.0",
+    "rimraf": "^2.6.1",
+    "slash": "^1.0.0",
     "typography": "^0.15.8",
     "typography-breakpoint-constants": "^0.14.0",
     "typography-plugin-code": "^0.15.9"
-  },
-  "false": {}
+  }
 }
