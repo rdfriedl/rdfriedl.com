@@ -6,7 +6,13 @@ import Pen from '../components/Pen';
 class PenTemplate extends React.Component {
 	render() {
 		const { pen, otherPens } = this.props.data;
-		const height = window.innerHeight * .8;
+		let height = 600;
+		try{
+			height = window.innerHeight * 0.8;
+		}
+		catch(err){
+			height = 600;
+		}
 
 		otherPens.pens = otherPens.pens.sort(() => Math.floor(Math.random() * 3)-1);
 		otherPens.pens.length = 4;
