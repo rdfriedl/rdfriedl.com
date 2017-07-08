@@ -1,13 +1,12 @@
 {
   "name": "rdfriedl.com",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "personal site",
-  "main": "build.js",
   "scripts": {
-    "clean": "rimraf dist",
-    "build": "node build/build.js",
-    "watch": "watch -p \"src/**/*\" -c \"npm run build\"",
-    "test": "echo no need for tests"
+    "build": "gatsby build",
+    "start": "gatsby develop",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"pages/*.js\" \"utils/*.js\" \"wrappers/*.js\" \"html.js\"",
+    "test": "echo \"no test specified\""
   },
   "repository": {
     "type": "git",
@@ -20,15 +19,13 @@
   },
   "homepage": "https://github.com/rdfriedl/rdfriedl.github.io#readme",
   "devDependencies": {
-    "glob": "^7.1.2",
-    "jstransformer-markdown-it": "^2.0.0",
-    "mkdirp": "^0.5.1",
-    "ncp": "^2.0.0",
-    "pretty": "^2.0.0",
-    "pug": "^2.0.0-rc.2",
-    "request": "^2.81.0",
-    "rimraf": "^2.6.1",
-    "watch-cli": "^0.2.1"
+    "gatsby": "^1.0.1",
+    "gatsby-link": "^1.0.1",
+    "gatsby-plugin-react-helmet": "^1.0.1",
+    "react-typography": "^0.15.0",
+    "typography": "^0.15.8",
+    "typography-breakpoint-constants": "^0.14.0",
+    "typography-plugin-code": "^0.15.9"
   },
   "false": {}
 }
