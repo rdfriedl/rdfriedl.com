@@ -11,7 +11,7 @@ script:
   - npm run build
 deploy:
   on:
-    branch: new-s3
+    branch: gatsby
   provider: s3
   access_key_id: $AWS_TOKEN
   secret_access_key: $AWS_SECRET
