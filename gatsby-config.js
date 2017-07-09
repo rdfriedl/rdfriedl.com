@@ -1,6 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Robert Friedl`,
+    description: '',
+		keywords: [
+			'site'
+		]
   },
   plugins: [
 		`gatsby-plugin-catch-links`,

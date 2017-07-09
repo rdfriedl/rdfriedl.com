@@ -23,22 +23,6 @@ export default class HTML extends React.Component {
       )
     }
 
-    let miniCSS;
-    if(process.env.NODE_ENV === 'production') {
-			miniCSS = (
-			  <style
-          dangerouslySetInnerHTML={{
-            __html: require("!raw!../node_modules/mini.css/dist/mini-dark.min.css"),
-          }}
-        />
-      );
-		}
-		else{
-      miniCSS = (
-        <link rel="stylesheet" href="https://unpkg.com/mini.css/dist/mini-dark.min.css"/>
-      );
-    }
-
     return (
       <html lang="en">
         <head>
@@ -50,7 +34,6 @@ export default class HTML extends React.Component {
           />
           {this.props.headComponents}
           {css}
-          {miniCSS}
         </head>
         <body>
           <div

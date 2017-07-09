@@ -2,8 +2,8 @@ import React from 'react';
 import Link from 'gatsby-link';
 
 const Header = (props) => (
-	<div>
-		<header className="sticky row">
+	<div id="header">
+		<header className="row">
 			<div className="col-sm-12 col-md-12 col-lg-10 col-lg-offset-1">
 				{/*<label htmlFor="drawer-checkbox" className="button drawer-toggle"/>*/}
 				<Link to="/" className="button">Home</Link>

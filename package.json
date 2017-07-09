@@ -6,6 +6,7 @@
     "prebuild": "rimraf public",
     "build": "gatsby build",
     "start": "gatsby develop",
+    "serve": "gatsby serve",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"pages/*.js\" \"utils/*.js\" \"wrappers/*.js\" \"html.js\"",
     "test": "echo \"no test specified\""
   },
