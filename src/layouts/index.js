@@ -4,8 +4,8 @@ import Helmet from 'react-helmet';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-import '../css/scroll.css';
-import '../../node_modules/mini.css/dist/mini-dark.min.css';
+// import sass
+import '../scss/main.scss';
 
 export default class Template extends React.Component {
   static propTypes = {
@@ -23,20 +23,19 @@ export default class Template extends React.Component {
 		};
 
     return (
-      <div>
+      <div id="page" className="layout-column">
         <Helmet
           title={title}
           meta={[
             { name: 'description', content: description },
             { name: 'keywords', content: keywords.join(', ') },
-          ]}
-        />
+					]}>
+					<link rel="stylesheet" href="https://unpkg.com/font-awesome/css/font-awesome.min.css"/>
+				</Helmet>
         <Header/>
-				<div className="container">
-					<div className="row">
-						<div className="col-sm-12 col-md-12 col-lg-10 col-lg-offset-1">
-							{this.props.children()}
-						</div>
+				<div className="flex layout-row align-center">
+					<div className="flex-100 flex-lg-80">
+						{this.props.children()}
 					</div>
 				</div>
         <Footer/>

@@ -1,15 +1,17 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import ExternalLink from './ExternalLink';
 
 const Header = (props) => (
 	<div id="header">
-		<header className="row">
-			<div className="col-sm-12 col-md-12 col-lg-10 col-lg-offset-1">
-				{/*<label htmlFor="drawer-checkbox" className="button drawer-toggle"/>*/}
-				<Link to="/" className="button">Home</Link>
-				<Link to="/games/" className="button">Games</Link>
-				<Link to="/pens/" className="button">Pens</Link>
-			</div>
+		<header>
+			<Link to="/" className="logo">Robert Friedl</Link>
+			<span style={{margin: 10}}/>
+			<Link to="/" className="button">Home</Link>
+			<Link to="/games/" className="button">Games</Link>
+			<Link to="/pens/" className="button">Pens</Link>
+
+			<ExternalLink className="button float-right"><i className="fa fa-github"></i></ExternalLink>
 		</header>
 
 		{/*<input type="checkbox" id="drawer-checkbox"/>*/}

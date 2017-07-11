@@ -1,7 +1,7 @@
 import React from 'react';
 
-const ExternalLink = (props) => (
-	<a rel={props.rel || "noopener"} target={props.target || "_blank"} {...props}>{props.children}</a>
+const ExternalLink = ({href, rel, target, to, children, ...props}) => (
+	<a rel={rel || "noopener"} target={target || "_blank"} href={href || to || '#'} {...props}>{children}</a>
 );
 
 export default ExternalLink;

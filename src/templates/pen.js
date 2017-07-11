@@ -33,9 +33,9 @@ class PenTemplate extends React.Component {
 				</iframe>
 
 				<h2>Other Pens</h2>
-				<div className="row">
+				<div className="layout-row layout-wrap">
 				{otherPens.pens.map(({pen}) => (
-					<div className="col-sm-12 col-md-6 col-lg-3" key={pen.id}>
+					<div className="flex-100 flex-sm-50 flex-md-33 flex-lg-25" key={pen.id}>
 						<Pen pen={pen}/>
 					</div>
 				))}

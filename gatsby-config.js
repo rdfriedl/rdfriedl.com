@@ -22,7 +22,6 @@ module.exports = {
         trackingId: 'UA-62048613-2'
       }
     },
-    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -34,6 +33,8 @@ module.exports = {
         display: 'minimal-ui'
       }
     },
-    'gatsby-plugin-offline'
+		'gatsby-plugin-react-helmet',
+    'gatsby-plugin-offline',
+    'gatsby-plugin-sass'
   ]
 };

@@ -1,15 +1,37 @@
 import React from 'react';
-import Link from "gatsby-link"
 import Helmet from 'react-helmet';
-import {createTitle} from '../utils/utils';
+import Game from '../components/Game';
+import { createTitle } from '../utils/utils';
 
-const GamesPage = () => (
-	<div>
-		<Helmet title={createTitle('Games')}/>
+export default class GamesPage extends React.Component {
+	render(){
+		const games = this.props.data.allGames.games.map(d => d.game);
 
-		<h1>games</h1>
-		<Link to="/">Back</Link>
-	</div>
-);
+		return (
+			<div>
+				<Helmet title={createTitle("Games")}/>
 
-export default GamesPage;
+				<h1>Games</h1>
+				<hr/>
+				<div className="layout-row layout-wrap">
+					{games.map(game => (
+						<div className="flex-100 flex-lg-50" key={game.id}>
+							<Game game={game}/>
+						</div>
+					))}
+				</div>
+			</div>
+		);
+	}
+}
+
+export const pageQuery = graphql`
+query games {
+	allGames: allGamesJson {
+		games: edges {
+			game: node {
+				...GameComponentFields
+			}
+		}
+	}
+}`;
