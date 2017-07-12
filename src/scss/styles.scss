@@ -6,17 +6,13 @@
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%,-50%);
-	font-size: 0.8in;
+	font-size: 0.8in !important;
 	transition: opacity 0.5s ease;
 }
 *:hover>.overlay-icon-hide{
 	opacity: 0;
 	transform: translate(-50%,-50%) scale(1.5);
 	transition: opacity 0.5s ease, transform 0.7s ease;
-}
-
-.video-thumbnail video{
-	width: 100%;
 }
 
 button.block, .button.block{
@@ -33,5 +29,13 @@ button.block, .button.block{
 		box-shadow:
 			0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.125),
 			0 0.125rem 0.125rem -0.125rem rgba(0, 0, 0, 0.25);
+	}
+}
+
+.video-thumbnail{
+	position: relative;
+
+	video{
+		width: 100%;
 	}
 }

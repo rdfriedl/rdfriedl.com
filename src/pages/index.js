@@ -4,6 +4,7 @@ import ExternalLink from "../components/ExternalLink";
 import Card from '../components/Card';
 import Game from '../components/Game';
 import Pen from '../components/Pen';
+import About from '../components/About';
 
 export default class Index extends React.Component {
   render() {
@@ -16,15 +17,15 @@ export default class Index extends React.Component {
 		pens.length = 6;
 
     return (
-      <div className="layout-row">
-				<main className="layout-column flex">
+      <div className="layout-row layout-wrap">
+				<main className="layout-column flex-md">
 					<section>
-						<Card header={<h2>About</h2>}>
-
+						<Card header={<h2><i className="fa fa-info-circle"/> About</h2>}>
+							<About/>
 						</Card>
 					</section>
 					<section>
-						<Card header={<h2>Games</h2>}>
+						<Card header={<h2><i className="fa fa-game"/> Games</h2>}>
 							<div className="layout-row layout-wrap">
 								{games.map(game =>
 									<div className="flex-100 flex-lg-50" key={game.id}>
@@ -35,11 +36,15 @@ export default class Index extends React.Component {
 						</Card>
 					</section>
 				</main>
-				<aside className="flex-25">
-					<Card header={<div className="layout-row align-between"><h3>Pens</h3><ExternalLink className="button tertiary"><i className="fa fa-codepen"></i> More</ExternalLink></div>}>
-						{pens.map(pen => (
-							<Pen pen={pen} key={pen.id}/>
-						))}
+				<aside className="flex-100 flex-md-25 order-sm-2">
+					<Card header={<div className="layout-row align-between"><h3>Pens</h3><ExternalLink className="button success"><i className="fa fa-codepen"></i> More</ExternalLink></div>}>
+						<div className="layout-row layout-wrap">
+							{pens.map(pen => (
+								<div className="flex-100 flex-sm-50 flex-md-100" key={pen.id}>
+									<Pen pen={pen}/>
+								</div>
+							))}
+						</div>
 					</Card>
 				</aside>
       </div>

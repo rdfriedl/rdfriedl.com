@@ -11,7 +11,10 @@ const Header = (props) => (
 			<Link to="/games/" className="button">Games</Link>
 			<Link to="/pens/" className="button">Pens</Link>
 
-			<ExternalLink className="button float-right"><i className="fa fa-github"></i></ExternalLink>
+			<ExternalLink className="button float-right hidden-sm">
+				<i className="fa fa-github"/>
+				<span> View Source</span>
+			</ExternalLink>
 		</header>
 
 		{/*<input type="checkbox" id="drawer-checkbox"/>*/}

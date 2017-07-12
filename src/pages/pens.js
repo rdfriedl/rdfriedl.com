@@ -14,7 +14,7 @@ export default class PensPage extends React.Component {
 
 				<div className="layout-row align-between-center">
 					<h1>Pens</h1>
-					<ExternalLink href={codepenProfile.href} className="button tertiary">More Pens</ExternalLink>
+					<ExternalLink href={codepenProfile.href} className="button success">More Pens</ExternalLink>
 				</div>
 				<hr/>
 				<div className="layout-row layout-wrap">
@@ -26,7 +26,7 @@ export default class PensPage extends React.Component {
 				</div>
 				<hr/>
 				<div className="layout-row align-center-center">
-					<ExternalLink href={codepenProfile.href} className="flex-80 flex-sm-50 flex-md-40 flex-lg-30 button tertiary block large no-margin">More Pens</ExternalLink>
+					<ExternalLink href={codepenProfile.href} className="flex-80 flex-sm-50 flex-md-40 flex-lg-30 button success block large no-margin">More Pens</ExternalLink>
 				</div>
 			</div>
 		);

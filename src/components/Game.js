@@ -2,10 +2,11 @@ import React from 'react';
 import Link from 'gatsby-link';
 import ExternalLink from './ExternalLink';
 import classNames from 'classnames';
+import VideoThumbnail from './VideoThumbnail';
 
 export const GameButtons = ({game, ...props}) => (
 	<div {...props}>
-		{game.demoURL && <Link to={`/game/${game.id}/play`} className="button tertiary">Play</Link>}
+		{game.demoURL && <Link to={`/game/${game.id}/play`} className="button success">Play</Link>}
 		{game.sourceURL && <ExternalLink to={game.sourceURL} className="button primary">Source</ExternalLink>}
 		<Link to={`/game/${game.id}`} className="button">View</Link>
 	</div>
@@ -20,10 +21,7 @@ const Game = ({game, className, ...props}) => (
 						margin: 0,
 						width: '100%'
 					}}/>}
-					{game.videoThumbnail && <div className="video-thumbnail">
-						<i className="fa fa-play-circle overlay-icon overlay-icon-hide"/>
-						<video className="play-on-hover img-responsive" preload="auto" src={game.videoThumbnail}/>
-					</div>}
+					{game.videoThumbnail && <VideoThumbnail src={game.videoThumbnail}/>}
 				</Link>
 			</div>
 			<div className="flex layout-column align-between">

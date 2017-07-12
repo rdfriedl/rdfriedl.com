@@ -36,7 +36,7 @@
 		}
 	}
 
-	@for $i from -20 through 20 {
+	@for $i from -5 through 5 {
 		$order: '';
 
 		@each $s in $sizes {
@@ -438,7 +438,7 @@
 }
 
 @mixin layouts_for_breakpoint($name:null) {
-	//@include order-for-name($name);
+	@include order-for-name($name);
 	//@include offset-for-name($name);
 	@include align-for-name($name);
 

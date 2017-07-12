@@ -1,0 +1,17 @@
+@import "../../node_modules/mini.css/src/flavors/mini-dark";
+
+$button-variant-success-name: 'success';
+$button-variant-success-back-color: #5f9133;
+$button-variant-success-back-opacity: 0.9;
+$button-variant-success-hover-back-opacity: 1;
+$button-variant-success-fore-color: #fafafa;
+
+$card-back-color: darken($card-back-color, 2%);
+
+@include make-button-alt-color (
+	$button-variant-success-name,
+	$button-variant-success-back-color,
+	$button-variant-success-back-opacity,
+	$button-variant-success-hover-back-opacity,
+	$button-variant-success-fore-color
+);
