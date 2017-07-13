@@ -1,0 +1,48 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:latest
+
+    working_directory: ~/repo
+
+    steps:
+      - run:
+          name: versions
+          command: |
+            node -v
+            npm -v
+
+      - checkout
+
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
+
+      - run: npm install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run:
+          name: Gatsby Build
+          command: npm run build
+
+      - run:
+          name: install awscli
+          command: sudo apt-get install awscli
+
+      - deploy:
+          name: deploy to s3
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "gatsby" ]
+              then
+                aws s3 sync public s3://${BUCKET_NAME} --delete
+            fi
