@@ -26,16 +26,23 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run:
-          name: Gatsby Build
+          name: gatsby build
           command: npm run build
 
       - run:
           name: install awscli
           command: sudo apt-get install awscli
 
-      - deploy:
-          name: deploy to s3
+      - run:
+          name: clean s3 bucket
           command: |
-            if [ "${CIRCLE_BRANCH}" == "gatsby" ]; then
-              aws s3 rm s3://${BUCKER_NAME}/ --recursive && aws s3 sync public s3://${BUCKET_NAME}/ --acl public-read;
+            if [ "${CIRCLE_BRANCH}" == "${DEPLOY_BRANCH}" ]; then
+              aws s3 rm s3://${BUCKER_NAME}/ --recursive;
+            fi
+
+      - deploy:
+          name: deploy to s3 bucket
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "${DEPLOY_BRANCH}" ]; then
+              aws s3 sync public s3://${BUCKET_NAME}/ --acl public-read;
             fi
