@@ -11,12 +11,6 @@ jobs:
     working_directory: ~/repo
 
     steps:
-      - run:
-          name: versions
-          command: |
-            node -v
-            npm -v
-
       - checkout
 
       - restore_cache:
@@ -42,7 +36,6 @@ jobs:
       - deploy:
           name: deploy to s3
           command: |
-            if [ "${CIRCLE_BRANCH}" == "gatsby" ]
-              then
-                aws s3 sync public s3://${BUCKET_NAME} --delete
+            if [ "${CIRCLE_BRANCH}" == "gatsby" ]; then
+              aws s3 rm s3://${BUCKER_NAME}/ --recursive && aws s3 sync public s3://${BUCKET_NAME}/ --acl public-read;
             fi
