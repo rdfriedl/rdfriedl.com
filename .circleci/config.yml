@@ -30,19 +30,60 @@ jobs:
           command: npm run build
 
       - run:
-          name: install awscli
-          command: sudo apt-get install awscli
+          name: copy build to workspace
+          command: |
+            mkdir -p workspace && cp -Lr public workspace
+
+      - persist_to_workspace:
+          root: workspace
+          paths:
+            - public
+
+#      - run:
+#          name: install awscli
+#          command: sudo apt-get install awscli
+#
+#      - run:
+#          name: clean s3 bucket
+#          command: |
+#            if [ "${CIRCLE_BRANCH}" == "${DEPLOY_BRANCH}" ]; then
+#              aws s3 rm s3://${BUCKER_NAME}/ --recursive;
+#            fi
+#
+#      - deploy:
+#          name: deploy to s3 bucket
+#          command: |
+#            if [ "${CIRCLE_BRANCH}" == "${DEPLOY_BRANCH}" ]; then
+#              aws s3 sync public s3://${BUCKET_NAME}/ --acl public-read;
+#            fi
+
+  deploy:
+    docker:
+      - image: cgswong/aws
+
+    working_directory: /tmp
+
+    branches:
+      only: gatsby
+
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
 
       - run:
           name: clean s3 bucket
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "${DEPLOY_BRANCH}" ]; then
-              aws s3 rm s3://${BUCKER_NAME}/ --recursive;
-            fi
+          command: aws s3 rm s3://${BUCKER_NAME}/ --recursive;
 
       - deploy:
-          name: deploy to s3 bucket
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "${DEPLOY_BRANCH}" ]; then
-              aws s3 sync public s3://${BUCKET_NAME}/ --acl public-read;
-            fi
+          name: push to s3 bucket
+          command: aws s3 sync /tmp/workspace/public/ s3://${BUCKET_NAME}/ --acl public-read;
+
+workflows:
+  version: 2
+
+  deploy-to-s3:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
