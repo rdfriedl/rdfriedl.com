@@ -1,27 +1,53 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import Link from 'gatsby-link';
 import ExternalLink from './ExternalLink';
 
-const Header = (props) => (
-	<div id="header">
-		<header>
-			<Link to="/" className="logo">Robert Friedl</Link>
-			<span style={{margin: 10}}/>
-			<Link to="/" className="button">Home</Link>
-			<Link to="/games/" className="button">Games</Link>
-			<Link to="/pens/" className="button">Pens</Link>
+import * as types from '../types';
 
-			<ExternalLink className="button float-right hidden-sm">
-				<i className="fa fa-github"/>
-				<span> View Source</span>
-			</ExternalLink>
-		</header>
+export default class Header extends Component{
+	static contextTypes = {
+		siteMetadata: PropTypes.object
+	};
 
-		{/*<input type="checkbox" id="drawer-checkbox"/>*/}
-		{/*<nav className="drawer hidden-md hidden-lg">*/}
-			{/*<label htmlFor="drawer-checkbox" className="close"/>*/}
-		{/*</nav>*/}
-	</div>
-);
+	render(){
+		const { siteMetadata } = this.context;
 
-export default Header;
+		return (
+			<div id="header" {...this.props}>
+				<header>
+					<Link to="/" className="logo">Robert Friedl</Link>
+					<span style={{margin: 10}}/>
+					<NavLink to="/"><i className="fa fa-home"/> Home</NavLink>
+					<NavLink to="/games/"><i className="fa fa-gamepad"/> Games</NavLink>
+					<NavLink to="/pens/"><i className="fa fa-codepen"/> Pens</NavLink>
+
+					<ExternalLink className="button float-right hidden-sm" href={siteMetadata.sourceUrl}><i className="fa fa-github"/> View Source</ExternalLink>
+				</header>
+			</div>
+		)
+	}
+}
+
+export class NavLink extends Component{
+	static contextTypes = {
+		location: types.location
+	};
+
+	render(){
+		const { to, children, className, ...props } = this.props;
+		const { location } = this.context;
+
+		const isActive = location.pathname === to;
+
+		return (
+			<Link
+				to={to || '/'}
+				className={classNames("button", {inverse: isActive}, className)}
+				{...props}>
+				{children}
+			</Link>
+		)
+	}
+}

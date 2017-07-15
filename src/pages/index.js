@@ -16,16 +16,31 @@ export default class Index extends React.Component {
 		pens.sort(() => Math.floor(Math.random() * 3)-1);
 		pens.length = 6;
 
+		const headers = {
+			about: (
+				<h2><i className="fa fa-info-circle"/> About</h2>
+			),
+			games: (
+				<h2><i className="fa fa-gamepad"/> Games</h2>
+			),
+			pens: (
+				<div className="layout-row align-between">
+					<h3><i className="fa fa-codepen"/> Pens</h3>
+					<ExternalLink className="button success" href={data.codepen.href}><i className="fa fa-link"/> More</ExternalLink>
+				</div>
+			)
+		};
+
     return (
       <div className="layout-row layout-wrap">
 				<main className="layout-column flex-md">
 					<section>
-						<Card header={<h2><i className="fa fa-info-circle"/> About</h2>}>
+						<Card header={headers.about}>
 							<About/>
 						</Card>
 					</section>
 					<section>
-						<Card header={<h2><i className="fa fa-game"/> Games</h2>}>
+						<Card header={headers.games}>
 							<div className="layout-row layout-wrap">
 								{games.map(game =>
 									<div className="flex-100 flex-lg-50" key={game.id}>
@@ -37,7 +52,7 @@ export default class Index extends React.Component {
 					</section>
 				</main>
 				<aside className="flex-100 flex-md-25 order-sm-2">
-					<Card header={<div className="layout-row align-between"><h3>Pens</h3><ExternalLink className="button success"><i className="fa fa-codepen"></i> More</ExternalLink></div>}>
+					<Card header={headers.pens}>
 						<div className="layout-row layout-wrap">
 							{pens.map(pen => (
 								<div className="flex-100 flex-sm-50 flex-md-100" key={pen.id}>
@@ -68,6 +83,10 @@ query data{
 			}
 		}
 	}
+	
+	codepen: profileLinksJson(id: {eq: "codepen"}) {
+    href
+  }
 }
 
 # Component fragments

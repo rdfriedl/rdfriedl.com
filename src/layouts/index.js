@@ -4,23 +4,40 @@ import Helmet from 'react-helmet';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
+import * as types from '../types';
+
 // import sass
 import '../scss/main.scss';
+
+const tmpMetaData = {
+	title: `Robert Friedl`,
+	description: '',
+	sourceUrl: 'https://github.com/rdfriedl/rdfriedl.github.com',
+	keywords: [
+		'site'
+	]
+};
 
 export default class Template extends React.Component {
   static propTypes = {
     children: PropTypes.func
   };
 
-  render() {
-  	// tmp hack till i can figure out how to query graphql from a template
-  	const { title, description, keywords } = {
-			title: `Robert Friedl`,
-			description: '',
-			keywords: [
-				'site'
-			]
+	static childContextTypes = {
+		location: types.location,
+		siteMetadata: PropTypes.object
+	};
+
+	getChildContext(){
+		return {
+			location: this.props.location,
+			siteMetadata: tmpMetaData
 		};
+	}
+
+	render() {
+  	// tmp hack till i can figure out how to query graphql from a template
+  	const { title, description, keywords } = tmpMetaData;
 
     return (
       <div id="page" className="layout-column">
@@ -34,7 +51,7 @@ export default class Template extends React.Component {
 				</Helmet>
         <Header/>
 				<div className="flex layout-row align-center">
-					<div className="flex-100 flex-lg-80">
+					<div className="flex-100 flex-lg-80 layout-row">
 						{this.props.children()}
 					</div>
 				</div>

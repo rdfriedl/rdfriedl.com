@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Robert Friedl`,
-    description: '',
+		title: `Robert Friedl`,
+		description: '',
+		sourceUrl: 'https://github.com/rdfriedl/rdfriedl.github.com',
 		keywords: [
 			'site'
 		]

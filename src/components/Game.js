@@ -6,8 +6,8 @@ import VideoThumbnail from './VideoThumbnail';
 
 export const GameButtons = ({game, ...props}) => (
 	<div {...props}>
-		{game.demoURL && <Link to={`/game/${game.id}/play`} className="button success">Play</Link>}
-		{game.sourceURL && <ExternalLink to={game.sourceURL} className="button primary">Source</ExternalLink>}
+		{game.demoURL && <Link to={`/game/${game.id}/play`} className="button success"><i className="fa fa-gamepad"/> Play</Link>}
+		{game.sourceURL && <ExternalLink to={game.sourceURL} className="button primary"><i className="fa fa-code"/> Source</ExternalLink>}
 		<Link to={`/game/${game.id}`} className="button">View</Link>
 	</div>
 );
