@@ -5,7 +5,7 @@ import classNames from 'classnames';
 const Pen = ({pen, className, ...props}) => (
 	<div className={classNames("pen card fluid hover-shadow", className)} {...props}>
 		<div className="section">
-			<Link to={`/pen/${pen.id}`}>
+			<Link to={`/pens/${pen.id}`}>
 				<img src={pen.thumbnail} alt={pen.title} style={{
 					margin: 0,
 					width: '100%'

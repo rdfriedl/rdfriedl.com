@@ -39,7 +39,7 @@ export class NavLink extends Component{
 		const { to, children, className, ...props } = this.props;
 		const { location } = this.context;
 
-		const isActive = location.pathname === to;
+		const isActive = to.split('/').length >= location.pathname.split('/').length && location.pathname.includes(to);
 
 		return (
 			<Link

@@ -29,7 +29,7 @@ class PenTemplate extends React.Component {
 						border: 'none',
 						height: '80vh'
 					}}>
-					See the Pen <a href='https://codepen.io/rdfriedl/pen/bRBPxG/'>bRBPxG</a> by rdfriedl (<a href='https://codepen.io/rdfriedl'>@rdfriedl</a>) on <a href='https://codepen.io'>CodePen</a>
+					See the Pen <a href={'https://codepen.io/rdfriedl/pen/'+pen.id}>{pen.id}</a> by rdfriedl (<a href='https://codepen.io/rdfriedl'>@rdfriedl</a>) on <a href='https://codepen.io'>CodePen</a>
 				</iframe>
 
 				<h2>Other Pens</h2>
