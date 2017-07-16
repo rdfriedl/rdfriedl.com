@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 import {createTitle} from '../utils/utils';
 import Pen from '../components/Pen';
 
-class PenTemplate extends React.Component {
+export default class PenTemplate extends React.Component {
 	render() {
 		const { pen, otherPens } = this.props.data;
 		let height = 600;
@@ -44,8 +44,6 @@ class PenTemplate extends React.Component {
 		)
 	}
 }
-
-export default PenTemplate
 
 export const pageQuery = graphql`
 query Pen($id: String) {

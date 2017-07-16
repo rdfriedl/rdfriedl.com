@@ -1,22 +1,12 @@
 const path = require(`path`);
 const slash = require(`slash`);
 
-// Implement the Gatsby API “createPages”. This is
-// called after the Gatsby bootstrap is finished so you have
-// access to any information necessary to programatically
-// create pages.
 exports.createPages = ({ graphql, boundActionCreators }) => {
 	const { createPage } = boundActionCreators;
+	let queries = [];
 
-	// The “graphql” function allows us to run arbitrary
-	// queries against local Hacker News graphql schema. Think of
-	// it like the site has a built-in database constructed
-	// from the fetched data that you can run queries against.
-
-	// HnStory is a data node type created from the HN API “allHnStory” is a
-	// "connection" (a GraphQL convention for accessing a list of nodes) gives
-	// us an easy way to query all HnStory nodes.
-	return graphql(`
+	//
+	queries.push(graphql(`
 		{
 			allPensJson {
 				edges {
@@ -27,31 +17,62 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 			}
 		}
 	`).then(result => {
-		if (result.errors) {
-			reject(result.errors)
-		}
+		if (result.errors)
+			return reject(result.errors);
 
-		// Create HN story pages.
 		const pageTemplate = path.resolve(`./src/templates/pen.js`);
-		// We want to create a detailed page for each
-		// story page. We'll just use the HN story ID for the slug.
-		result.data.allPensJson.edges.forEach(pen => {
-			// Gatsby uses Redux to manage its internal state.
-			// Plugins and sites can use functions like "createPage"
-			// to interact with Gatsby.
+		result.data.allPensJson.edges.map(d => d.node).forEach(pen => {
 			createPage({
-				// Each page is required to have a `path` as well
-				// as a template component. The `context` is
-				// optional but is often necessary so the template
-				// can query data specific to each page.
-				path: `/pens/${pen.node.id}/`,
+				path: `/pens/${pen.id}/`,
 				component: slash(pageTemplate),
 				context: {
-					id: pen.node.id
+					id: pen.id
 				},
 			})
 		});
 
 		return true;
-	});
+	}));
+
+	// render game pages
+	queries.push(graphql(`
+		{
+			allGamesJson {
+				edges {
+					node {
+						id
+						demoURL
+					}
+				}
+			}
+		}
+	`).then(result => {
+		if(result.errors)
+			return reject(result.errors);
+
+		const gameTemplate = path.resolve('./src/templates/game.js');
+		const playTemplate = path.resolve('./src/templates/play.js');
+		result.data.allGamesJson.edges.map(d => d.node).forEach(game => {
+			createPage({
+				path: `/games/${game.id}/`,
+				component: slash(gameTemplate),
+				context: {
+					id: game.id
+				},
+			});
+
+			// render play page
+			if(game.demoURL){
+				createPage({
+					path: `/games/${game.id}/play`,
+					component: slash(playTemplate),
+					context: {
+						id: game.id
+					},
+				})
+			}
+		})
+	}));
+
+	return Promise.all(queries);
 };

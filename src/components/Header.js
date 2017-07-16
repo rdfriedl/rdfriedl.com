@@ -19,7 +19,7 @@ export default class Header extends Component{
 				<header>
 					<Link to="/" className="logo">Robert Friedl</Link>
 					<span style={{margin: 10}}/>
-					<NavLink to="/"><i className="fa fa-home"/> Home</NavLink>
+					<NavLink to="/" matchSubPaths={false}><i className="fa fa-home"/> Home</NavLink>
 					<NavLink to="/games/"><i className="fa fa-gamepad"/> Games</NavLink>
 					<NavLink to="/pens/"><i className="fa fa-codepen"/> Pens</NavLink>
 
@@ -35,11 +35,20 @@ export class NavLink extends Component{
 		location: types.location
 	};
 
+	static propTypes = {
+		to: PropTypes.string.isRequired,
+		matchSubPaths: PropTypes.bool
+	};
+
+	static defaultProps = {
+		matchSubPaths: true
+	};
+
 	render(){
-		const { to, children, className, ...props } = this.props;
+		const { to, matchSubPaths, children, className, ...props } = this.props;
 		const { location } = this.context;
 
-		const isActive = to.split('/').length >= location.pathname.split('/').length && location.pathname.includes(to);
+		const isActive = matchSubPaths? location.pathname.indexOf(to) === 0 : location.pathname === to;
 
 		return (
 			<Link
