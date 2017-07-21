@@ -1,12 +1,11 @@
-import React from 'react';
-import classNames from 'classnames';
+import React from "react";
+import classNames from "classnames";
 
-const Card = ({header, children, className, ...props}) => (
-	<div className={classNames('card fluid responsive-padding')}>
+const Card = ({ header, children, className, ...props }) =>
+	<div className={classNames("card fluid responsive-padding")}>
 		{header}
-		{header && <hr/>}
+		{header && <hr />}
 		{children}
-	</div>
-);
+	</div>;
 
 export default Card;

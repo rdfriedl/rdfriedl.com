@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import classNames from "classnames";
 
 export default class VideoThumbnail extends Component {
-	constructor(props){
+	constructor(props) {
 		super(props);
 
 		this.state = {
@@ -13,23 +13,29 @@ export default class VideoThumbnail extends Component {
 		this.onMouseEnter = this.onMouseEnter.bind(this);
 		this.onMouseLeave = this.onMouseLeave.bind(this);
 	}
-	onMouseEnter(){
+	onMouseEnter() {
 		this.refs.video.play();
 	}
-	onMouseLeave(){
+	onMouseLeave() {
 		this.refs.video.pause();
 	}
-	render(){
-		let {src, className, ...props} = this.props;
+	render() {
+		let { src, className, ...props } = this.props;
 
 		return (
 			<div
 				className={classNames("video-thumbnail", className)}
 				onMouseEnter={this.onMouseEnter}
 				onMouseLeave={this.onMouseLeave}
-				{...props}>
-				<i className="fa fa-play-circle overlay-icon overlay-icon-hide"/>
-				<video className="play-on-hover img-responsive" preload="auto" src={src} ref="video"/>
+				{...props}
+			>
+				<i className="fa fa-play-circle overlay-icon overlay-icon-hide" />
+				<video
+					className="play-on-hover img-responsive"
+					preload="auto"
+					src={src}
+					ref="video"
+				/>
 			</div>
 		);
 	}
