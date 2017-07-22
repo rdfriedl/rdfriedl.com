@@ -1,7 +1,7 @@
 {
   "name": "rdfriedl.com",
   "version": "2.0.0",
-  "description": "personal site",
+  "description": "my personal site",
   "scripts": {
     "prebuild": "rimraf public",
     "build": "gatsby build",
@@ -16,9 +16,6 @@
   },
   "author": "Robert Friedl (rdfriedl@gmail.com)",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rdfriedl/rdfriedl.github.io/issues"
-  },
   "homepage": "https://github.com/rdfriedl/rdfriedl.github.io#readme",
   "dependencies": {
     "classnames": "^2.2.5",

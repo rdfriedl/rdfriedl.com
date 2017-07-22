@@ -15,20 +15,20 @@ jobs:
 
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "package-lock.json" }}
+          - v1-dependencies-{{ checksum "package.json" }}
 
       - run:
           name: Install dependancies
-          command: npm install
+          command: yarn install
 
       - save_cache:
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "package-lock.json" }}
+          key: v1-dependencies-{{ checksum "package.json" }}
 
       - run:
           name: gatsby build
-          command: npm run build
+          command: yarn run build
 
       - run:
           name: Clean s3 bucket
