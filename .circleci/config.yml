@@ -43,3 +43,11 @@ jobs:
             if [ "${CIRCLE_BRANCH}" == "${DEPLOY_BRANCH}" ]; then
               aws s3 sync public s3://${BUCKET_NAME}/ --acl public-read;
             fi
+
+      - run:
+          name: Invalidate CloudFront Cache
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "${DEPLOY_BRANCH}" ]; then
+              aws configure set preview.cloudfront true && \
+              aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_ID} --paths /*
+            fi
