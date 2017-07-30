@@ -30,26 +30,13 @@ jobs:
           name: gatsby build
           command: yarn run build
 
-      - run:
-          name: Clean s3 bucket
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "${DEPLOY_BRANCH}" ]; then
-              echo cleaning bucket ${BUCKET_NAME} && \
-              aws s3 rm s3://${BUCKER_NAME} --recursive;
-            fi
-
       - deploy:
           name: Deploy to s3 bucket
           command: |
             if [ "${CIRCLE_BRANCH}" == "${DEPLOY_BRANCH}" ]; then
-              echo delopying to bucket ${BUCKET_NAME} && \
-              aws s3 sync public s3://${BUCKET_NAME} --acl public-read;
-            fi
-
-      - run:
-          name: Invalidate CloudFront Cache
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "${DEPLOY_BRANCH}" ]; then
               aws configure set preview.cloudfront true && \
+              echo delopying to bucket ${S3_BUCKET} && \
+              aws s3 rm s3://${BUCKER_NAME} --recursive && \
+              aws s3 sync public s3://${S3_BUCKET} --acl public-read && \
               aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_ID} --paths /*;
             fi
