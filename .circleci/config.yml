@@ -34,14 +34,16 @@ jobs:
           name: Clean s3 bucket
           command: |
             if [ "${CIRCLE_BRANCH}" == "${DEPLOY_BRANCH}" ]; then
-              aws s3 rm s3://${BUCKER_NAME}/ --recursive;
+              echo cleaning bucket ${BUCKET_NAME} && \
+              aws s3 rm s3://${BUCKER_NAME} --recursive;
             fi
 
       - deploy:
           name: Deploy to s3 bucket
           command: |
             if [ "${CIRCLE_BRANCH}" == "${DEPLOY_BRANCH}" ]; then
-              aws s3 sync public s3://${BUCKET_NAME}/ --acl public-read;
+              echo delopying to bucket ${BUCKET_NAME} && \
+              aws s3 sync public s3://${BUCKET_NAME} --acl public-read;
             fi
 
       - run:
@@ -49,5 +51,5 @@ jobs:
           command: |
             if [ "${CIRCLE_BRANCH}" == "${DEPLOY_BRANCH}" ]; then
               aws configure set preview.cloudfront true && \
-              aws cloudfront create-invalidation --distribution-id "${CLOUDFRONT_ID}" --paths /*
+              aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_ID} --paths /*;
             fi
