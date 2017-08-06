@@ -7,25 +7,21 @@ import VideoThumbnail from "./VideoThumbnail";
 export const GameButtons = ({ game, ...props }) =>
 	<div {...props}>
 		{game.demoURL &&
-			<Link to={`/games/${game.id}/play`} className="button success">
+			<Link to={`/games/${game.id}`} className="button success">
 				<i className="fa fa-gamepad" /> Play
 			</Link>}
 		{game.sourceURL &&
 			<ExternalLink to={game.sourceURL} className="button primary">
 				<i className="fa fa-code" /> Source
 			</ExternalLink>}
-		<Link to={`/games/${game.id}`} className="button">
-			View
-		</Link>
 	</div>;
 
 const Game = ({ game, className, ...props }) =>
 	<div
 		className={classNames("game card fluid hover-shadow", className)}
-		{...props}
-	>
-		<div className="layout-row">
-			<div className="flex-33">
+		{...props}>
+		<div className="layout-row layout-xs-column">
+			<div className="flex-xs-100 flex-33">
 				<Link to={`/games/${game.id}`}>
 					{game.thumbnail &&
 						<img

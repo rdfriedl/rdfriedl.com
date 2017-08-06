@@ -51,7 +51,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 			return reject(result.errors);
 
 		const gameTemplate = path.resolve('./src/templates/game.js');
-		const playTemplate = path.resolve('./src/templates/play.js');
 		result.data.allGamesJson.edges.map(d => d.node).forEach(game => {
 			createPage({
 				path: `/games/${game.id}/`,
@@ -60,17 +59,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 					id: game.id
 				},
 			});
-
-			// render play page
-			if(game.demoURL){
-				createPage({
-					path: `/games/${game.id}/play`,
-					component: slash(playTemplate),
-					context: {
-						id: game.id
-					},
-				})
-			}
 		})
 	}));
 

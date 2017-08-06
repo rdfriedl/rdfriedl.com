@@ -2,6 +2,11 @@ import React, {Component} from 'react';
 import Helmet from 'react-helmet';
 import {createTitle} from '../utils/utils';
 import Game from '../components/Game';
+import ExternalLink from '../components/ExternalLink';
+
+const iframeStyles = {
+	border: 'none'
+};
 
 export default class GameTemplate extends Component {
 	render() {
@@ -11,18 +16,18 @@ export default class GameTemplate extends Component {
 		otherGames.games.length = 4;
 
 		return (
-			<div>
+			<div className="flex layout-column">
 				<Helmet title={createTitle(game.title)}/>
-				<h1>{game.title}</h1>
 
-				<h2>Other Games</h2>
-				<div className="layout-row layout-wrap">
-					{otherGames.games.map(({game}) => (
-						<div className="flex-100 flex-lg-50" key={game.id}>
-							<Game game={game}/>
-						</div>
-					))}
+				<div className="flex-no-shirnk layout-row align-between-start">
+					<h3>{game.title}</h3>
+					<div>
+						{game.sourceURL && <ExternalLink className="button primary" href={game.sourceURL}><i className="fa fa-code"/> Source</ExternalLink>}
+						<ExternalLink className="button success" href={game.demoURL}><i className="fa fa-reply"/> Open</ExternalLink>
+					</div>
 				</div>
+
+				<iframe className="flex" src={game.demoURL} style={iframeStyles}/>
 			</div>
 		);
 	}
@@ -33,14 +38,8 @@ query Game($id: String) {
   game: gamesJson(id: {eq: $id}) {
     id
     title
-    thumbnail
-    videoThumbnail
+    demoURL
     sourceURL
-    media {
-      type
-      src
-      thumbnail
-    }
   }
 	otherGames: allGamesJson(filter: {id: {ne: $id}}){
 		games: edges {
