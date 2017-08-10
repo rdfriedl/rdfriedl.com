@@ -38,5 +38,5 @@ jobs:
               echo delopying to bucket ${S3_BUCKET} && \
               aws s3 rm s3://${BUCKER_NAME} --recursive && \
               aws s3 sync public s3://${S3_BUCKET} --acl public-read && \
-              aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_ID} --paths /*;
+              aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_ID} --paths /;
             fi

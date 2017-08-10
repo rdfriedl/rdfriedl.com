@@ -4,7 +4,7 @@
 		"type": "game",
 		"title": "Block-Script",
 		"description": "A 3 Dimensional voxel maze game, built with Three.js and VueJS",
-		"videoThumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/games/block-script/block-script.mp4",
+		"videoThumbnail": "https://assets.rdfriedl.com/games/block-script/block-script.mp4",
 		"tags": [
 			{
 				"title": "Game",
@@ -18,38 +18,38 @@
 		"media": [
 			{
 				"type": "image",
-				"src": "https://s3.amazonaws.com/rdfriedl.com-assets/games/block-script/2016-11-12-19-35-09.png",
-				"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/games/block-script/2016-11-12-19-35-09_tn.jpg"
+				"src": "https://assets.rdfriedl.com/games/block-script/2016-11-12-19-35-09.png",
+				"thumbnail": "https://assets.rdfriedl.com/games/block-script/2016-11-12-19-35-09_tn.jpg"
 			},
 			{
 				"type": "image",
-				"src": "https://s3.amazonaws.com/rdfriedl.com-assets/games/block-script/2016-11-12-19-37-44.png",
-				"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/games/block-script/2016-11-12-19-37-44_tn.jpg"
+				"src": "https://assets.rdfriedl.com/games/block-script/2016-11-12-19-37-44.png",
+				"thumbnail": "https://assets.rdfriedl.com/games/block-script/2016-11-12-19-37-44_tn.jpg"
 			},
 			{
 				"type": "image",
-				"src": "https://s3.amazonaws.com/rdfriedl.com-assets/games/block-script/2016-11-12-19-38-42.png",
-				"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/games/block-script/2016-11-12-19-38-42_tn.jpg"
+				"src": "https://assets.rdfriedl.com/games/block-script/2016-11-12-19-38-42.png",
+				"thumbnail": "https://assets.rdfriedl.com/games/block-script/2016-11-12-19-38-42_tn.jpg"
 			},
 			{
 				"type": "image",
-				"src": "https://s3.amazonaws.com/rdfriedl.com-assets/games/block-script/2016-11-12-19-39-58.png",
-				"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/games/block-script/2016-11-12-19-39-58_tn.jpg"
+				"src": "https://assets.rdfriedl.com/games/block-script/2016-11-12-19-39-58.png",
+				"thumbnail": "https://assets.rdfriedl.com/games/block-script/2016-11-12-19-39-58_tn.jpg"
 			},
 			{
 				"type": "image",
-				"src": "https://s3.amazonaws.com/rdfriedl.com-assets/games/block-script/2016-11-13-15-55-54.png",
-				"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/games/block-script/2016-11-13-15-55-54_tn.jpg"
+				"src": "https://assets.rdfriedl.com/games/block-script/2016-11-13-15-55-54.png",
+				"thumbnail": "https://assets.rdfriedl.com/games/block-script/2016-11-13-15-55-54_tn.jpg"
 			},
 			{
 				"type": "image",
-				"src": "https://s3.amazonaws.com/rdfriedl.com-assets/games/block-script/2016-11-13-15-57-24.png",
-				"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/games/block-script/2016-11-13-15-57-24_tn.jpg"
+				"src": "https://assets.rdfriedl.com/games/block-script/2016-11-13-15-57-24.png",
+				"thumbnail": "https://assets.rdfriedl.com/games/block-script/2016-11-13-15-57-24_tn.jpg"
 			},
 			{
 				"type": "image",
-				"src": "https://s3.amazonaws.com/rdfriedl.com-assets/games/block-script/2016-11-13-15-57-53.png",
-				"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/games/block-script/2016-11-13-15-57-53_tn.jpg"
+				"src": "https://assets.rdfriedl.com/games/block-script/2016-11-13-15-57-53.png",
+				"thumbnail": "https://assets.rdfriedl.com/games/block-script/2016-11-13-15-57-53_tn.jpg"
 			}
 		],
 		"used": [
@@ -79,9 +79,8 @@
 			}
 		],
 
-
 		"sourceURL": "https://github.com/rdfriedl/block-script",
-		"demoURL": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/block-script/index.html",
+		"demoURL": "https://projects.rdfriedl.com/block-script",
 		"demoText": "Play Now"
 	},
 	{
@@ -89,7 +88,7 @@
 		"type": "game",
 		"title": "buttons-and-doors",
 		"description": "a simple puzzle game",
-		"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/games/buttons-and-doors/buttons-and-doors_tn.jpg",
+		"thumbnail": "https://assets.rdfriedl.com/games/buttons-and-doors/buttons-and-doors_tn.jpg",
 		"tags": [
 			{
 				"title": "Game",
@@ -103,18 +102,18 @@
 		"media": [
 			{
 				"type": "image",
-				"src": "https://s3.amazonaws.com/rdfriedl.com-assets/games/buttons-and-doors/buttons-and-doors.png",
-				"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/games/buttons-and-doors/buttons-and-doors_tn.jpg"
+				"src": "https://assets.rdfriedl.com/games/buttons-and-doors/buttons-and-doors.png",
+				"thumbnail": "https://assets.rdfriedl.com/games/buttons-and-doors/buttons-and-doors_tn.jpg"
 			},
 			{
 				"type": "image",
-				"src": "https://s3.amazonaws.com/rdfriedl.com-assets/games/buttons-and-doors/2016-11-12-19-52-44.png",
-				"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/games/buttons-and-doors/2016-11-12-19-52-44_tn.jpg"
+				"src": "https://assets.rdfriedl.com/games/buttons-and-doors/2016-11-12-19-52-44.png",
+				"thumbnail": "https://assets.rdfriedl.com/games/buttons-and-doors/2016-11-12-19-52-44_tn.jpg"
 			},
 			{
 				"type": "image",
-				"src": "https://s3.amazonaws.com/rdfriedl.com-assets/games/buttons-and-doors/2016-11-12-19-53-48.png",
-				"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/games/buttons-and-doors/2016-11-12-19-53-48_tn.jpg"
+				"src": "https://assets.rdfriedl.com/games/buttons-and-doors/2016-11-12-19-53-48.png",
+				"thumbnail": "https://assets.rdfriedl.com/games/buttons-and-doors/2016-11-12-19-53-48_tn.jpg"
 			}
 		],
 		"used": [
@@ -122,9 +121,8 @@
 			"javascript"
 		],
 
-
 		"sourceURL": "https://github.com/rdfriedl/buttons-and-doors",
-		"demoURL": "http://rdfriedl.github.io/buttons-and-doors",
+		"demoURL": "https://projects.rdfriedl.com/buttons-and-doors",
 		"demoText": "Play Online"
 	},
 	{
@@ -132,7 +130,7 @@
 		"type": "game",
 		"title": "Car Game",
 		"description": "A simple Car Game built with Unity",
-		"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/games/car-game/screenshot1.png",
+		"thumbnail": "https://assets.rdfriedl.com/games/car-game/screenshot1.png",
 		"tags": [
 			{
 				"title": "Game",
@@ -150,24 +148,23 @@
 		"media": [
 			{
 				"type": "image",
-				"src": "https://s3.amazonaws.com/rdfriedl.com-assets/games/car-game/screenshot2.png",
-				"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/games/car-game/screenshot2.png"
+				"src": "https://assets.rdfriedl.com/games/car-game/screenshot2.png",
+				"thumbnail": "https://assets.rdfriedl.com/games/car-game/screenshot2.png"
 			},
 			{
 				"type": "image",
-				"src": "https://s3.amazonaws.com/rdfriedl.com-assets/games/car-game/screenshot3.png",
-				"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/games/car-game/screenshot3.png"
+				"src": "https://assets.rdfriedl.com/games/car-game/screenshot3.png",
+				"thumbnail": "https://assets.rdfriedl.com/games/car-game/screenshot3.png"
 			},
 			{
 				"type": "image",
-				"src": "https://s3.amazonaws.com/rdfriedl.com-assets/games/car-game/screenshot4.png",
-				"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/games/car-game/screenshot4.png"
+				"src": "https://assets.rdfriedl.com/games/car-game/screenshot4.png",
+				"thumbnail": "https://assets.rdfriedl.com/games/car-game/screenshot4.png"
 			}
 		],
 
-
 		"sourceURL": "https://github.com/ReflectionGames/carGame",
-		"demoURL": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/CarGame/webplayers/UnityWebPlayer/UnityWebPlayer.html",
+		"demoURL": "https://projects.rdfriedl.com/CarGame/UnityWebPlayer.html",
 		"demoText": "Play Now"
 	},
 	{
@@ -175,7 +172,7 @@
 		"type": "game",
 		"title": "cannontest",
 		"description": "A Three.js and Cannon.js Test Project",
-		"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/games/cannontest/cannontest_tn.jpg",
+		"thumbnail": "https://assets.rdfriedl.com/games/cannontest/cannontest_tn.jpg",
 		"tags": [
 			{
 				"title": "Game",
@@ -193,18 +190,18 @@
 		"media": [
 			{
 				"type": "image",
-				"src": "https://s3.amazonaws.com/rdfriedl.com-assets/games/cannontest/cannontest.png",
-				"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/games/cannontest/cannontest_tn.jpg"
+				"src": "https://assets.rdfriedl.com/games/cannontest/cannontest.png",
+				"thumbnail": "https://assets.rdfriedl.com/games/cannontest/cannontest_tn.jpg"
 			},
 			{
 				"type": "image",
-				"src": "https://s3.amazonaws.com/rdfriedl.com-assets/games/cannontest/2016-11-12-19-49-59.png",
-				"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/games/cannontest/2016-11-12-19-49-59_tn.jpg"
+				"src": "https://assets.rdfriedl.com/games/cannontest/2016-11-12-19-49-59.png",
+				"thumbnail": "https://assets.rdfriedl.com/games/cannontest/2016-11-12-19-49-59_tn.jpg"
 			},
 			{
 				"type": "image",
-				"src": "https://s3.amazonaws.com/rdfriedl.com-assets/games/cannontest/2016-11-12-19-50-33.png",
-				"thumbnail": "https://s3.amazonaws.com/rdfriedl.com-assets/games/cannontest/2016-11-12-19-50-33_tn.jpg"
+				"src": "https://assets.rdfriedl.com/games/cannontest/2016-11-12-19-50-33.png",
+				"thumbnail": "https://assets.rdfriedl.com/games/cannontest/2016-11-12-19-50-33_tn.jpg"
 			}
 		],
 		"used": [
@@ -214,8 +211,7 @@
 			"javascript"
 		],
 
-
 		"sourceURL": "https://github.com/rdfriedl/cannontest",
-		"demoURL": "http://cdn.rawgit.com/rdfriedl/cannontest/v1/index.html"
+		"demoURL": "https://projects.rdfriedl.com/connontest"
 	}
 ]

@@ -18,7 +18,7 @@ export default class Footer extends Component {
 					<span>Built with </span>
 					<ExternalLink href="https://www.gatsbyjs.org/">Gatsby v{gatsbyInfo.version}</ExternalLink>
 					<span> and </span>
-					<ExternalLink href="http://minicss.org/">Mini.css v{miniCssInfo.version}</ExternalLink>
+					<ExternalLink href="https://minicss.org/">Mini.css v{miniCssInfo.version}</ExternalLink>
 					<span> | view </span>
 					<ExternalLink href={siteMetadata.sourceUrl}><i className="fa fa-code"/> Source</ExternalLink>
 					{process.env.NODE_ENV === "development" &&
