@@ -3,14 +3,11 @@ import PropTypes from "prop-types";
 import ExternalLink from "./ExternalLink";
 import gatsbyInfo from 'gatsby/package.json';
 import miniCssInfo from 'mini.css/package.json';
+import config from '../siteConfig';
 
 export default class Footer extends Component {
-	static contextTypes = {
-		siteMetadata: PropTypes.object
-	};
-
 	render(){
-		const { siteMetadata } = this.context;
+		const { sourceUrl } = config;
 
 		return (
 			<footer id="footer">
@@ -20,7 +17,7 @@ export default class Footer extends Component {
 					<span> and </span>
 					<ExternalLink href="https://minicss.org/">Mini.css v{miniCssInfo.version}</ExternalLink>
 					<span> | view </span>
-					<ExternalLink href={siteMetadata.sourceUrl}><i className="fa fa-code"/> Source</ExternalLink>
+					<ExternalLink href={sourceUrl}><i className="fa fa-code"/> Source</ExternalLink>
 					{process.env.NODE_ENV === "development" &&
 						<span>
 							<span> | </span>

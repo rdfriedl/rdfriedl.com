@@ -44,7 +44,7 @@ const linkStyles = {
 	fontSize: "1.5rem"
 };
 
-class FourOFour extends Component {
+export default class FourOFour extends Component {
 	render() {
 		const message = messages[Math.floor(Math.random() * messages.length)];
 		const fontFamily = fonts[Math.floor(Math.random() * fonts.length)];
@@ -61,12 +61,10 @@ class FourOFour extends Component {
 
 				<div
 					className="card layout-column align-center-center text-center"
-					style={{ padding }}
-				>
+					style={{ padding }}>
 					<div
 						className="layout-column align-start-center"
-						style={containerStyles}
-					>
+						style={containerStyles}>
 						<h1 style={{ ...titleStyles, fontFamily }}>404</h1>
 						<p style={messageStyles}>
 							{message}
@@ -80,5 +78,3 @@ class FourOFour extends Component {
 		);
 	}
 }
-
-export default FourOFour;

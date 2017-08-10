@@ -3,16 +3,13 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import Link from "gatsby-link";
 import ExternalLink from "./ExternalLink";
+import config from '../siteConfig';
 
 import * as types from "../types";
 
 export default class Header extends Component {
-	static contextTypes = {
-		siteMetadata: PropTypes.object
-	};
-
 	render() {
-		const { siteMetadata } = this.context;
+		const { sourceUrl } = config;
 
 		return (
 			<div id="header" {...this.props}>
@@ -33,7 +30,7 @@ export default class Header extends Component {
 
 					<ExternalLink
 						className="button float-right hidden-sm"
-						href={siteMetadata.sourceUrl}
+						href={sourceUrl}
 					>
 						<i className="fa fa-github" /> View Source
 					</ExternalLink>

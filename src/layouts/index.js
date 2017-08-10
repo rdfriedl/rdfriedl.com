@@ -3,20 +3,12 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import config from '../siteConfig';
 
 import * as types from '../types';
 
 // import sass
 import '../scss/main.scss';
-
-const tmpMetaData = {
-	title: `Robert Friedl`,
-	description: '',
-	sourceUrl: 'https://github.com/rdfriedl/rdfriedl.github.com',
-	keywords: [
-		'site'
-	]
-};
 
 export default class Template extends React.Component {
   static propTypes = {
@@ -30,14 +22,12 @@ export default class Template extends React.Component {
 
 	getChildContext(){
 		return {
-			location: this.props.location,
-			siteMetadata: tmpMetaData
+			location: this.props.location
 		};
 	}
 
 	render() {
-  	// tmp hack till i can figure out how to query graphql from a template
-  	const { title, description, keywords } = tmpMetaData;
+  	const { title, description, keywords } = config;
 
     return (
       <div id="page" className="layout-column">
@@ -60,12 +50,3 @@ export default class Template extends React.Component {
     )
   }
 }
-
-// export const pageQuery = graphql`
-// query metaData {
-// 	site {
-//     siteMetadata {
-//       title
-//     }
-//   }
-// }`;

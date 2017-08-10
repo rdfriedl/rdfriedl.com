@@ -2,10 +2,11 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import {createTitle} from '../utils/utils';
 import Pen from '../components/Pen';
+import DisqusComments from '../components/DisqusComments';
 
 export default class PenTemplate extends React.Component {
 	render() {
-		const { pen, otherPens } = this.props.data;
+		const { pen, otherPens, sitePage } = this.props.data;
 		let height = 600;
 		try{
 			height = window.innerHeight * 0.8;
@@ -40,6 +41,8 @@ export default class PenTemplate extends React.Component {
 					</div>
 				))}
 				</div>
+
+				<DisqusComments disqusId={`pen-${pen.id}`} disqusTitle={pen.title} category="pen"/>
 			</div>
 		)
 	}
