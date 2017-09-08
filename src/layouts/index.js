@@ -16,8 +16,7 @@ export default class Template extends React.Component {
   };
 
 	static childContextTypes = {
-		location: types.location,
-		siteMetadata: PropTypes.object
+		location: types.location
 	};
 
 	getChildContext(){

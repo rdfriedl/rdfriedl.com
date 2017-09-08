@@ -1,5 +1,11 @@
 [
 	{
+		"id": "github",
+		"title": "GitHub",
+		"icon": "github",
+		"href": "https://github.com/rdfriedl"
+	},
+	{
 		"id": "codepen",
 		"title": "CodePen",
 		"icon": "codepen",

@@ -1,75 +1,55 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
-import classNames from "classnames";
 import Link from "gatsby-link";
 import ExternalLink from "./ExternalLink";
+import MobileNavDraw from './MobileNavDraw';
+import NavLink from './NavLink';
 import config from '../siteConfig';
-
-import * as types from "../types";
 
 export default class Header extends Component {
 	render() {
-		const { sourceUrl } = config;
+		const {sourceUrl} = config;
 
 		return (
 			<div id="header" {...this.props}>
-				<header>
-					<Link to="/" className="logo">
-						Robert Friedl
+				{/*desktop header*/}
+				<header className="layout-row hidden-sm">
+					<Link to="/">
+						<img className="avatar circular m-2" src={config.avatar} alt="avatar" title={config.name}/>
 					</Link>
-					<span style={{ margin: 10 }} />
-					<NavLink to="/" matchSubPaths={false}>
-						<i className="fa fa-home" /> Home
-					</NavLink>
-					<NavLink to="/games/">
-						<i className="fa fa-gamepad" /> Games
-					</NavLink>
-					<NavLink to="/pens/">
-						<i className="fa fa-codepen" /> Pens
-					</NavLink>
+					<div className="flex layout-column pl-2 pb-2">
+						<h2 className="mx-0">{config.name}</h2>
 
-					<ExternalLink
-						className="button float-right hidden-sm"
-						href={sourceUrl}
-					>
-						<i className="fa fa-github" /> View Source
-					</ExternalLink>
+						<span className="flex"/>
+
+						<div className="flex-noshrink flex-nogrow layout-row">
+							<NavLink to="/" matchSubPaths={false}>
+								<i className="fa fa-home"/> Home
+							</NavLink>
+							<NavLink to="/games/">
+								<i className="fa fa-gamepad"/> Games
+							</NavLink>
+							<NavLink to="/pens/">
+								<i className="fa fa-codepen"/> Pens
+							</NavLink>
+
+							<span className="flex"/>
+
+							<ExternalLink
+								className="button hidden-sm"
+								href={sourceUrl}
+							>
+								<i className="fa fa-github"/> View Source
+							</ExternalLink>
+						</div>
+					</div>
+				</header>
+
+				{/*mobile header*/}
+				<MobileNavDraw className="hidden-md hidden-lg"/>
+				<header className="hidden-md hidden-lg">
+					<label htmlFor="drawer-checkbox" className="button drawer-toggle"/>
 				</header>
 			</div>
-		);
-	}
-}
-
-export class NavLink extends Component {
-	static contextTypes = {
-		location: types.location
-	};
-
-	static propTypes = {
-		to: PropTypes.string.isRequired,
-		matchSubPaths: PropTypes.bool
-	};
-
-	static defaultProps = {
-		matchSubPaths: true
-	};
-
-	render() {
-		const { to, matchSubPaths, children, className, ...props } = this.props;
-		const { location } = this.context;
-
-		const isActive = matchSubPaths
-			? location.pathname.indexOf(to) === 0
-			: location.pathname === to;
-
-		return (
-			<Link
-				to={to || "/"}
-				className={classNames("button", { inverse: isActive }, className)}
-				{...props}
-			>
-				{children}
-			</Link>
 		);
 	}
 }

@@ -13,3 +13,60 @@
 .float-left{
 	float: left !important;
 }
+
+$box-layout-spacing-base: 5px;
+
+@mixin box-layout-spacing($type, $scale, $side: null){
+	@if($side){
+		@if($side == "x"){
+			#{$type}-right: $scale * $box-layout-spacing-base;
+			#{$type}-left: $scale * $box-layout-spacing-base;
+		}
+		@else if($side == "y"){
+			#{$type}-top: $scale * $box-layout-spacing-base;
+			#{$type}-bottom: $scale * $box-layout-spacing-base;
+		}
+		@else{
+			#{$type}-#{$side}: $scale * $box-layout-spacing-base;
+		}
+	}
+	@else{
+		#{$type}: $scale * $box-layout-spacing-base;
+	}
+}
+
+@mixin box-layout-spacing-util($type, $scale){
+	$sides: "top" "bottom" "left" "right";
+	$letter: str_slice($type, 0, 1);
+
+	&.#{$letter}-#{$scale}{
+		@include box-layout-spacing($type, $scale);
+	}
+	&.#{$letter}x-#{$scale}{
+		@include box-layout-spacing($type, $scale, "x");
+	}
+	&.#{$letter}y-#{$scale}{
+		@include box-layout-spacing($type, $scale, "y");
+	}
+
+	@each $side in $sides{
+		&.#{$letter}#{str-slice($side, 0, 1)}-#{$scale}{
+			@include box-layout-spacing($type, $scale, $side);
+		}
+	}
+}
+
+@for $i from 0 through 4 {
+	@include box-layout-spacing-util("padding", $i);
+	@include box-layout-spacing-util("margin", $i);
+}
+
+@for $i from 0 through 4 {
+	$size: $i * 25;
+	.w-#{$size}{
+		width: $size * 1%;
+	}
+	.h-#{$size}{
+		height: $size * 1%;
+	}
+}
