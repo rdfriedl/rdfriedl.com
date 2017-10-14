@@ -1,6 +1,31 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import styled from "styled-components";
+
+const Styles = styled.div`
+	position: relative;
+
+	video {
+		width: 100%;
+	}
+
+	.overlay-icon {
+		display: block;
+		position: absolute;
+		color: black;
+		opacity: 0.6;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 0.8in !important;
+		transition: opacity 0.5s ease;
+	}
+	*:hover > .overlay-icon-hide {
+		opacity: 0;
+		transform: translate(-50%, -50%) scale(1.5);
+		transition: opacity 0.5s ease, transform 0.7s ease;
+	}
+`;
 
 export default class VideoThumbnail extends Component {
 	constructor(props) {
@@ -20,11 +45,10 @@ export default class VideoThumbnail extends Component {
 		this.refs.video.pause();
 	}
 	render() {
-		let { src, className, ...props } = this.props;
+		let { src, ...props } = this.props;
 
 		return (
-			<div
-				className={classNames("video-thumbnail", className)}
+			<Styles
 				onMouseEnter={this.onMouseEnter}
 				onMouseLeave={this.onMouseLeave}
 				{...props}
@@ -36,7 +60,7 @@ export default class VideoThumbnail extends Component {
 					src={src}
 					ref="video"
 				/>
-			</div>
+			</Styles>
 		);
 	}
 }

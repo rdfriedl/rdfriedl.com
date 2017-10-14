@@ -1,7 +1,7 @@
 import React from "react";
 import ExternalLink from "./ExternalLink";
 
-const About = ({ ...props }) =>
+const About = ({ ...props }) => (
 	<div {...props}>
 		<p>
 			I am an enthusiastic front-end developer with extensive knowledge and
@@ -18,6 +18,7 @@ const About = ({ ...props }) =>
 				React
 			</ExternalLink>
 		</p>
-	</div>;
+	</div>
+);
 
 export default About;

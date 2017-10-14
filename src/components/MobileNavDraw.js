@@ -1,11 +1,55 @@
-import React, {PureComponent} from 'react';
-import PropTypes from 'prop-types';
-import Link from "gatsby-link";
-import NavLink from './NavLink';
-import config from '../siteConfig';
+import React, { PureComponent } from "react";
+import styled from 'styled-components';
+import PropTypes from "prop-types";
+import { Link, getSiteProps } from "react-static";
+import NavLink from "./NavLink";
+import {breakpoints} from "../utils";
 
-export default class MobileNavDraw extends PureComponent{
-	constructor(props){
+const ColumnLayout = styled.div`
+	display: flex;
+	flex-direction: column;
+`;
+
+const AvatarContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem;
+	
+	img{
+		width: 10rem;
+	}
+`;
+
+const Overlay = styled.label`
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,0.5);
+	opacity: 0;
+	pointer-events: none;
+	
+	transition: opacity 0.25s ease;
+`;
+
+const Styles = styled.div`
+	display: none;
+	
+	@media(${breakpoints.phone}){
+		display: block;
+	}
+	
+	#drawer-checkbox:checked ~ label.overlay {
+		opacity: 1;
+		pointer-events: all;
+	}
+`;
+
+export default getSiteProps(class MobileNavDraw extends PureComponent {
+	constructor(props) {
 		super(props);
 
 		this.closeDraw = this.closeDraw.bind(this);
@@ -24,52 +68,64 @@ export default class MobileNavDraw extends PureComponent{
 		open: false
 	};
 
-	closeDraw(){
+	closeDraw() {
 		this.setState({
 			open: false
-		})
+		});
 	}
 
-	stateChanged(e){
+	stateChanged(e) {
 		this.setState({
 			open: e.target.checked
-		})
+		});
 	}
 
-	componentWillReceiveProps(nextProps){
+	componentWillReceiveProps(nextProps) {
 		this.setState({
 			open: !!nextProps.open
 		});
 	}
 
-	render(){
-		let {...props } = this.props;
+	render() {
+		let { name, avatar } = this.props;
 		let { open } = this.state;
 
 		return (
-			<div {...props}>
-				<input type="checkbox" id="drawer-checkbox" checked={open} onChange={this.stateChanged}/>
+			<Styles>
+				<input
+					type="checkbox"
+					id="drawer-checkbox"
+					checked={open}
+					onChange={this.stateChanged}
+				/>
 				<div className="drawer">
-					<label htmlFor="drawer-checkbox" className="close"/>
+					<label htmlFor="drawer-checkbox" className="close" />
 
-					<div className="layout-column align-center-center">
-						<img className="circular m-4 w-50" src={config.avatar} alt="avatar" title={config.name}/>
-						<h2>{config.name}</h2>
-					</div>
+					<AvatarContainer>
+						<img
+							className="circular"
+							src={avatar}
+							alt="avatar"
+							title={name}
+						/>
+					</AvatarContainer>
+					<h2>{name}</h2>
 
-					<div className="layout-column">
+					<ColumnLayout>
 						<NavLink to="/" matchSubPaths={false} onClick={this.closeDraw}>
-							<i className="fa fa-home"/> Home
+							<i className="fa fa-home" /> Home
 						</NavLink>
 						<NavLink to="/games/" onClick={this.closeDraw}>
-							<i className="fa fa-gamepad"/> Games
+							<i className="fa fa-gamepad" /> Games
 						</NavLink>
 						<NavLink to="/pens/" onClick={this.closeDraw}>
-							<i className="fa fa-codepen"/> Pens
+							<i className="fa fa-codepen" /> Pens
 						</NavLink>
-					</div>
+					</ColumnLayout>
 				</div>
-			</div>
+
+				<Overlay className="overlay" htmlFor="drawer-checkbox"/>
+			</Styles>
 		);
 	}
-}
+});

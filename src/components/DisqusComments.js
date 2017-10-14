@@ -1,27 +1,34 @@
-import React, { Component } from "react";
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 import ReactDisqusComments from "react-disqus-comments";
-import config from "../siteConfig";
+import { getSiteProps } from "react-static";
 
-export default class DisqusComments extends Component {
-	static propTypes = {
-		category: PropTypes.string,
-		disqusTitle: PropTypes.string,
-		disqusId: PropTypes.string.isRequired
-	};
+let hasWindow = false;
+try {
+	hasWindow = !!self.window;
+} catch (err) {
+	hasWindow = false;
+}
 
-	render() {
-		if (!config.disqus.shortname) return null;
-
-		let { category, disqusTitle, disqusId } = this.props;
+const DisqusComments = getSiteProps(
+	({ category, disqusTitle, disqusId, disqus }) => {
+		if (!disqus.shortname || !hasWindow) return null;
 
 		return (
 			<ReactDisqusComments
-				shortname={config.disqus.shortname}
+				shortname={disqus.shortname}
 				identifier={disqusId}
 				title={disqusTitle}
 				category_id={category}
 			/>
 		);
 	}
-}
+);
+
+DisqusComments.propTypes = {
+	category: PropTypes.string,
+	disqusTitle: PropTypes.string,
+	disqusId: PropTypes.string.isRequired
+};
+
+export default DisqusComments;

@@ -1,21 +1,19 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: rdfriedl/circleci-node-aws
+
 version: 2
 jobs:
   build:
-    docker:
-      - image: rdfriedl/circleci-node-aws
-
-    working_directory: ~/repo
+    <<: *defaults
 
     steps:
       - checkout
 
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "package.json" }}
+          - node_modules-{{ checksum "package.json" }}
 
       - run:
           name: Install dependancies
@@ -24,19 +22,41 @@ jobs:
       - save_cache:
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+          key: node_modules-{{ checksum "package.json" }}
 
       - run:
-          name: gatsby build
+          name: build
           command: yarn run build
+
+      - persist_to_workspace:
+          root: ./
+          paths:
+            - dist
+
+  deploy:
+    <<: *defaults
+
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
 
       - deploy:
           name: Deploy to s3 bucket
           command: |
-            if [ "${CIRCLE_BRANCH}" == "${DEPLOY_BRANCH}" ]; then
-              aws configure set preview.cloudfront true && \
-              echo delopying to bucket ${S3_BUCKET} && \
-              aws s3 rm s3://${BUCKER_NAME} --recursive && \
-              aws s3 sync public s3://${S3_BUCKET} --acl public-read && \
-              aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_ID} --paths "/*";
-            fi
+            aws configure set preview.cloudfront true && \
+            aws s3 rm s3://${S3_BUCKET} --recursive && \
+            aws s3 sync /tmp/workspace/dist s3://${S3_BUCKET} --acl public-read && \
+            aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_ID} --paths "/*";
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - react-static
