@@ -5,7 +5,7 @@ import styled from "styled-components";
 import ExternalLink from "./ExternalLink";
 import MobileNavDraw from "./MobileNavDraw";
 import NavLink from "./NavLink";
-import {breakpoints} from "../utils";
+import { breakpoints } from "../utils";
 
 let HeaderStyles = styled.div`
 	position: -webkit-sticky;
@@ -47,9 +47,9 @@ const DesktopHeader = styled.header`
 	.source {
 		grid-area: source;
 	}
-	
+
 	display: none;
-	@media(${breakpoints.tablet}){
+	@media (${breakpoints.tablet}) {
 		display: grid;
 	}
 `;
@@ -57,9 +57,9 @@ const DesktopHeader = styled.header`
 const MobileHeader = styled.header`
 	justify-content: space-between;
 	align-items: center;
-	
+
 	display: none;
-	@media(${breakpoints.phone}){
+	@media (${breakpoints.phone}) {
 		display: flex;
 	}
 `;
@@ -100,11 +100,11 @@ const Header = getSiteProps(({ sourceUrl, avatar, name }) => (
 			<label htmlFor="drawer-checkbox" className="button drawer-toggle" />
 			<h3>{name}</h3>
 			<ExternalLink className="button source" href={sourceUrl}>
-				<i className="fa fa-github"/>
+				<i className="fa fa-github" />
 			</ExternalLink>
 		</MobileHeader>
 
-		<MobileNavDraw/>
+		<MobileNavDraw />
 	</HeaderStyles>
 ));
 

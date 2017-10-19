@@ -23,7 +23,7 @@
     "classnames": "^2.2.5",
     "css-loader": "^0.28.7",
     "font-awesome": "^4.7.0",
-    "mini.css": "^2.3.4",
+    "mini.css": "^2.3.5",
     "node-sass": "^4.5.3",
     "prettier": "^1.7.4",
     "prop-types": "^15.6.0",
@@ -31,12 +31,12 @@
     "react-disqus-comments": "^1.1.1",
     "react-dom": "^16.0.0",
     "react-router": "^4.2.0",
-    "react-static": "^1.2.5",
-    "react-static-routes": "^1.0.0",
+    "react-static": "^1.4.1",
     "rimraf": "^2.6.2",
     "sass-loader": "^6.0.6",
-    "serve": "^6.2.0",
+    "serve": "^6.3.1",
     "style-loader": "^0.19.0",
-    "styled-components": "^2.2.1"
+    "styled-components": "^2.2.1",
+    "dotenv": "^4.0.0"
   }
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { getRouteProps, Head, Link } from "react-static";
 import styled from "styled-components";
 
-import {breakpoints, createTitle} from "../utils";
+import { breakpoints, createTitle } from "../utils";
 
 import ExternalLink from "../components/ExternalLink";
 import Card from "../components/Card";
@@ -18,13 +18,13 @@ const Layout = styled.div`
 	aside {
 		grid-area: side;
 	}
-	
-	@media(${breakpoints.phone}){
+
+	@media (${breakpoints.phone}) {
 		display: block;
 	}
-	@media(${breakpoints.desktop}){
+	@media (${breakpoints.desktop}) {
 		display: grid;
-	
+
 		grid-template-columns: 3fr 1fr;
 		grid-template-areas: "main side";
 	}
@@ -34,17 +34,17 @@ const GamesLayout = styled.div`
 	display: grid;
 	grid-gap: 1rem;
 	padding: 0.5rem;
-	
-	@media(${breakpoints.phone}){
+
+	@media (${breakpoints.phone}) {
 		grid-template-columns: 1fr;
 	}
-	@media(${breakpoints.tablet}){
+	@media (${breakpoints.tablet}) {
 		grid-template-columns: 1fr 1fr;
 	}
-	@media(${breakpoints.desktop}){
+	@media (${breakpoints.desktop}) {
 		grid-template-columns: 1fr;
 	}
-	@media(${breakpoints.large}){
+	@media (${breakpoints.large}) {
 		grid-template-columns: 1fr 1fr;
 	}
 `;
@@ -53,14 +53,14 @@ const PensLayout = styled.div`
 	display: grid;
 	grid-gap: 1rem;
 	padding: 0.5rem;
-	
-	@media(${breakpoints.phone}){
+
+	@media (${breakpoints.phone}) {
 		grid-template-columns: 1fr;
 	}
-	@media(${breakpoints.tablet}){
+	@media (${breakpoints.tablet}) {
 		grid-template-columns: 1fr 1fr;
 	}
-	@media(${breakpoints.desktop}){
+	@media (${breakpoints.desktop}) {
 		grid-template-columns: 1fr;
 	}
 `;
