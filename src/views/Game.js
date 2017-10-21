@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { getRouteProps, Head } from "react-static";
 import styled from "styled-components";
 

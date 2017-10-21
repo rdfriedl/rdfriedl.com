@@ -16,7 +16,8 @@ const contentful = createClient({
 });
 
 function pickRandom(items, count, exclude = []) {
-	let arr = items.filter(item => !exclude.includes(item))
+	let arr = items
+		.filter(item => !exclude.includes(item))
 		.sort(() => Math.floor(Math.random() * 3) - 1);
 
 	arr.length = Number.isInteger(count) ? count : items.length;

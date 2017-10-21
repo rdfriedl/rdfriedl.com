@@ -10,7 +10,20 @@ import Pens from "./views/Pens";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
+const AppStyles = styled.div`
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	
+	// fix issue caused by minimized html
+	img{
+		display: block;
+	}
+`;
+
 const Content = styled.div`
+	flex-grow: 1;
+
 	@media (${breakpoints.phone}) {
 		margin: 0;
 	}
@@ -24,7 +37,7 @@ const Content = styled.div`
 
 export default () => (
 	<Router>
-		<div>
+		<AppStyles>
 			<Header />
 			<Content>
 				<Switch>
@@ -35,6 +48,6 @@ export default () => (
 				</Switch>
 			</Content>
 			<Footer />
-		</div>
+		</AppStyles>
 	</Router>
 );
