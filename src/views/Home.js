@@ -66,10 +66,6 @@ const PensLayout = styled.div`
 `;
 
 const HomePage = getRouteProps(({ pens, games }) => {
-	// only show 6 pens on the main page
-	pens.sort(() => Math.floor(Math.random() * 3) - 1);
-	pens.length = 6;
-
 	const headers = {
 		about: (
 			<h2>

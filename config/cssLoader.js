@@ -1,5 +1,5 @@
 import ExtractTextPlugin from "extract-text-webpack-plugin";
-import { autoprefixerConfig, postCssLoader } from "./config";
+import { postCssLoader } from "./config";
 
 export default function(config, { stage }) {
 	if (stage === "dev") {
@@ -10,10 +10,11 @@ export default function(config, { stage }) {
 				{
 					loader: "css-loader",
 					options: {
-						importLoaders: 1
+						importLoaders: 1,
+						sourceMap: true
 					}
 				},
-				postCssLoader
+				postCssLoader(stage)
 			]
 		});
 	} else {
@@ -31,11 +32,10 @@ export default function(config, { stage }) {
 						loader: "css-loader",
 						options: {
 							importLoaders: 1,
-							minimize: true,
-							sourceMap: true
+							minimize: true
 						}
 					},
-					postCssLoader
+					postCssLoader(stage)
 				]
 			})
 		});

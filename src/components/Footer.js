@@ -29,7 +29,6 @@ const MiniCssLogo = styled(ExternalLink)`
 	}
 `;
 
-console.log(require("../res/react-static-logo.png"));
 const Footer = getSiteProps(({ siteUrl, sourceUrl }) => (
 	<FooterLayout>
 		<a href="https://www.contentful.com/" rel="nofollow" target="_blank">

@@ -11,7 +11,7 @@ const Layout = styled.div`
 	display: grid;
 	grid-gap: 1rem;
 	padding: 0.5rem;
-	
+
 	@media (${breakpoints.phone}) {
 		grid-template-columns: 1fr;
 	}

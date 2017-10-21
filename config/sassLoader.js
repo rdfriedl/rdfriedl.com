@@ -1,12 +1,12 @@
 import ExtractTextPlugin from "extract-text-webpack-plugin";
-import { autoprefixerConfig, postCssLoader } from "./config";
+import { postCssLoader } from "./config";
 
-const sassLoader = {
+const sassLoader = stage => ({
 	loader: "sass-loader",
 	options: {
-		sourceMap: true
+		sourceMap: stage === "dev"
 	}
-};
+});
 
 export default function(config, { stage }) {
 	if (stage === "dev") {
@@ -21,8 +21,8 @@ export default function(config, { stage }) {
 						sourceMap: true
 					}
 				},
-				postCssLoader,
-				sassLoader
+				postCssLoader(stage),
+				sassLoader(stage)
 			]
 		});
 	} else {
@@ -40,12 +40,11 @@ export default function(config, { stage }) {
 						loader: "css-loader",
 						options: {
 							importLoaders: 2,
-							minimize: true,
-							sourceMap: true
+							minimize: true
 						}
 					},
-					postCssLoader,
-					sassLoader
+					postCssLoader(stage),
+					sassLoader(stage)
 				]
 			})
 		});

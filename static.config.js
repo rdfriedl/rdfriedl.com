@@ -16,17 +16,17 @@ const contentful = createClient({
 
 function pickRandom(items, count, exclude = []) {
 	let arr = items
-		.filter(item => !exclude.includes(item))
-		.sort(() => Math.floor(Math.random() * 3) - 1);
+		.filter(item => !exclude.includes(item));
+		// .sort(() => Math.floor(Math.random() * 3) - 1);
 
 	arr.length = Number.isInteger(count) ? count : items.length;
 	return arr;
 }
 
 function stripOutSysInfo(data) {
-	if(Array.isArray(data)){
+	if (Array.isArray(data)) {
 		return data.map(child => {
-			if(typeof child === 'object'){
+			if (typeof child === "object") {
 				return stripOutSysInfo(child);
 			}
 			return child;
@@ -35,7 +35,7 @@ function stripOutSysInfo(data) {
 
 	let copy = Object.assign({}, data.fields || data);
 	Reflect.ownKeys(copy)
-		.filter(key => typeof copy[key] === 'object')
+		.filter(key => typeof copy[key] === "object")
 		.forEach(key => {
 			copy[key] = stripOutSysInfo(copy[key]);
 		});
@@ -74,7 +74,7 @@ export default {
 				path: "/",
 				getProps: () => ({
 					games: stripOutSysInfo(games),
-					pens
+					pens: pickRandom(pens, 6)
 				})
 			},
 			{
@@ -86,7 +86,7 @@ export default {
 					path: `/${game.id}`,
 					getProps: () => ({
 						game: stripOutSysInfo(game),
-						otherGames: []// pickRandom(games, 2, [game])
+						otherGames: [] // pickRandom(games, 2, [game])
 					})
 				}))
 			},
