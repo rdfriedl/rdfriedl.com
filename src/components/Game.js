@@ -9,13 +9,13 @@ import Card from "./Card";
 
 export const GameButtons = ({ game, ...props }) => (
 	<div {...props}>
-		{game.demoURL && (
+		{game.demoUrl && (
 			<Link to={`/games/${game.id}`} className="button success">
 				<i className="fa fa-gamepad" /> Play
 			</Link>
 		)}
-		{game.sourceURL && (
-			<ExternalLink to={game.sourceURL} className="button primary">
+		{game.sourceUrl && (
+			<ExternalLink to={game.sourceUrl} className="button primary">
 				<i className="fa fa-code" /> Source
 			</ExternalLink>
 		)}
@@ -42,12 +42,13 @@ const StyledCard = styled(Card)`
 		grid-area: thumbnail;
 	}
 
-	display: grid;
-
 	@media (${breakpoints.desktop}) {
+		display: grid;
 		grid-template-columns: 12rem 1fr auto;
 		grid-template-rows: auto 1fr auto;
-		grid-template-areas: "thumbnail title title" "thumbnail desc desc"
+		grid-template-areas: 
+			"thumbnail title title" 
+			"thumbnail desc desc"
 			"thumbnail .... buttons";
 	}
 `;
@@ -55,20 +56,17 @@ const StyledCard = styled(Card)`
 const Game = ({ game, ...props }) => (
 	<StyledCard {...props}>
 		<Link to={`/games/${game.id}`} className="thumbnail">
-			{game.thumbnail && (
-				<img
-					src={game.thumbnail}
-					alt={game.title}
-					style={{
-						margin: 0,
-						width: "100%"
-					}}
-				/>
-			)}
-			{game.videoThumbnail && <VideoThumbnail src={game.videoThumbnail} />}
+			<img
+				src={game.thumbnail.file.url}
+				alt={game.title}
+				style={{
+					margin: 0,
+					width: "100%"
+				}}
+			/>
 		</Link>
 		<h3 className="title">{game.title}</h3>
-		<p className="description">{game.description}</p>
+		<p className="description">{game.shortDescription}</p>
 		<GameButtons className="buttons" game={game} />
 	</StyledCard>
 );

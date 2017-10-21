@@ -5,13 +5,25 @@ import styled from "styled-components";
 
 import GamePage from "./Game";
 import Game from "../components/Game";
-import { createTitle } from "../utils";
+import { breakpoints, createTitle } from "../utils";
 
 const Layout = styled.div`
 	display: grid;
-	grid-template-columns: 1fr 1fr;
 	grid-gap: 1rem;
 	padding: 0.5rem;
+	
+	@media (${breakpoints.phone}) {
+		grid-template-columns: 1fr;
+	}
+	@media (${breakpoints.tablet}) {
+		grid-template-columns: 1fr 1fr;
+	}
+	@media (${breakpoints.desktop}) {
+		grid-template-columns: 1fr;
+	}
+	@media (${breakpoints.large}) {
+		grid-template-columns: 1fr 1fr;
+	}
 `;
 
 const GamesPage = getRouteProps(({ games }) => (

@@ -1,5 +1,18 @@
 import React, { Component } from "react";
+import { createClient } from "contentful";
 import axios from "axios";
+import * as dotenv from "dotenv";
+import fileLoader from "react-static/lib/plugins/withFileLoader";
+import cssLoader from "./config/cssLoader";
+import sassLoader from "./config/sassLoader";
+import fontLoader from "./config/fontLoader";
+
+dotenv.config();
+
+const contentful = createClient({
+	space: process.env.CONTENTFUL_SPACE,
+	accessToken: process.env.CONTENTFUL_TOKEN
+});
 
 function pickRandom(items, count, exclude = []) {
 	let arr = items
@@ -8,6 +21,26 @@ function pickRandom(items, count, exclude = []) {
 
 	arr.length = Number.isInteger(count) ? count : items.length;
 	return arr;
+}
+
+function stripOutSysInfo(data) {
+	if(Array.isArray(data)){
+		return data.map(child => {
+			if(typeof child === 'object'){
+				return stripOutSysInfo(child);
+			}
+			return child;
+		});
+	}
+
+	let copy = Object.assign({}, data.fields || data);
+	Reflect.ownKeys(copy)
+		.filter(key => typeof copy[key] === 'object')
+		.forEach(key => {
+			copy[key] = stripOutSysInfo(copy[key]);
+		});
+
+	return copy;
 }
 
 let githubCache;
@@ -31,27 +64,29 @@ export default {
 		};
 	},
 	getRoutes: async () => {
-		const games = require("./src/data/games.json");
+		let { items: games } = await contentful.getEntries({
+			content_type: "game"
+		});
 		const pens = require("./src/data/pens.json");
 
 		return [
 			{
 				path: "/",
 				getProps: () => ({
-					games,
+					games: stripOutSysInfo(games),
 					pens
 				})
 			},
 			{
 				path: "/games",
 				getProps: () => ({
-					games
+					games: stripOutSysInfo(games)
 				}),
-				children: games.map(game => ({
+				children: games.map(({ fields: game }) => ({
 					path: `/${game.id}`,
 					getProps: () => ({
-						game,
-						otherGames: pickRandom(games, 2, [game])
+						game: stripOutSysInfo(game),
+						otherGames: []// pickRandom(games, 2, [game])
 					})
 				}))
 			},
@@ -87,51 +122,14 @@ export default {
 			);
 		}
 	},
-	webpack: (config, { dev }) => {
-		const styleLoader = {
-			loader: "style-loader",
-			options: {
-				insertAt: "top", // insert these styles first so they do no overwrite the styled-components styles
-				sourceMap: dev
-			}
-		};
-		const cssLoader = {
-			loader: "css-loader",
-			options: {
-				sourceMap: dev
-			}
-		};
-		const sassLoader = {
-			loader: "sass-loader",
-			options: {
-				sourceMap: dev
-			}
-		};
-
-		config.merge(current => {
-			// insert the sass loader right before the fallback loader
-			current.module.rules.splice(current.module.rules.length - 1, 0, {
-				test: /\.(sass|scss)$/,
-				use: [styleLoader, cssLoader, sassLoader]
-			});
-
-			// tell the fallback loader to ignore sass files
-			current.module.rules[current.module.rules.length - 1].exclude.push(
-				/\.(sass|scss)$/
-			);
-
-			// insert the css loader right before the fallback loader
-			current.module.rules.splice(current.module.rules.length - 1, 0, {
-				test: /\.css$/,
-				use: [styleLoader, cssLoader]
-			});
-
-			// tell the fallback loader to ignore css files
-			current.module.rules[current.module.rules.length - 1].exclude.push(
-				/\.css$/
-			);
-
-			return current;
-		});
-	}
+	webpack: [
+		config => {
+			config.devtool = "source-maps";
+			return config;
+		},
+		sassLoader,
+		cssLoader,
+		fontLoader,
+		fileLoader
+	]
 };

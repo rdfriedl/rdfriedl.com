@@ -54,17 +54,17 @@ const GamePage = getRouteProps(({ game, otherGames }) => (
 
 		<h3 className="title">{game.title}</h3>
 		<div className="buttons">
-			{game.sourceURL && (
-				<ExternalLink className="button primary" href={game.sourceURL}>
+			{game.sourceUrl && (
+				<ExternalLink className="button primary" href={game.sourceUrl}>
 					<i className="fa fa-code" /> Source
 				</ExternalLink>
 			)}
-			<ExternalLink className="button success" href={game.demoURL}>
+			<ExternalLink className="button success" href={game.demoUrl}>
 				<i className="fa fa-reply" /> Open
 			</ExternalLink>
 		</div>
 
-		<EmbeddedGame className="game" src={game.demoURL} />
+		<EmbeddedGame className="game" src={game.demoUrl} />
 
 		<div className="other-games">
 			<h2>Other Games</h2>
