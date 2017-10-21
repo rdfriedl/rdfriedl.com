@@ -6,6 +6,7 @@ import fileLoader from "react-static/lib/plugins/withFileLoader";
 import cssLoader from "./config/cssLoader";
 import sassLoader from "./config/sassLoader";
 import fontLoader from "./config/fontLoader";
+import { ServerStyleSheet } from "styled-components";
 
 dotenv.config();
 
@@ -15,9 +16,8 @@ const contentful = createClient({
 });
 
 function pickRandom(items, count, exclude = []) {
-	let arr = items
-		.filter(item => !exclude.includes(item));
-		// .sort(() => Math.floor(Math.random() * 3) - 1);
+	let arr = items.filter(item => !exclude.includes(item))
+		.sort(() => Math.floor(Math.random() * 3) - 1);
 
 	arr.length = Number.isInteger(count) ? count : items.length;
 	return arr;
@@ -109,15 +109,22 @@ export default {
 	Html: class CustomHtml extends Component {
 		render() {
 			const { Html, Head, Body, children } = this.props;
+
+			const sheet = new ServerStyleSheet();
+			const newChildren = sheet.collectStyles(children);
+			const styleTags = sheet.getStyleElement();
+
 			return (
 				<Html lang="en-US">
 					<Head>
+						<meta charSet="UTF-8" />
 						<meta
 							name="viewport"
 							content="width=device-width, initial-scale=1"
 						/>
+						{styleTags}
 					</Head>
-					<Body>{children}</Body>
+					<Body>{newChildren}</Body>
 				</Html>
 			);
 		}
