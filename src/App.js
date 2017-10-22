@@ -6,6 +6,7 @@ import { breakpoints } from "./utils";
 import Home from "./views/Home";
 import Games from "./views/Games";
 import Pens from "./views/Pens";
+import Search from "./views/Search";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -14,9 +15,9 @@ const AppStyles = styled.div`
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-	
+
 	// fix issue caused by minimized html
-	img{
+	img {
 		display: block;
 	}
 `;
@@ -42,6 +43,7 @@ export default () => (
 			<Content>
 				<Switch>
 					<Route exact path="/" component={Home} />
+					<Route path="/search" component={Search} />
 					<Route path="/games" component={Games} />
 					<Route path="/pens" component={Pens} />
 					<Redirect to="/" />

@@ -1,30 +1,11 @@
 import React from "react";
 import Helmet from "react-helmet";
 import { getRouteProps, Switch, Route } from "react-static";
-import styled from "styled-components";
 
+import { GamesLayout } from "../components/Layouts";
 import GamePage from "./Game";
 import Game from "../components/Game";
-import { breakpoints, createTitle } from "../utils";
-
-const Layout = styled.div`
-	display: grid;
-	grid-gap: 1rem;
-	padding: 0.5rem;
-
-	@media (${breakpoints.phone}) {
-		grid-template-columns: 1fr;
-	}
-	@media (${breakpoints.tablet}) {
-		grid-template-columns: 1fr 1fr;
-	}
-	@media (${breakpoints.desktop}) {
-		grid-template-columns: 1fr;
-	}
-	@media (${breakpoints.large}) {
-		grid-template-columns: 1fr 1fr;
-	}
-`;
+import { createTitle } from "../utils";
 
 const GamesPage = getRouteProps(({ games }) => (
 	<div>
@@ -34,7 +15,9 @@ const GamesPage = getRouteProps(({ games }) => (
 
 		<h1>Games</h1>
 		<hr />
-		<Layout>{games.map(game => <Game key={game.id} game={game} />)}</Layout>
+		<GamesLayout>
+			{games.map(game => <Game key={game.id} game={game} />)}
+		</GamesLayout>
 	</div>
 ));
 

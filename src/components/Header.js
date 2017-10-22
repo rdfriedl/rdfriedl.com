@@ -5,6 +5,7 @@ import styled from "styled-components";
 import ExternalLink from "./ExternalLink";
 import MobileNavDraw from "./MobileNavDraw";
 import NavLink from "./NavLink";
+import SearchForm from "./SearchForm";
 import { breakpoints } from "../utils";
 
 let HeaderStyles = styled.div`
@@ -29,7 +30,7 @@ const DesktopHeader = styled.header`
 	grid-gap: 0.4rem;
 	grid-template-rows: 1fr auto;
 	grid-template-columns: auto 1fr auto;
-	grid-template-areas: "avatar title title" "avatar navbar source";
+	grid-template-areas: "avatar title search" "avatar navbar source";
 
 	.avatar {
 		grid-area: avatar;
@@ -44,8 +45,14 @@ const DesktopHeader = styled.header`
 		grid-area: navbar;
 		margin-left: 0.8rem;
 	}
-	.source {
+	.source-link {
 		grid-area: source;
+
+		display: flex;
+		justify-content: flex-end;
+	}
+	form[action="/search"] {
+		grid-area: search;
 	}
 
 	display: none;
@@ -90,9 +97,13 @@ const Header = getSiteProps(({ sourceUrl, avatar, name }) => (
 				</NavLink>
 			</div>
 
-			<ExternalLink className="button source" href={sourceUrl}>
-				<i className="fa fa-github" /> View Source
-			</ExternalLink>
+			<SearchForm />
+
+			<div className="source-link">
+				<ExternalLink className="button" href={sourceUrl}>
+					<i className="fa fa-github" /> View Source
+				</ExternalLink>
+			</div>
 		</DesktopHeader>
 
 		{/*mobile header*/}

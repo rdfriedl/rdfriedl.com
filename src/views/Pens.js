@@ -5,10 +5,10 @@ import { getSiteProps, getRouteProps, Switch, Route, Head } from "react-static";
 
 import Pen from "../components/Pen";
 import PenPage from "./Pen";
+import { PensLayout } from "../components/Layouts";
 import { createTitle } from "../utils";
 import ExternalLink from "../components/ExternalLink";
 import TitleWithButton from "../components/TitleWithButton";
-import { breakpoints } from "../utils";
 
 const PageStyles = styled.div`
 	.bottom-container {
@@ -18,25 +18,6 @@ const PageStyles = styled.div`
 		a.button {
 			padding: 0.75rem 4rem;
 		}
-	}
-`;
-
-const Layout = styled.div`
-	padding: 0.5rem;
-	display: grid;
-	grid-gap: 1rem;
-
-	@media (${breakpoints.phone}) {
-		grid-template-columns: 1fr;
-	}
-	@media (${breakpoints.tablet}) {
-		grid-template-columns: 1fr 1fr;
-	}
-	@media (${breakpoints.desktop}) {
-		grid-template-columns: 1fr 1fr 1fr;
-	}
-	@media (${breakpoints.large}) {
-		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
 `;
 
@@ -58,7 +39,9 @@ const PensPage = getSiteProps(
 					</ExternalLink>
 				</TitleWithButton>
 				<hr />
-				<Layout>{pens.map(pen => <Pen key={pen.id} pen={pen} />)}</Layout>
+				<PensLayout>
+					{pens.map(pen => <Pen key={pen.id} pen={pen} />)}
+				</PensLayout>
 				<hr />
 				<div className="bottom-container">
 					<ExternalLink href={codependLink.href} className="button success">

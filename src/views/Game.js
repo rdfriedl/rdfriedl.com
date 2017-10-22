@@ -6,6 +6,7 @@ import { createTitle } from "../utils";
 import Game from "../components/Game";
 import ExternalLink from "../components/ExternalLink";
 import DisqusComments from "../components/DisqusComments";
+import { GamesLayout } from "../components/Layouts";
 
 const Layout = styled.div`
 	display: grid;
@@ -31,13 +32,6 @@ const Layout = styled.div`
 	.comments {
 		grid-area: comments;
 	}
-`;
-
-const OtherGamesLayout = styled.div`
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-gap: 1rem;
-	padding: 0.5rem;
 `;
 
 const EmbeddedGame = styled.iframe`
@@ -68,9 +62,9 @@ const GamePage = getRouteProps(({ game, otherGames }) => (
 
 		<div className="other-games">
 			<h2>Other Games</h2>
-			<OtherGamesLayout>
+			<GamesLayout>
 				{otherGames.map(game => game && <Game key={game.id} game={game} />)}
-			</OtherGamesLayout>
+			</GamesLayout>
 		</div>
 
 		<div className="comments">

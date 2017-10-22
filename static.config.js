@@ -103,6 +103,13 @@ export default {
 						otherPens: pickRandom(pens, 4, [pen])
 					})
 				}))
+			},
+			{
+				path: "/search",
+				getProps: () => ({
+					games: stripOutSysInfo(games),
+					pens
+				})
 			}
 		];
 	},

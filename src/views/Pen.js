@@ -5,25 +5,7 @@ import styled from "styled-components";
 import { createTitle, breakpoints } from "../utils";
 import Pen from "../components/Pen";
 import DisqusComments from "../components/DisqusComments";
-
-const OtherPensLayout = styled.div`
-	padding: 0.5rem;
-	display: grid;
-	grid-gap: 1rem;
-
-	@media (${breakpoints.phone}) {
-		grid-template-columns: 1fr;
-	}
-	@media (${breakpoints.tablet}) {
-		grid-template-columns: 1fr 1fr;
-	}
-	@media (${breakpoints.desktop}) {
-		grid-template-columns: 1fr 1fr 1fr;
-	}
-	@media (${breakpoints.large}) {
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-	}
-`;
+import { PensLayout } from "../components/Layouts";
 
 const EmbeddedPen = styled.iframe`
 	width: 100%;
@@ -50,9 +32,9 @@ const PenPage = getRouteProps(({ pen, otherPens }) => (
 		</EmbeddedPen>
 
 		<h2>Other Pens</h2>
-		<OtherPensLayout>
+		<PensLayout>
 			{otherPens.map(pen => pen && <Pen key={pen.id} pen={pen} />)}
-		</OtherPensLayout>
+		</PensLayout>
 
 		<DisqusComments
 			disqusId={`pen-${pen.id}`}

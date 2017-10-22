@@ -10,6 +10,7 @@ import Game from "../components/Game";
 import Pen from "../components/Pen";
 import About from "../components/About";
 import TitleWithButton from "../components/TitleWithButton";
+import { GamesLayout } from "../components/Layouts";
 
 const Layout = styled.div`
 	main {
@@ -27,25 +28,6 @@ const Layout = styled.div`
 
 		grid-template-columns: 3fr 1fr;
 		grid-template-areas: "main side";
-	}
-`;
-
-const GamesLayout = styled.div`
-	display: grid;
-	grid-gap: 1rem;
-	padding: 0.5rem;
-
-	@media (${breakpoints.phone}) {
-		grid-template-columns: 1fr;
-	}
-	@media (${breakpoints.tablet}) {
-		grid-template-columns: 1fr 1fr;
-	}
-	@media (${breakpoints.desktop}) {
-		grid-template-columns: 1fr;
-	}
-	@media (${breakpoints.large}) {
-		grid-template-columns: 1fr 1fr;
 	}
 `;
 
