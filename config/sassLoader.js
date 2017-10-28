@@ -9,6 +9,11 @@ const sassLoader = stage => ({
 });
 
 export default function(config, { stage }) {
+	const extractSass = new ExtractTextPlugin({
+		filename: 'theme.css',
+		disable: stage === 'dev'
+	});
+
 	if (stage === "dev") {
 		config.module.rules.push({
 			test: /\.(sass|scss)$/,
@@ -28,7 +33,7 @@ export default function(config, { stage }) {
 	} else {
 		config.module.rules.push({
 			test: /\.(sass|scss)$/,
-			loader: ExtractTextPlugin.extract({
+			loader: extractSass.extract({
 				fallback: {
 					loader: "style-loader",
 					options: {
@@ -49,6 +54,8 @@ export default function(config, { stage }) {
 			})
 		});
 	}
+
+	config.plugins.push(extractSass);
 
 	return config;
 }

@@ -123,18 +123,18 @@ class SearchPage extends Component {
 		let pens = this.renderPens();
 		let elements = [];
 
-		if(games){
+		if (games) {
 			elements.push(...games);
 		}
-		if(pens){
+		if (pens) {
 			elements.push(...pens);
 		}
 
-		if(!elements.length){
+		if (!elements.length) {
 			elements.push(<h1>No Results</h1>);
 		}
 
-		return elements
+		return elements;
 	}
 	render() {
 		let { inputValue } = this.state;

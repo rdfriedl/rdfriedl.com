@@ -7,7 +7,7 @@ const FooterLayout = styled.footer`
 	display: flex;
 	align-items: flex-end;
 	padding-top: 1rem;
-	padding-bottom: 1.5rem;
+	padding-bottom: 1rem;
 
 	& > * {
 		margin: 0 0.25rem;

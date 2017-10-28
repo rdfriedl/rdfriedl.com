@@ -3,13 +3,13 @@ import ReactDOM from "react-dom";
 import { AppContainer } from "react-hot-loader";
 
 import "./scss/theme.scss";
-import "font-awesome/css/font-awesome.min.css";
+import "font-awesome/css/font-awesome.css";
 
 // Your top level component
 import App from "./App";
 
-// Export your top level component as JSX (for static rendering)
-export default <App />;
+// Export your top level component
+export default App;
 
 // Render your app
 if (typeof document !== "undefined") {
