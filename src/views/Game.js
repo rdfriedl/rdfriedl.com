@@ -12,7 +12,8 @@ const Layout = styled.div`
 	display: grid;
 	grid-template-columns: auto 1fr auto;
 	grid-template-rows: 1fr 80vh auto auto;
-	grid-template-areas: "title    ....     btns" "game     game     game"
+	grid-template-areas:
+		"title    ....     btns" "game     game     game"
 		"other    other    other" "comments comments comments";
 
 	min-height: 90vh;

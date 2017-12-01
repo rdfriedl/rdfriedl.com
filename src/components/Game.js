@@ -46,7 +46,8 @@ const StyledCard = styled(Card)`
 		display: grid;
 		grid-template-columns: 12rem 1fr auto;
 		grid-template-rows: auto 1fr auto;
-		grid-template-areas: "thumbnail title title" "thumbnail desc desc"
+		grid-template-areas:
+			"thumbnail title title" "thumbnail desc desc"
 			"thumbnail .... buttons";
 	}
 `;

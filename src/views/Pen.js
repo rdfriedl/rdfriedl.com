@@ -23,7 +23,9 @@ const PenPage = getRouteProps(({ pen, otherPens }) => (
 		<EmbeddedPen
 			scrolling="no"
 			title={pen.id}
-			src={`//codepen.io/rdfriedl/embed/${pen.id}/?theme-id=dark&default-tab=result&embed-version=2`}
+			src={`//codepen.io/rdfriedl/embed/${
+				pen.id
+			}/?theme-id=dark&default-tab=result&embed-version=2`}
 		>
 			See the Pen{" "}
 			<a href={"https://codepen.io/rdfriedl/pen/" + pen.id}>{pen.id}</a> by

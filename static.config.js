@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import { createClient } from "contentful";
 import axios from "axios";
 import * as dotenv from "dotenv";
-import fileLoader from "react-static/lib/plugins/withFiles";
 import fontLoader from "./config/fontLoader";
-import cssLoader from "./config/cssLoader";
 import sassLoader from "./config/sassLoader";
 import { ServerStyleSheet } from "styled-components";
 
@@ -140,9 +138,7 @@ export default {
 		}
 	},
 	webpack: [
-		cssLoader,
 		sassLoader,
-		fontLoader,
-		fileLoader
+		fontLoader
 	]
 };
