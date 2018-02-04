@@ -1,5 +1,5 @@
 import React from "react";
-import { getSiteProps } from "react-static";
+import { withSiteData } from "react-static";
 import ExternalLink from "./ExternalLink";
 import styled from "styled-components";
 
@@ -29,7 +29,7 @@ const MiniCssLogo = styled(ExternalLink)`
 	}
 `;
 
-const Footer = getSiteProps(({ siteUrl, sourceUrl }) => (
+const Footer = withSiteData(({ siteUrl, sourceUrl }) => (
 	<FooterLayout>
 		<a href="https://www.contentful.com/" rel="nofollow" target="_blank">
 			<img

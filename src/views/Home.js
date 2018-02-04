@@ -1,5 +1,5 @@
 import React from "react";
-import { getRouteProps, Head, Link } from "react-static";
+import { withRouteData, Head } from "react-static";
 import styled from "styled-components";
 
 import { breakpoints, createTitle } from "../utils";
@@ -47,7 +47,7 @@ const PensLayout = styled.div`
 	}
 `;
 
-const HomePage = getRouteProps(({ pens, games }) => {
+const HomePage = withRouteData(({ pens, games }) => {
 	const headers = {
 		about: (
 			<h2>

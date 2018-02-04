@@ -1,5 +1,5 @@
 import React from "react";
-import { getRouteProps, Head } from "react-static";
+import { withRouteData, Head } from "react-static";
 import styled from "styled-components";
 
 import { createTitle, breakpoints } from "../utils";
@@ -13,7 +13,7 @@ const EmbeddedPen = styled.iframe`
 	border: none;
 `;
 
-const PenPage = getRouteProps(({ pen, otherPens }) => (
+const PenPage = withRouteData(({ pen, otherPens }) => (
 	<div>
 		<Head>
 			<title>{createTitle(pen.title)}</title>

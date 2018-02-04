@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import * as queryString from "query-string";
-import { getRouteProps, Switch, Route, Head } from "react-static";
+import { withRouteData, Switch, Route, Head } from "react-static";
 
 import { GamesLayout, PensLayout } from "../components/Layouts";
 import Game from "../components/Game";
@@ -140,7 +140,7 @@ class SearchPage extends Component {
 		let { inputValue } = this.state;
 
 		return (
-			<div>
+			<React.Fragment>
 				<Head>
 					<title>{createTitle("Search")}</title>
 				</Head>
@@ -158,9 +158,9 @@ class SearchPage extends Component {
 					<button className="button primary">Search</button>
 				</SearchForm>
 				{this.renderResults()}
-			</div>
+			</React.Fragment>
 		);
 	}
 }
 
-export default getRouteProps(SearchPage);
+export default withRouteData(SearchPage);

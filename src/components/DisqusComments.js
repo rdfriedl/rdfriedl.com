@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ReactDisqusComments from "react-disqus-comments";
-import { getSiteProps } from "react-static";
+import { withSiteData } from "react-static";
 
 let hasWindow = false;
 try {
@@ -10,7 +10,7 @@ try {
 	hasWindow = false;
 }
 
-const DisqusComments = getSiteProps(
+const DisqusComments = withSiteData(
 	({ category, disqusTitle, disqusId, disqus }) => {
 		if (!disqus.shortname || !hasWindow) return null;
 

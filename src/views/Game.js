@@ -1,5 +1,5 @@
 import React from "react";
-import { getRouteProps, Head } from "react-static";
+import { withRouteData, Head } from "react-static";
 import styled from "styled-components";
 
 import { createTitle } from "../utils";
@@ -41,7 +41,7 @@ const EmbeddedGame = styled.iframe`
 	height: 100%;
 `;
 
-const GamePage = getRouteProps(({ game, otherGames }) => (
+const GamePage = withRouteData(({ game, otherGames }) => (
 	<Layout>
 		<Head>
 			<title>{createTitle(game.title)}</title>

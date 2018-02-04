@@ -1,24 +1,36 @@
-export default function(config, { stage, defaultLoaders }) {
-	let loader = {
-		test: /\.(sass|scss)$/,
-		use: [
-			...(defaultLoaders.cssLoader.use || defaultLoaders.cssLoader.loader),
-			{
-				loader: "sass-loader",
-				options: {
-					sourceMap: stage === "dev"
-				}
-			}
-		]
-	};
+import ExtractTextPlugin from "extract-text-webpack-plugin";
+import { postCssLoader } from "./config";
 
-
-	if(config.module.rules[0].oneOf){
-		config.module.rules[0].oneOf.unshift(loader);
+export default function(stage) {
+	if (stage === "dev") {
+		return {
+			test: /\.s(a|c)ss$/,
+			use: [
+				{ loader: "style-loader" },
+				{ loader: "css-loader" },
+				{ loader: "sass-loader" }
+			]
+		};
+	} else {
+		return {
+			test: /\.s(a|c)ss$/,
+			use: ExtractTextPlugin.extract({
+				use: [
+					{
+						loader: "css-loader",
+						options: {
+							importLoaders: 2,
+							minimize: true,
+							sourceMap: false
+						}
+					},
+					postCssLoader(stage),
+					{
+						loader: "sass-loader",
+						options: { includePaths: ["src/"] }
+					}
+				]
+			})
+		};
 	}
-	else{
-		config.module.rules.unshift(loader);
-	}
-
-	return config;
 }

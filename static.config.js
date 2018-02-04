@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { createClient } from "contentful";
+import { ServerStyleSheet } from "styled-components";
 import axios from "axios";
 import * as dotenv from "dotenv";
 import fontLoader from "./config/fontLoader";
+import cssLoader from "./config/cssLoader";
 import sassLoader from "./config/sassLoader";
-import { ServerStyleSheet } from "styled-components";
 
 dotenv.config();
 
@@ -45,7 +46,7 @@ function stripOutSysInfo(data) {
 let githubCache;
 
 export default {
-	getSiteProps: async () => {
+	getSiteData: async () => {
 		let config = require("./src/data/config.json");
 		let github = githubCache;
 
@@ -71,19 +72,19 @@ export default {
 		return [
 			{
 				path: "/",
-				getProps: () => ({
+				getData: () => ({
 					games: stripOutSysInfo(games),
 					pens: pickRandom(pens, 6)
 				})
 			},
 			{
 				path: "/games",
-				getProps: () => ({
+				getData: () => ({
 					games: stripOutSysInfo(games)
 				}),
 				children: games.map(({ fields: game }) => ({
 					path: `/${game.id}`,
-					getProps: () => ({
+					getData: () => ({
 						game: stripOutSysInfo(game),
 						otherGames: [] // pickRandom(games, 2, [game])
 					})
@@ -91,12 +92,12 @@ export default {
 			},
 			{
 				path: "/pens",
-				getProps: () => ({
+				getData: () => ({
 					pens
 				}),
 				children: pens.map(pen => ({
 					path: `/${pen.id}`,
-					getProps: () => ({
+					getData: () => ({
 						pen,
 						otherPens: pickRandom(pens, 4, [pen])
 					})
@@ -104,7 +105,7 @@ export default {
 			},
 			{
 				path: "/search",
-				getProps: () => ({
+				getData: () => ({
 					games: stripOutSysInfo(games),
 					pens
 				})
@@ -137,8 +138,19 @@ export default {
 			);
 		}
 	},
-	webpack: [
-		sassLoader,
-		fontLoader
-	]
+	webpack: (config, { defaultLoaders, stage }) => {
+		config.module.rules = [
+			{
+				oneOf: [
+					sassLoader(stage),
+					cssLoader(stage),
+					defaultLoaders.jsLoader,
+					fontLoader(stage),
+					defaultLoaders.fileLoader
+				]
+			}
+		];
+		config.devtool = stage === "dev" ? "source-map" : false;
+		return config;
+	}
 };

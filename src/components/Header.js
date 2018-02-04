@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, getSiteProps, Prefetch } from "react-static";
+import { Link, withSiteData, Prefetch } from "react-static";
 import styled from "styled-components";
 
 import ExternalLink from "./ExternalLink";
@@ -71,7 +71,7 @@ const MobileHeader = styled.header`
 	}
 `;
 
-const Header = getSiteProps(({ sourceUrl, avatar, name }) => (
+const Header = withSiteData(({ sourceUrl, avatar, name }) => (
 	<HeaderStyles id="header">
 		{/*prefetch*/}
 		<Prefetch path="/" />

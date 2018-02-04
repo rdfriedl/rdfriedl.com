@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { Link, getSiteProps } from "react-static";
+import { Link, withSiteData } from "react-static";
 import NavLink from "./NavLink";
 import { breakpoints } from "../utils";
 
@@ -48,7 +48,7 @@ const Styles = styled.div`
 	}
 `;
 
-export default getSiteProps(
+export default withSiteData(
 	class MobileNavDraw extends PureComponent {
 		constructor(props) {
 			super(props);

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import classNames from "classnames";
-import { getSiteProps, getRouteProps, Switch, Route, Head } from "react-static";
+import { withSiteData, withRouteData, Switch, Route, Head } from "react-static";
 
 import Pen from "../components/Pen";
 import PenPage from "./Pen";
@@ -21,8 +21,8 @@ const PageStyles = styled.div`
 	}
 `;
 
-const PensPage = getSiteProps(
-	getRouteProps(({ pens, socialLinks }) => {
+const PensPage = withSiteData(
+	withRouteData(({ pens, socialLinks }) => {
 		const codependLink = socialLinks.find(link => link.id === "codepen");
 
 		return (
@@ -54,7 +54,7 @@ const PensPage = getSiteProps(
 	})
 );
 
-export default getRouteProps(({ match, pens, ...props }) => (
+export default withRouteData(({ match, pens, ...props }) => (
 	<Switch>
 		<Route exact path={match.url} component={PensPage} />
 		<Route path={`${match.url}/:penId`} component={PenPage} />
