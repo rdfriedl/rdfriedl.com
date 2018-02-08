@@ -3,11 +3,12 @@ import { withRouteData, Head } from "react-static";
 import styled from "styled-components";
 
 import { breakpoints, createTitle } from "../utils";
+import config from "../config.json";
 
 import ExternalLink from "../components/ExternalLink";
 import Card from "../components/Card";
-import Game from "../components/Game";
-import Pen from "../components/Pen";
+import GameCard from "../components/GameCard";
+import Pen from "../components/PenCard";
 import About from "../components/About";
 import TitleWithButton from "../components/TitleWithButton";
 import { GamesLayout } from "../components/Layouts";
@@ -64,7 +65,10 @@ const HomePage = withRouteData(({ pens, games }) => {
 				<h3>
 					<i className="fa fa-codepen" /> Pens
 				</h3>
-				<ExternalLink className="button success" href={4}>
+				<ExternalLink
+					className="button success"
+					href={config.socialLinks.find(link => link.id === "codepen").href}
+				>
 					<i className="fa fa-link" /> More
 				</ExternalLink>
 			</TitleWithButton>
@@ -87,7 +91,7 @@ const HomePage = withRouteData(({ pens, games }) => {
 				<section>
 					<Card header={headers.games}>
 						<GamesLayout>
-							{games.map(game => <Game key={game.id} game={game} />)}
+							{games.map(game => <GameCard key={game.id} game={game} />)}
 						</GamesLayout>
 					</Card>
 				</section>

@@ -6,6 +6,7 @@ import { breakpoints } from "../utils";
 import ExternalLink from "./ExternalLink";
 import VideoThumbnail from "./VideoThumbnail";
 import Card from "./Card";
+import Thumbnail from "./Thumbnail";
 
 export const GameButtons = ({ game, ...props }) => (
 	<div {...props}>
@@ -52,16 +53,13 @@ const StyledCard = styled(Card)`
 	}
 `;
 
-const Game = ({ game, ...props }) => (
+const GameCard = ({ game, ...props }) => (
 	<StyledCard {...props}>
 		<Link to={`/games/${game.id}`} className="thumbnail">
-			<img
+			<Thumbnail
+				aspectRatio={1.5}
 				src={game.thumbnail.file.url}
 				alt={game.title}
-				style={{
-					margin: 0,
-					width: "100%"
-				}}
 			/>
 		</Link>
 		<h3 className="title">{game.title}</h3>
@@ -70,4 +68,4 @@ const Game = ({ game, ...props }) => (
 	</StyledCard>
 );
 
-export default Game;
+export default GameCard;

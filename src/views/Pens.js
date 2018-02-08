@@ -3,7 +3,7 @@ import styled from "styled-components";
 import classNames from "classnames";
 import { withSiteData, withRouteData, Switch, Route, Head } from "react-static";
 
-import Pen from "../components/Pen";
+import PenCard from "../components/PenCard";
 import PenPage from "./Pen";
 import { PensLayout } from "../components/Layouts";
 import { createTitle } from "../utils";
@@ -40,7 +40,7 @@ const PensPage = withSiteData(
 				</TitleWithButton>
 				<hr />
 				<PensLayout>
-					{pens.map(pen => <Pen key={pen.id} pen={pen} />)}
+					{pens.map(pen => <PenCard key={pen.id} pen={pen} />)}
 				</PensLayout>
 				<hr />
 				<div className="bottom-container">

@@ -26,5 +26,7 @@
 			"icon": "codepen",
 			"href": "https://codepen.io/rdfriedl"
 		}
-	]
+	],
+
+	"defaultThumbnailSize": 256
 }

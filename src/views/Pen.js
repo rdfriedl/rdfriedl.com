@@ -3,7 +3,7 @@ import { withRouteData, Head } from "react-static";
 import styled from "styled-components";
 
 import { createTitle, breakpoints } from "../utils";
-import Pen from "../components/Pen";
+import PenCard from "../components/PenCard";
 import DisqusComments from "../components/DisqusComments";
 import { PensLayout } from "../components/Layouts";
 
@@ -35,7 +35,7 @@ const PenPage = withRouteData(({ pen, otherPens }) => (
 
 		<h2>Other Pens</h2>
 		<PensLayout>
-			{otherPens.map(pen => pen && <Pen key={pen.id} pen={pen} />)}
+			{otherPens.map(pen => pen && <PenCard key={pen.id} pen={pen} />)}
 		</PensLayout>
 
 		<DisqusComments

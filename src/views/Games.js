@@ -4,7 +4,7 @@ import { withRouteData, Switch, Route } from "react-static";
 
 import { GamesLayout } from "../components/Layouts";
 import GamePage from "./Game";
-import Game from "../components/Game";
+import GameCard from "../components/GameCard";
 import { createTitle } from "../utils";
 
 const GamesPage = withRouteData(({ games }) => (
@@ -16,7 +16,7 @@ const GamesPage = withRouteData(({ games }) => (
 		<h1>Games</h1>
 		<hr />
 		<GamesLayout>
-			{games.map(game => <Game key={game.id} game={game} />)}
+			{games.map(game => <GameCard key={game.id} game={game} />)}
 		</GamesLayout>
 	</React.Fragment>
 ));

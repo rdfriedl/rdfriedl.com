@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { createClient } from "contentful";
 import { ServerStyleSheet } from "styled-components";
 import axios from "axios";
+import moment from "moment";
 import * as dotenv from "dotenv";
 import fontLoader from "./config/fontLoader";
 import cssLoader from "./config/cssLoader";
@@ -47,7 +48,7 @@ let githubCache;
 
 export default {
 	getSiteData: async () => {
-		let config = require("./src/data/config.json");
+		let config = require("./src/config.json");
 		let github = githubCache;
 
 		if (!github) {
@@ -67,52 +68,65 @@ export default {
 		let { items: games } = await contentful.getEntries({
 			content_type: "game"
 		});
-		const pens = require("./src/data/pens.json");
+		let { items: pens } = await contentful.getEntries({
+			content_type: "codePen"
+		});
+
+		games = games.sort((a, b) => {
+			return moment(b.sys.updatedAt).diff(a.sys.updatedAt);
+		});
+		pens = pens.sort((a, b) => {
+			return moment(b.sys.updatedAt).diff(a.sys.updatedAt);
+		});
+
+		const cleanedGames = stripOutSysInfo(games);
+		const cleanedPens = stripOutSysInfo(pens);
 
 		return [
 			{
 				path: "/",
 				getData: () => ({
-					games: stripOutSysInfo(games),
-					pens: pickRandom(pens, 6)
+					games: cleanedGames,
+					pens: pickRandom(cleanedPens, 6),
+					rawPens: pens
 				})
 			},
 			{
 				path: "/games",
 				getData: () => ({
-					games: stripOutSysInfo(games)
+					games: cleanedGames
 				}),
-				children: games.map(({ fields: game }) => ({
+				children: cleanedGames.map(game => ({
 					path: `/${game.id}`,
 					getData: () => ({
-						game: stripOutSysInfo(game),
-						otherGames: [] // pickRandom(games, 2, [game])
+						game: game,
+						otherGames: pickRandom(cleanedGames, 2, [game])
 					})
 				}))
 			},
 			{
 				path: "/pens",
 				getData: () => ({
-					pens
+					pens: cleanedPens
 				}),
-				children: pens.map(pen => ({
+				children: cleanedPens.map(pen => ({
 					path: `/${pen.id}`,
 					getData: () => ({
 						pen,
-						otherPens: pickRandom(pens, 4, [pen])
+						otherPens: pickRandom(cleanedPens, 4, [pen])
 					})
 				}))
 			},
 			{
 				path: "/search",
 				getData: () => ({
-					games: stripOutSysInfo(games),
-					pens
+					games: cleanedGames,
+					pens: cleanedPens
 				})
 			}
 		];
 	},
-	siteRoot: require("./src/data/config.json").siteUrl,
+	siteRoot: require("./src/config.json").siteUrl,
 	renderToHtml: (render, Comp, meta) => {
 		const sheet = new ServerStyleSheet();
 		const html = render(sheet.collectStyles(<Comp />));

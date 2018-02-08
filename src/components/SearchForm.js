@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { withRouter } from "react-router";
+import * as queryString from "query-string";
 
 const Form = styled.form`
 	display: flex;
@@ -16,12 +17,27 @@ class SearchForm extends Component {
 	constructor(...args) {
 		super(...args);
 
+		let { q: inputValue } = this.getQueryParams();
+
 		this.state = {
-			inputValue: ""
+			inputValue
 		};
 
 		this.handleInputChange = this.handleInputChange.bind(this);
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
+	}
+	componentWillReceiveProps(nextProps) {
+		if (nextProps.location.search !== this.props.location.search) {
+			let { q: inputValue } = this.getQueryParams(nextProps);
+
+			this.setState({
+				inputValue
+			});
+		}
+	}
+	getQueryParams(props = this.props) {
+		let { location } = props;
+		return location ? queryString.parse(location.search) : {};
 	}
 	handleInputChange(event) {
 		this.setState({
@@ -46,7 +62,7 @@ class SearchForm extends Component {
 					type="search"
 					name="q"
 					placeholder="Search"
-					value={inputValue}
+					value={inputValue || ""}
 					onChange={this.handleInputChange}
 				/>
 				<button className="button primary" type="submit">

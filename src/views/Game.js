@@ -3,7 +3,7 @@ import { withRouteData, Head } from "react-static";
 import styled from "styled-components";
 
 import { createTitle } from "../utils";
-import Game from "../components/Game";
+import GameCard from "../components/GameCard";
 import ExternalLink from "../components/ExternalLink";
 import DisqusComments from "../components/DisqusComments";
 import { GamesLayout } from "../components/Layouts";
@@ -64,15 +64,15 @@ const GamePage = withRouteData(({ game, otherGames }) => (
 		<div className="other-games">
 			<h2>Other Games</h2>
 			<GamesLayout>
-				{otherGames.map(game => game && <Game key={game.id} game={game} />)}
+				{otherGames.map(game => game && <GameCard key={game.id} game={game} />)}
 			</GamesLayout>
 		</div>
 
 		<div className="comments">
 			<DisqusComments
-				disqusId={`pen-${game.id}`}
+				disqusId={`game-${game.id}`}
 				disqusTitle={game.title}
-				category="pen"
+				category="game"
 			/>
 		</div>
 	</Layout>

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import * as queryString from "query-string";
-import { withRouteData, Switch, Route, Head } from "react-static";
+import { withRouteData, Head } from "react-static";
 
 import { GamesLayout, PensLayout } from "../components/Layouts";
-import Game from "../components/Game";
-import Pen from "../components/Pen";
+import Game from "../components/GameCard";
+import Pen from "../components/PenCard";
 import { createTitle } from "../utils";
 
 const SearchForm = styled.form`
@@ -45,8 +45,8 @@ class SearchPage extends Component {
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
 	}
 	getQueryParams() {
-		let { location } = this.props;
-		return queryString.parse(location.search);
+		let { history: { location } } = this.props;
+		return location ? queryString.parse(location.search) : {};
 	}
 	getSearchTerm() {
 		let { q: query } = this.getQueryParams();
@@ -131,7 +131,7 @@ class SearchPage extends Component {
 		}
 
 		if (!elements.length) {
-			elements.push(<h1>No Results</h1>);
+			elements.push(<h1 key="no-results">No Results</h1>);
 		}
 
 		return elements;
@@ -151,7 +151,7 @@ class SearchPage extends Component {
 						type="Search"
 						placeholder="Search"
 						name="q"
-						value={inputValue}
+						value={inputValue || ""}
 						onChange={this.handleSearchInputChange}
 					/>
 					<input type="hidden" name="tags" />
