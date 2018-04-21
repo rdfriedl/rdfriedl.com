@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import queryString from "query-string";
+import qs from "qs";
 import { defaultThumbnailSize } from "../config.json";
 
 const StyledImage = styled.img`
@@ -47,7 +47,7 @@ function getImageParams({
 		rounded = width || height;
 	}
 
-	return queryString.stringify({
+	return qs.stringify({
 		fm: format,
 		fit: fit,
 		w: width && Math.round(width),

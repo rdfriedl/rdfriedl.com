@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import * as queryString from "query-string";
+import qs from "qs";
 import { withRouteData, Head } from "react-static";
 
 import { GamesLayout, PensLayout } from "../components/Layouts";
@@ -46,7 +46,7 @@ class SearchPage extends Component {
 	}
 	getQueryParams() {
 		let { history: { location } } = this.props;
-		return location ? queryString.parse(location.search) : {};
+		return location ? qs.parse(location.search.replace(/^\?/g, '')) : {};
 	}
 	getSearchTerm() {
 		let { q: query } = this.getQueryParams();
@@ -66,7 +66,7 @@ class SearchPage extends Component {
 			pathname: "/search",
 			search:
 				"?" +
-				queryString.stringify({
+				qs.stringify({
 					q: this.state.inputValue
 				})
 		});

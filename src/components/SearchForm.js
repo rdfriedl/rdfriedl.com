@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { withRouter } from "react-router";
-import * as queryString from "query-string";
+import qs from "qs";
 
 const Form = styled.form`
 	display: flex;
@@ -37,7 +37,7 @@ class SearchForm extends Component {
 	}
 	getQueryParams(props = this.props) {
 		let { location } = props;
-		return location ? queryString.parse(location.search) : {};
+		return location ? qs.parse(location.search.replace(/^\?/g, '')) : {};
 	}
 	handleInputChange(event) {
 		this.setState({
