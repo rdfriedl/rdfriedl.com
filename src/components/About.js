@@ -1,5 +1,4 @@
 import React from "react";
-import ExternalLink from "./ExternalLink";
 
 const About = ({ ...props }) => (
 	<div {...props}>
@@ -13,10 +12,7 @@ const About = ({ ...props }) => (
 		</p>
 		<p>
 			Some of my most recent experiments have used technologies like SVG, WebGl
-			and{" "}
-			<ExternalLink href="https://facebook.github.io/react/">
-				React
-			</ExternalLink>
+			and React
 		</p>
 	</div>
 );

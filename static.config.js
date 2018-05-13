@@ -123,6 +123,9 @@ export default {
 				}))
 			},
 			{
+				path: "/contact",
+			},
+			{
 				path: "/search",
 				getData: () => ({
 					games: cleanedGames,

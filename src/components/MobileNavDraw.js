@@ -122,6 +122,9 @@ export default withSiteData(
 							<NavLink to="/pens/" onClick={this.closeDraw}>
 								<i className="fa fa-codepen" /> Pens
 							</NavLink>
+							<NavLink to="/contact/">
+								<i className="fa fa-envelope-o" /> Contact
+							</NavLink>
 						</ColumnLayout>
 					</div>
 
