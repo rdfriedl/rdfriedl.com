@@ -3,7 +3,7 @@ import Helmet from "react-helmet";
 import { withRouteData } from "react-static";
 
 import { createTitle } from "../utils";
-import ContactForm from '../components/ContactForm';
+import ContactForm from "../components/ContactForm";
 
 const ContactPage = () => (
 	<React.Fragment>
@@ -12,7 +12,7 @@ const ContactPage = () => (
 		</Helmet>
 
 		<h1>Contact Me</h1>
-		<ContactForm/>
+		<ContactForm />
 	</React.Fragment>
 );
 

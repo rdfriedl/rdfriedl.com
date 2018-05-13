@@ -3,7 +3,7 @@ import { createClient } from "contentful";
 import { ServerStyleSheet } from "styled-components";
 import axios from "axios";
 import moment from "moment";
-import md5 from 'md5';
+import md5 from "md5";
 import * as dotenv from "dotenv";
 import fontLoader from "./config/fontLoader";
 import cssLoader from "./config/cssLoader";
@@ -61,7 +61,11 @@ export default {
 		}
 
 		// get gravitar
-		let gravitar = `https://www.gravatar.com/avatar/${md5(String(config.email).trim().toLowerCase())}?s=512`;
+		let gravitar = `https://www.gravatar.com/avatar/${md5(
+			String(config.email)
+				.trim()
+				.toLowerCase()
+		)}?s=512`;
 
 		return {
 			github,
@@ -123,7 +127,7 @@ export default {
 				}))
 			},
 			{
-				path: "/contact",
+				path: "/contact"
 			},
 			{
 				path: "/search",

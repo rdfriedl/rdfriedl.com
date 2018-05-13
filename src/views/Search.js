@@ -45,8 +45,10 @@ class SearchPage extends Component {
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
 	}
 	getQueryParams() {
-		let { history: { location } } = this.props;
-		return location ? qs.parse(location.search.replace(/^\?/g, '')) : {};
+		let {
+			history: { location }
+		} = this.props;
+		return location ? qs.parse(location.search.replace(/^\?/g, "")) : {};
 	}
 	getSearchTerm() {
 		let { q: query } = this.getQueryParams();

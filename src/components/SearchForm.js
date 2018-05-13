@@ -37,7 +37,7 @@ class SearchForm extends Component {
 	}
 	getQueryParams(props = this.props) {
 		let { location } = props;
-		return location ? qs.parse(location.search.replace(/^\?/g, '')) : {};
+		return location ? qs.parse(location.search.replace(/^\?/g, "")) : {};
 	}
 	handleInputChange(event) {
 		this.setState({

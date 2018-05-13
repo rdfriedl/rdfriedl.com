@@ -2,35 +2,48 @@ import ExtractTextPlugin from "extract-text-webpack-plugin";
 import { postCssLoader } from "./config";
 
 export default function(stage) {
+	let loaders = [];
+
 	if (stage === "dev") {
-		return {
-			test: /\.s(a|c)ss$/,
-			use: [
-				{ loader: "style-loader" },
-				{ loader: "css-loader" },
-				{ loader: "sass-loader" }
-			]
-		};
+		loaders = [
+			{ loader: "style-loader" },
+			{ loader: "css-loader" },
+			{ loader: "sass-loader" }
+		];
 	} else {
-		return {
-			test: /\.s(a|c)ss$/,
-			use: ExtractTextPlugin.extract({
-				use: [
-					{
-						loader: "css-loader",
-						options: {
-							importLoaders: 2,
-							minimize: true,
-							sourceMap: false
-						}
-					},
-					postCssLoader(stage),
-					{
-						loader: "sass-loader",
-						options: { includePaths: ["src/"] }
+		loaders = [
+			{
+				loader: "css-loader",
+				options: {
+					importLoaders: 1,
+					minimize: stage === "prod",
+					sourceMap: false
+				}
+			},
+			postCssLoader(stage),
+			{
+				loader: "sass-loader",
+				options: { includePaths: ["src/"] }
+			}
+		];
+
+		// Don't extract css to file during node build process
+		if (stage !== "node") {
+			loaders = ExtractTextPlugin.extract({
+				fallback: {
+					loader: "style-loader",
+					options: {
+						sourceMap: false,
+						hmr: false
 					}
-				]
-			})
-		};
+				},
+				use: loaders
+			});
+		}
 	}
+
+	return {
+		test: /\.s(a|c)ss$/,
+		use: loaders
+	};
 }
