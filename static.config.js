@@ -49,7 +49,7 @@ let githubCache;
 
 export default {
 	getSiteData: async () => {
-		let config = require("./src/config.json");
+		let config = require("./src/config.js");
 		let github = githubCache;
 
 		if (!github) {
@@ -138,7 +138,7 @@ export default {
 			}
 		];
 	},
-	siteRoot: require("./src/config.json").siteUrl,
+	siteRoot: require("./src/config.js").siteUrl,
 	renderToHtml: (render, Comp, meta) => {
 		const sheet = new ServerStyleSheet();
 		const html = render(sheet.collectStyles(<Comp />));

@@ -3,7 +3,7 @@ import { withRouteData, Head } from "react-static";
 import styled from "styled-components";
 
 import { breakpoints, createTitle } from "../utils";
-import config from "../config.json";
+import config from "../config.js";
 
 import ExternalLink from "../components/ExternalLink";
 import Card from "../components/Card";

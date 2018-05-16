@@ -1,11 +1,11 @@
-{
+module.exports = {
 	"siteTitle": "Robert Friedl",
 	"avatar": "",
 	"name": "Robert Friedl",
 	"email": "rdfriedl@gmail.com",
 	"description": "",
 	"keywords": ["site"],
-	"siteUrl": "https://new.rdfriedl.com",
+	"siteUrl": process.env.SITE_URL || "https://rdfriedl.com",
 	"sourceUrl": "https://github.com/rdfriedl/rdfriedl.github.com",
 	"githubUsername": "rdfriedl",
 
@@ -29,4 +29,4 @@
 	],
 
 	"defaultThumbnailSize": 256
-}
+};

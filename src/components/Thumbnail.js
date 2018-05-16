@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import qs from "qs";
-import { defaultThumbnailSize } from "../config.json";
+import { defaultThumbnailSize } from "../config.js";
 
 const StyledImage = styled.img`
 	width: 100%;
