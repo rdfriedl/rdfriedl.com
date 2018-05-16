@@ -6,7 +6,7 @@ module.exports = {
 	"description": "",
 	"keywords": ["site"],
 	"siteUrl": process.env.SITE_URL || "https://rdfriedl.com",
-	"sourceUrl": "https://github.com/rdfriedl/rdfriedl.github.com",
+	"sourceUrl": "https://github.com/rdfriedl/rdfriedl.com",
 	"githubUsername": "rdfriedl",
 
 	"disqus": {
