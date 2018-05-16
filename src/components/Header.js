@@ -86,16 +86,16 @@ const Header = withSiteData(({ sourceUrl, avatar, name }) => (
 			<h2 className="title">{name}</h2>
 
 			<div className="navbar">
-				<NavLink to="/" matchSubPaths={false}>
+				<NavLink to="/" matchSubPaths={false} aria-label="home">
 					<i className="fa fa-home" /> Home
 				</NavLink>
-				<NavLink to="/games/">
+				<NavLink to="/games/" aria-label="games">
 					<i className="fa fa-gamepad" /> Games
 				</NavLink>
-				<NavLink to="/pens/">
+				<NavLink to="/pens/" aria-label="pens">
 					<i className="fa fa-codepen" /> Pens
 				</NavLink>
-				<NavLink to="/contact/">
+				<NavLink to="/contact/" aria-label="contact">
 					<i className="fa fa-envelope-o" /> Contact
 				</NavLink>
 			</div>
@@ -103,7 +103,7 @@ const Header = withSiteData(({ sourceUrl, avatar, name }) => (
 			<SearchForm />
 
 			<div className="source-link">
-				<ExternalLink className="button" href={sourceUrl}>
+				<ExternalLink className="button" href={sourceUrl} aria-label="view source">
 					<i className="fa fa-github" /> View Source
 				</ExternalLink>
 			</div>
@@ -113,7 +113,7 @@ const Header = withSiteData(({ sourceUrl, avatar, name }) => (
 		<MobileHeader>
 			<label htmlFor="drawer-checkbox" className="button drawer-toggle" />
 			<h3>{name}</h3>
-			<ExternalLink className="button source" href={sourceUrl}>
+			<ExternalLink className="button source" href={sourceUrl} aria-label="view source">
 				<i className="fa fa-github" />
 			</ExternalLink>
 		</MobileHeader>

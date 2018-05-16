@@ -40,7 +40,7 @@ function getImageParams({
 	}
 
 	if (!format) {
-		format = "png";
+		format = "webp";
 	}
 
 	if (rounded === true && (width || height)) {

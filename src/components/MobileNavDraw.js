@@ -113,16 +113,16 @@ export default withSiteData(
 						<h2>{name}</h2>
 
 						<ColumnLayout>
-							<NavLink to="/" matchSubPaths={false} onClick={this.closeDraw}>
+							<NavLink to="/" matchSubPaths={false} onClick={this.closeDraw} aria-label="home">
 								<i className="fa fa-home" /> Home
 							</NavLink>
-							<NavLink to="/games/" onClick={this.closeDraw}>
+							<NavLink to="/games/" onClick={this.closeDraw} aria-label="games">
 								<i className="fa fa-gamepad" /> Games
 							</NavLink>
-							<NavLink to="/pens/" onClick={this.closeDraw}>
+							<NavLink to="/pens/" onClick={this.closeDraw} aria-label="pens">
 								<i className="fa fa-codepen" /> Pens
 							</NavLink>
-							<NavLink to="/contact/">
+							<NavLink to="/contact/" aria-label="contact">
 								<i className="fa fa-envelope-o" /> Contact
 							</NavLink>
 						</ColumnLayout>
