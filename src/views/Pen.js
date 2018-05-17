@@ -1,8 +1,9 @@
 import React from "react";
-import { withRouteData, Head } from "react-static";
+import { withRouteData, Head, withSiteData } from "react-static";
 import styled from "styled-components";
+import _get from "lodash/get";
 
-import { createTitle, breakpoints } from "../utils";
+import { createTitle } from "../utils";
 import PenCard from "../components/PenCard";
 import DisqusComments from "../components/DisqusComments";
 import { PensLayout } from "../components/Layouts";
@@ -13,11 +14,45 @@ const EmbeddedPen = styled.iframe`
 	border: none;
 `;
 
+const PenMetaTags = withSiteData(
+	withRouteData(({ pen, name, avatar, siteUrl, match }) => {
+		let title = createTitle(pen.title);
+		let description = pen.title;
+
+		return (
+			<Head>
+				{/*COMMON TAGS*/}
+				<title>{title}</title>
+				{/*Search Engine*/}
+				<meta name="description" content={description} />
+				<meta name="image" content={_get(pen, "thumbnail.file.url")} />
+				{/*Schema.org for Google*/}
+				<meta itemprop="name" content={pen.title} />
+				<meta itemprop="description" content={description} />
+				<meta itemprop="image" content={_get(pen, "thumbnail.file.url")} />
+				{/*Twitter*/}
+				<meta name="twitter:card" content="summary" />
+				<meta name="twitter:title" content={pen.title} />
+				<meta name="twitter:description" content={description} />
+				<meta
+					name="twitter:image:src"
+					content={_get(pen, "thumbnail.file.url")}
+				/>
+				{/*Open Graph general (Facebook, Pinterest & Google+)*/}
+				<meta property="og:title" content={pen.title} />
+				<meta property="og:description" content={description} />
+				<meta property="og:url" content={siteUrl + match.url} />
+				<meta property="og:site_name" content={name} />
+				<meta property="og:type" content="website" />
+				<meta property="og:image" content={_get(pen, "thumbnail.file.url")} />
+			</Head>
+		);
+	})
+);
+
 const PenPage = withRouteData(({ pen, otherPens }) => (
 	<div>
-		<Head>
-			<title>{createTitle(pen.title)}</title>
-		</Head>
+		<PenMetaTags />
 
 		<h1>{pen.title}</h1>
 		<EmbeddedPen

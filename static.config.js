@@ -8,6 +8,7 @@ import * as dotenv from "dotenv";
 import fontLoader from "./config/fontLoader";
 import cssLoader from "./config/cssLoader";
 import sassLoader from "./config/sassLoader";
+import { pickRandom } from "./src/utils";
 
 dotenv.config();
 
@@ -15,15 +16,6 @@ const contentful = createClient({
 	space: process.env.CONTENTFUL_SPACE,
 	accessToken: process.env.CONTENTFUL_TOKEN
 });
-
-function pickRandom(items, count, exclude = []) {
-	let arr = items
-		.filter(item => !exclude.includes(item))
-		.sort(() => Math.floor(Math.random() * 3) - 1);
-
-	arr.length = Number.isInteger(count) ? count : items.length;
-	return arr;
-}
 
 function stripOutSysInfo(data) {
 	if (Array.isArray(data)) {

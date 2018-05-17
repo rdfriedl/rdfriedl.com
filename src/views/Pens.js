@@ -6,7 +6,7 @@ import { withSiteData, withRouteData, Switch, Route, Head } from "react-static";
 import PenCard from "../components/PenCard";
 import PenPage from "./Pen";
 import { PensLayout } from "../components/Layouts";
-import { createTitle } from "../utils";
+import { createTitle, pickRandom } from "../utils";
 import ExternalLink from "../components/ExternalLink";
 import TitleWithButton from "../components/TitleWithButton";
 
@@ -21,15 +21,57 @@ const PageStyles = styled.div`
 	}
 `;
 
+const PensMetaTags = withSiteData(
+	withRouteData(({ pens, name, description, avatar, siteUrl, match }) => {
+		let defaultPen = pens.find(pen => !!pen.thumbnail);
+		let title = createTitle("Pens");
+
+		return (
+			<Head>
+				{/*COMMON TAGS*/}
+				<title>{title}</title>
+				{/*Search Engine*/}
+				<meta name="description" content={description} />
+				<meta name="image" content={defaultPen.thumbnail.file.url} />
+				{/*Schema.org for Google*/}
+				<meta itemprop="name" content={title} />
+				<meta itemprop="description" content={description} />
+				<meta itemprop="image" content={defaultPen.thumbnail.file.url} />
+				{/*Twitter*/}
+				<meta name="twitter:card" content="summary" />
+				<meta name="twitter:title" content={title} />
+				<meta name="twitter:description" content={description} />
+				<meta
+					name="twitter:image:src"
+					content={defaultPen.thumbnail.file.url}
+				/>
+				{/*Open Graph general (Facebook, Pinterest & Google+)*/}
+				<meta property="og:title" content={title} />
+				<meta property="og:description" content={description} />
+				<meta property="og:url" content={siteUrl + match.url} />
+				<meta property="og:site_name" content={name} />
+				<meta property="og:type" content="website" />
+				{pickRandom(pens, 4)
+					.filter(pen => !!pen.thumbnail)
+					.map(pen => (
+						<meta
+							key={pen.id}
+							property="og:image"
+							content={pen.thumbnail.file.url}
+						/>
+					))}
+			</Head>
+		);
+	})
+);
+
 const PensPage = withSiteData(
 	withRouteData(({ pens, socialLinks }) => {
 		const codependLink = socialLinks.find(link => link.id === "codepen");
 
 		return (
 			<PageStyles>
-				<Head>
-					<title>{createTitle("Pens")}</title>
-				</Head>
+				<PensMetaTags />
 
 				<TitleWithButton>
 					<h1>Pens</h1>

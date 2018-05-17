@@ -113,7 +113,12 @@ export default withSiteData(
 						<h2>{name}</h2>
 
 						<ColumnLayout>
-							<NavLink to="/" matchSubPaths={false} onClick={this.closeDraw} aria-label="home">
+							<NavLink
+								to="/"
+								matchSubPaths={false}
+								onClick={this.closeDraw}
+								aria-label="home"
+							>
 								<i className="fa fa-home" /> Home
 							</NavLink>
 							<NavLink to="/games/" onClick={this.closeDraw} aria-label="games">

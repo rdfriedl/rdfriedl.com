@@ -103,7 +103,11 @@ const Header = withSiteData(({ sourceUrl, avatar, name }) => (
 			<SearchForm />
 
 			<div className="source-link">
-				<ExternalLink className="button" href={sourceUrl} aria-label="view source">
+				<ExternalLink
+					className="button"
+					href={sourceUrl}
+					aria-label="view source"
+				>
 					<i className="fa fa-github" /> View Source
 				</ExternalLink>
 			</div>
@@ -113,7 +117,11 @@ const Header = withSiteData(({ sourceUrl, avatar, name }) => (
 		<MobileHeader>
 			<label htmlFor="drawer-checkbox" className="button drawer-toggle" />
 			<h3>{name}</h3>
-			<ExternalLink className="button source" href={sourceUrl} aria-label="view source">
+			<ExternalLink
+				className="button source"
+				href={sourceUrl}
+				aria-label="view source"
+			>
 				<i className="fa fa-github" />
 			</ExternalLink>
 		</MobileHeader>
