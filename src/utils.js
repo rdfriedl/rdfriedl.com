@@ -1,4 +1,5 @@
 import { css } from "styled-components";
+import moment from "moment";
 
 export function createTitle(...args) {
 	return ["Robert Friedl", ...args].join(" - ");
@@ -10,6 +11,10 @@ export const breakpoints = {
 	tablet: "min-width: 641px",
 	phone: "max-width: 640px"
 };
+
+export function formatDate(date) {
+	return moment(date).format("MMMM d, YYYY");
+}
 
 export function pickRandom(items, count, exclude = []) {
 	let arr = items

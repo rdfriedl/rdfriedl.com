@@ -4,6 +4,7 @@ import { Router, Route, Switch, Redirect, Link } from "react-static";
 import { breakpoints } from "./utils";
 
 import HomePage from "./views/Home";
+import BlogPage from "./views/Blog";
 import GamesPage from "./views/Games";
 import PensPage from "./views/Pens";
 import SearchPage from "./views/Search";
@@ -45,6 +46,7 @@ export default () => (
 				<Switch>
 					<Route exact path="/" component={HomePage} />
 					<Route path="/search" component={SearchPage} />
+					<Route path="/blog" component={BlogPage} />
 					<Route path="/games" component={GamesPage} />
 					<Route path="/pens" component={PensPage} />
 					<Route path="/contact" component={ContactPage} />

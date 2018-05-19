@@ -9,6 +9,7 @@ import fontLoader from "./config/fontLoader";
 import cssLoader from "./config/cssLoader";
 import sassLoader from "./config/sassLoader";
 import { pickRandom } from "./src/utils";
+import { renderMarkdown } from "./src/markdownRenderer";
 
 dotenv.config();
 
@@ -16,6 +17,18 @@ const contentful = createClient({
 	space: process.env.CONTENTFUL_SPACE,
 	accessToken: process.env.CONTENTFUL_TOKEN
 });
+
+function pick(obj, fields = []) {
+	let picked = {};
+
+	if (typeof obj === "object") {
+		fields.forEach(field => {
+			picked[field] = obj[field];
+		});
+	}
+
+	return picked;
+}
 
 function stripOutSysInfo(data) {
 	if (Array.isArray(data)) {
@@ -28,11 +41,13 @@ function stripOutSysInfo(data) {
 	}
 
 	let copy = Object.assign({}, data.fields || data);
-	Reflect.ownKeys(copy)
+	Object.keys(copy)
 		.filter(key => typeof copy[key] === "object")
 		.forEach(key => {
 			copy[key] = stripOutSysInfo(copy[key]);
 		});
+
+	copy.sys = copy.sys || pick(data.sys, ["updatedAt", "createdAt"]);
 
 	return copy;
 }
@@ -66,6 +81,9 @@ export default {
 		};
 	},
 	getRoutes: async () => {
+		let { items: blogPosts } = await contentful.getEntries({
+			content_type: "blogPost"
+		});
 		let { items: games } = await contentful.getEntries({
 			content_type: "game"
 		});
@@ -80,8 +98,13 @@ export default {
 			return moment(b.sys.updatedAt).diff(a.sys.updatedAt);
 		});
 
+		const cleanedBlogPosts = stripOutSysInfo(blogPosts);
 		const cleanedGames = stripOutSysInfo(games);
 		const cleanedPens = stripOutSysInfo(pens);
+
+		cleanedBlogPosts.map(post => {
+			post.content = renderMarkdown(post.content);
+		});
 
 		return [
 			{
@@ -91,6 +114,19 @@ export default {
 					pens: pickRandom(cleanedPens, 6),
 					rawPens: pens
 				})
+			},
+			{
+				path: "/blog",
+				getData: () => ({
+					posts: cleanedBlogPosts
+				}),
+				children: cleanedBlogPosts.map(post => ({
+					path: `/${post.slug}`,
+					getData: () => ({
+						post: post,
+						otherPosts: pickRandom(cleanedBlogPosts, 6, [post])
+					})
+				}))
 			},
 			{
 				path: "/games",

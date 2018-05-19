@@ -1,9 +1,10 @@
 import React, { PureComponent } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { Link, withSiteData } from "react-static";
+import { withSiteData } from "react-static";
 import NavLink from "./NavLink";
 import { breakpoints } from "../utils";
+import NavMenu from "./NavMenu";
 
 const ColumnLayout = styled.div`
 	display: flex;
@@ -113,23 +114,7 @@ export default withSiteData(
 						<h2>{name}</h2>
 
 						<ColumnLayout>
-							<NavLink
-								to="/"
-								matchSubPaths={false}
-								onClick={this.closeDraw}
-								aria-label="home"
-							>
-								<i className="fa fa-home" /> Home
-							</NavLink>
-							<NavLink to="/games/" onClick={this.closeDraw} aria-label="games">
-								<i className="fa fa-gamepad" /> Games
-							</NavLink>
-							<NavLink to="/pens/" onClick={this.closeDraw} aria-label="pens">
-								<i className="fa fa-codepen" /> Pens
-							</NavLink>
-							<NavLink to="/contact/" aria-label="contact">
-								<i className="fa fa-envelope-o" /> Contact
-							</NavLink>
+							<NavMenu onMenuItemClick={this.closeDraw} />
 						</ColumnLayout>
 					</div>
 

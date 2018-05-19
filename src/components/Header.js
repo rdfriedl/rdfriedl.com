@@ -4,9 +4,9 @@ import styled from "styled-components";
 
 import ExternalLink from "./ExternalLink";
 import MobileNavDraw from "./MobileNavDraw";
-import NavLink from "./NavLink";
 import SearchForm from "./SearchForm";
 import { breakpoints } from "../utils";
+import NavMenu from "./NavMenu";
 
 let HeaderStyles = styled.div`
 	position: -webkit-sticky;
@@ -86,18 +86,7 @@ const Header = withSiteData(({ sourceUrl, avatar, name }) => (
 			<h2 className="title">{name}</h2>
 
 			<div className="navbar">
-				<NavLink to="/" matchSubPaths={false} aria-label="home">
-					<i className="fa fa-home" /> Home
-				</NavLink>
-				<NavLink to="/games/" aria-label="games">
-					<i className="fa fa-gamepad" /> Games
-				</NavLink>
-				<NavLink to="/pens/" aria-label="pens">
-					<i className="fa fa-codepen" /> Pens
-				</NavLink>
-				<NavLink to="/contact/" aria-label="contact">
-					<i className="fa fa-envelope-o" /> Contact
-				</NavLink>
+				<NavMenu />
 			</div>
 
 			<SearchForm />

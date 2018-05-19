@@ -48,10 +48,21 @@
     "react-hot-loader": "^4.2.0",
     "react-router": "^4.2.0",
     "react-static": "^5.9.3",
+    "rehype-minify-whitespace": "^2.0.3",
+    "rehype-parse": "^4.1.0",
+    "rehype-raw": "^2.0.0",
+    "rehype-react": "^3.0.2",
+    "rehype-stringify": "^3.0.0",
+    "remark-autolink-headings": "^5.0.0",
+    "remark-iframes": "^3.0.1",
+    "remark-parse": "^5.0.0",
+    "remark-rehype": "^3.0.0",
+    "remark-slug": "^5.0.0",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.0.1",
     "serve": "^6.5.7",
     "style-loader": "^0.21.0",
-    "styled-components": "^3.2.6"
+    "styled-components": "^3.2.6",
+    "unified": "^7.0.0"
   }
 }

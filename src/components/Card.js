@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import classNames from "classnames";
 import styled from "styled-components";
 
@@ -14,5 +15,9 @@ const Card = ({ header, children, className, ...props }) => (
 		{children}
 	</StyleMiniCssCard>
 );
+
+Card.propTypes = {
+	header: PropTypes.any
+};
 
 export default Card;
