@@ -12,6 +12,7 @@ import Pen from "../components/PenCard";
 import About from "../components/About";
 import TitleWithButton from "../components/TitleWithButton";
 import { GamesLayout } from "../components/Layouts";
+import BlogPostCard from "../components/BlogPostCard";
 
 const Layout = styled.div`
 	main {
@@ -58,6 +59,11 @@ const GamesHeader = () => (
 		<i className="fa fa-gamepad" /> Games
 	</h2>
 );
+const BlogHeader = () => (
+	<h2>
+		<i className="fa fa-rss" /> Latest Blog Posts
+	</h2>
+);
 const PensHeader = () => (
 	<TitleWithButton>
 		<h3>
@@ -100,7 +106,7 @@ const HomeMetaTags = withSiteData(({ name, description, siteUrl, avatar }) => (
 	</Head>
 ));
 
-const HomePage = withRouteData(({ pens, games }) => (
+const HomePage = withRouteData(({ pens, games, posts }) => (
 	<Layout>
 		<HomeMetaTags />
 
@@ -116,6 +122,14 @@ const HomePage = withRouteData(({ pens, games }) => (
 					<GamesLayout>
 						{games.map(game => <GameCard key={game.id} game={game} />)}
 					</GamesLayout>
+				</Card>
+			</section>
+
+			<section>
+				<Card header={<BlogHeader />}>
+					{posts.map(post => (
+						<BlogPostCard key={post.slug} post={post}/>
+					))}
 				</Card>
 			</section>
 		</main>

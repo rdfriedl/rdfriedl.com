@@ -13,6 +13,7 @@ const PenCard = ({ pen, ...props }) => (
 		<Link className="thumbnail" to={`/pens/${pen.id}`}>
 			<Thumbnail
 				aspectRatio={1.5}
+				width={400}
 				src={pen.thumbnail.file.url}
 				alt={pen.title}
 			/>

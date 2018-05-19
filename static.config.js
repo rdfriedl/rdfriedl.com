@@ -112,6 +112,7 @@ export default {
 				getData: () => ({
 					games: cleanedGames,
 					pens: pickRandom(cleanedPens, 6),
+					posts: cleanedBlogPosts.slice(0, 5),
 					rawPens: pens
 				})
 			},
